@@ -4,16 +4,20 @@
     "nickname": "Arduino程序设计基础",
     "description": "针对Arduino初学者的基础教程，包含Arduino IDE安装配置、基本电路连接、常用组件介绍（LED、按钮、传感器等）、基础编程语法、简单项目实践。适合零基础学习者快速掌握Arduino开发环境和基本技能。",
     "author": "奈何col",
+    "url": "https://arduino.me/s/arduino-getting-started",
+    "img": "subject.png",
     "examples": [
       {
         "nickname": "LED闪烁（Blink）",
         "description": "学习如何控制一个LED灯的开关，这是Arduino的第一个入门项目。",
-        "path": "blink"
+        "path": "blink",
+        "url": "https://arduino.me/s/arduino-getting-started?aid=640"
       },
       {
         "nickname": "LED与按钮控制",
         "description": "使用按钮控制LED的开关状态，学习数字输入的基础操作。",
-        "path": "led_button"
+        "path": "led_button",
+        "url": "https://arduino.me/s/arduino-getting-started?aid=642"
       }
     ]
   },
@@ -22,16 +26,20 @@
     "nickname": "物联网开发入门",
     "description": "针对物联网初学者的基础教程，包含物联网概念、基本电路连接、常用组件介绍（传感器、执行器等）、基础编程语法、简单项目实践。适合零基础学习者快速掌握物联网开发环境和基本技能。",
     "author": "奈何col",
+    "url": "https://arduino.me/s/blinker-arduino",
+    "img": "subject.png",
     "examples": [
       {
         "nickname": "LED闪烁（Blink）",
         "description": "学习如何控制一个LED灯的开关，这是Arduino的第一个入门项目。",
-        "path": "blink"
+        "path": "blink",
+        "url": ""
       },
       {
         "nickname": "LED与按钮控制",
         "description": "使用按钮控制LED的开关状态，学习数字输入的基础操作。",
-        "path": "led_button"
+        "path": "led_button",
+        "url": ""
       }
     ]
   }

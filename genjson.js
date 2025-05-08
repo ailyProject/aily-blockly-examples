@@ -10,7 +10,9 @@ function readSubjectInfo(subjectDir) {
       name: path.basename(subjectDir),
       nickname: path.basename(subjectDir),
       description: '',
-      author: ''
+      author: '',
+      url: '',
+      img: 'subject.png'
     };
   }
   
@@ -21,7 +23,9 @@ function readSubjectInfo(subjectDir) {
       name: packageJson.name || path.basename(subjectDir),
       nickname: packageJson.nickname || packageJson.name || path.basename(subjectDir),
       description: packageJson.description || '',
-      author: packageJson.author || (typeof packageJson.author === 'object' ? packageJson.author.name : '')
+      author: packageJson.author || (typeof packageJson.author === 'object' ? packageJson.author.name : ''),
+      url: packageJson.url || '',
+      img: 'subject.png'
     };
   } catch (error) {
     console.error(`读取 ${subjectDir} 中的package.json出错:`, error.message);
@@ -29,7 +33,9 @@ function readSubjectInfo(subjectDir) {
       name: path.basename(subjectDir),
       nickname: path.basename(subjectDir),
       description: '',
-      author: ''
+      author: '',
+      url: '',
+      img: 'subject.png'
     };
   }
 }
@@ -42,7 +48,8 @@ function readExampleInfo(exampleDir, relativePath) {
     return {
       nickname: path.basename(exampleDir),
       description: '',
-      path: relativePath
+      path: relativePath,
+      url: ''
     };
   }
   
@@ -52,14 +59,16 @@ function readExampleInfo(exampleDir, relativePath) {
     return {
       nickname: packageJson.nickname || packageJson.name || path.basename(exampleDir),
       description: packageJson.description || '',
-      path: relativePath
+      path: relativePath,
+      url: packageJson.url || ''
     };
   } catch (error) {
     console.error(`读取 ${exampleDir} 中的package.json出错:`, error.message);
     return {
       nickname: path.basename(exampleDir),
       description: '',
-      path: relativePath
+      path: relativePath,
+      url: ''
     };
   }
 }

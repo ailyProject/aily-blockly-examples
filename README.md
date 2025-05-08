@@ -25,15 +25,18 @@ subject_name               // 程序集目录
 ```json
 [
     {
-        "name":"@aily-project/example-arduino-book",  // 程序集package.json中的nickname
+        "name":"@aily-project/example-arduino-book",  // 程序集package.json中的name
         "nickname": "Arduino开发入门",                 // 程序集package.json中的nickname，如果没有则使用name
         "description": "针对Arduino初学者的基础教程，包含Arduino IDE安装配置、基本电路连接、常用组件介绍（LED、按钮、传感器等）、基础编程语法、简单项目实践。适合零基础学习者快速掌握Arduino开发环境和基本技能。",  // 程序集package.json中的description
-        "author":"奈何col",  // 程序集package.json中的author
+        "author":"奈何col",                                    // 程序集package.json中的author
+        "url":"https://arduino.me/s/arduino-getting-started", // 程序集package.json中的url
+        "img":"subject.png",                                  // 程序集package.json中的img
         "examples":[
             {
                 "nickname": "LED闪烁（Blink）", // 项目package.json中的nickname，如果没有则使用name
                 "description": "学习如何控制一个LED灯的开关，这是Arduino的第一个入门项目。", // 项目package.json中的description
-                "path": "blink"  // 项目路径
+                "path": "blink",  // 项目路径,
+                "url":"https://arduino.me/s/arduino-getting-started?aid=318", // 项目package.json中的url
             },
             {
                 "nickname": "按钮控制LED",

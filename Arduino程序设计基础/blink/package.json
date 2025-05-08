@@ -3,6 +3,7 @@
   "nickname": "LED闪烁（Blink）",
   "version": "1.0.0",
   "description": "学习如何控制一个LED灯的开关，这是Arduino的第一个入门项目。",
+  "url": "https://arduino.me/s/arduino-getting-started?aid=640",
   "board": "Arduino UNO R3",
   "boardDependencies": {
     "@aily-project/compiler-avr-gcc": "7.3.0",
