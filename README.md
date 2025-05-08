@@ -5,7 +5,7 @@
 
 ### 程序集结构
 一个程序集中包含多个示例程序  
-```json
+```
 subject_name               // 程序集目录
  |- subject.png            // 封面图片
  |- package.json           // npm包管理文件
