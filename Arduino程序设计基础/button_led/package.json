@@ -4,7 +4,6 @@
   "url": "https://arduino.me/s/arduino-getting-started?aid=657",
   "description": "通过按钮控制LED的开关，学习按钮的基本使用。",
   "version": "1.0.0",
-  "description": "",
   "board": "Arduino UNO R3",
   "boardDependencies": {
     "@aily-project/compiler-avr-gcc": "7.3.0",
