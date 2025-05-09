@@ -1,7 +1,9 @@
 {
-  "name": "按键控制led",
+  "name": "AnalogRead_MQ2",
+  "nickname": "学习使用烟雾传感器",
+  "url": "",
+  "description": "通过MQ2烟雾传感器的值，学习MQ2烟雾传感器的基本使用。",
   "version": "1.0.0",
-  "description": "",
   "board": "Arduino UNO R3",
   "boardDependencies": {
     "@aily-project/compiler-avr-gcc": "7.3.0",
