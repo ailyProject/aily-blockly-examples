@@ -5,19 +5,61 @@
     "description": "针对Arduino初学者的基础教程，包含Arduino IDE安装配置、基本电路连接、常用组件介绍（LED、按钮、传感器等）、基础编程语法、简单项目实践。适合零基础学习者快速掌握Arduino开发环境和基本技能。",
     "author": "奈何col",
     "url": "https://arduino.me/s/arduino-getting-started",
-    "img": "subject.png",
+    "img": "arduino_subject.png",
     "examples": [
       {
-        "nickname": "LED闪烁（Blink）",
-        "description": "学习如何控制一个LED灯的开关，这是Arduino的第一个入门项目。",
-        "path": "blink",
-        "url": "https://arduino.me/s/arduino-getting-started?aid=640"
+        "nickname": "读取光敏电阻的值",
+        "description": "通过模拟读取光敏传感器的值，学习光敏传感器的基本使用。",
+        "path": "AnalogRead_light",
+        "url": ""
       },
       {
-        "nickname": "LED与按钮控制",
-        "description": "使用按钮控制LED的开关状态，学习数字输入的基础操作。",
-        "path": "led_button",
-        "url": "https://arduino.me/s/arduino-getting-started?aid=642"
+        "nickname": "学习使用烟雾传感器",
+        "description": "通过MQ2烟雾传感器的值，学习MQ2烟雾传感器的基本使用。",
+        "path": "AnalogRead_MQ2",
+        "url": ""
+      },
+      {
+        "nickname": "LED闪烁",
+        "description": "LED闪烁，学习LED的基本使用。",
+        "path": "blink",
+        "url": "https://arduino.me/s/arduino-getting-started?aid=657"
+      },
+      {
+        "nickname": "按钮控制LED",
+        "description": "通过按钮控制LED的开关，学习按钮的基本使用。",
+        "path": "button_led",
+        "url": "https://arduino.me/s/arduino-getting-started?aid=657"
+      },
+      {
+        "nickname": "呼吸灯",
+        "description": "通过pwm控制LED灯的亮度，实现呼吸灯效果，学习PWM的基本使用。",
+        "path": "fade_led",
+        "url": "https://arduino.me/s/arduino-getting-started?aid=657"
+      },
+      {
+        "nickname": "流水灯",
+        "description": "通过控制LED灯的亮灭顺序，实现流水灯效果，学习LED的基本使用。",
+        "path": "flowing_led",
+        "url": ""
+      },
+      {
+        "nickname": "光敏电阻控制LED",
+        "description": "通过光敏电阻控制LED的亮灭，学习模拟输入和逻辑判断的基本使用。",
+        "path": "photoresistor_led",
+        "url": ""
+      },
+      {
+        "nickname": "电位器调光",
+        "description": "通过电位器调节LED的亮度，学习电位器的基本使用。",
+        "path": "potentiometer_fade",
+        "url": ""
+      },
+      {
+        "nickname": "蜂鸣器发声（生日快乐）",
+        "description": "通过蜂鸣器发声，演奏生日快乐歌，学习蜂鸣器的基本使用。",
+        "path": "tone",
+        "url": ""
       }
     ]
   },
