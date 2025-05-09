@@ -304,15 +304,15 @@ jobs:
             exit 0
           fi
       
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: SFTP upload PNG images
+        uses: Dylan700/sftp-upload-action@latest
         with:
           server: ${{ secrets.SERVER }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          local-dir: temp_images/
-          server-dir: ${{ secrets.IMG_TARGET }}
+          uploads: |
+            temp_images/ => ${{ secrets.IMG_TARGET }}
       
       # - name: 使用SCP上传PNG图片
       #   if: steps.check-update-all-img.outputs.should_run == 'true'
