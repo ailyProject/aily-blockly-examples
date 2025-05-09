@@ -95,11 +95,6 @@ jobs:
           node-version: '18'
           registry-url: ${{ secrets.REGISTRY_URL }}
       
-      # - name: Install dependencies
-      #   run: |
-      #     cd ${{ matrix.package }}
-      #     npm ci || npm install
-      
       - name: Build package
         if: steps.check-update-all.outputs.should_skip != 'true'
         run: |
