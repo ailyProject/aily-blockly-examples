@@ -34,7 +34,7 @@ jobs:
           echo "Comparing $BASE_SHA...$HEAD_SHA"
           
           PACKAGE_DIRS=$(find . -name "package.json" -not -path "*/node_modules/*" -not -path "./package.json" -exec dirname {} \; | sed 's/^\.\///')
-          
+
           CHANGED_PACKAGES=()
           
           for dir in $PACKAGE_DIRS; do
@@ -42,17 +42,22 @@ jobs:
               echo "No changes in $dir"
             else
               echo "Detected changes in $dir"
-              CHANGED_PACKAGES+=("$dir")
+              # 只取一级目录名
+              top_dir=$(echo "$dir" | cut -d'/' -f1)
+              CHANGED_PACKAGES+=("$top_dir")
             fi
           done
+
+          # 去重
+          UNIQUE_CHANGED_PACKAGES=($(printf "%s\n" "${CHANGED_PACKAGES[@]}" | sort -u))
           
-          if [ ${#CHANGED_PACKAGES[@]} -eq 0 ]; then
+          if [ ${#UNIQUE_CHANGED_PACKAGES[@]} -eq 0 ]; then
             echo "matrix={\"package\":[]}" >> $GITHUB_OUTPUT
             echo "No packages changed"
           else
-            JSON_ARRAY=$(printf '"%s",' "${CHANGED_PACKAGES[@]}" | sed 's/,$//')
+            JSON_ARRAY=$(printf '"%s",' "${UNIQUE_CHANGED_PACKAGES[@]}" | sed 's/,$//')
             echo "matrix={\"package\":[$JSON_ARRAY]}" >> $GITHUB_OUTPUT
-            echo "Changed packages: ${CHANGED_PACKAGES[@]}"
+            echo "Changed packages: ${UNIQUE_CHANGED_PACKAGES[@]}"
           fi
       
 
