@@ -1,0 +1,234 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 110,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "variables_set",
+              "id": "jaVq3md`3K4zt7h{BG63",
+              "fields": {
+                "VAR": {
+                  "id": "{AC.-FRY-$A0p_IA{}K,"
+                }
+              },
+              "inputs": {
+                "VALUE": {
+                  "block": {
+                    "type": "io_analogread",
+                    "id": "hl|EHIAD%*AuE|-Lm|(c",
+                    "inputs": {
+                      "PIN": {
+                        "block": {
+                          "type": "variables_get",
+                          "id": "s.{YY4^PYPm4UTAxF2)7",
+                          "fields": {
+                            "VAR": {
+                              "id": "`u_S+X}_c(w]W?6=A5ZG"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "controls_ifelse",
+                  "id": "6HfA@gQiDYpo/WDAb!r}",
+                  "inputs": {
+                    "IF0": {
+                      "block": {
+                        "type": "logic_compare",
+                        "id": "Z$Ft]8VxBXDvqib9[9kE",
+                        "fields": {
+                          "OP": "GT"
+                        },
+                        "inputs": {
+                          "A": {
+                            "block": {
+                              "type": "variables_get",
+                              "id": "w,_N2?rhogdzPc~e7DT|",
+                              "fields": {
+                                "VAR": {
+                                  "id": "{AC.-FRY-$A0p_IA{}K,"
+                                }
+                              }
+                            }
+                          },
+                          "B": {
+                            "block": {
+                              "type": "math_number",
+                              "id": "~79tF(byu~]+Fi09d7J#",
+                              "fields": {
+                                "NUM": 300
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "DO0": {
+                      "block": {
+                        "type": "io_digitalwrite",
+                        "id": "YU]SFQ+/K8ymD(YS1v}*",
+                        "inputs": {
+                          "PIN": {
+                            "block": {
+                              "type": "variables_get",
+                              "id": "NouD^5BX]iAygkdFkAw?",
+                              "fields": {
+                                "VAR": {
+                                  "id": "W~:NFR}.jE09(FVf${],"
+                                }
+                              }
+                            }
+                          },
+                          "STATE": {
+                            "block": {
+                              "type": "io_state",
+                              "id": "}s-AP52LjxxF5SY/ju9h",
+                              "fields": {
+                                "STATE": "LOW"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "ELSE": {
+                      "block": {
+                        "type": "io_digitalwrite",
+                        "id": "Qp.1R=i;#Ap1;L7PBX!=",
+                        "inputs": {
+                          "PIN": {
+                            "block": {
+                              "type": "variables_get",
+                              "id": "d-f@I.Rn;mR,~yz,VZ:T",
+                              "fields": {
+                                "VAR": {
+                                  "id": "W~:NFR}.jE09(FVf${],"
+                                }
+                              }
+                            }
+                          },
+                          "STATE": {
+                            "block": {
+                              "type": "io_state",
+                              "id": "NTBRq]%ke7%=wmccD48f",
+                              "fields": {
+                                "STATE": "HIGH"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "variable_define",
+        "id": ")YP:]tHmP8=Fm.:wgrvq",
+        "x": 50,
+        "y": -110,
+        "fields": {
+          "VAR": "ledPin",
+          "TYPE": "int"
+        },
+        "inputs": {
+          "VALUE": {
+            "block": {
+              "type": "math_number",
+              "id": ",x3eAf!xm1Z@#v:MX#EU",
+              "fields": {
+                "NUM": 13
+              }
+            }
+          }
+        },
+        "next": {
+          "block": {
+            "type": "variable_define",
+            "id": "=`goin6e..?PFXS~+^9}",
+            "fields": {
+              "VAR": "sensorPin",
+              "TYPE": "int"
+            },
+            "inputs": {
+              "VALUE": {
+                "block": {
+                  "type": "io_pin_adc",
+                  "id": "Lc.zQeln1hZj0dEAwE;M",
+                  "fields": {
+                    "PIN": "A0"
+                  }
+                }
+              }
+            },
+            "next": {
+              "block": {
+                "type": "variable_define",
+                "id": "24f_Md6}^qyA+LrF8BbZ",
+                "fields": {
+                  "VAR": "sensorValue",
+                  "TYPE": "int"
+                },
+                "inputs": {
+                  "VALUE": {
+                    "block": {
+                      "type": "math_number",
+                      "id": "l3gc8[c9:of/w(c;v},r",
+                      "fields": {
+                        "NUM": 0
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "math_number",
+        "id": "d-EU.ez{PV!;tVSh?Ks?",
+        "x": 354,
+        "y": -34,
+        "fields": {
+          "NUM": 0
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "ledPin",
+      "id": "W~:NFR}.jE09(FVf${],"
+    },
+    {
+      "name": "sensorPin",
+      "id": "`u_S+X}_c(w]W?6=A5ZG"
+    },
+    {
+      "name": "sensorValue",
+      "id": "{AC.-FRY-$A0p_IA{}K,"
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 {
-  "name": "blink",
+  "name": "photoresistor_led",
+  "nickname": "光敏电阻控制LED",
+  "url": "",
+  "description": "通过光敏电阻控制LED的亮灭，学习模拟输入和逻辑判断的基本使用。",
   "version": "1.0.0",
-  "description": "LED闪烁，学习LED的基本使用。",
-  "nickname": "LED闪烁",
-  "url": "https://arduino.me/s/arduino-getting-started?aid=657",
   "board": "Arduino UNO R3",
   "boardDependencies": {
     "@aily-project/compiler-avr-gcc": "7.3.0",

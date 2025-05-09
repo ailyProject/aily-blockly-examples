@@ -11,5 +11,5 @@
   "description": "针对Arduino初学者的基础教程，包含Arduino IDE安装配置、基本电路连接、常用组件介绍（LED、按钮、传感器等）、基础编程语法、简单项目实践。适合零基础学习者快速掌握Arduino开发环境和基本技能。",
   "level": "0",
   "url": "https://arduino.me/s/arduino-getting-started",
-  "img":"subject.png"
+  "img":"arduino_subject.png"
 }

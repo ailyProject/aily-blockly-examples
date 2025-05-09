@@ -1,9 +1,9 @@
 {
-  "name": "led_button",
-  "nickname": "LED与按钮控制",
+  "name": "AnalogRead_MQ2",
+  "nickname": "学习使用烟雾传感器",
+  "url": "",
+  "description": "通过MQ2烟雾传感器的值，学习MQ2烟雾传感器的基本使用。",
   "version": "1.0.0",
-  "description": "使用按钮控制LED的开关状态，学习数字输入的基础操作。",
-   "url": "https://arduino.me/s/arduino-getting-started?aid=642",
   "board": "Arduino UNO R3",
   "boardDependencies": {
     "@aily-project/compiler-avr-gcc": "7.3.0",
@@ -12,13 +12,13 @@
     "@aily-project/tool-ctags": "5.8.0"
   },
   "dependencies": {
-    "@aily-project/board-arduino_uno": "^1.0.1",
+    "@aily-project/board-arduino_uno": "^1.0.2",
     "@aily-project/lib-core-io": "1.0.0",
     "@aily-project/lib-core-logic": "0.0.1",
     "@aily-project/lib-core-loop": "0.0.1",
     "@aily-project/lib-core-math": "0.0.1",
-    "@aily-project/lib-core-serial": "0.0.1",
     "@aily-project/lib-core-text": "0.0.1",
+    "@aily-project/lib-core-serial": "0.0.1",
     "@aily-project/lib-core-time": "0.0.1",
     "@aily-project/lib-core-variables": "0.0.1"
   }

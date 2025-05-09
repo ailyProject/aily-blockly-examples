@@ -1,9 +1,9 @@
 {
-  "name": "blink",
+  "name": "potentiometer_fade",
+  "nickname": "电位器调光",
+  "url": "",
+  "description": "通过电位器调节LED的亮度，学习电位器的基本使用。",
   "version": "1.0.0",
-  "description": "LED闪烁，学习LED的基本使用。",
-  "nickname": "LED闪烁",
-  "url": "https://arduino.me/s/arduino-getting-started?aid=657",
   "board": "Arduino UNO R3",
   "boardDependencies": {
     "@aily-project/compiler-avr-gcc": "7.3.0",
@@ -12,8 +12,8 @@
     "@aily-project/tool-ctags": "5.8.0"
   },
   "dependencies": {
-    "@aily-project/board-arduino_uno": "^1.0.2",
-    "@aily-project/lib-core-io": "1.0.0",
+    "@aily-project/board-arduino_uno": "^1.0.1",
+    "@aily-project/lib-core-io": "0.0.1",
     "@aily-project/lib-core-logic": "0.0.1",
     "@aily-project/lib-core-loop": "0.0.1",
     "@aily-project/lib-core-math": "0.0.1",

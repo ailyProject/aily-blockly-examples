@@ -1,9 +1,9 @@
 {
-  "name": "blink",
-  "version": "1.0.0",
-  "description": "LED闪烁，学习LED的基本使用。",
-  "nickname": "LED闪烁",
+  "name": "button_led",
+  "nickname": "按钮控制LED",
   "url": "https://arduino.me/s/arduino-getting-started?aid=657",
+  "description": "通过按钮控制LED的开关，学习按钮的基本使用。",
+  "version": "1.0.0",
   "board": "Arduino UNO R3",
   "boardDependencies": {
     "@aily-project/compiler-avr-gcc": "7.3.0",
