@@ -1,8 +1,8 @@
 {
-  "name": "blink",
+  "name": "fade_led",
   "version": "1.0.0",
-  "description": "LED闪烁，学习LED的基本使用。",
-  "nickname": "LED闪烁",
+  "nickname": "呼吸灯",
+  "description": "通过pwm控制LED灯的亮度，实现呼吸灯效果，学习PWM的基本使用。",
   "url": "https://arduino.me/s/arduino-getting-started?aid=657",
   "board": "Arduino UNO R3",
   "boardDependencies": {
@@ -12,8 +12,8 @@
     "@aily-project/tool-ctags": "5.8.0"
   },
   "dependencies": {
-    "@aily-project/board-arduino_uno": "^1.0.2",
-    "@aily-project/lib-core-io": "1.0.0",
+    "@aily-project/board-arduino_uno": "^1.0.1",
+    "@aily-project/lib-core-io": "0.0.1",
     "@aily-project/lib-core-logic": "0.0.1",
     "@aily-project/lib-core-loop": "0.0.1",
     "@aily-project/lib-core-math": "0.0.1",
