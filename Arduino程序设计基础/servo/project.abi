@@ -1,0 +1,132 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 170,
+        "y": 170
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 170,
+        "y": 290,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "servo_write",
+              "id": "LkP-Z:Iq^t|%w~^SnfQ/",
+              "fields": {
+                "PIN": "9"
+              },
+              "inputs": {
+                "ANGLE": {
+                  "shadow": {
+                    "type": "servo_angle",
+                    "id": "m;7??Qmy(QX?b50CJEA2",
+                    "fields": {
+                      "ANGLE": 0
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "time_delay",
+                  "id": "NI+*8dpn(C}FNS`$=-T?",
+                  "inputs": {
+                    "DELAY_TIME": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "CFBs{i[Wf~;~cCZV2$.r",
+                        "fields": {
+                          "NUM": 1000
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "servo_write",
+                      "id": "vRbv!]%X}G;|*dof6[2`",
+                      "fields": {
+                        "PIN": "9"
+                      },
+                      "inputs": {
+                        "ANGLE": {
+                          "shadow": {
+                            "type": "servo_angle",
+                            "id": ";yye[OLeWvh*6q!5!87B",
+                            "fields": {
+                              "ANGLE": 90
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "time_delay",
+                          "id": "p=h@^~^hZ?SwBU4w[Cy{",
+                          "inputs": {
+                            "DELAY_TIME": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "zyK_G@!2w#AV36:G.FH+",
+                                "fields": {
+                                  "NUM": 1000
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "servo_write",
+                              "id": "W)b82Ia#`CPwbWg2hC3p",
+                              "fields": {
+                                "PIN": "9"
+                              },
+                              "inputs": {
+                                "ANGLE": {
+                                  "shadow": {
+                                    "type": "servo_angle",
+                                    "id": "l?KK}hF{wYc)-]D^JZY=",
+                                    "fields": {
+                                      "ANGLE": 180
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "time_delay",
+                                  "id": "pXQ8C=/ySY2dxWCnU2.j",
+                                  "inputs": {
+                                    "DELAY_TIME": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "id": "HU}eHQb%y2#%Ps,-08J`",
+                                        "fields": {
+                                          "NUM": 1000
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

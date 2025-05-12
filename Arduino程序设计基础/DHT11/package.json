@@ -1,8 +1,8 @@
 {
-  "name": "AnalogRead_MQ2",
-  "nickname": "学习使用烟雾传感器",
+  "name": "DHT11",
+  "nickname": "温湿度传感器（DHT11）",
   "url": "https://www.openjumper.com/doc/arduinocheng-xu-she-ji-ji-chu-mu-lu",
-  "description": "通过MQ2烟雾传感器的值，学习MQ2烟雾传感器的基本使用。",
+  "description": "通过DHT11传感器读取温度和湿度数据，学习DHT11传感器的基本使用。",
   "version": "1.0.0",
   "board": "Arduino UNO R3",
   "boardDependencies": {
@@ -17,9 +17,10 @@
     "@aily-project/lib-core-logic": "0.0.1",
     "@aily-project/lib-core-loop": "0.0.1",
     "@aily-project/lib-core-math": "0.0.1",
-    "@aily-project/lib-core-text": "0.0.1",
     "@aily-project/lib-core-serial": "0.0.1",
+    "@aily-project/lib-core-text": "0.0.1",
     "@aily-project/lib-core-time": "0.0.1",
-    "@aily-project/lib-core-variables": "0.0.1"
+    "@aily-project/lib-core-variables": "0.0.1",
+    "@aily-project/lib-dht": "0.0.1"
   }
 }
