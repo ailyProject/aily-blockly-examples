@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "LED闪烁，学习LED的基本使用。",
   "nickname": "LED闪烁",
-  "url": "https://arduino.me/s/arduino-getting-started?aid=657",
+  "url": "https://www.openjumper.com/doc/arduinocheng-xu-she-ji-ji-chu-mu-lu",
   "board": "Arduino UNO R3",
   "boardDependencies": {
     "@aily-project/compiler-avr-gcc": "7.3.0",

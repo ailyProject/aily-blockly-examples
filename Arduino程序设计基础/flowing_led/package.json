@@ -1,7 +1,7 @@
 {
   "name": "flowing_led",
   "nickname": "流水灯",
-  "url": "",
+  "url": "https://www.openjumper.com/doc/arduinocheng-xu-she-ji-ji-chu-mu-lu",
   "description": "通过控制LED灯的亮灭顺序，实现流水灯效果，学习LED的基本使用。",
   "version": "1.0.0",
   "board": "Arduino UNO R3",

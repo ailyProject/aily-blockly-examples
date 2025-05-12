@@ -1,7 +1,7 @@
 {
   "name": "AnalogRead_light",
   "nickname": "读取光敏电阻的值",
-  "url": "",
+  "url": "https://www.openjumper.com/doc/arduinocheng-xu-she-ji-ji-chu-mu-lu",
   "description": "通过模拟读取光敏传感器的值，学习光敏传感器的基本使用。",
   "version": "1.0.0",
   "board": "Arduino UNO R3",
