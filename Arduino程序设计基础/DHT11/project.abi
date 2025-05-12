@@ -1,0 +1,224 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 130,
+        "y": -50,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "dht_init",
+              "id": "7.!qHb?amITjo[B,(.n;",
+              "fields": {
+                "TYPE": "DHT11",
+                "PIN": "2"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 110,
+        "y": 90,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "variables_set",
+              "id": ")UZ92C8Nn+Ok*?8YO@+r",
+              "fields": {
+                "VAR": {
+                  "id": "5m*Tb93du1)V7yU-}[E;"
+                }
+              },
+              "inputs": {
+                "VALUE": {
+                  "block": {
+                    "type": "dht_read_temperature",
+                    "id": "mQFv,]3].EkqP+y$htf{"
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "variables_set",
+                  "id": "{5(4Hba?acQ;)UiA_SGR",
+                  "fields": {
+                    "VAR": {
+                      "id": "qy)?;fFiiKmOPO;KFkrh"
+                    }
+                  },
+                  "inputs": {
+                    "VALUE": {
+                      "block": {
+                        "type": "dht_read_humidity",
+                        "id": "W_x2#snzqg:#7sEHDWVM"
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_print",
+                      "id": "[ZZ_ZuttAM.y/-yq^D$G",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "block": {
+                            "type": "text",
+                            "id": ".ee(hY]O!sLQ(Y5EZ+MD",
+                            "fields": {
+                              "TEXT": "温度："
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "serial_println",
+                          "id": "g?;`9[[KiF3d!OS5P2-S",
+                          "fields": {
+                            "SERIAL": "Serial"
+                          },
+                          "inputs": {
+                            "VAR": {
+                              "block": {
+                                "type": "variables_get",
+                                "id": "D)I6GUY$^Iok~+$7?K]s",
+                                "fields": {
+                                  "VAR": {
+                                    "id": "5m*Tb93du1)V7yU-}[E;"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "serial_print",
+                              "id": "/nQ0yc~zj%cwotXiwO[j",
+                              "fields": {
+                                "SERIAL": "Serial"
+                              },
+                              "inputs": {
+                                "VAR": {
+                                  "block": {
+                                    "type": "text",
+                                    "id": "3.X(4eSrT=+D}F#9UkIB",
+                                    "fields": {
+                                      "TEXT": "湿度："
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "serial_println",
+                                  "id": ";lM]6uZ=k6jgn-|y^EK%",
+                                  "fields": {
+                                    "SERIAL": "Serial"
+                                  },
+                                  "inputs": {
+                                    "VAR": {
+                                      "block": {
+                                        "type": "variables_get",
+                                        "id": "QzHWRDS+YTi0-6wxT,?R",
+                                        "fields": {
+                                          "VAR": {
+                                            "id": "qy)?;fFiiKmOPO;KFkrh"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "time_delay",
+                                      "id": ",H3[tuwk;bB0ON}Gf{-F",
+                                      "inputs": {
+                                        "DELAY_TIME": {
+                                          "shadow": {
+                                            "type": "math_number",
+                                            "id": "msqV?j$Dz*_n[5^B);y4",
+                                            "fields": {
+                                              "NUM": 500
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "variable_define",
+        "id": "a*Wz]e4Wv;YuSKpsI81S",
+        "x": 130,
+        "y": -170,
+        "fields": {
+          "VAR": "tem",
+          "TYPE": "int"
+        },
+        "inputs": {
+          "VALUE": {
+            "block": {
+              "type": "math_number",
+              "id": "L=Oaz9zcZk{}fqy5gY+s",
+              "fields": {
+                "NUM": 0
+              }
+            }
+          }
+        },
+        "next": {
+          "block": {
+            "type": "variable_define",
+            "id": "EV8CjL|yQ`?OT{v^mr[4",
+            "fields": {
+              "VAR": "hum",
+              "TYPE": "int"
+            },
+            "inputs": {
+              "VALUE": {
+                "block": {
+                  "type": "math_number",
+                  "id": "noBA@m+XM6_*KVh$^|_P",
+                  "fields": {
+                    "NUM": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "tem",
+      "id": "5m*Tb93du1)V7yU-}[E;"
+    },
+    {
+      "name": "hum",
+      "id": "qy)?;fFiiKmOPO;KFkrh"
+    }
+  ]
+}

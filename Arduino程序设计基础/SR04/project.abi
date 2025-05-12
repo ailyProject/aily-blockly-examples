@@ -1,0 +1,129 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 350,
+        "y": 170
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 350,
+        "y": 330,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "variables_set",
+              "id": "$m0Vrfr/JnU/3P90D%EF",
+              "fields": {
+                "VAR": {
+                  "id": "2:68Ie2BN7@nd/HZS`1|"
+                }
+              },
+              "inputs": {
+                "VALUE": {
+                  "block": {
+                    "type": "ultrasonic_ranging",
+                    "id": "svVu1-VYZFU9$/4BI=A0",
+                    "inputs": {
+                      "PIN1": {
+                        "block": {
+                          "type": "io_pin_digi",
+                          "id": "~0hjVAK@n6b[#~lY:t9o",
+                          "fields": {
+                            "PIN": "2"
+                          }
+                        }
+                      },
+                      "PIN2": {
+                        "block": {
+                          "type": "io_pin_digi",
+                          "id": "o!rD]-$5VZl0)=A).$bI",
+                          "fields": {
+                            "PIN": "3"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_print",
+                  "id": "r3[|q4Df$p*,:mBEfG|t",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "block": {
+                        "type": "variables_get",
+                        "id": "AufcZ}6~_7b6Qin_j@$D",
+                        "fields": {
+                          "VAR": {
+                            "id": "2:68Ie2BN7@nd/HZS`1|"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_println",
+                      "id": "Rk)wVUaK.3]4!@2p*Fyc",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "block": {
+                            "type": "text",
+                            "id": "P)F?#_hl8kr|0,+6pQhw",
+                            "fields": {
+                              "TEXT": "cm"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "variable_define",
+        "id": "VW}Y$]Yg6B[V,o0[]j)u",
+        "x": 370,
+        "y": 70,
+        "fields": {
+          "VAR": "distance",
+          "TYPE": "int"
+        },
+        "inputs": {
+          "VALUE": {
+            "block": {
+              "type": "math_number",
+              "id": "ry?YI6(3#Nxu%LbSz]T|",
+              "fields": {
+                "NUM": 0
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "distance",
+      "id": "2:68Ie2BN7@nd/HZS`1|"
+    }
+  ]
+}

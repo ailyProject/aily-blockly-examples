@@ -1,7 +1,7 @@
 {
   "name": "photoresistor_led",
   "nickname": "光敏电阻控制LED",
-  "url": "",
+  "url": "https://www.openjumper.com/doc/arduinocheng-xu-she-ji-ji-chu-mu-lu",
   "description": "通过光敏电阻控制LED的亮灭，学习模拟输入和逻辑判断的基本使用。",
   "version": "1.0.0",
   "board": "Arduino UNO R3",
