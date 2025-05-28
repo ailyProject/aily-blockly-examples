@@ -1,7 +1,7 @@
 {
   "name": "button_led",
   "nickname": "按钮控制LED",
-  "url": "https://www.openjumper.com/doc/arduinocheng-xu-she-ji-ji-chu-mu-lu",
+  "url": "hhttps://arduino.me/s/53?aid=3130",
   "description": "通过按钮控制LED的开关，学习按钮的基本使用。",
   "version": "1.0.0",
   "board": "Arduino UNO R3",
