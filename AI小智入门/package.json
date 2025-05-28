@@ -1,0 +1,15 @@
+{
+  "name": "@aily-project/example-ai-vox",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nulllab",
+  "license": "ISC",
+  "nickname": "AI小智使用入门",
+  "description": "AI小智使用入门，包含AI小智的基本使用方法、语音交互、简单编程示例等内容，适合初学者快速上手。",
+  "level": "0",
+  "url": "https://dcnmu33qx4fc.feishu.cn/docx/Lpy7dfEYAo04PzxJNI0ceTj5nxg",
+  "img":"subject.png"
+}
