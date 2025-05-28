@@ -1,7 +1,7 @@
 {
   "name": "AnalogRead_MQ2",
   "nickname": "学习使用烟雾传感器",
-  "url": "https://www.openjumper.com/doc/arduinocheng-xu-she-ji-ji-chu-mu-lu",
+  "url": "https://arduino.me/s/53?aid=3147",
   "description": "通过MQ2烟雾传感器的值，学习MQ2烟雾传感器的基本使用。",
   "version": "1.0.0",
   "board": "Arduino UNO R3",

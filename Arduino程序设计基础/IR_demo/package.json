@@ -1,9 +1,10 @@
 {
-  "name": "flowing_led",
-  "nickname": "流水灯",
-  "url": "https://arduino.me/s/53?aid=3129",
-  "description": "通过控制LED灯的亮灭顺序，实现流水灯效果，学习LED的基本使用。",
+  "name": "IR_demo",
+  "nickname": "红外避障传感器的使用",
+  "url": "https://arduino.me/s/53?aid=3145",
+  "description": "通过读取红外避障传感器的数字输出，学会使用红外避障传感器。",
   "version": "1.0.0",
+  "description": "",
   "board": "Arduino UNO R3",
   "boardDependencies": {
     "@aily-project/compiler-avr-gcc": "7.3.0",
@@ -12,8 +13,8 @@
     "@aily-project/tool-ctags": "5.8.0"
   },
   "dependencies": {
-    "@aily-project/board-arduino_uno": "^1.0.1",
-    "@aily-project/lib-core-io": "0.0.1",
+    "@aily-project/board-arduino_uno": "^1.0.2",
+    "@aily-project/lib-core-io": "1.0.0",
     "@aily-project/lib-core-logic": "0.0.1",
     "@aily-project/lib-core-loop": "0.0.1",
     "@aily-project/lib-core-math": "0.0.1",

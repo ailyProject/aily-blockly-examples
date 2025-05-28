@@ -1,0 +1,121 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 50,
+        "y": 150,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "1%6l0:`R2UIf|q`^`g5B",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": 9600
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 50,
+        "y": 250,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "variables_set",
+              "id": "Ng#8p*GjMwG6{4o$@AZI",
+              "fields": {
+                "VAR": {
+                  "id": "6z92(pIZbya-K?Q_OgTo"
+                }
+              },
+              "inputs": {
+                "VALUE": {
+                  "block": {
+                    "type": "io_pin_adc",
+                    "id": "_166U~j`vnrnays_xNGF",
+                    "fields": {
+                      "PIN": "A0"
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_println",
+                  "id": "N=0I:QaAldk[=Aa1k)$8",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "block": {
+                        "type": "variables_get",
+                        "id": "Yr{dEtKk6|7{uZ9w8Qfu",
+                        "fields": {
+                          "VAR": {
+                            "id": "6z92(pIZbya-K?Q_OgTo"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "time_delay",
+                      "id": "$s$a%$4QZU;OaP-rXo*@",
+                      "inputs": {
+                        "DELAY_TIME": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "9_6*:zSJ1dnmv(5]Vy;l",
+                            "fields": {
+                              "NUM": 1000
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "variable_define",
+        "id": "O2KEVLxg(m*Ev(FuuFO=",
+        "x": 50,
+        "y": 70,
+        "fields": {
+          "VAR": "sensorValue",
+          "TYPE": "int"
+        },
+        "inputs": {
+          "VALUE": {
+            "block": {
+              "type": "math_number",
+              "id": "xre:Bv*F=o~W+q*/}J:i",
+              "fields": {
+                "NUM": 0
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "sensorValue",
+      "id": "6z92(pIZbya-K?Q_OgTo"
+    }
+  ]
+}

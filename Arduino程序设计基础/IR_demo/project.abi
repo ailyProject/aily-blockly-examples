@@ -1,0 +1,117 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 150,
+        "y": 130
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 150,
+        "y": 210,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "variables_set",
+              "id": "5Yidk{3jM)DLD#W@_`Im",
+              "fields": {
+                "VAR": {
+                  "id": "YOuh0~6V;B;}:^kSSXfx"
+                }
+              },
+              "inputs": {
+                "VALUE": {
+                  "block": {
+                    "type": "io_digitalread",
+                    "id": "N[L3-}J|l[)![o21]hcK",
+                    "inputs": {
+                      "PIN": {
+                        "block": {
+                          "type": "io_pin_digi",
+                          "id": "Ei0xgfl;5!eDYEwB4lTF",
+                          "fields": {
+                            "PIN": "8"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_println",
+                  "id": "AGy$EdR_2*6yg7fl`NOQ",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "block": {
+                        "type": "variables_get",
+                        "id": "S|17tTNti.[K^l}~e|Ly",
+                        "fields": {
+                          "VAR": {
+                            "id": "YOuh0~6V;B;}:^kSSXfx"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "time_delay",
+                      "id": "-#~Bks2h7Rkv|n@?bHD9",
+                      "inputs": {
+                        "DELAY_TIME": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "p_cG15/R9|*2qauNPDcl",
+                            "fields": {
+                              "NUM": 100
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "variable_define",
+        "id": "hY3X+J-@ZtF9XE9pe6h;",
+        "x": 170,
+        "y": 50,
+        "fields": {
+          "VAR": "IRstate",
+          "TYPE": "int"
+        },
+        "inputs": {
+          "VALUE": {
+            "block": {
+              "type": "math_number",
+              "id": "8QC?sUzt,~bM];w}G1]m",
+              "fields": {
+                "NUM": 0
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "IRstate",
+      "id": "YOuh0~6V;B;}:^kSSXfx"
+    }
+  ]
+}
