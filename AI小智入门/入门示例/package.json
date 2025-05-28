@@ -1,8 +1,8 @@
 {
   "name": "ai-vox-getting-started",
   "nickname": "AI小智使用入门",
+  "description": "AI小智使用入门，包含AI小智的基本使用方法、语音交互、简单编程示例等内容，适合初学者快速上手。",
   "version": "1.0.0",
-  "description": "",
   "board": "AI-VOX",
   "url": "https://dcnmu33qx4fc.feishu.cn/docx/Lpy7dfEYAo04PzxJNI0ceTj5nxg",
   "boardDependencies": {
