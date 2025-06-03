@@ -1,9 +1,8 @@
 {
-  "name": "sound_sensor",
-  "nickname": "声音传感器的使用",
-  "url": "https://arduino.me/s/53?aid=3135",
-  "description": "通过读取声音传感器的模拟输出，学会使用声音传感器。",
+  "name": "blink",
+  "nickname": "LED闪烁（Blink）",
   "version": "1.0.0",
+  "description": "学习如何控制一个LED灯的开关，这是Arduino的第一个入门项目。",
   "board": "Arduino UNO R3",
   "boardDependencies": {
     "@aily-project/compiler-avr-gcc": "7.3.0",
@@ -12,7 +11,7 @@
     "@aily-project/tool-ctags": "5.8.0"
   },
   "dependencies": {
-    "@aily-project/board-arduino_uno": "^1.0.2",
+    "@aily-project/board-arduino_uno": "^1.0.1",
     "@aily-project/lib-core-io": "1.0.0",
     "@aily-project/lib-core-logic": "0.0.1",
     "@aily-project/lib-core-loop": "0.0.1",

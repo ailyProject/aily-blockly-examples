@@ -1,0 +1,15 @@
+{
+  "name": "@aily-project/example-diandeng-iot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mango",
+  "license": "ISC",
+  "nickname": "金牛板使用教程",
+  "description": "针对金牛创客板的基础教程，包含基础模块的使用、基本电路连接、常用组件介绍（传感器、执行器等）、基础编程语法、简单项目实践。适合零基础学习者快速掌握金牛板的使用。",
+  "level": "0",
+  "url": "",
+  "img":"arduino_subject.png"
+}
