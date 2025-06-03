@@ -1,7 +1,7 @@
 {
   "name": "DHT11",
   "nickname": "温湿度传感器（DHT11）",
-  "url": "https://www.openjumper.com/doc/arduinocheng-xu-she-ji-ji-chu-mu-lu",
+  "url": "https://arduino.me/s/53?aid=3141",
   "description": "通过DHT11传感器读取温度和湿度数据，学习DHT11传感器的基本使用。",
   "version": "1.0.0",
   "board": "Arduino UNO R3",

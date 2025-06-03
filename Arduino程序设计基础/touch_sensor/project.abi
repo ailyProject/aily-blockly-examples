@@ -1,0 +1,168 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 110,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "variables_set",
+              "id": "H3T}iZQu_4nA}[+{y[k,",
+              "fields": {
+                "VAR": {
+                  "id": "V%gj^a4w0vx5CWzMX_2@"
+                }
+              },
+              "inputs": {
+                "VALUE": {
+                  "block": {
+                    "type": "io_pin_digi",
+                    "id": "IWpC)Tn~4gb)mdT_n)Ha",
+                    "fields": {
+                      "PIN": "2"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 210,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "variables_set",
+              "id": "}S:9a?cwH+n!m#e@W.SO",
+              "fields": {
+                "VAR": {
+                  "id": "Az??8p!YM_6AzS~yBh:R"
+                }
+              },
+              "inputs": {
+                "VALUE": {
+                  "block": {
+                    "type": "io_digitalread",
+                    "id": "N2d-d(9f*Kq0SQ#!T{j.",
+                    "inputs": {
+                      "PIN": {
+                        "block": {
+                          "type": "variables_get",
+                          "id": "9XXD_qtye61]X~OaMCmb",
+                          "fields": {
+                            "VAR": {
+                              "id": "V%gj^a4w0vx5CWzMX_2@"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_println",
+                  "id": "pqrgJX5P|!{wOJ9-(HBV",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "block": {
+                        "type": "variables_get",
+                        "id": "[OCl`,GMI|I9]eKXA[d|",
+                        "fields": {
+                          "VAR": {
+                            "id": "Az??8p!YM_6AzS~yBh:R"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "time_delay",
+                      "id": "{oottcr1ScU8ywYgm2!:",
+                      "inputs": {
+                        "DELAY_TIME": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "?5i:7It;GoVG)GA-txLY",
+                            "fields": {
+                              "NUM": 500
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "variable_define",
+        "id": "%=X4wq_3p#pnXnj+M8UD",
+        "x": 30,
+        "y": 10,
+        "fields": {
+          "VAR": "touchvalue",
+          "TYPE": "int"
+        },
+        "inputs": {
+          "VALUE": {
+            "block": {
+              "type": "math_number",
+              "id": "gZ^MVhS;2Z``Jj`I^IKb",
+              "fields": {
+                "NUM": 0
+              }
+            }
+          }
+        },
+        "next": {
+          "block": {
+            "type": "variable_define",
+            "id": ":w67jWB/3c7Y!Gyr/.{/",
+            "fields": {
+              "VAR": "touchpin",
+              "TYPE": "int"
+            },
+            "inputs": {
+              "VALUE": {
+                "block": {
+                  "type": "math_number",
+                  "id": "w4`M]pdf1gbAawMIvl/9",
+                  "fields": {
+                    "NUM": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "touchvalue",
+      "id": "Az??8p!YM_6AzS~yBh:R"
+    },
+    {
+      "name": "touchpin",
+      "id": "V%gj^a4w0vx5CWzMX_2@"
+    }
+  ]
+}
