@@ -10,5 +10,6 @@
   "nickname": "物联网开发入门",
   "description": "针对物联网初学者的基础教程，包含物联网概念、基本电路连接、常用组件介绍（传感器、执行器等）、基础编程语法、简单项目实践。适合零基础学习者快速掌握物联网开发环境和基本技能。",
   "level": "0",
-  "url": "https://arduino.me/s/blinker-arduino"
+  "url": "https://arduino.me/s/blinker-arduino",
+  "img":"AIOT_subject.png"
 }
