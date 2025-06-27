@@ -1,0 +1,76 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "blinker_init_wifi",
+              "id": "{W|nZ!cuByQcM;Ns`w1h",
+              "fields": {
+                "MODE": "手动配网",
+                "AUTH": "3c87e30cc877",
+                "SSID": "openjumper_2.4G",
+                "PSWD": "cd85586651"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": -10,
+        "y": 310,
+        "deletable": false
+      },
+      {
+        "type": "blinker_slider",
+        "id": "i^8slY##tKml:P{3F5v-",
+        "x": 130,
+        "y": 270,
+        "fields": {
+          "KEY": "ran-abc"
+        },
+        "inputs": {
+          "NAME": {
+            "block": {
+              "type": "io_analogwrite",
+              "id": "hX~(@RZAP_7feJY,v8J.",
+              "inputs": {
+                "PIN": {
+                  "shadow": {
+                    "type": "io_pin_pwm",
+                    "id": "!oggdfqff*.(uo1Vgv$U",
+                    "fields": {
+                      "PIN": "45"
+                    }
+                  }
+                },
+                "PWM": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "Sv,Xs3KLK_;/RGwp;qSw",
+                    "fields": {
+                      "NUM": 255
+                    }
+                  },
+                  "block": {
+                    "type": "blinker_slider_value",
+                    "id": ";yc*t9dXh=?Td8oZ9KkN"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "blinker_init_wifi",
+              "id": "{W|nZ!cuByQcM;Ns`w1h",
+              "fields": {
+                "MODE": "手动配网",
+                "AUTH": "3c87e30cc877",
+                "SSID": "openjumper_2.4G",
+                "PSWD": "cd85586651"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": -10,
+        "y": 310,
+        "deletable": false
+      },
+      {
+        "type": "blinker_joystick",
+        "id": ":[Vietj^sJDnKY].6F%i",
+        "x": 190,
+        "y": 270,
+        "fields": {
+          "KEY": "joy-abc"
+        },
+        "inputs": {
+          "NAME": {
+            "block": {
+              "type": "serial_print",
+              "id": "S].u=p.A4xHd.N?h.sYv",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "lS#e/X*7`UA{ut1Sgf8h",
+                    "fields": {
+                      "TEXT": ""
+                    }
+                  },
+                  "block": {
+                    "type": "blinker_joystick_value",
+                    "id": "9f.TR*V+~8!jI}k=%x|U",
+                    "fields": {
+                      "KEY": "X"
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_print",
+                  "id": "j!=HPFomYEE{7RUW^WpR",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "W~k*$_Sm,aJZxVPG=8$t",
+                        "fields": {
+                          "TEXT": "------"
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_println",
+                      "id": "sH[FxAD%}+,sbs-Z3`_@",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "=x^*2KD6:;Ph5*6oSaT1",
+                            "fields": {
+                              "TEXT": ""
+                            }
+                          },
+                          "block": {
+                            "type": "blinker_joystick_value",
+                            "id": "t?D#jP`wj=538Qhdq!S3",
+                            "fields": {
+                              "KEY": "Y"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
