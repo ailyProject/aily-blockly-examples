@@ -1,0 +1,177 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "dht_init",
+              "id": "j*N?AGRPA[@(Ox?f}Olo",
+              "fields": {
+                "TYPE": "DHT11",
+                "PIN": "45"
+              },
+              "next": {
+                "block": {
+                  "type": "blinker_init_wifi",
+                  "id": ")eL`eF6l{|(pJ~y*%*_q",
+                  "fields": {
+                    "MODE": "手动配网",
+                    "AUTH": "3c87e30cc877",
+                    "SSID": "openjumper_2.4G",
+                    "PSWD": "cd85586651"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 250,
+        "deletable": false
+      },
+      {
+        "type": "blinker_button",
+        "id": "||3V^,i,4|-ssx@=2[^8",
+        "x": 30,
+        "y": 350,
+        "fields": {
+          "KEY": "btn-abe"
+        },
+        "inputs": {
+          "NAME": {
+            "block": {
+              "type": "controls_if",
+              "id": "/cIy*^iA0m)$#yhTg~It",
+              "inputs": {
+                "IF0": {
+                  "block": {
+                    "type": "blinker_button_state",
+                    "id": ";f2[5wU8S2TWHA{$Ik_}",
+                    "fields": {
+                      "STATE": "tap"
+                    }
+                  }
+                },
+                "DO0": {
+                  "block": {
+                    "type": "blinker_widget_print",
+                    "id": "h5nyzK+Lg_FZEo$9sr|T",
+                    "extraState": {
+                      "itemCount": 2
+                    },
+                    "fields": {
+                      "WIDGET": "num-abc"
+                    },
+                    "inputs": {
+                      "INPUT0": {
+                        "block": {
+                          "type": "blinker_text",
+                          "id": "4Cs!d6g-8]4)J?vr#0r$",
+                          "inputs": {
+                            "TEXT": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "^[*!3?gGL!MebKM%V5yk",
+                                "fields": {
+                                  "TEXT": "温度："
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "INPUT1": {
+                        "block": {
+                          "type": "blinker_value",
+                          "id": "ZTMgHc.`@p9t`X/Ru8hS",
+                          "inputs": {
+                            "VALUE": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "npJQ=qRFGL%C=xL=G$j1",
+                                "fields": {
+                                  "NUM": 0
+                                }
+                              },
+                              "block": {
+                                "type": "dht_read_temperature",
+                                "id": "8L},o{IF.s3M?#])|*nb"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "blinker_widget_print",
+                        "id": "jctuPb63$Neh^F2/$E[L",
+                        "extraState": {
+                          "itemCount": 2
+                        },
+                        "fields": {
+                          "WIDGET": "num-abd"
+                        },
+                        "inputs": {
+                          "INPUT0": {
+                            "block": {
+                              "type": "blinker_text",
+                              "id": "K]aa~mq0!iS3tA/,|RNy",
+                              "inputs": {
+                                "TEXT": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "NIYnYB{G6(W7|#+A!fn:",
+                                    "fields": {
+                                      "TEXT": "湿度："
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "INPUT1": {
+                            "block": {
+                              "type": "blinker_value",
+                              "id": "x)`SZZf(r7h,-:;y65|m",
+                              "inputs": {
+                                "VALUE": {
+                                  "shadow": {
+                                    "type": "math_number",
+                                    "id": "Iaa|B.qIz8G1}gnhuhVM",
+                                    "fields": {
+                                      "NUM": 0
+                                    }
+                                  },
+                                  "block": {
+                                    "type": "dht_read_humidity",
+                                    "id": "n7+*=TU[e6B)4*)#m~K*"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

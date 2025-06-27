@@ -1,0 +1,15 @@
+{
+  "name": "@aily-project/example-blinker-iot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mango",
+  "license": "ISC",
+  "nickname": "Blinker物联网入门",
+  "description": "学习使用Blinker APP基本功能，包括基本组件使用、数据上传、常用组件介绍（按键，调色、滑块等）、简单项目实践。适合零基础学习者快速掌握Blinker的使用。",
+  "level": "0",
+  "url": "",
+  "img":"Blinker_subject.png"
+}
