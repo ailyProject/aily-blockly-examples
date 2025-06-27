@@ -1,0 +1,193 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 90,
+        "y": 110,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "fastled_init",
+              "id": "!^DXWI1JJ~]WqMO2N@Ol",
+              "fields": {
+                "DATA_PIN": "48",
+                "TYPE": "WS2812B",
+                "NUM_LEDS": 1
+              },
+              "next": {
+                "block": {
+                  "type": "blinker_init_wifi",
+                  "id": "!C6hGds54}]Hl;~xfj;w",
+                  "fields": {
+                    "MODE": "手动配网",
+                    "AUTH": "3c87e30cc877",
+                    "SSID": "openjumper_2.4G",
+                    "PSWD": "cd85586651"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 130,
+        "y": 310,
+        "deletable": false
+      },
+      {
+        "type": "blinker_button",
+        "id": "*,8l{#k$V!kYS?q?OX*{",
+        "x": 130,
+        "y": 390,
+        "fields": {
+          "KEY": "btn-abc"
+        },
+        "inputs": {
+          "NAME": {
+            "block": {
+              "type": "controls_if",
+              "id": "c^`Za{E@m#LuoyMXr)vp",
+              "inputs": {
+                "IF0": {
+                  "block": {
+                    "type": "blinker_button_state",
+                    "id": "Ui*{VJL]72dB9AEiQmvX",
+                    "fields": {
+                      "STATE": "on"
+                    }
+                  }
+                },
+                "DO0": {
+                  "block": {
+                    "type": "fastled_fill_solid",
+                    "id": "~99-W(h)X2T2k5A*w%~*",
+                    "fields": {
+                      "DATA_PIN": "48"
+                    },
+                    "inputs": {
+                      "COLOR": {
+                        "shadow": {
+                          "type": "fastled_preset_color",
+                          "id": "|m-8oi;[o@k5g;KbkPW/",
+                          "fields": {
+                            "COLOR": "#ffffff"
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "blinker_widget_print",
+                        "id": "-dP+P`k{;$!Mg%1D:0Vg",
+                        "extraState": {
+                          "itemCount": 2
+                        },
+                        "fields": {
+                          "WIDGET": "btn-abc"
+                        },
+                        "inputs": {
+                          "INPUT0": {
+                            "block": {
+                              "type": "blinker_state",
+                              "id": "B4HLQ(ijH]r1z~b(7#,`",
+                              "inputs": {
+                                "STATE": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "Rn{/Tx#6QrS5!!40d[|s",
+                                    "fields": {
+                                      "TEXT": "on"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "controls_if",
+                  "id": "Eq+uZDdl0c/XD;jCT}Wg",
+                  "inputs": {
+                    "IF0": {
+                      "block": {
+                        "type": "blinker_button_state",
+                        "id": "!G.yj/2v7di!t%=u1(s#",
+                        "fields": {
+                          "STATE": "off"
+                        }
+                      }
+                    },
+                    "DO0": {
+                      "block": {
+                        "type": "fastled_fill_solid",
+                        "id": "g8PW+1dNA:NSN:VCmx$n",
+                        "fields": {
+                          "DATA_PIN": "48"
+                        },
+                        "inputs": {
+                          "COLOR": {
+                            "shadow": {
+                              "type": "fastled_preset_color",
+                              "id": "x~DwNK!0WXPe@[DBN[.4",
+                              "fields": {
+                                "COLOR": "#000000"
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "blinker_widget_print",
+                            "id": "da:!N[#r2$fN`UTM#21v",
+                            "extraState": {
+                              "itemCount": 2
+                            },
+                            "fields": {
+                              "WIDGET": "btn-abc"
+                            },
+                            "inputs": {
+                              "INPUT0": {
+                                "block": {
+                                  "type": "blinker_state",
+                                  "id": ";uB8++-I?Y_]J+F`.9%Y",
+                                  "inputs": {
+                                    "STATE": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "1go^Q(dkx8=;Cf|^{HJ5",
+                                        "fields": {
+                                          "TEXT": "off"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
