@@ -20,12 +20,38 @@
               "next": {
                 "block": {
                   "type": "blinker_init_wifi",
-                  "id": ")eL`eF6l{|(pJ~y*%*_q",
+                  "id": ";#GB2}ad6tl=8}}XRY0P",
                   "fields": {
-                    "MODE": "手动配网",
-                    "AUTH": "3c87e30cc877",
-                    "SSID": "openjumper_2.4G",
-                    "PSWD": "cd85586651"
+                    "MODE": "手动配网"
+                  },
+                  "inputs": {
+                    "AUTH": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "RI7Y;o#N^?mUM%`{dCFG",
+                        "fields": {
+                          "TEXT": "Your Device Secret Key"
+                        }
+                      }
+                    },
+                    "SSID": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "mnOWua2_l$[+*A!`3gqM",
+                        "fields": {
+                          "TEXT": "Your WiFi SSID"
+                        }
+                      }
+                    },
+                    "PSWD": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "3X@-jXJ47}X%U41`XCq#",
+                        "fields": {
+                          "TEXT": "Your WiFi Password"
+                        }
+                      }
+                    }
                   }
                 }
               }
