@@ -1,0 +1,121 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "Pc6CQeUWJX%5|26/P-Xu",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "esp32_i2s_init_speaker",
+                  "id": "^hp:#t[T?4}]{J,hy{x7",
+                  "next": {
+                    "block": {
+                      "type": "esp32_i2s_set_volume",
+                      "id": "BF_hGHdCC$__TUvm+(=h",
+                      "fields": {
+                        "OBJECT": {
+                          "id": "?p2z3|${~N9TpQ|]knAe"
+                        }
+                      },
+                      "inputs": {
+                        "VOLUME": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "3N4=[{8^axwHw!75_c#G",
+                            "fields": {
+                              "NUM": 0.5
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "esp32_i2s_play_twinkle_star",
+                          "id": "L+dhJ=0,eUcSW]]LHBUZ",
+                          "fields": {
+                            "OBJECT": {
+                              "id": "?p2z3|${~N9TpQ|]knAe"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "esp32_i2s_update_melody",
+              "id": "(vYsQ,SaQG:z1wy)]n;V",
+              "fields": {
+                "OBJECT": {
+                  "id": "?p2z3|${~N9TpQ|]knAe"
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_println",
+                  "id": "_vFJuS@+v@fP8=)b$8nG",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "GLiw{-q5=64khJP[j})u",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      },
+                      "block": {
+                        "type": "esp32_i2s_is_melody_playing",
+                        "id": "f@}esZQHaMdQ.e#r~UJg",
+                        "fields": {
+                          "OBJECT": {
+                            "id": "?p2z3|${~N9TpQ|]knAe"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "microphone",
+      "id": "?p2z3|${~N9TpQ|]knAe",
+      "type": "EspI2S"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "esp32_microphone",
+  "nickname": "ESP32 数字麦克风",
+  "url": "https://arduino.me/s/52?aid=3120",
+  "description": "使用数字麦克风采集音频数据，学习音频信号处理与录制的基础操作。",
+  "version": "1.0.0",
+  "board": "ESP32S3 board",
+  "dependencies": {
+    "@aily-project/board-esp32s3": "1.0.0",
+    "@aily-project/lib-core-io": "1.0.0",
+    "@aily-project/lib-core-logic": "0.0.1",
+    "@aily-project/lib-core-loop": "0.0.1",
+    "@aily-project/lib-core-math": "0.0.1",
+    "@aily-project/lib-core-serial": "0.0.1",
+    "@aily-project/lib-core-text": "0.0.1",
+    "@aily-project/lib-core-time": "0.0.1",
+    "@aily-project/lib-core-variables": "0.0.1",
+    "@aily-project/lib-esp32-i2s": "^1.0.0"
+  }
+}

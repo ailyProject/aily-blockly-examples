@@ -1,0 +1,27 @@
+{
+  "name": "esp32_ntc_thermistor",
+  "nickname": "NTC热敏电阻",
+  "url": "https://arduino.me/s/52?aid=3116",
+  "description": "学习如何通过NTC热敏电阻进行温度测量",
+  "version": "1.0.0",
+  "board": "ESP32 board",
+  "boardDependencies": {
+    "@aily-project/compiler-esp-x32": "14.2.0",
+    "@aily-project/tool-esptool_py": "4.8.1",
+    "@aily-project/sdk-esp32": "3.2.0",
+    "@aily-project/tool-idf_esp32s3": "5.4.0",
+    "@aily-project/tool-ctags": "5.8.0"
+  },
+  "dependencies": {
+    "@aily-project/board-esp32s3": "1.0.0",
+    "@aily-project/lib-core-io": "1.0.0",
+    "@aily-project/lib-core-logic": "0.0.1",
+    "@aily-project/lib-core-loop": "0.0.1",
+    "@aily-project/lib-core-math": "0.0.1",
+    "@aily-project/lib-core-serial": "0.0.1",
+    "@aily-project/lib-core-text": "0.0.1",
+    "@aily-project/lib-core-time": "0.0.1",
+    "@aily-project/lib-core-variables": "0.0.1",
+    "@aily-project/lib-ntc": "^1.0.0"
+  }
+}
