@@ -1,0 +1,147 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "Lo,1~*So)59kqpJ#X)h/",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "sd_init",
+                  "id": "y=;`!t%a^p%RMD3l|ao|",
+                  "fields": {
+                    "SPI_TYPE": "HSPI",
+                    "SPI_VAR_NAME": "spi"
+                  },
+                  "inputs": {
+                    "SCK_PIN": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "0sU3SvS8Whr)DiTJg6iZ",
+                        "fields": {
+                          "NUM": 3
+                        }
+                      }
+                    },
+                    "MISO_PIN": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "3w/nHq~G9__nGkXHT|2E",
+                        "fields": {
+                          "NUM": 35
+                        }
+                      }
+                    },
+                    "MOSI_PIN": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "Oe$?@TCy+Px;E/]=ob#1",
+                        "fields": {
+                          "NUM": 14
+                        }
+                      }
+                    },
+                    "CS_PIN": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "yTNaB*v:[L]lgnJDc.H+",
+                        "fields": {
+                          "NUM": 46
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 310,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "sd_write_file",
+              "id": "2Nnq$Q,t2D*M@Qy}p6Wh",
+              "fields": {
+                "MODE": "WRITE"
+              },
+              "inputs": {
+                "DATA": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "O/vQ3^v!Bmo#QJl|7Xq5",
+                    "fields": {
+                      "TEXT": "Hello, world!"
+                    }
+                  }
+                },
+                "PATH": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "y3xoS?Q)^bqtWJI,p}^o",
+                    "fields": {
+                      "TEXT": "/data.txt"
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_println",
+                  "id": "gkm|_P68Ba_K$v3QBXV=",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "kr^g1L^=rZMQr%Rl{R|2",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      },
+                      "block": {
+                        "type": "sd_read_file",
+                        "id": "]L(dBBi-o#CIRI`I_Cp!",
+                        "inputs": {
+                          "PATH": {
+                            "block": {
+                              "type": "text",
+                              "id": "^t#Txz!1Iz@[dzTJ+*7W",
+                              "fields": {
+                                "TEXT": "/data.txt"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

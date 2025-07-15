@@ -1,0 +1,160 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "7rYT)f;ffZi^Nn+PdFeD",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "rotary_encoder_init",
+                  "id": "XN1CG5/W_MAI`Z4DMKdl",
+                  "fields": {
+                    "CLK_PIN": 6,
+                    "DT_PIN": 7,
+                    "SW_PIN": 8
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "rotary_encoder_state_change",
+              "id": "x5mgK1;Qj_A-kT1-Vn+_",
+              "fields": {
+                "STATE": "CHANGED"
+              },
+              "inputs": {
+                "DO": {
+                  "block": {
+                    "type": "serial_println",
+                    "id": "5smFYs`GbxVHeu#PB:^#",
+                    "fields": {
+                      "SERIAL": "Serial"
+                    },
+                    "inputs": {
+                      "VAR": {
+                        "shadow": {
+                          "type": "text",
+                          "id": "Hm/i]NrIPFlBUnE/-[vp",
+                          "fields": {
+                            "TEXT": ""
+                          }
+                        },
+                        "block": {
+                          "type": "rotary_encoder_get_property",
+                          "id": "MO1|kOP-L@{#=ajaIDa*",
+                          "fields": {
+                            "PROPERTY": "POSITION"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "rotary_encoder_state_change",
+                  "id": "Kaj+#D1$[f{1g~T;yq/{",
+                  "fields": {
+                    "STATE": "LEFT"
+                  },
+                  "inputs": {
+                    "DO": {
+                      "block": {
+                        "type": "serial_println",
+                        "id": ";?4p2U2l2n5HQe~SZ(`r",
+                        "fields": {
+                          "SERIAL": "Serial"
+                        },
+                        "inputs": {
+                          "VAR": {
+                            "shadow": {
+                              "type": "text",
+                              "id": "Hm/i]NrIPFlBUnE/-[vp",
+                              "fields": {
+                                "TEXT": ""
+                              }
+                            },
+                            "block": {
+                              "type": "rotary_encoder_get_property",
+                              "id": "b|UIPJIZ_mj5v9w4C-4A",
+                              "fields": {
+                                "PROPERTY": "DIRECTION"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "rotary_encoder_state_change",
+                      "id": "|z$p6*WnX8FV+Wdz7XAr",
+                      "fields": {
+                        "STATE": "CHANGED"
+                      },
+                      "inputs": {
+                        "DO": {
+                          "block": {
+                            "type": "serial_println",
+                            "id": "5fm$cKzpvXR2^E3l{w~d",
+                            "fields": {
+                              "SERIAL": "Serial"
+                            },
+                            "inputs": {
+                              "VAR": {
+                                "shadow": {
+                                  "type": "text",
+                                  "id": "Hm/i]NrIPFlBUnE/-[vp",
+                                  "fields": {
+                                    "TEXT": ""
+                                  }
+                                },
+                                "block": {
+                                  "type": "rotary_encoder_get_property",
+                                  "id": "m!t!YX+K?S_QsQRm1gm5",
+                                  "fields": {
+                                    "PROPERTY": "INCREMENT"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

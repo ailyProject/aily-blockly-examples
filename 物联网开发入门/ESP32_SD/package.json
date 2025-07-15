@@ -1,0 +1,28 @@
+{
+  "name": "esp32-sd-card",
+  "nickname": "SD卡读写",
+  "url":"https://arduino.me/s/52?aid=3122",
+  "description": "控制SD卡进行文件读写等，学习SD卡的基本使用方法。",
+  "version": "1.0.0",
+  "board": "ESP32 board",
+  "boardDependencies": {
+    "@aily-project/compiler-esp-x32": "14.2.0",
+    "@aily-project/tool-esptool_py": "4.8.1",
+    "@aily-project/sdk-esp32": "3.2.0",
+    "@aily-project/tool-idf_esp32s3": "5.4.0",
+    "@aily-project/tool-ctags": "5.8.0"
+  },
+  "dependencies": {
+    "@aily-project/board-esp32s3": "1.0.0",
+    "@aily-project/lib-core-io": "1.0.0",
+    "@aily-project/lib-core-logic": "0.0.1",
+    "@aily-project/lib-core-loop": "0.0.1",
+    "@aily-project/lib-core-math": "0.0.1",
+    "@aily-project/lib-core-serial": "0.0.1",
+    "@aily-project/lib-core-text": "0.0.1",
+    "@aily-project/lib-core-time": "0.0.1",
+    "@aily-project/lib-core-variables": "0.0.1",
+    "@aily-project/lib-esp32-sd": "0.0.1",
+    "@aily-project/lib-esp32-spi": "0.0.1"
+  }
+}

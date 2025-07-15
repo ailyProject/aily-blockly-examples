@@ -1,0 +1,20 @@
+{
+  "name": "esp_vl53l0x",
+  "nickname": "VL53L0X 激光测距",
+  "url": "https://arduino.me/s/52?aid=3123",
+  "description": "利用VL53L0X模块进行测距，学习激光测距的基本方法。",
+  "version": "1.0.0",
+  "board": "ESP32 board",
+  "dependencies": {
+    "@aily-project/board-esp32s3": "1.0.0",
+    "@aily-project/lib-adafruit-vl53l0x": "^1.0.0",
+    "@aily-project/lib-core-io": "1.0.0",
+    "@aily-project/lib-core-logic": "0.0.1",
+    "@aily-project/lib-core-loop": "0.0.1",
+    "@aily-project/lib-core-math": "0.0.1",
+    "@aily-project/lib-core-serial": "0.0.1",
+    "@aily-project/lib-core-text": "0.0.1",
+    "@aily-project/lib-core-time": "0.0.1",
+    "@aily-project/lib-core-variables": "0.0.1"
+  }
+}

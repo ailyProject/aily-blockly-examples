@@ -1,0 +1,20 @@
+{
+  "name": "esp_encoder",
+  "nickname": "ESP32 编码器",
+  "url": "https://arduino.me/s/52?aid=3119",
+  "description": "通过编码器模块测量旋转角度，了解运动检测与控制的基本原理。",
+  "version": "1.0.0",
+  "board": "ESP32 board",
+  "dependencies": {
+    "@aily-project/board-esp32s3": "1.0.0",
+    "@aily-project/lib-core-io": "1.0.0",
+    "@aily-project/lib-core-logic": "0.0.1",
+    "@aily-project/lib-core-loop": "0.0.1",
+    "@aily-project/lib-core-math": "0.0.1",
+    "@aily-project/lib-core-serial": "0.0.1",
+    "@aily-project/lib-core-text": "0.0.1",
+    "@aily-project/lib-core-time": "0.0.1",
+    "@aily-project/lib-core-variables": "0.0.1",
+    "@aily-project/lib-esp32_encoder": "^0.0.1"
+  }
+}

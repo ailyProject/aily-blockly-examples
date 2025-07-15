@@ -1,0 +1,189 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "O[71r+I%uS6NK:0]4h5`",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "esp32_i2s_init",
+                  "id": "_-V$W=Rc:jG+8$2c@K~R",
+                  "next": {
+                    "block": {
+                      "type": "esp32_i2s_begin",
+                      "id": "5%Ls9GshzXI^I@`cC7*2",
+                      "fields": {
+                        "OBJECT": {
+                          "id": "bE=Liq9ZT?6po6]XlNW-"
+                        },
+                        "SAMPLE_RATE": "8000",
+                        "BUFFER_SIZE": "512"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "esp32_i2s_read_samples",
+              "id": "DolX+jgN:8,7rHIq?:mF",
+              "fields": {
+                "OBJECT": {
+                  "id": "bE=Liq9ZT?6po6]XlNW-"
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_print",
+                  "id": "QsQq[OkY5;`Bz`IeCx*f",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "`sc/A/,k~@oZ[,JB2`T6",
+                        "fields": {
+                          "TEXT": "平均电平："
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_println",
+                      "id": "#I+}oeTUTKgZNW1;V]M}",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "aZq-q5]ye%0MLk0h[g`|",
+                            "fields": {
+                              "TEXT": ""
+                            }
+                          },
+                          "block": {
+                            "type": "esp32_i2s_get_level",
+                            "id": "u*#EawuOr$IgyGlin-Ic",
+                            "fields": {
+                              "OBJECT": {
+                                "id": "bE=Liq9ZT?6po6]XlNW-"
+                              },
+                              "LEVEL_TYPE": "average"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "serial_print",
+                          "id": "Y*4UNqp#Rk9Imh_b1T*$",
+                          "fields": {
+                            "SERIAL": "Serial"
+                          },
+                          "inputs": {
+                            "VAR": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "SaWp%t(],H@!yOy%g/|:",
+                                "fields": {
+                                  "TEXT": "分贝值："
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "serial_println",
+                              "id": "KYlBNTr083giy%1C?NeW",
+                              "fields": {
+                                "SERIAL": "Serial"
+                              },
+                              "inputs": {
+                                "VAR": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "[?meQ)Pwlv*R6.cpy.~r",
+                                    "fields": {
+                                      "TEXT": ""
+                                    }
+                                  },
+                                  "block": {
+                                    "type": "esp32_i2s_get_level",
+                                    "id": "%QwzmV7KYdIB5#kM3qW3",
+                                    "fields": {
+                                      "OBJECT": {
+                                        "id": "bE=Liq9ZT?6po6]XlNW-"
+                                      },
+                                      "LEVEL_TYPE": "decibels"
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "time_delay",
+                                  "id": "~mBr[2S!Y[.Yy|C2oHf1",
+                                  "inputs": {
+                                    "DELAY_TIME": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "id": "Q35?+^|%VUVWH`5g#fzB",
+                                        "fields": {
+                                          "NUM": 1000
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "microphone",
+      "id": "bE=Liq9ZT?6po6]XlNW-",
+      "type": "EspI2S"
+    }
+  ]
+}

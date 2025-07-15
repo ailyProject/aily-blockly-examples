@@ -1,0 +1,172 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "vl53l0x_init_with_wire",
+              "id": "6$S+z}4PE980!l}Ap!qy",
+              "fields": {
+                "SENSOR": {
+                  "id": "$B~mW=g7M~+F|NyUfiP+"
+                },
+                "WIRE": "Wire"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 170,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "vl53l0x_ranging_test",
+              "id": "8YV[ZR/|_gk0#bP@:B^Z",
+              "fields": {
+                "SENSOR": {
+                  "id": "k+eb9oF.SMryi{;Q!cgm"
+                },
+                "MEASURE": {
+                  "id": "/r*vftZ*-BAXk?mGNB2Z"
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "controls_if",
+                  "id": "s:c^w^$hlCiuqSMKgR}/",
+                  "inputs": {
+                    "IF0": {
+                      "block": {
+                        "type": "vl53l0x_check_range_valid",
+                        "id": "H+#2m|XMI~+=9*W[RLi@",
+                        "fields": {
+                          "MEASURE": {
+                            "id": "/r*vftZ*-BAXk?mGNB2Z"
+                          }
+                        }
+                      }
+                    },
+                    "DO0": {
+                      "block": {
+                        "type": "serial_print",
+                        "id": "t~^{_d5qC-9P)x4-;MuH",
+                        "fields": {
+                          "SERIAL": "Serial"
+                        },
+                        "inputs": {
+                          "VAR": {
+                            "shadow": {
+                              "type": "text",
+                              "id": "}^kd(Pk_R13tw66$D,~g",
+                              "fields": {
+                                "TEXT": "距离："
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "serial_print",
+                            "id": ")YR[M#Q$HFOG**I4;fAB",
+                            "fields": {
+                              "SERIAL": "Serial"
+                            },
+                            "inputs": {
+                              "VAR": {
+                                "shadow": {
+                                  "type": "text",
+                                  "id": "S$UQM{bw(xBs)Te#|E!}",
+                                  "fields": {
+                                    "TEXT": ""
+                                  }
+                                },
+                                "block": {
+                                  "type": "vl53l0x_get_range_mm",
+                                  "id": "YKD{PAv*Z-9Q^Xw/Cqri",
+                                  "fields": {
+                                    "MEASURE": {
+                                      "id": "/r*vftZ*-BAXk?mGNB2Z"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "serial_println",
+                                "id": "5(!SbZ,R+!nv%)Z(]vVI",
+                                "fields": {
+                                  "SERIAL": "Serial"
+                                },
+                                "inputs": {
+                                  "VAR": {
+                                    "shadow": {
+                                      "type": "text",
+                                      "id": "qqqa^==Hx6dlMS]#n!j8",
+                                      "fields": {
+                                        "TEXT": "mm"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "time_delay",
+                      "id": "MOlGNB:s)G0+60=^2[2-",
+                      "inputs": {
+                        "DELAY_TIME": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "~(v-[3JAHE]32R]_~R=w",
+                            "fields": {
+                              "NUM": 500
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "sensor",
+      "id": "$B~mW=g7M~+F|NyUfiP+"
+    },
+    {
+      "name": "sensor",
+      "id": "k+eb9oF.SMryi{;Q!cgm",
+      "type": "Adafruit_VL53L0X"
+    },
+    {
+      "name": "measure",
+      "id": "/r*vftZ*-BAXk?mGNB2Z",
+      "type": "VL53L0X_RangingMeasurementData_t"
+    }
+  ]
+}

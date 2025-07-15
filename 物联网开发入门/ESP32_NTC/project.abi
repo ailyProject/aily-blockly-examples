@@ -1,0 +1,146 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "P`:-GSWG|w(i%imz%Iy/",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "ntc_init",
+                  "id": "|.05:4i06hiF2,P0Hu9:",
+                  "fields": {
+                    "PIN": "5",
+                    "REF_RESISTANCE": 10000,
+                    "NOMINAL_RESISTANCE": 10000,
+                    "NOMINAL_TEMP": 25,
+                    "B_VALUE": 3950
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "serial_println",
+              "id": ".=NEAyVGT:yko@IK_Kv^",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "r!7X{4uvqPDw3zLhA+Oy",
+                    "fields": {
+                      "TEXT": ""
+                    }
+                  },
+                  "block": {
+                    "type": "ntc_read_celsius",
+                    "id": "#~Ab/6TP0718T58TQGRt",
+                    "fields": {
+                      "PIN": "5"
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_println",
+                  "id": "L=67LfoH9ESlxZk:]$0e",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "r!7X{4uvqPDw3zLhA+Oy",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      },
+                      "block": {
+                        "type": "ntc_read_fahrenheit",
+                        "id": "GC?cSogw[Olhx~U(Hu4S",
+                        "fields": {
+                          "PIN": "5"
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_println",
+                      "id": "!Of5/q=#ZDde%ykEU3w#",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "OKXfw!blk@f1=8Ws~9iP",
+                            "fields": {
+                              "TEXT": ""
+                            }
+                          },
+                          "block": {
+                            "type": "ntc_read_kelvin",
+                            "id": "m$_m`h|g[D!-#ON@[+rL",
+                            "fields": {
+                              "PIN": "5"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "time_delay",
+                          "id": "^y.n/0@C3$xhSQi6yX~#",
+                          "inputs": {
+                            "DELAY_TIME": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": ";NMW[fMxsKBjiQ^gYTdV",
+                                "fields": {
+                                  "NUM": 1000
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
