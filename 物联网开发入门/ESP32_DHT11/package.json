@@ -1,0 +1,20 @@
+{
+  "name": "esp_dht11",
+  "nickname": "DHT11 温湿度传感器",
+  "url": "https://arduino.me/s/52?aid=3112",
+  "description": "使用DHT11传感器采集温湿度数据，掌握基础的环境监测方法。",
+  "version": "1.0.0",
+  "board": "ESP32 board",
+  "dependencies": {
+    "@aily-project/board-esp32s3": "1.0.0",
+    "@aily-project/lib-core-io": "1.0.0",
+    "@aily-project/lib-core-logic": "0.0.1",
+    "@aily-project/lib-core-loop": "0.0.1",
+    "@aily-project/lib-core-math": "0.0.1",
+    "@aily-project/lib-core-serial": "0.0.1",
+    "@aily-project/lib-core-text": "0.0.1",
+    "@aily-project/lib-core-time": "0.0.1",
+    "@aily-project/lib-core-variables": "0.0.1",
+    "@aily-project/lib-dht": "^1.0.0"
+  }
+}

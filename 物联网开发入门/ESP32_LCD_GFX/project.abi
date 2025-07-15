@@ -1,0 +1,242 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "tft_init",
+              "id": "zl=EOruf}W08)rd.2M3y",
+              "fields": {
+                "MODEL": "ST7789"
+              },
+              "next": {
+                "block": {
+                  "type": "tft_set_rotation",
+                  "id": "Dk~*}}b3?wZ}nj9ea6Rg",
+                  "fields": {
+                    "ROTATION": "2"
+                  },
+                  "next": {
+                    "block": {
+                      "type": "tft_fill_screen",
+                      "id": ".:oLx?c=g(eLRlu0`HDn",
+                      "inputs": {
+                        "COLOR": {
+                          "shadow": {
+                            "type": "tft_preset_color",
+                            "id": "O6u7`=T_pX[D@Qk2puJf",
+                            "fields": {
+                              "COLOR": "#ffffff"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "tft_set_text_color",
+                          "id": "c_z`)G:UBP4ST)Rg{Fl7",
+                          "inputs": {
+                            "COLOR": {
+                              "shadow": {
+                                "type": "tft_preset_color",
+                                "id": "XHbov~X@G$[o=D%n7*wy",
+                                "fields": {
+                                  "COLOR": "#ff0000"
+                                }
+                              }
+                            },
+                            "BG_COLOR": {
+                              "shadow": {
+                                "type": "tft_preset_color",
+                                "id": "9Zu4)6L~;dN)9#7|ME[n",
+                                "fields": {
+                                  "COLOR": "#ffffff"
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "tft_set_text_size",
+                              "id": "Y2ivK5vaF0|u^*K0JIO(",
+                              "inputs": {
+                                "SIZE": {
+                                  "shadow": {
+                                    "type": "math_number",
+                                    "id": "9/9~Q_kT8zBJ$Oj{7Pwb",
+                                    "fields": {
+                                      "NUM": 3
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 410,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "tft_print",
+              "id": "}3%)qAzlBOrgSJ@-W-9C",
+              "inputs": {
+                "ROW": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "y}Yi$9I$^x:S.!2)bMWz",
+                    "fields": {
+                      "NUM": 5
+                    }
+                  }
+                },
+                "COLUMN": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "%v;c,vLV9pGaI/s/BWce",
+                    "fields": {
+                      "NUM": 5
+                    }
+                  }
+                },
+                "TEXT": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "xu+]|TSQN2f(B9EhneV?",
+                    "fields": {
+                      "TEXT": "Hello World!"
+                    }
+                  },
+                  "block": {
+                    "type": "number_to_string",
+                    "id": "EdJYb(73Q0JJ*WX|q7(_",
+                    "inputs": {
+                      "NUM": {
+                        "shadow": {
+                          "type": "math_number",
+                          "id": "^6O3(hOU5{8,618h-?Ti",
+                          "fields": {
+                            "NUM": 0
+                          }
+                        },
+                        "block": {
+                          "type": "math_random_float",
+                          "id": "0[)S3jS-cr][c$zr5FV9"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "tft_print",
+                  "id": "n5$9Mr8%#R[]9dyJ#@fP",
+                  "inputs": {
+                    "ROW": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "E|nA*s7|(|WqeuoHB5C%",
+                        "fields": {
+                          "NUM": 5
+                        }
+                      }
+                    },
+                    "COLUMN": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "-@|G]9+rABjCE=l#F,|6",
+                        "fields": {
+                          "NUM": 30
+                        }
+                      }
+                    },
+                    "TEXT": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "l]@=Qozne(}e:*5{-Z3S",
+                        "fields": {
+                          "TEXT": "Hello World"
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "tft_fill_circle",
+                      "id": "m4eEqG=yK51`RUoEL%/`",
+                      "inputs": {
+                        "X": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "8((rV]qz(krpPXa}8D)a",
+                            "fields": {
+                              "NUM": 120
+                            }
+                          }
+                        },
+                        "Y": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "Pp;(0lBv8Wev{hYrz!iX",
+                            "fields": {
+                              "NUM": 120
+                            }
+                          }
+                        },
+                        "R": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "ti,c`twC0xTj#q{xO^6:",
+                            "fields": {
+                              "NUM": 20
+                            }
+                          }
+                        },
+                        "COLOR": {
+                          "shadow": {
+                            "type": "tft_preset_color",
+                            "id": "?2S/y7mpx|OJ/]i0*zFj",
+                            "fields": {
+                              "COLOR": "#00ffdd"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "sum",
+      "id": "G}99Rtsb~:/tl8R:@@.I"
+    }
+  ]
+}

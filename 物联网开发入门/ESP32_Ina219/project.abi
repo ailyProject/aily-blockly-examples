@@ -1,0 +1,356 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "BU8O4yLAOH:7PoSgUg:y",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "ina219_init_with_wire",
+                  "id": "zKz:OIL/GoZoN]l5C(^|",
+                  "fields": {
+                    "VAR": {
+                      "id": "DT4FOQK3`ZEokJpL:{4A"
+                    },
+                    "ADDRESS": "0x40",
+                    "WIRE": "Wire"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "serial_print",
+              "id": ".KzlRI1:Uq=K-=8v.LQI",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "#rp$_=9WsdMgkv!N^=.#",
+                    "fields": {
+                      "TEXT": "总线电压："
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_print",
+                  "id": "|J2J_incZtK9~^znH~dE",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "32Y(RcVS*fdRFpmvRr?H",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      },
+                      "block": {
+                        "type": "ina219_read_value",
+                        "id": "(^24+mmQjD!u(n4|d-4k",
+                        "fields": {
+                          "VAR": {
+                            "id": "6p?`D*C;D]TZxgEk{hx4"
+                          },
+                          "TYPE": "BUS_VOLTAGE"
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_println",
+                      "id": "L7ai*JLOVB.:x%3$3;UL",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "TWSq,4hzmlk3jw]!NWHI",
+                            "fields": {
+                              "TEXT": "V"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "serial_print",
+                          "id": "/in@;i?gtTl}hB9+!ozn",
+                          "fields": {
+                            "SERIAL": "Serial"
+                          },
+                          "inputs": {
+                            "VAR": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "|9.*H@$^F`P9qLR?Qx,^",
+                                "fields": {
+                                  "TEXT": "分流电压："
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "serial_print",
+                              "id": "l#vr@V+Lf$~wvqmqE%s/",
+                              "fields": {
+                                "SERIAL": "Serial"
+                              },
+                              "inputs": {
+                                "VAR": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "N64~!sk)zG@_y]tp_bG]",
+                                    "fields": {
+                                      "TEXT": ""
+                                    }
+                                  },
+                                  "block": {
+                                    "type": "ina219_read_value",
+                                    "id": "19qVG-qiV!sf4@)jWi==",
+                                    "fields": {
+                                      "VAR": {
+                                        "id": "6p?`D*C;D]TZxgEk{hx4"
+                                      },
+                                      "TYPE": "SHUNT_VOLTAGE"
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "serial_println",
+                                  "id": "Fg@.{mTJ|0-cjoaX32T[",
+                                  "fields": {
+                                    "SERIAL": "Serial"
+                                  },
+                                  "inputs": {
+                                    "VAR": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "Z+$oMWKN9f)@FbQ3tf-|",
+                                        "fields": {
+                                          "TEXT": "mV"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "serial_print",
+                                      "id": "R0N#xPx*aEz17B8V.gz@",
+                                      "fields": {
+                                        "SERIAL": "Serial"
+                                      },
+                                      "inputs": {
+                                        "VAR": {
+                                          "shadow": {
+                                            "type": "text",
+                                            "id": "rwrnYysD_vdto{C@bP$l",
+                                            "fields": {
+                                              "TEXT": "电流："
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "serial_print",
+                                          "id": "+K6BYJEIK|AlFAsrB@,B",
+                                          "fields": {
+                                            "SERIAL": "Serial"
+                                          },
+                                          "inputs": {
+                                            "VAR": {
+                                              "shadow": {
+                                                "type": "text",
+                                                "id": "P4u6hsc=#iRav4q38*xn",
+                                                "fields": {
+                                                  "TEXT": ""
+                                                }
+                                              },
+                                              "block": {
+                                                "type": "ina219_read_value",
+                                                "id": "]@_H)=gq_U_1u%M.Q4sP",
+                                                "fields": {
+                                                  "VAR": {
+                                                    "id": "6p?`D*C;D]TZxgEk{hx4"
+                                                  },
+                                                  "TYPE": "CURRENT"
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "serial_println",
+                                              "id": "{VBEu^!2Zt;zw(2KH?T3",
+                                              "fields": {
+                                                "SERIAL": "Serial"
+                                              },
+                                              "inputs": {
+                                                "VAR": {
+                                                  "shadow": {
+                                                    "type": "text",
+                                                    "id": "JT]Hz1y2IXW`GJtcN!I|",
+                                                    "fields": {
+                                                      "TEXT": "mA"
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "serial_print",
+                                                  "id": "{K,zp#2c={O:+COeNV6S",
+                                                  "fields": {
+                                                    "SERIAL": "Serial"
+                                                  },
+                                                  "inputs": {
+                                                    "VAR": {
+                                                      "shadow": {
+                                                        "type": "text",
+                                                        "id": "H;2z/48Xj_aH4hwsD+9O",
+                                                        "fields": {
+                                                          "TEXT": "功率："
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "serial_print",
+                                                      "id": "eKsiq(=83e_w7h|E0*n9",
+                                                      "fields": {
+                                                        "SERIAL": "Serial"
+                                                      },
+                                                      "inputs": {
+                                                        "VAR": {
+                                                          "shadow": {
+                                                            "type": "text",
+                                                            "id": "eOcg^L1L,LYK4pC/cCpU",
+                                                            "fields": {
+                                                              "TEXT": ""
+                                                            }
+                                                          },
+                                                          "block": {
+                                                            "type": "ina219_read_value",
+                                                            "id": "qb,V-U$:k:-X+1B(s~G[",
+                                                            "fields": {
+                                                              "VAR": {
+                                                                "id": "6p?`D*C;D]TZxgEk{hx4"
+                                                              },
+                                                              "TYPE": "POWER"
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "next": {
+                                                        "block": {
+                                                          "type": "serial_println",
+                                                          "id": "V2ElIWC?nu0=x4x5[_sC",
+                                                          "fields": {
+                                                            "SERIAL": "Serial"
+                                                          },
+                                                          "inputs": {
+                                                            "VAR": {
+                                                              "shadow": {
+                                                                "type": "text",
+                                                                "id": "F+(6Y=~:@{KeFBU3x/)j",
+                                                                "fields": {
+                                                                  "TEXT": "mW"
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "next": {
+                                                            "block": {
+                                                              "type": "time_delay",
+                                                              "id": "k__+#`jf:993m;iI/P1[",
+                                                              "inputs": {
+                                                                "DELAY_TIME": {
+                                                                  "shadow": {
+                                                                    "type": "math_number",
+                                                                    "id": "xLT2:aukjUmg[p`MkoAO",
+                                                                    "fields": {
+                                                                      "NUM": 1000
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "ina219",
+      "id": "DT4FOQK3`ZEokJpL:{4A"
+    },
+    {
+      "name": "ina219",
+      "id": "6p?`D*C;D]TZxgEk{hx4",
+      "type": "Adafruit_INA219"
+    }
+  ]
+}

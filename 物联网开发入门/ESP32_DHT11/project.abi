@@ -1,0 +1,216 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "[v1@l!.oD;QRt.`%|#*0",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "dht_init",
+                  "id": "Q-~:%Ou%kw8|jy:*WN1H",
+                  "fields": {
+                    "TYPE": "DHT11",
+                    "PIN": "8"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "controls_if",
+              "id": "V2GU-CX]4hM-Syc0H%B$",
+              "inputs": {
+                "IF0": {
+                  "block": {
+                    "type": "dht_read_success",
+                    "id": "lq7WTAiNLH~W.Kzavu_y",
+                    "fields": {
+                      "TYPE": "DHT11",
+                      "PIN": "8"
+                    }
+                  }
+                },
+                "DO0": {
+                  "block": {
+                    "type": "serial_print",
+                    "id": "I;d.U/*[0uiDbo|[/.cL",
+                    "fields": {
+                      "SERIAL": "Serial"
+                    },
+                    "inputs": {
+                      "VAR": {
+                        "shadow": {
+                          "type": "text",
+                          "id": "GzWe#j5HL*KJ*3^RhF[R",
+                          "fields": {
+                            "TEXT": "温度："
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "serial_print",
+                        "id": "!z|$d$uYq0fB{lw]Q9ub",
+                        "fields": {
+                          "SERIAL": "Serial"
+                        },
+                        "inputs": {
+                          "VAR": {
+                            "shadow": {
+                              "type": "text",
+                              "id": "qL`^|5:RTbZvV,Ogpg}s",
+                              "fields": {
+                                "TEXT": ""
+                              }
+                            },
+                            "block": {
+                              "type": "dht_read_temperature",
+                              "id": "M-YGG!y70$Nl4BOl/72M",
+                              "fields": {
+                                "TYPE": "DHT11",
+                                "PIN": "8"
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "serial_println",
+                            "id": "?Ua}rJF=X^g}IAzV(z?L",
+                            "fields": {
+                              "SERIAL": "Serial"
+                            },
+                            "inputs": {
+                              "VAR": {
+                                "shadow": {
+                                  "type": "text",
+                                  "id": "L8LJ;g`~AOhFp6%_ziQE",
+                                  "fields": {
+                                    "TEXT": "°C"
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "serial_print",
+                                "id": "zlEcpP7(M|u*X2SUc{~w",
+                                "fields": {
+                                  "SERIAL": "Serial"
+                                },
+                                "inputs": {
+                                  "VAR": {
+                                    "shadow": {
+                                      "type": "text",
+                                      "id": "7yX^VP8z`n}nk.9,89}n",
+                                      "fields": {
+                                        "TEXT": "湿度："
+                                      }
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "serial_print",
+                                    "id": "EiF01nSe8E!Ql?STr#n,",
+                                    "fields": {
+                                      "SERIAL": "Serial"
+                                    },
+                                    "inputs": {
+                                      "VAR": {
+                                        "shadow": {
+                                          "type": "text",
+                                          "id": "p^+Ljb({eFLLA8Qi^wi!",
+                                          "fields": {
+                                            "TEXT": ""
+                                          }
+                                        },
+                                        "block": {
+                                          "type": "dht_read_humidity",
+                                          "id": "8F(lvF]QDk+@,m|]oQXW",
+                                          "fields": {
+                                            "TYPE": "DHT11",
+                                            "PIN": "8"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "next": {
+                                      "block": {
+                                        "type": "serial_println",
+                                        "id": "3|+Gg!:Opv4O1GF~*z;#",
+                                        "fields": {
+                                          "SERIAL": "Serial"
+                                        },
+                                        "inputs": {
+                                          "VAR": {
+                                            "shadow": {
+                                              "type": "text",
+                                              "id": "P+X!k$7JJqTS-kUj_7AT",
+                                              "fields": {
+                                                "TEXT": "%"
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "next": {
+                                          "block": {
+                                            "type": "time_delay",
+                                            "id": ".FCQXeHL++F0M~G.]fC9",
+                                            "inputs": {
+                                              "DELAY_TIME": {
+                                                "shadow": {
+                                                  "type": "math_number",
+                                                  "id": "_X[E`b{(a:RjkG`~X(;S",
+                                                  "fields": {
+                                                    "NUM": 500
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

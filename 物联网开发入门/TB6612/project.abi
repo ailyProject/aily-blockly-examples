@@ -1,0 +1,184 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 90,
+        "y": -10,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "tb6612_motor_init",
+              "id": ".=7]nufpc*_Ms1c_6`;%",
+              "fields": {
+                "MOTOR_A_NAME": {
+                  "id": "$uIa4KYZX3E.Tn+E]H66"
+                },
+                "MOTOR_B_NAME": {
+                  "id": "$HUqe`xF:_+jCT0Nu|}M"
+                }
+              },
+              "inputs": {
+                "AIN1": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "@}WGM,?7@2cU]w[R4j*b",
+                    "fields": {
+                      "NUM": 36
+                    }
+                  }
+                },
+                "AIN2": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": ",-`e~.#`h/CI.K/w)Ghi",
+                    "fields": {
+                      "NUM": 37
+                    }
+                  }
+                },
+                "PWMA": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "%plKYs=(Wt0fkin)#7:K",
+                    "fields": {
+                      "NUM": 35
+                    }
+                  }
+                },
+                "OFFSET_A": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "lCu(=ioMLZ0#I0~(3qU2",
+                    "fields": {
+                      "NUM": 1
+                    }
+                  }
+                },
+                "BIN1": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "*F+IArV.G/Kx)I2S=:c$",
+                    "fields": {
+                      "NUM": 11
+                    }
+                  }
+                },
+                "BIN2": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "OX7n:3H-1RM!oz}$hcRQ",
+                    "fields": {
+                      "NUM": 12
+                    }
+                  }
+                },
+                "PWMB": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "1}`!AUoW.DBbL){v4*J=",
+                    "fields": {
+                      "NUM": 10
+                    }
+                  }
+                },
+                "OFFSET_B": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "z182f%y?98Pu/G{H(gy,",
+                    "fields": {
+                      "NUM": 1
+                    }
+                  }
+                },
+                "STBY_PIN": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "wup}(!SsC1kK.UJ*c9B+",
+                    "fields": {
+                      "NUM": 45
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 90,
+        "y": 370,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "tb6612_dual_action",
+              "id": "vv,2V8G/lhl.5D2DFwO~",
+              "fields": {
+                "MODE": "forward",
+                "MOTOR1": {
+                  "id": "W~Arl2*Q{2wtw3uiv/9="
+                },
+                "MOTOR2": {
+                  "id": ":#+@9RbJvpeDsp~3y:}o"
+                },
+                "LEFT_MOTOR": {
+                  "id": "r#bI+(O~rVkfyI?Z?H05"
+                },
+                "RIGHT_MOTOR": {
+                  "id": "DkLK)adVN#ow_x[f(Wkr"
+                }
+              },
+              "inputs": {
+                "SPEED": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "MUG4-{OXs@[P(CxJ[e;G",
+                    "fields": {
+                      "NUM": 100
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "motor1",
+      "id": "$uIa4KYZX3E.Tn+E]H66"
+    },
+    {
+      "name": "motor2",
+      "id": "$HUqe`xF:_+jCT0Nu|}M"
+    },
+    {
+      "name": "motor1",
+      "id": "W~Arl2*Q{2wtw3uiv/9=",
+      "type": "Motor"
+    },
+    {
+      "name": "motor2",
+      "id": ":#+@9RbJvpeDsp~3y:}o",
+      "type": "Motor"
+    },
+    {
+      "name": "leftMotor",
+      "id": "r#bI+(O~rVkfyI?Z?H05",
+      "type": "Motor"
+    },
+    {
+      "name": "rightMotor",
+      "id": "DkLK)adVN#ow_x[f(Wkr",
+      "type": "Motor"
+    }
+  ]
+}
