@@ -1,5 +1,5 @@
 {
-  "name": "esp32-tft",
+  "name": "esp32_tft",
   "nickname": "LCD屏幕显示",
   "url": "https://arduino.me/s/52?aid=3115",
   "description": "控制LCD屏幕显示文字、图形和数据，学习LCD屏幕的基本使用方法。",

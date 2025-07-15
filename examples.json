@@ -82,6 +82,66 @@
         "description": "使用按钮控制LED的开关状态，学习数字输入的基础操作。",
         "path": "led_button",
         "url": ""
+      },
+      {
+        "nickname": "ESP32 数字麦克风",
+        "description": "使用数字麦克风采集音频数据，学习音频信号处理与录制的基础操作。",
+        "path": "esp32_microphone",
+        "url": "https://arduino.me/s/52?aid=3120"
+      },
+      {
+        "nickname": "DHT11 温湿度传感器",
+        "description": "使用DHT11传感器采集温湿度数据，掌握基础的环境监测方法。",
+        "path": "esp_dht11",
+        "url": "https://arduino.me/s/52?aid=3112"
+      },
+      {
+        "nickname": "ESP32 编码器",
+        "description": "通过编码器模块测量旋转角度，了解运动检测与控制的基本原理。",
+        "path": "esp_encoder",
+        "url": "https://arduino.me/s/52?aid=3119"
+      },
+      {
+        "nickname": "INA219 电流传感器",
+        "description": "通过INA219模块测量电流，了解电流监测的基本原理。",
+        "path": "esp_ina219",
+        "url": "https://arduino.me/s/52?aid=3126"
+      },
+      {
+        "nickname": "LCD屏幕显示",
+        "description": "控制LCD屏幕显示文字、图形和数据，学习LCD屏幕的基本使用方法。",
+        "path": "esp32_tft",
+        "url": "https://arduino.me/s/52?aid=3115"
+      },
+      {
+        "nickname": "NTC热敏电阻",
+        "description": "学习如何通过NTC热敏电阻进行温度测量",
+        "path": "esp32_ntc_thermistor",
+        "url": "https://arduino.me/s/52?aid=3116"
+      },
+      {
+        "nickname": "SD卡读写",
+        "description": "控制SD卡进行文件读写等，学习SD卡的基本使用方法。",
+        "path": "esp32-sd-card",
+        "url": "https://arduino.me/s/52?aid=3122"
+      },
+      {
+        "nickname": "ESP32 音频播放器",
+        "description": "控制音频播放器，学习音频播放的基本操作。",
+        "path": "esp32_speaker",
+        "url": "https://arduino.me/s/52?aid=3121"
+      },
+      {
+        "nickname": "VL53L0X 激光测距",
+        "description": "利用VL53L0X模块进行测距，学习激光测距的基本方法。",
+        "path": "esp_vl53l0x",
+        "url": "https://arduino.me/s/52?aid=3123"
+      },
+      {
+        "nickname": "TB6612 电机驱动",
+        "description": "控制TB6612电机驱动模块，学习电机控制的基本方法。",
+        "path": "esp_tb6612",
+        "url": "https://arduino.me/s/52?aid=3111"
       }
     ]
   }
