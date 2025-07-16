@@ -5,6 +5,13 @@
   "description": "利用VL53L0X模块进行测距，学习激光测距的基本方法。",
   "version": "1.0.0",
   "board": "ESP32 board",
+  "boardDependencies": {
+    "@aily-project/compiler-esp-x32": "14.2.0",
+    "@aily-project/tool-esptool_py": "4.8.1",
+    "@aily-project/sdk-esp32": "3.2.0",
+    "@aily-project/tool-idf_esp32s3": "5.4.0",
+    "@aily-project/tool-ctags": "5.8.0"
+  },
   "dependencies": {
     "@aily-project/board-esp32s3": "1.0.0",
     "@aily-project/lib-adafruit-vl53l0x": "^1.0.0",

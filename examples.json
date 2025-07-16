@@ -144,5 +144,21 @@
         "url": "https://arduino.me/s/52?aid=3111"
       }
     ]
+  },
+  {
+    "name": "@aily-project/example-qixiangzhan",
+    "nickname": "气象站套件使用教程",
+    "description": "本教程面向气象站套件初学者，涵盖模块功能、基础编程知识及简单项目实操，帮助零基础用户快速入门并应用气象站套件。",
+    "author": "openjumper",
+    "url": "https://openjumper.com/doc/weather-meter-iot",
+    "img":"qixiangzhan_subject.png",
+    "examples": [
+      {
+        "nickname": "",
+        "description": "",
+        "path": "",
+        "url": "https://openjumper.com/doc/weather-meter-iot"
+      }
+    ]
   }
 ]

@@ -20,7 +20,36 @@
               "next": {
                 "block": {
                   "type": "esp32_i2s_init_speaker",
-                  "id": "^hp:#t[T?4}]{J,hy{x7",
+                  "id": "B$_Oph0}n5PUg2H8%GVC",
+                  "inputs": {
+                    "BCLK_PIN": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "9^#sxy.Ncvgs!MIbAd/H",
+                        "fields": {
+                          "NUM": 39
+                        }
+                      }
+                    },
+                    "LRC_PIN": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "2IEqc6O8DVTTNt4!^8}b",
+                        "fields": {
+                          "NUM": 40
+                        }
+                      }
+                    },
+                    "DIN_PIN": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "[/PcJQ:$@6n~5b;^QNj8",
+                        "fields": {
+                          "NUM": 38
+                        }
+                      }
+                    }
+                  },
                   "next": {
                     "block": {
                       "type": "esp32_i2s_set_volume",

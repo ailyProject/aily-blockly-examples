@@ -1,0 +1,253 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "sE_~g6:7S;MNfRSaM$v.",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "bmp280_init",
+                  "id": "E`0jtM)sL0=C)Xu%IMF%",
+                  "fields": {
+                    "ADDR": "0x76",
+                    "WIRE": "Wire"
+                  },
+                  "next": {
+                    "block": {
+                      "type": "bmp280_set_sampling",
+                      "id": "+IGE|YGh~BhCQZ{|`?bp",
+                      "fields": {
+                        "MODE": "MODE_NORMAL",
+                        "TEMP_OS": "SAMPLING_X4",
+                        "PRES_OS": "SAMPLING_X16",
+                        "FILTER": "FILTER_OFF",
+                        "DURATION": "STANDBY_MS_1"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 250,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "serial_print",
+              "id": "*nuVJJtIYP}k+mnVcFZz",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "dzKFmjYp4P*U51]lxV4V",
+                    "fields": {
+                      "TEXT": "温度："
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_print",
+                  "id": "?[WQ1zR@I8nZ_.n-^1-n",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "ABKn2tGrgRmp[M.AW^q|",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      },
+                      "block": {
+                        "type": "bmp280_read_temperature",
+                        "id": "ho{.|?K[,nj6J}q^=Esz"
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_println",
+                      "id": "c;I5cLIvVVfds+cDpdCq",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "shadow": {
+                            "type": "text",
+                            "id": ":L)@5)J,`67760,(3[/R",
+                            "fields": {
+                              "TEXT": " °C"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "serial_print",
+                          "id": "5lrT$^`_I1T5%yw#c81b",
+                          "fields": {
+                            "SERIAL": "Serial"
+                          },
+                          "inputs": {
+                            "VAR": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "R}08DZV#H0s/`dF3(NJ;",
+                                "fields": {
+                                  "TEXT": "气压："
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "serial_print",
+                              "id": "nX*:w49-!77k;%XN{{V}",
+                              "fields": {
+                                "SERIAL": "Serial"
+                              },
+                              "inputs": {
+                                "VAR": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "[m6+~P`pG?]8UmmF2B(8",
+                                    "fields": {
+                                      "TEXT": ""
+                                    }
+                                  },
+                                  "block": {
+                                    "type": "bmp280_read_pressure",
+                                    "id": "pU4Bdl!0(wJlbC!g1rZT"
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "serial_println",
+                                  "id": "{bkdz@thgAzFEO(Q:Ki-",
+                                  "fields": {
+                                    "SERIAL": "Serial"
+                                  },
+                                  "inputs": {
+                                    "VAR": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "IM[sYeC_e=GK4{KiCE(B",
+                                        "fields": {
+                                          "TEXT": " hPa"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "serial_print",
+                                      "id": "sZ$zeijR=1J4l)^qI{W^",
+                                      "fields": {
+                                        "SERIAL": "Serial"
+                                      },
+                                      "inputs": {
+                                        "VAR": {
+                                          "shadow": {
+                                            "type": "text",
+                                            "id": "S!g,zs^8b?e+fTLIa!$F",
+                                            "fields": {
+                                              "TEXT": "海拔高度："
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "serial_print",
+                                          "id": "A.^kMGF+5?xAI7xz9*|?",
+                                          "fields": {
+                                            "SERIAL": "Serial"
+                                          },
+                                          "inputs": {
+                                            "VAR": {
+                                              "shadow": {
+                                                "type": "text",
+                                                "id": "x3;$TS1/8Z_:*UBO#]YF",
+                                                "fields": {
+                                                  "TEXT": ""
+                                                }
+                                              },
+                                              "block": {
+                                                "type": "bmp280_read_altitude",
+                                                "id": "EF.PZ=^WA@*v)D7GZ,f~",
+                                                "fields": {
+                                                  "SEAPRESSURE": 1013.25
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "serial_println",
+                                              "id": "4hB^f,TirWKGJivu?4*y",
+                                              "fields": {
+                                                "SERIAL": "Serial"
+                                              },
+                                              "inputs": {
+                                                "VAR": {
+                                                  "shadow": {
+                                                    "type": "text",
+                                                    "id": "vxcA6ij4+n{sy-GmSNOc",
+                                                    "fields": {
+                                                      "TEXT": " m"
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

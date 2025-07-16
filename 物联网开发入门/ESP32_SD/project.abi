@@ -12,7 +12,7 @@
           "ARDUINO_SETUP": {
             "block": {
               "type": "serial_begin",
-              "id": "Lo,1~*So)59kqpJ#X)h/",
+              "id": "_?S/06O}:?Rt_cxzj~(P",
               "fields": {
                 "SERIAL": "Serial",
                 "SPEED": "9600"
@@ -20,7 +20,7 @@
               "next": {
                 "block": {
                   "type": "sd_init",
-                  "id": "y=;`!t%a^p%RMD3l|ao|",
+                  "id": "mHk0:C]wzO2qm77T:?$1",
                   "fields": {
                     "SPI_TYPE": "HSPI",
                     "SPI_VAR_NAME": "spi"
@@ -29,7 +29,7 @@
                     "SCK_PIN": {
                       "shadow": {
                         "type": "math_number",
-                        "id": "0sU3SvS8Whr)DiTJg6iZ",
+                        "id": "o6sEPy)_`zp/p``VhrR(",
                         "fields": {
                           "NUM": 3
                         }
@@ -38,7 +38,7 @@
                     "MISO_PIN": {
                       "shadow": {
                         "type": "math_number",
-                        "id": "3w/nHq~G9__nGkXHT|2E",
+                        "id": "ms(2J@r{D@khDGT/$~AK",
                         "fields": {
                           "NUM": 35
                         }
@@ -47,7 +47,7 @@
                     "MOSI_PIN": {
                       "shadow": {
                         "type": "math_number",
-                        "id": "Oe$?@TCy+Px;E/]=ob#1",
+                        "id": "`Sm|R:5C=?jZN*cW5Mwx",
                         "fields": {
                           "NUM": 14
                         }
@@ -56,7 +56,7 @@
                     "CS_PIN": {
                       "shadow": {
                         "type": "math_number",
-                        "id": "yTNaB*v:[L]lgnJDc.H+",
+                        "id": "~t(J[:%|sa0xu/{Cyf^8",
                         "fields": {
                           "NUM": 46
                         }
@@ -73,13 +73,13 @@
         "type": "arduino_loop",
         "id": "arduino_loop_id0",
         "x": 30,
-        "y": 310,
+        "y": 370,
         "deletable": false,
         "inputs": {
           "ARDUINO_LOOP": {
             "block": {
               "type": "sd_write_file",
-              "id": "2Nnq$Q,t2D*M@Qy}p6Wh",
+              "id": "h;wOg=]nLyF{!H9lHw@5",
               "fields": {
                 "MODE": "WRITE"
               },
@@ -87,7 +87,7 @@
                 "DATA": {
                   "shadow": {
                     "type": "text",
-                    "id": "O/vQ3^v!Bmo#QJl|7Xq5",
+                    "id": "xG#1.BbuQ;d4lEUFGp(y",
                     "fields": {
                       "TEXT": "Hello, world!"
                     }
@@ -96,7 +96,7 @@
                 "PATH": {
                   "shadow": {
                     "type": "text",
-                    "id": "y3xoS?Q)^bqtWJI,p}^o",
+                    "id": "5$0a?a[f%u9VndvaT{~l",
                     "fields": {
                       "TEXT": "/data.txt"
                     }
@@ -106,7 +106,7 @@
               "next": {
                 "block": {
                   "type": "serial_println",
-                  "id": "gkm|_P68Ba_K$v3QBXV=",
+                  "id": "jU@D@ReD_K2bvs2,]$t@",
                   "fields": {
                     "SERIAL": "Serial"
                   },
@@ -114,19 +114,19 @@
                     "VAR": {
                       "shadow": {
                         "type": "text",
-                        "id": "kr^g1L^=rZMQr%Rl{R|2",
+                        "id": "ncF_a,qTFu$D`hW!v.Tx",
                         "fields": {
                           "TEXT": ""
                         }
                       },
                       "block": {
                         "type": "sd_read_file",
-                        "id": "]L(dBBi-o#CIRI`I_Cp!",
+                        "id": "|{h/s:LY{v3/IC?9K;#+",
                         "inputs": {
                           "PATH": {
                             "block": {
                               "type": "text",
-                              "id": "^t#Txz!1Iz@[dzTJ+*7W",
+                              "id": "qv7zbPf|=4;arH$FPZPx",
                               "fields": {
                                 "TEXT": "/data.txt"
                               }
@@ -143,5 +143,12 @@
         }
       }
     ]
-  }
+  },
+  "variables": [
+    {
+      "name": "spi1",
+      "id": "vyRertPSP6(iOv1$:Jxb",
+      "type": "SPI"
+    }
+  ]
 }

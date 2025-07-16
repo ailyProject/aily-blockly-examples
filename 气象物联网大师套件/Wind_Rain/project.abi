@@ -1,0 +1,286 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "dmw`ITNS2U6YBjw=l.S4",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "wind_begin",
+                  "id": "4V#nu=pQ9E9h(M=c(k$~",
+                  "fields": {
+                    "SPEED_PIN": "35",
+                    "DIR_PIN": "34"
+                  },
+                  "next": {
+                    "block": {
+                      "type": "rain_init",
+                      "id": "ut$_l8;bwQXw|nG+g6$^",
+                      "fields": {
+                        "PIN": "32"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "wind_update",
+              "id": "85WIK5C%2]zUV-W|!u*n",
+              "next": {
+                "block": {
+                  "type": "rain_update",
+                  "id": "(v`z[*=({B:=x@6x9hm7",
+                  "next": {
+                    "block": {
+                      "type": "controls_if",
+                      "id": "?S6go/S;dabsD(F687fs",
+                      "inputs": {
+                        "IF0": {
+                          "block": {
+                            "type": "wind_is_data_ready",
+                            "id": "~[}cXj~iLm!s^](ib*a@"
+                          }
+                        },
+                        "DO0": {
+                          "block": {
+                            "type": "serial_print",
+                            "id": "!`*9,`_#S{UK4UkNU1h!",
+                            "fields": {
+                              "SERIAL": "Serial"
+                            },
+                            "inputs": {
+                              "VAR": {
+                                "shadow": {
+                                  "type": "text",
+                                  "id": "IT@MQ?_#4Waa`^9)q|pq",
+                                  "fields": {
+                                    "TEXT": "风速："
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "serial_print",
+                                "id": "IZ.yInWK9[sn),U8*sk1",
+                                "fields": {
+                                  "SERIAL": "Serial"
+                                },
+                                "inputs": {
+                                  "VAR": {
+                                    "shadow": {
+                                      "type": "text",
+                                      "id": "v*r[zpiMB^4%;QhJtwdd",
+                                      "fields": {
+                                        "TEXT": ""
+                                      }
+                                    },
+                                    "block": {
+                                      "type": "wind_get_speed_kmh",
+                                      "id": "P0`.nLovz4,N]zIS8#@n"
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "serial_println",
+                                    "id": "DPm:xxA#nGz@-U23m.q7",
+                                    "fields": {
+                                      "SERIAL": "Serial"
+                                    },
+                                    "inputs": {
+                                      "VAR": {
+                                        "shadow": {
+                                          "type": "text",
+                                          "id": "$@}#(e{DY37C4!Dc~K|:",
+                                          "fields": {
+                                            "TEXT": "km/h"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "next": {
+                                      "block": {
+                                        "type": "serial_print",
+                                        "id": "@cjueB3e##Ck].d2@s@~",
+                                        "fields": {
+                                          "SERIAL": "Serial"
+                                        },
+                                        "inputs": {
+                                          "VAR": {
+                                            "shadow": {
+                                              "type": "text",
+                                              "id": "@4Wi}opWB2(lIv2x7UiF",
+                                              "fields": {
+                                                "TEXT": "风向："
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "next": {
+                                          "block": {
+                                            "type": "serial_print",
+                                            "id": "t{B`l2lJ)M(Ch]q?i-?{",
+                                            "fields": {
+                                              "SERIAL": "Serial"
+                                            },
+                                            "inputs": {
+                                              "VAR": {
+                                                "shadow": {
+                                                  "type": "text",
+                                                  "id": "v*r[zpiMB^4%;QhJtwdd",
+                                                  "fields": {
+                                                    "TEXT": ""
+                                                  }
+                                                },
+                                                "block": {
+                                                  "type": "wind_get_direction",
+                                                  "id": "6g030B(JF@?IR5HAJ?a0"
+                                                }
+                                              }
+                                            },
+                                            "next": {
+                                              "block": {
+                                                "type": "serial_println",
+                                                "id": "yu^sX2ZzKNy3[5}^Kdp2",
+                                                "fields": {
+                                                  "SERIAL": "Serial"
+                                                },
+                                                "inputs": {
+                                                  "VAR": {
+                                                    "shadow": {
+                                                      "type": "text",
+                                                      "id": "9.F3w)LQ,B,ANt-roQsj",
+                                                      "fields": {
+                                                        "TEXT": "°"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "controls_if",
+                          "id": "DeY`O#7br$Shqn2zYX^p",
+                          "inputs": {
+                            "IF0": {
+                              "block": {
+                                "type": "rain_is_data_ready",
+                                "id": "[RXjh}06SD:#M}Fnlyd~"
+                              }
+                            },
+                            "DO0": {
+                              "block": {
+                                "type": "serial_print",
+                                "id": "8Xk8!{7[Fo+JJ@JzWh_r",
+                                "fields": {
+                                  "SERIAL": "Serial"
+                                },
+                                "inputs": {
+                                  "VAR": {
+                                    "shadow": {
+                                      "type": "text",
+                                      "id": "W^oq=+VT),BUen|?)AM@",
+                                      "fields": {
+                                        "TEXT": "累计降雨量："
+                                      }
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "serial_print",
+                                    "id": "KTdVp$/}sU/|@iqszy*Y",
+                                    "fields": {
+                                      "SERIAL": "Serial"
+                                    },
+                                    "inputs": {
+                                      "VAR": {
+                                        "shadow": {
+                                          "type": "text",
+                                          "id": "/CFjpWEENVkEy5gwJ0WJ",
+                                          "fields": {
+                                            "TEXT": ""
+                                          }
+                                        },
+                                        "block": {
+                                          "type": "rain_get_total",
+                                          "id": "S@@v1tIoX74)N0h5)-st"
+                                        }
+                                      }
+                                    },
+                                    "next": {
+                                      "block": {
+                                        "type": "serial_println",
+                                        "id": "^pV+BUoWGF{Z;8yGim@G",
+                                        "fields": {
+                                          "SERIAL": "Serial"
+                                        },
+                                        "inputs": {
+                                          "VAR": {
+                                            "shadow": {
+                                              "type": "text",
+                                              "id": "OIvI/sG`?*5Jb7ub9_Z(",
+                                              "fields": {
+                                                "TEXT": "mm"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

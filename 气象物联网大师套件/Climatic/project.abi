@@ -1,0 +1,977 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": -90,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "6KJD`lLn5C%:,lpY9J])",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "wind_begin",
+                  "id": "Mo]8ESps{.2qhI;Qfa0D",
+                  "fields": {
+                    "SPEED_PIN": "35",
+                    "DIR_PIN": "34"
+                  },
+                  "next": {
+                    "block": {
+                      "type": "rain_init",
+                      "id": "d=a8o.mw@wf5$:#}JakH",
+                      "fields": {
+                        "PIN": "32"
+                      },
+                      "next": {
+                        "block": {
+                          "type": "bmp280_init",
+                          "id": "dt/7u?ATEr{:ML|wyCJ;",
+                          "fields": {
+                            "ADDR": "0x76"
+                          },
+                          "next": {
+                            "block": {
+                              "type": "bmp280_set_sampling",
+                              "id": "DSiJ}k6mV0JO/E7YzcRC",
+                              "fields": {
+                                "MODE": "MODE_NORMAL",
+                                "TEMP_OS": "SAMPLING_X4",
+                                "PRES_OS": "SAMPLING_X4",
+                                "FILTER": "FILTER_X4",
+                                "DURATION": "STANDBY_MS_1"
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "sgp30_init",
+                                  "id": "#V+)n:ehbWCczMCCt;Mk",
+                                  "next": {
+                                    "block": {
+                                      "type": "si7021_begin",
+                                      "id": "rT)J%y*7kMIBpbzHjAFP",
+                                      "fields": {
+                                        "OBJECT": {
+                                          "id": "5CFMp7oF:ARD:A#sjo~;"
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "bh1750_init_with_wire",
+                                          "id": "cjCsJTz0G1#vBOd(C1SX",
+                                          "fields": {
+                                            "VAR": {
+                                              "id": "Z!!+bW~8U;P}4NTQs,f("
+                                            },
+                                            "MODE": "CONTINUOUS_HIGH_RES_MODE",
+                                            "ADDRESS": "0x23",
+                                            "WIRE": "Wire"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 350,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "wind_update",
+              "id": "o_)rS62d+3qi$!]a_RnM",
+              "next": {
+                "block": {
+                  "type": "rain_update",
+                  "id": "APKWha;mB}(x/Tt:H+;J",
+                  "next": {
+                    "block": {
+                      "type": "sgp30_measure",
+                      "id": "xlODa3*G1Y$.@ND@?FK?",
+                      "next": {
+                        "block": {
+                          "type": "sgp30_measure_raw",
+                          "id": "/?`*i~YZa7Cyn5B]}1]+",
+                          "next": {
+                            "block": {
+                              "type": "serial_print",
+                              "id": "D1RlSk7J=ha1WuL9C|R4",
+                              "fields": {
+                                "SERIAL": "Serial"
+                              },
+                              "inputs": {
+                                "VAR": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "UaI|afpS~N{/K+}uMDKa",
+                                    "fields": {
+                                      "TEXT": "光强："
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "serial_println",
+                                  "id": ")@y#GN)(j+id70x0H;s5",
+                                  "fields": {
+                                    "SERIAL": "Serial"
+                                  },
+                                  "inputs": {
+                                    "VAR": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "7rRXQJ;x.ofE6Di%6a%2",
+                                        "fields": {
+                                          "TEXT": ""
+                                        }
+                                      },
+                                      "block": {
+                                        "type": "bh1750_read_light_level",
+                                        "id": "lCy#8}Xr#IU~$?P_;f$#",
+                                        "fields": {
+                                          "VAR": {
+                                            "id": "Z!!+bW~8U;P}4NTQs,f("
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "serial_print",
+                                      "id": "1PC2Kp?KMj`Rnz/2FD-8",
+                                      "fields": {
+                                        "SERIAL": "Serial"
+                                      },
+                                      "inputs": {
+                                        "VAR": {
+                                          "shadow": {
+                                            "type": "text",
+                                            "id": "K_Typ/z`lp;d$tO;|SR%",
+                                            "fields": {
+                                              "TEXT": "海拔高度："
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "serial_print",
+                                          "id": "%mKFxNv/K+bYvV}VjX:G",
+                                          "fields": {
+                                            "SERIAL": "Serial"
+                                          },
+                                          "inputs": {
+                                            "VAR": {
+                                              "shadow": {
+                                                "type": "text",
+                                                "id": "ZA(^`/]3gh#PAgF`om#h",
+                                                "fields": {
+                                                  "TEXT": ""
+                                                }
+                                              },
+                                              "block": {
+                                                "type": "bmp280_read_altitude",
+                                                "id": "cx78-l7sYm2/:gn67qf`",
+                                                "fields": {
+                                                  "SEAPRESSURE": 1013.25
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "serial_println",
+                                              "id": "z9Og-O@*.an8+!B@{n|I",
+                                              "fields": {
+                                                "SERIAL": "Serial"
+                                              },
+                                              "inputs": {
+                                                "VAR": {
+                                                  "shadow": {
+                                                    "type": "text",
+                                                    "id": "[4gQT#J2n=p~D-L#BWI#",
+                                                    "fields": {
+                                                      "TEXT": "m"
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "serial_print",
+                                                  "id": "5Kb1IQiyuD;:iHxw*fEa",
+                                                  "fields": {
+                                                    "SERIAL": "Serial"
+                                                  },
+                                                  "inputs": {
+                                                    "VAR": {
+                                                      "shadow": {
+                                                        "type": "text",
+                                                        "id": "m{=2=a#=Iuh2nl^J0oR$",
+                                                        "fields": {
+                                                          "TEXT": "气压："
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "serial_print",
+                                                      "id": "mw(uH?jBM+=.WAvT4_6f",
+                                                      "fields": {
+                                                        "SERIAL": "Serial"
+                                                      },
+                                                      "inputs": {
+                                                        "VAR": {
+                                                          "shadow": {
+                                                            "type": "text",
+                                                            "id": "Y))_+TId;rz~-OFnJNVP",
+                                                            "fields": {
+                                                              "TEXT": ""
+                                                            }
+                                                          },
+                                                          "block": {
+                                                            "type": "bmp280_read_pressure",
+                                                            "id": "qSNjBF~JY)jc.5Gap:{R"
+                                                          }
+                                                        }
+                                                      },
+                                                      "next": {
+                                                        "block": {
+                                                          "type": "serial_println",
+                                                          "id": "@xgqRLSJ!3-#1*A6j*_i",
+                                                          "fields": {
+                                                            "SERIAL": "Serial"
+                                                          },
+                                                          "inputs": {
+                                                            "VAR": {
+                                                              "shadow": {
+                                                                "type": "text",
+                                                                "id": "#J^`R$640#6ls$84^u49",
+                                                                "fields": {
+                                                                  "TEXT": "hPa"
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "next": {
+                                                            "block": {
+                                                              "type": "serial_print",
+                                                              "id": "l:Pa-zViERQ@7nSg4nf^",
+                                                              "fields": {
+                                                                "SERIAL": "Serial"
+                                                              },
+                                                              "inputs": {
+                                                                "VAR": {
+                                                                  "shadow": {
+                                                                    "type": "text",
+                                                                    "id": "Rv?|kd!#dD490j_1w1_c",
+                                                                    "fields": {
+                                                                      "TEXT": "TVOC值:"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "next": {
+                                                                "block": {
+                                                                  "type": "serial_print",
+                                                                  "id": "kenU#Euv2QHT!]^NUL]9",
+                                                                  "fields": {
+                                                                    "SERIAL": "Serial"
+                                                                  },
+                                                                  "inputs": {
+                                                                    "VAR": {
+                                                                      "shadow": {
+                                                                        "type": "text",
+                                                                        "id": "=iC}Bh|:^s*C95O)d8.2",
+                                                                        "fields": {
+                                                                          "TEXT": ""
+                                                                        }
+                                                                      },
+                                                                      "block": {
+                                                                        "type": "sgp30_get_tvoc",
+                                                                        "id": "t8+}n`f#t4hB8QYPJiyr"
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "next": {
+                                                                    "block": {
+                                                                      "type": "serial_println",
+                                                                      "id": "(DmBVyNAoR4NY.pzUjA{",
+                                                                      "fields": {
+                                                                        "SERIAL": "Serial"
+                                                                      },
+                                                                      "inputs": {
+                                                                        "VAR": {
+                                                                          "shadow": {
+                                                                            "type": "text",
+                                                                            "id": "=m|z!EI7bw2Q./4Bv@q3",
+                                                                            "fields": {
+                                                                              "TEXT": "ppb"
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "next": {
+                                                                        "block": {
+                                                                          "type": "serial_print",
+                                                                          "id": "0}F:Wn_Ofy964CiC%2lk",
+                                                                          "fields": {
+                                                                            "SERIAL": "Serial"
+                                                                          },
+                                                                          "inputs": {
+                                                                            "VAR": {
+                                                                              "shadow": {
+                                                                                "type": "text",
+                                                                                "id": "mO1CuKg(+6d1Pq^!:Aw_",
+                                                                                "fields": {
+                                                                                  "TEXT": "eCO2值："
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "next": {
+                                                                            "block": {
+                                                                              "type": "serial_print",
+                                                                              "id": "WzNjhSE:kLdf#w!YyeN$",
+                                                                              "fields": {
+                                                                                "SERIAL": "Serial"
+                                                                              },
+                                                                              "inputs": {
+                                                                                "VAR": {
+                                                                                  "shadow": {
+                                                                                    "type": "text",
+                                                                                    "id": "MX.)?9+8%I[!Blvf.(vO",
+                                                                                    "fields": {
+                                                                                      "TEXT": ""
+                                                                                    }
+                                                                                  },
+                                                                                  "block": {
+                                                                                    "type": "sgp30_get_eco2",
+                                                                                    "id": "|VN=e?X2c^bPj4noWOEk"
+                                                                                  }
+                                                                                }
+                                                                              },
+                                                                              "next": {
+                                                                                "block": {
+                                                                                  "type": "serial_println",
+                                                                                  "id": "P-O[0bX%aT(wN;Mm#_d[",
+                                                                                  "fields": {
+                                                                                    "SERIAL": "Serial"
+                                                                                  },
+                                                                                  "inputs": {
+                                                                                    "VAR": {
+                                                                                      "shadow": {
+                                                                                        "type": "text",
+                                                                                        "id": "%3AYw5,AQsSeZx(.^4dh",
+                                                                                        "fields": {
+                                                                                          "TEXT": "ppm"
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  "next": {
+                                                                                    "block": {
+                                                                                      "type": "serial_print",
+                                                                                      "id": ";`8hv}TVc5uG6E+5f24[",
+                                                                                      "fields": {
+                                                                                        "SERIAL": "Serial"
+                                                                                      },
+                                                                                      "inputs": {
+                                                                                        "VAR": {
+                                                                                          "shadow": {
+                                                                                            "type": "text",
+                                                                                            "id": "pLg{vu!38E:.;cbK9]jd",
+                                                                                            "fields": {
+                                                                                              "TEXT": "原始H2值："
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      },
+                                                                                      "next": {
+                                                                                        "block": {
+                                                                                          "type": "serial_println",
+                                                                                          "id": "9ySvZ7QMUujti-%vqz4Z",
+                                                                                          "fields": {
+                                                                                            "SERIAL": "Serial"
+                                                                                          },
+                                                                                          "inputs": {
+                                                                                            "VAR": {
+                                                                                              "shadow": {
+                                                                                                "type": "text",
+                                                                                                "id": "pOy?;hY{A1G_ny7-jII~",
+                                                                                                "fields": {
+                                                                                                  "TEXT": ""
+                                                                                                }
+                                                                                              },
+                                                                                              "block": {
+                                                                                                "type": "sgp30_get_raw_h2",
+                                                                                                "id": "%S/3r40rIq{4M;+^ELci"
+                                                                                              }
+                                                                                            }
+                                                                                          },
+                                                                                          "next": {
+                                                                                            "block": {
+                                                                                              "type": "serial_print",
+                                                                                              "id": "G*zL((WSxc)GN5QIpGnR",
+                                                                                              "fields": {
+                                                                                                "SERIAL": "Serial"
+                                                                                              },
+                                                                                              "inputs": {
+                                                                                                "VAR": {
+                                                                                                  "shadow": {
+                                                                                                    "type": "text",
+                                                                                                    "id": "t%%[w^)v|mPAu5=Sc{|@",
+                                                                                                    "fields": {
+                                                                                                      "TEXT": "原始乙醇值："
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              },
+                                                                                              "next": {
+                                                                                                "block": {
+                                                                                                  "type": "serial_println",
+                                                                                                  "id": "Y!1q8EE6aB7A;28MH8Ks",
+                                                                                                  "fields": {
+                                                                                                    "SERIAL": "Serial"
+                                                                                                  },
+                                                                                                  "inputs": {
+                                                                                                    "VAR": {
+                                                                                                      "shadow": {
+                                                                                                        "type": "text",
+                                                                                                        "id": "=Pc@M}orA};na5;;#)!I",
+                                                                                                        "fields": {
+                                                                                                          "TEXT": ""
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "block": {
+                                                                                                        "type": "sgp30_get_raw_ethanol",
+                                                                                                        "id": ":r.6mR|2(+?[t=u(Z%oD"
+                                                                                                      }
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "next": {
+                                                                                                    "block": {
+                                                                                                      "type": "serial_print",
+                                                                                                      "id": "g1_[I3Cx2cpkT}(OiY6l",
+                                                                                                      "fields": {
+                                                                                                        "SERIAL": "Serial"
+                                                                                                      },
+                                                                                                      "inputs": {
+                                                                                                        "VAR": {
+                                                                                                          "shadow": {
+                                                                                                            "type": "text",
+                                                                                                            "id": "KV|5iWjpa-z]z~u{fzc]",
+                                                                                                            "fields": {
+                                                                                                              "TEXT": "温度："
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "next": {
+                                                                                                        "block": {
+                                                                                                          "type": "serial_print",
+                                                                                                          "id": "`Uc8nv%vY$/?{k93AZRL",
+                                                                                                          "fields": {
+                                                                                                            "SERIAL": "Serial"
+                                                                                                          },
+                                                                                                          "inputs": {
+                                                                                                            "VAR": {
+                                                                                                              "shadow": {
+                                                                                                                "type": "text",
+                                                                                                                "id": "cl,SjnBbPt%DB.6P}MHP",
+                                                                                                                "fields": {
+                                                                                                                  "TEXT": ""
+                                                                                                                }
+                                                                                                              },
+                                                                                                              "block": {
+                                                                                                                "type": "si7021_read_temperature",
+                                                                                                                "id": "L^ZZ27joNNw9_aSQe*kX",
+                                                                                                                "fields": {
+                                                                                                                  "OBJECT": {
+                                                                                                                    "id": "5CFMp7oF:ARD:A#sjo~;"
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          },
+                                                                                                          "next": {
+                                                                                                            "block": {
+                                                                                                              "type": "serial_println",
+                                                                                                              "id": "b7~(1pFlC8T$(]0HUAQW",
+                                                                                                              "fields": {
+                                                                                                                "SERIAL": "Serial"
+                                                                                                              },
+                                                                                                              "inputs": {
+                                                                                                                "VAR": {
+                                                                                                                  "shadow": {
+                                                                                                                    "type": "text",
+                                                                                                                    "id": "0[$,9KCLXdE-y]!KK5EZ",
+                                                                                                                    "fields": {
+                                                                                                                      "TEXT": "°C"
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              },
+                                                                                                              "next": {
+                                                                                                                "block": {
+                                                                                                                  "type": "serial_print",
+                                                                                                                  "id": "gEa-Z-D!w,J|`#2unPKH",
+                                                                                                                  "fields": {
+                                                                                                                    "SERIAL": "Serial"
+                                                                                                                  },
+                                                                                                                  "inputs": {
+                                                                                                                    "VAR": {
+                                                                                                                      "shadow": {
+                                                                                                                        "type": "text",
+                                                                                                                        "id": "#5~BAZDk%uJp0ea{~A{e",
+                                                                                                                        "fields": {
+                                                                                                                          "TEXT": "湿度："
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  },
+                                                                                                                  "next": {
+                                                                                                                    "block": {
+                                                                                                                      "type": "serial_print",
+                                                                                                                      "id": "jVF/(0RVO8Ulh8X@^0nj",
+                                                                                                                      "fields": {
+                                                                                                                        "SERIAL": "Serial"
+                                                                                                                      },
+                                                                                                                      "inputs": {
+                                                                                                                        "VAR": {
+                                                                                                                          "shadow": {
+                                                                                                                            "type": "text",
+                                                                                                                            "id": "xT4k4!Bz1NNrCa8IJc)R",
+                                                                                                                            "fields": {
+                                                                                                                              "TEXT": ""
+                                                                                                                            }
+                                                                                                                          },
+                                                                                                                          "block": {
+                                                                                                                            "type": "si7021_read_humidity",
+                                                                                                                            "id": "-Qcgd_^WKhYB]vw[kd/R",
+                                                                                                                            "fields": {
+                                                                                                                              "OBJECT": {
+                                                                                                                                "id": "5CFMp7oF:ARD:A#sjo~;"
+                                                                                                                              }
+                                                                                                                            }
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      },
+                                                                                                                      "next": {
+                                                                                                                        "block": {
+                                                                                                                          "type": "serial_println",
+                                                                                                                          "id": "AhoYwP7LFX]YEt{:FF{T",
+                                                                                                                          "fields": {
+                                                                                                                            "SERIAL": "Serial"
+                                                                                                                          },
+                                                                                                                          "inputs": {
+                                                                                                                            "VAR": {
+                                                                                                                              "shadow": {
+                                                                                                                                "type": "text",
+                                                                                                                                "id": "}1xC`Naa_xWCVc8A8PBn",
+                                                                                                                                "fields": {
+                                                                                                                                  "TEXT": "%RH"
+                                                                                                                                }
+                                                                                                                              }
+                                                                                                                            }
+                                                                                                                          },
+                                                                                                                          "next": {
+                                                                                                                            "block": {
+                                                                                                                              "type": "controls_if",
+                                                                                                                              "id": "S_ekX8gNK=[L.2=J8MOF",
+                                                                                                                              "inputs": {
+                                                                                                                                "IF0": {
+                                                                                                                                  "block": {
+                                                                                                                                    "type": "wind_is_data_ready",
+                                                                                                                                    "id": "!bx?|];tX6-*(LVs6/8_"
+                                                                                                                                  }
+                                                                                                                                },
+                                                                                                                                "DO0": {
+                                                                                                                                  "block": {
+                                                                                                                                    "type": "serial_print",
+                                                                                                                                    "id": "-5k2_giSt?!?0`3MyUj%",
+                                                                                                                                    "fields": {
+                                                                                                                                      "SERIAL": "Serial"
+                                                                                                                                    },
+                                                                                                                                    "inputs": {
+                                                                                                                                      "VAR": {
+                                                                                                                                        "shadow": {
+                                                                                                                                          "type": "text",
+                                                                                                                                          "id": "vRVtQ+4JfTyCSg=}d@+u",
+                                                                                                                                          "fields": {
+                                                                                                                                            "TEXT": "风速："
+                                                                                                                                          }
+                                                                                                                                        }
+                                                                                                                                      }
+                                                                                                                                    },
+                                                                                                                                    "next": {
+                                                                                                                                      "block": {
+                                                                                                                                        "type": "serial_print",
+                                                                                                                                        "id": "_9wf36jE$jsar5)4%(x$",
+                                                                                                                                        "fields": {
+                                                                                                                                          "SERIAL": "Serial"
+                                                                                                                                        },
+                                                                                                                                        "inputs": {
+                                                                                                                                          "VAR": {
+                                                                                                                                            "shadow": {
+                                                                                                                                              "type": "text",
+                                                                                                                                              "id": "lfOR0hj5o;{tjn:E{?dS",
+                                                                                                                                              "fields": {
+                                                                                                                                                "TEXT": ""
+                                                                                                                                              }
+                                                                                                                                            },
+                                                                                                                                            "block": {
+                                                                                                                                              "type": "wind_get_speed_kmh",
+                                                                                                                                              "id": "QVRGHNO#,laplphWgMGA"
+                                                                                                                                            }
+                                                                                                                                          }
+                                                                                                                                        },
+                                                                                                                                        "next": {
+                                                                                                                                          "block": {
+                                                                                                                                            "type": "serial_println",
+                                                                                                                                            "id": "+:Y*vP/=)e]]}(EWqpZc",
+                                                                                                                                            "fields": {
+                                                                                                                                              "SERIAL": "Serial"
+                                                                                                                                            },
+                                                                                                                                            "inputs": {
+                                                                                                                                              "VAR": {
+                                                                                                                                                "shadow": {
+                                                                                                                                                  "type": "text",
+                                                                                                                                                  "id": "SgEl#=,|7vl`n)Jejr^Q",
+                                                                                                                                                  "fields": {
+                                                                                                                                                    "TEXT": "km/h"
+                                                                                                                                                  }
+                                                                                                                                                }
+                                                                                                                                              }
+                                                                                                                                            },
+                                                                                                                                            "next": {
+                                                                                                                                              "block": {
+                                                                                                                                                "type": "serial_print",
+                                                                                                                                                "id": "IPKX,}|W!Q/^,V@KwiL:",
+                                                                                                                                                "fields": {
+                                                                                                                                                  "SERIAL": "Serial"
+                                                                                                                                                },
+                                                                                                                                                "inputs": {
+                                                                                                                                                  "VAR": {
+                                                                                                                                                    "shadow": {
+                                                                                                                                                      "type": "text",
+                                                                                                                                                      "id": "D+*:3A?dL?55Qj*Vm:-v",
+                                                                                                                                                      "fields": {
+                                                                                                                                                        "TEXT": "风向："
+                                                                                                                                                      }
+                                                                                                                                                    }
+                                                                                                                                                  }
+                                                                                                                                                },
+                                                                                                                                                "next": {
+                                                                                                                                                  "block": {
+                                                                                                                                                    "type": "serial_print",
+                                                                                                                                                    "id": "!5o_muRQ$Bl3+qkr%u}j",
+                                                                                                                                                    "fields": {
+                                                                                                                                                      "SERIAL": "Serial"
+                                                                                                                                                    },
+                                                                                                                                                    "inputs": {
+                                                                                                                                                      "VAR": {
+                                                                                                                                                        "shadow": {
+                                                                                                                                                          "type": "text",
+                                                                                                                                                          "id": ":$YFH+$@~l9xlX/@)pCf",
+                                                                                                                                                          "fields": {
+                                                                                                                                                            "TEXT": ""
+                                                                                                                                                          }
+                                                                                                                                                        },
+                                                                                                                                                        "block": {
+                                                                                                                                                          "type": "wind_get_direction",
+                                                                                                                                                          "id": "0LAk@:YzW2*IzVfPElp{"
+                                                                                                                                                        }
+                                                                                                                                                      }
+                                                                                                                                                    },
+                                                                                                                                                    "next": {
+                                                                                                                                                      "block": {
+                                                                                                                                                        "type": "serial_println",
+                                                                                                                                                        "id": "m|wvB/HN+L~Ijjo)n(oE",
+                                                                                                                                                        "fields": {
+                                                                                                                                                          "SERIAL": "Serial"
+                                                                                                                                                        },
+                                                                                                                                                        "inputs": {
+                                                                                                                                                          "VAR": {
+                                                                                                                                                            "shadow": {
+                                                                                                                                                              "type": "text",
+                                                                                                                                                              "id": "vx=vfMV3xazJf~yceb6G",
+                                                                                                                                                              "fields": {
+                                                                                                                                                                "TEXT": "度"
+                                                                                                                                                              }
+                                                                                                                                                            }
+                                                                                                                                                          }
+                                                                                                                                                        }
+                                                                                                                                                      }
+                                                                                                                                                    }
+                                                                                                                                                  }
+                                                                                                                                                }
+                                                                                                                                              }
+                                                                                                                                            }
+                                                                                                                                          }
+                                                                                                                                        }
+                                                                                                                                      }
+                                                                                                                                    }
+                                                                                                                                  }
+                                                                                                                                }
+                                                                                                                              },
+                                                                                                                              "next": {
+                                                                                                                                "block": {
+                                                                                                                                  "type": "controls_if",
+                                                                                                                                  "id": ":KE2vl|Sn4G:;:FR,!XR",
+                                                                                                                                  "inputs": {
+                                                                                                                                    "IF0": {
+                                                                                                                                      "block": {
+                                                                                                                                        "type": "rain_is_data_ready",
+                                                                                                                                        "id": "LHd=!*`[AZG~BS:Rm9NS"
+                                                                                                                                      }
+                                                                                                                                    },
+                                                                                                                                    "DO0": {
+                                                                                                                                      "block": {
+                                                                                                                                        "type": "serial_print",
+                                                                                                                                        "id": "sKf#}o6c:ycUB$)9@N*q",
+                                                                                                                                        "fields": {
+                                                                                                                                          "SERIAL": "Serial"
+                                                                                                                                        },
+                                                                                                                                        "inputs": {
+                                                                                                                                          "VAR": {
+                                                                                                                                            "shadow": {
+                                                                                                                                              "type": "text",
+                                                                                                                                              "id": "J!|B!*9W4CIu#G|B``8.",
+                                                                                                                                              "fields": {
+                                                                                                                                                "TEXT": "24小时降雨量："
+                                                                                                                                              }
+                                                                                                                                            }
+                                                                                                                                          }
+                                                                                                                                        },
+                                                                                                                                        "next": {
+                                                                                                                                          "block": {
+                                                                                                                                            "type": "serial_print",
+                                                                                                                                            "id": "z2{jl]a%=^XhsblS25GT",
+                                                                                                                                            "fields": {
+                                                                                                                                              "SERIAL": "Serial"
+                                                                                                                                            },
+                                                                                                                                            "inputs": {
+                                                                                                                                              "VAR": {
+                                                                                                                                                "shadow": {
+                                                                                                                                                  "type": "text",
+                                                                                                                                                  "id": "SWrt-!g9b;#G^I`Ynrw-",
+                                                                                                                                                  "fields": {
+                                                                                                                                                    "TEXT": ""
+                                                                                                                                                  }
+                                                                                                                                                },
+                                                                                                                                                "block": {
+                                                                                                                                                  "type": "rain_get_day",
+                                                                                                                                                  "id": "_ilzS}/!T/rjmJFRDBnX"
+                                                                                                                                                }
+                                                                                                                                              }
+                                                                                                                                            },
+                                                                                                                                            "next": {
+                                                                                                                                              "block": {
+                                                                                                                                                "type": "serial_println",
+                                                                                                                                                "id": "E{BhrriH#`PWe-VThK#g",
+                                                                                                                                                "fields": {
+                                                                                                                                                  "SERIAL": "Serial"
+                                                                                                                                                },
+                                                                                                                                                "inputs": {
+                                                                                                                                                  "VAR": {
+                                                                                                                                                    "shadow": {
+                                                                                                                                                      "type": "text",
+                                                                                                                                                      "id": "c4u+zqQ?gAG1)#JS9Rgw",
+                                                                                                                                                      "fields": {
+                                                                                                                                                        "TEXT": "mm"
+                                                                                                                                                      }
+                                                                                                                                                    }
+                                                                                                                                                  }
+                                                                                                                                                },
+                                                                                                                                                "next": {
+                                                                                                                                                  "block": {
+                                                                                                                                                    "type": "serial_print",
+                                                                                                                                                    "id": ",N*)6=OE+hK;1~a19_Ok",
+                                                                                                                                                    "fields": {
+                                                                                                                                                      "SERIAL": "Serial"
+                                                                                                                                                    },
+                                                                                                                                                    "inputs": {
+                                                                                                                                                      "VAR": {
+                                                                                                                                                        "shadow": {
+                                                                                                                                                          "type": "text",
+                                                                                                                                                          "id": "??jD50=$.OZ]6;:N*l._",
+                                                                                                                                                          "fields": {
+                                                                                                                                                            "TEXT": "累计降雨量："
+                                                                                                                                                          }
+                                                                                                                                                        }
+                                                                                                                                                      }
+                                                                                                                                                    },
+                                                                                                                                                    "next": {
+                                                                                                                                                      "block": {
+                                                                                                                                                        "type": "serial_print",
+                                                                                                                                                        "id": "^,,7^H7-fB_3:mz`zjPA",
+                                                                                                                                                        "fields": {
+                                                                                                                                                          "SERIAL": "Serial"
+                                                                                                                                                        },
+                                                                                                                                                        "inputs": {
+                                                                                                                                                          "VAR": {
+                                                                                                                                                            "shadow": {
+                                                                                                                                                              "type": "text",
+                                                                                                                                                              "id": "9qWM[G+pKJRG,WF;Dp64",
+                                                                                                                                                              "fields": {
+                                                                                                                                                                "TEXT": ""
+                                                                                                                                                              }
+                                                                                                                                                            },
+                                                                                                                                                            "block": {
+                                                                                                                                                              "type": "rain_get_total",
+                                                                                                                                                              "id": "L|VsYqn*MD1yOu}AUD4i"
+                                                                                                                                                            }
+                                                                                                                                                          }
+                                                                                                                                                        },
+                                                                                                                                                        "next": {
+                                                                                                                                                          "block": {
+                                                                                                                                                            "type": "serial_println",
+                                                                                                                                                            "id": "FfY08MD?st3`Mh@^LHKa",
+                                                                                                                                                            "fields": {
+                                                                                                                                                              "SERIAL": "Serial"
+                                                                                                                                                            },
+                                                                                                                                                            "inputs": {
+                                                                                                                                                              "VAR": {
+                                                                                                                                                                "shadow": {
+                                                                                                                                                                  "type": "text",
+                                                                                                                                                                  "id": "*GsZ}O+a+h?Brv[W6qJD",
+                                                                                                                                                                  "fields": {
+                                                                                                                                                                    "TEXT": "mm"
+                                                                                                                                                                  }
+                                                                                                                                                                }
+                                                                                                                                                              }
+                                                                                                                                                            }
+                                                                                                                                                          }
+                                                                                                                                                        }
+                                                                                                                                                      }
+                                                                                                                                                    }
+                                                                                                                                                  }
+                                                                                                                                                }
+                                                                                                                                              }
+                                                                                                                                            }
+                                                                                                                                          }
+                                                                                                                                        }
+                                                                                                                                      }
+                                                                                                                                    }
+                                                                                                                                  },
+                                                                                                                                  "next": {
+                                                                                                                                    "block": {
+                                                                                                                                      "type": "time_delay",
+                                                                                                                                      "id": "D+`}PK=gRZz)ug#Am0mM",
+                                                                                                                                      "inputs": {
+                                                                                                                                        "DELAY_TIME": {
+                                                                                                                                          "shadow": {
+                                                                                                                                            "type": "math_number",
+                                                                                                                                            "id": "#)o3()%}PhP9xb-[pVA?",
+                                                                                                                                            "fields": {
+                                                                                                                                              "NUM": 500
+                                                                                                                                            }
+                                                                                                                                          }
+                                                                                                                                        }
+                                                                                                                                      }
+                                                                                                                                    }
+                                                                                                                                  }
+                                                                                                                                }
+                                                                                                                              }
+                                                                                                                            }
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "lightMeter",
+      "id": "Z!!+bW~8U;P}4NTQs,f("
+    },
+    {
+      "name": "sensor",
+      "id": "5CFMp7oF:ARD:A#sjo~;",
+      "type": "Si7021"
+    }
+  ]
+}
