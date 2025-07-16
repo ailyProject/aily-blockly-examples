@@ -12,47 +12,20 @@
           "ARDUINO_SETUP": {
             "block": {
               "type": "serial_begin",
-              "id": "O[71r+I%uS6NK:0]4h5`",
+              "id": "=fZ0r_t5=SL/.j4TrJgS",
               "fields": {
                 "SERIAL": "Serial",
                 "SPEED": "9600"
               },
               "next": {
                 "block": {
-                  "type": "esp32_i2s_init_and_begin",
-                  "id": ";pfCh8D{uj_Qv2s9gJTN",
+                  "type": "si7021_begin",
+                  "id": "`*=@0YFn`^fr{H3QZV;6",
                   "fields": {
-                    "SAMPLE_RATE": "8000",
-                    "BUFFER_SIZE": "512"
-                  },
-                  "inputs": {
-                    "SCK_PIN": {
-                      "shadow": {
-                        "type": "math_number",
-                        "id": "U+|(8TyAnuzG1^:l#d(*",
-                        "fields": {
-                          "NUM": 41
-                        }
-                      }
+                    "OBJECT": {
+                      "id": "Xw`0]9)W:cb%w+^q~.oL"
                     },
-                    "WS_PIN": {
-                      "shadow": {
-                        "type": "math_number",
-                        "id": "uIn6eAA}e7o+4*+$sJ(q",
-                        "fields": {
-                          "NUM": 42
-                        }
-                      }
-                    },
-                    "SD_PIN": {
-                      "shadow": {
-                        "type": "math_number",
-                        "id": "uHxbj`iPeoy82c[y%S~D",
-                        "fields": {
-                          "NUM": 2
-                        }
-                      }
-                    }
+                    "WIRE": "Wire"
                   }
                 }
               }
@@ -64,22 +37,31 @@
         "type": "arduino_loop",
         "id": "arduino_loop_id0",
         "x": 30,
-        "y": 310,
+        "y": 250,
         "deletable": false,
         "inputs": {
           "ARDUINO_LOOP": {
             "block": {
-              "type": "esp32_i2s_read_samples",
-              "id": "DolX+jgN:8,7rHIq?:mF",
+              "type": "serial_print",
+              "id": "{9NMapTfb5dcP|7nu*T6",
               "fields": {
-                "OBJECT": {
-                  "id": "bE=Liq9ZT?6po6]XlNW-"
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "$R4==gH$o:s%=V:pD9#2",
+                    "fields": {
+                      "TEXT": "温度："
+                    }
+                  }
                 }
               },
               "next": {
                 "block": {
                   "type": "serial_print",
-                  "id": "QsQq[OkY5;`Bz`IeCx*f",
+                  "id": "ft#1M+If;QF~ruxNHo/4",
                   "fields": {
                     "SERIAL": "Serial"
                   },
@@ -87,9 +69,18 @@
                     "VAR": {
                       "shadow": {
                         "type": "text",
-                        "id": "`sc/A/,k~@oZ[,JB2`T6",
+                        "id": "`2bS/Tyc4p9Ri8I(Rh;e",
                         "fields": {
-                          "TEXT": "平均电平："
+                          "TEXT": ""
+                        }
+                      },
+                      "block": {
+                        "type": "si7021_read_temperature",
+                        "id": "f`6=P2*H~NjvWnuRPi33",
+                        "fields": {
+                          "OBJECT": {
+                            "id": "Xw`0]9)W:cb%w+^q~.oL"
+                          }
                         }
                       }
                     }
@@ -97,7 +88,7 @@
                   "next": {
                     "block": {
                       "type": "serial_println",
-                      "id": "#I+}oeTUTKgZNW1;V]M}",
+                      "id": "b{!@$+8WT}(:O$aLkWcX",
                       "fields": {
                         "SERIAL": "Serial"
                       },
@@ -105,19 +96,9 @@
                         "VAR": {
                           "shadow": {
                             "type": "text",
-                            "id": "aZq-q5]ye%0MLk0h[g`|",
+                            "id": "k9rE}gT6]ogK^`0__f}u",
                             "fields": {
-                              "TEXT": ""
-                            }
-                          },
-                          "block": {
-                            "type": "esp32_i2s_get_level",
-                            "id": "u*#EawuOr$IgyGlin-Ic",
-                            "fields": {
-                              "OBJECT": {
-                                "id": "bE=Liq9ZT?6po6]XlNW-"
-                              },
-                              "LEVEL_TYPE": "average"
+                              "TEXT": " °C"
                             }
                           }
                         }
@@ -125,7 +106,7 @@
                       "next": {
                         "block": {
                           "type": "serial_print",
-                          "id": "Y*4UNqp#Rk9Imh_b1T*$",
+                          "id": "J03-}P0OxU^c5h;O6!.G",
                           "fields": {
                             "SERIAL": "Serial"
                           },
@@ -133,17 +114,17 @@
                             "VAR": {
                               "shadow": {
                                 "type": "text",
-                                "id": "SaWp%t(],H@!yOy%g/|:",
+                                "id": "]X0FI(|YHm;eK@c-,Xjy",
                                 "fields": {
-                                  "TEXT": "分贝值："
+                                  "TEXT": "湿度："
                                 }
                               }
                             }
                           },
                           "next": {
                             "block": {
-                              "type": "serial_println",
-                              "id": "KYlBNTr083giy%1C?NeW",
+                              "type": "serial_print",
+                              "id": "riq-/[tdmG(#n:|Ho^OA",
                               "fields": {
                                 "SERIAL": "Serial"
                               },
@@ -151,34 +132,36 @@
                                 "VAR": {
                                   "shadow": {
                                     "type": "text",
-                                    "id": "[?meQ)Pwlv*R6.cpy.~r",
+                                    "id": "pV,X#XOF|@;nmF:Q#%o8",
                                     "fields": {
                                       "TEXT": ""
                                     }
                                   },
                                   "block": {
-                                    "type": "esp32_i2s_get_level",
-                                    "id": "%QwzmV7KYdIB5#kM3qW3",
+                                    "type": "si7021_read_humidity",
+                                    "id": "|u:_]*K*2C*pk@/eLOby",
                                     "fields": {
                                       "OBJECT": {
-                                        "id": "bE=Liq9ZT?6po6]XlNW-"
-                                      },
-                                      "LEVEL_TYPE": "decibels"
+                                        "id": "Xw`0]9)W:cb%w+^q~.oL"
+                                      }
                                     }
                                   }
                                 }
                               },
                               "next": {
                                 "block": {
-                                  "type": "time_delay",
-                                  "id": "~mBr[2S!Y[.Yy|C2oHf1",
+                                  "type": "serial_println",
+                                  "id": "#n]`}2),+[B[LnPKbH{K",
+                                  "fields": {
+                                    "SERIAL": "Serial"
+                                  },
                                   "inputs": {
-                                    "DELAY_TIME": {
+                                    "VAR": {
                                       "shadow": {
-                                        "type": "math_number",
-                                        "id": "Q35?+^|%VUVWH`5g#fzB",
+                                        "type": "text",
+                                        "id": "|)1qNAp$QLNJcX%/s?y2",
                                         "fields": {
-                                          "NUM": 500
+                                          "TEXT": "%RH"
                                         }
                                       }
                                     }
@@ -201,9 +184,9 @@
   },
   "variables": [
     {
-      "name": "microphone",
-      "id": "bE=Liq9ZT?6po6]XlNW-",
-      "type": "EspI2S"
+      "name": "sensor",
+      "id": "Xw`0]9)W:cb%w+^q~.oL",
+      "type": "Si7021"
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "name": "@aily-project/example-qixiangzhan",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "openjumper",
+  "license": "ISC",
+  "nickname": "气象物联网大师套件使用教程",
+  "description": "OpenJumper气象物联网大师套件 是一款专为物联网与气象学习设计的全能教学工具。它集成了风速、风向、雨量、温湿度、气压、光照、空气质量等多种高精度传感器，通过RJ-11接口便捷连接，搭配blinker物联网云平台，以及详细教程，让用户轻松采集、分析气象数据。无论是教学实验、创客项目，还是物联网开发，这套件都能提供完整的解决方案，助力探索智能气象的奥秘！",
+  "level": "0",
+  "url": "https://openjumper.com/doc/weather-meter-iot",
+  "img":"subject.png"
+}

@@ -1,0 +1,121 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "oEc{.Ws6|;2#v~IU/X*y",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "bh1750_init_with_wire",
+                  "id": "m7-IT^aq#7bPP+B7^~hE",
+                  "fields": {
+                    "VAR": {
+                      "id": ".ps*{{8CQ*3JfPm?3/,L"
+                    },
+                    "MODE": "CONTINUOUS_HIGH_RES_MODE",
+                    "ADDRESS": "0x23",
+                    "WIRE": "Wire"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "serial_print",
+              "id": "~usaraYR@NzQ+i1vC~3:",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "gD(,yDpw[pPUa8=2JDFT",
+                    "fields": {
+                      "TEXT": "光强："
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_println",
+                  "id": "fG#AG8U[SULEHOqSb?E{",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "y2jN0y3)OqGpQPf$asV#",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      },
+                      "block": {
+                        "type": "bh1750_read_light_level",
+                        "id": "n^*yaL7sIMz{IiULtOx5",
+                        "fields": {
+                          "VAR": {
+                            "id": ".ps*{{8CQ*3JfPm?3/,L"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "time_delay",
+                      "id": "J{QbV{9%W~M(dn}2;d0C",
+                      "inputs": {
+                        "DELAY_TIME": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "TE#eK!9OY8tTmmu$!Iq%",
+                            "fields": {
+                              "NUM": 500
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "lightMeter",
+      "id": ".ps*{{8CQ*3JfPm?3/,L"
+    }
+  ]
+}
