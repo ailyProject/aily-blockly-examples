@@ -1,0 +1,272 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 230,
+        "y": 90,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "dS;/_;=Jp?_hFlW?Elf.",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "sgp30_init",
+                  "id": "I6[Wg:4P)}R;sV(lKJ,d",
+                  "fields": {
+                    "WIRE": "Wire"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 230,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "sgp30_measure",
+              "id": "x@,oV`t{;_V|O%ZlXpXw",
+              "next": {
+                "block": {
+                  "type": "sgp30_measure_raw",
+                  "id": "4(+v:J*)=OJ1x0Gz_7+L",
+                  "next": {
+                    "block": {
+                      "type": "serial_print",
+                      "id": "~^jAGz81}R*K~7!sMxDC",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "%dCrYQggDjXHE9G]Cva[",
+                            "fields": {
+                              "TEXT": "TVOC:"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "serial_print",
+                          "id": "bLJ3uR:t5Vs9a^T^p5H%",
+                          "fields": {
+                            "SERIAL": "Serial"
+                          },
+                          "inputs": {
+                            "VAR": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "g*@:(,IVQ$k:]-H-]`0a",
+                                "fields": {
+                                  "TEXT": ""
+                                }
+                              },
+                              "block": {
+                                "type": "sgp30_get_tvoc",
+                                "id": "hX2J7-._=gE(cSLY@OLu"
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "serial_println",
+                              "id": ";xF27J*Sp9I!m]u4,:X:",
+                              "fields": {
+                                "SERIAL": "Serial"
+                              },
+                              "inputs": {
+                                "VAR": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "6ML?7dhGD3{Hf-4O@?wA",
+                                    "fields": {
+                                      "TEXT": " ppb"
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "serial_print",
+                                  "id": ".{8/O#k$k(WZqnlZiaA#",
+                                  "fields": {
+                                    "SERIAL": "Serial"
+                                  },
+                                  "inputs": {
+                                    "VAR": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "z`UVqp2B_@$7sdHIv![D",
+                                        "fields": {
+                                          "TEXT": "eCO2:"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "serial_print",
+                                      "id": "YJf_~iY~e`:wsYfVnuQ)",
+                                      "fields": {
+                                        "SERIAL": "Serial"
+                                      },
+                                      "inputs": {
+                                        "VAR": {
+                                          "shadow": {
+                                            "type": "text",
+                                            "id": "}jq.`QWn|2e7jy0qSon3",
+                                            "fields": {
+                                              "TEXT": ""
+                                            }
+                                          },
+                                          "block": {
+                                            "type": "sgp30_get_eco2",
+                                            "id": "2`8S$kXEqFwe~tFszK67"
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "serial_println",
+                                          "id": "?HuvZK7X=Qr/@.XlZO;b",
+                                          "fields": {
+                                            "SERIAL": "Serial"
+                                          },
+                                          "inputs": {
+                                            "VAR": {
+                                              "shadow": {
+                                                "type": "text",
+                                                "id": "sI[HOi00OZC0dL|oL{Y=",
+                                                "fields": {
+                                                  "TEXT": " ppm"
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "serial_print",
+                                              "id": "a/m2?L0ua*FpyVSUfnw[",
+                                              "fields": {
+                                                "SERIAL": "Serial"
+                                              },
+                                              "inputs": {
+                                                "VAR": {
+                                                  "shadow": {
+                                                    "type": "text",
+                                                    "id": "wway%bBt)ulVw`EX0qhM",
+                                                    "fields": {
+                                                      "TEXT": "原始H2信号："
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "serial_println",
+                                                  "id": ",AU)-l-{19/~8~w*8s{N",
+                                                  "fields": {
+                                                    "SERIAL": "Serial"
+                                                  },
+                                                  "inputs": {
+                                                    "VAR": {
+                                                      "shadow": {
+                                                        "type": "text",
+                                                        "id": "xpfh^,,jB[3bWDNw/p~Y",
+                                                        "fields": {
+                                                          "TEXT": ""
+                                                        }
+                                                      },
+                                                      "block": {
+                                                        "type": "sgp30_get_raw_h2",
+                                                        "id": "poRL6L#TTwWsOm69Xh1#"
+                                                      }
+                                                    }
+                                                  },
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "serial_print",
+                                                      "id": "pJ(|J*+5{bASH~H/HMYd",
+                                                      "fields": {
+                                                        "SERIAL": "Serial"
+                                                      },
+                                                      "inputs": {
+                                                        "VAR": {
+                                                          "shadow": {
+                                                            "type": "text",
+                                                            "id": "Z15%Xm^(#,fo8J$7Jmq%",
+                                                            "fields": {
+                                                              "TEXT": "原始乙醇信号："
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "next": {
+                                                        "block": {
+                                                          "type": "serial_println",
+                                                          "id": "w*[UcALKT#QuSPf-M%k+",
+                                                          "fields": {
+                                                            "SERIAL": "Serial"
+                                                          },
+                                                          "inputs": {
+                                                            "VAR": {
+                                                              "shadow": {
+                                                                "type": "text",
+                                                                "id": "O8897ZX}b9IdL.5{D76J",
+                                                                "fields": {
+                                                                  "TEXT": ""
+                                                                }
+                                                              },
+                                                              "block": {
+                                                                "type": "sgp30_get_raw_ethanol",
+                                                                "id": "A8anZlf2k(Ab]i%~UdME"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

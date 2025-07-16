@@ -1,0 +1,20 @@
+{
+  "name": "bmp280",
+  "nickname": "BMP280 温度气压海拔传感器",
+  "url": "https://openjumper.com/doc/weather-meter-iot",
+  "description": "采集BMP280气压、温度和海拔数据，并进行串口输出，学习BMP280传感器的基本使用方法。",
+  "version": "1.0.0",
+  "board": "ESP32 board",
+  "dependencies": {
+    "@aily-project/board-esp32": "1.0.0",
+    "@aily-project/lib-bmp280": "^0.0.1",
+    "@aily-project/lib-core-io": "1.0.0",
+    "@aily-project/lib-core-logic": "0.0.1",
+    "@aily-project/lib-core-loop": "0.0.1",
+    "@aily-project/lib-core-math": "0.0.1",
+    "@aily-project/lib-core-serial": "0.0.1",
+    "@aily-project/lib-core-text": "0.0.1",
+    "@aily-project/lib-core-time": "0.0.1",
+    "@aily-project/lib-core-variables": "0.0.1"
+  }
+}
