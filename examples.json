@@ -1,5 +1,21 @@
 [
   {
+    "name": "@aily-project/example-ai-vox",
+    "nickname": "AI小智使用入门",
+    "description": "AI小智使用入门，包含AI小智的基本使用方法、语音交互、简单编程示例等内容，适合初学者快速上手。",
+    "author": "nulllab",
+    "url": "https://dcnmu33qx4fc.feishu.cn/docx/Lpy7dfEYAo04PzxJNI0ceTj5nxg",
+    "img": "ai-vox-subject.png",
+    "examples": [
+      {
+        "nickname": "AI小智使用入门",
+        "description": "AI小智使用入门，包含AI小智的基本使用方法、语音交互、简单编程示例等内容，适合初学者快速上手。",
+        "path": "AI小智入门示例",
+        "url": "https://dcnmu33qx4fc.feishu.cn/docx/Lpy7dfEYAo04PzxJNI0ceTj5nxg"
+      }
+    ]
+  },
+  {
     "name": "@aily-project/example-arduino-book",
     "nickname": "Arduino程序设计基础",
     "description": "针对Arduino初学者的基础教程，包含Arduino IDE安装配置、基本电路连接、常用组件介绍（LED、按钮、传感器等）、基础编程语法、简单项目实践。适合零基础学习者快速掌握Arduino开发环境和基本技能。",
@@ -11,55 +27,189 @@
         "nickname": "读取光敏电阻的值",
         "description": "通过模拟读取光敏传感器的值，学习光敏传感器的基本使用。",
         "path": "AnalogRead_light",
-        "url": ""
+        "url": "https://arduino.me/s/53?aid=3133"
       },
       {
         "nickname": "学习使用烟雾传感器",
         "description": "通过MQ2烟雾传感器的值，学习MQ2烟雾传感器的基本使用。",
         "path": "AnalogRead_MQ2",
-        "url": ""
+        "url": "https://arduino.me/s/53?aid=3147"
       },
       {
         "nickname": "LED闪烁",
         "description": "LED闪烁，学习LED的基本使用。",
         "path": "blink",
-        "url": "https://arduino.me/s/arduino-getting-started?aid=657"
+        "url": "https://arduino.me/s/53?aid=3128"
       },
       {
         "nickname": "按钮控制LED",
         "description": "通过按钮控制LED的开关，学习按钮的基本使用。",
         "path": "button_led",
-        "url": "https://arduino.me/s/arduino-getting-started?aid=657"
+        "url": "hhttps://arduino.me/s/53?aid=3130"
+      },
+      {
+        "nickname": "温湿度传感器（DHT11）",
+        "description": "通过DHT11传感器读取温度和湿度数据，学习DHT11传感器的基本使用。",
+        "path": "DHT11",
+        "url": "https://arduino.me/s/53?aid=3141"
       },
       {
         "nickname": "呼吸灯",
         "description": "通过pwm控制LED灯的亮度，实现呼吸灯效果，学习PWM的基本使用。",
         "path": "fade_led",
-        "url": "https://arduino.me/s/arduino-getting-started?aid=657"
+        "url": "https://arduino.me/s/53?aid=3131"
       },
       {
         "nickname": "流水灯",
         "description": "通过控制LED灯的亮灭顺序，实现流水灯效果，学习LED的基本使用。",
         "path": "flowing_led",
-        "url": ""
+        "url": "https://arduino.me/s/53?aid=3129"
+      },
+      {
+        "nickname": "红外避障传感器的使用",
+        "description": "",
+        "path": "IR_demo",
+        "url": "https://arduino.me/s/53?aid=3145"
       },
       {
         "nickname": "光敏电阻控制LED",
         "description": "通过光敏电阻控制LED的亮灭，学习模拟输入和逻辑判断的基本使用。",
         "path": "photoresistor_led",
-        "url": ""
+        "url": "https://arduino.me/s/53?aid=3134"
+      },
+      {
+        "nickname": "电位器的使用",
+        "description": "通过读取电位器的模拟输出，学会使用电位器。",
+        "path": "Potentiometer",
+        "url": "https://arduino.me/s/53?aid=3132"
       },
       {
         "nickname": "电位器调光",
         "description": "通过电位器调节LED的亮度，学习电位器的基本使用。",
         "path": "potentiometer_fade",
-        "url": ""
+        "url": "https://arduino.me/s/53?aid=3132"
+      },
+      {
+        "nickname": "舵机（Servo）",
+        "description": "通过舵机（Servo）控制舵机的转动，学习舵机的基本使用。",
+        "path": "servo",
+        "url": "https://www.openjumper.com/doc/arduinocheng-xu-she-ji-ji-chu-mu-lu"
+      },
+      {
+        "nickname": "声音传感器的使用",
+        "description": "通过读取声音传感器的模拟输出，学会使用声音传感器。",
+        "path": "sound_sensor",
+        "url": "https://arduino.me/s/53?aid=3135"
+      },
+      {
+        "nickname": "超声波测距传感器（SR04）",
+        "description": "通过超声波测距传感器（SR04）测量距离，学习超声波测距传感器的基本使用。",
+        "path": "SR04",
+        "url": "https://www.openjumper.com/doc/arduinocheng-xu-she-ji-ji-chu-mu-lu"
       },
       {
         "nickname": "蜂鸣器发声（生日快乐）",
         "description": "通过蜂鸣器发声，演奏生日快乐歌，学习蜂鸣器的基本使用。",
         "path": "tone",
-        "url": ""
+        "url": "https://arduino.me/s/53?aid=3143"
+      },
+      {
+        "nickname": "触摸传感器的使用",
+        "description": "通过读取触摸传感器的数字输出，学会使用触摸传感器。",
+        "path": "touch_sensor",
+        "url": "https://arduino.me/s/53?aid=3137"
+      }
+    ]
+  },
+  {
+    "name": "@aily-project/example-blinker-iot",
+    "nickname": "Blinker物联网入门",
+    "description": "学习使用Blinker APP基本功能，包括基本组件使用、数据上传、常用组件介绍（按键，调色、滑块等）、简单项目实践。适合零基础学习者快速掌握Blinker的使用。",
+    "author": "mango",
+    "url": "",
+    "img": "Blinker_subject.png",
+    "examples": [
+      {
+        "nickname": "环境检测装置",
+        "description": "通过Blinker APP读取DHT11传感器的温度和湿度数据，学习Blinker的基本使用方法。",
+        "path": "blinker_dht11",
+        "url": "https://www.diandeng.tech/home"
+      },
+      {
+        "nickname": "串口读取摇杆数据",
+        "description": "通过串口读取Blinker摇杆数据，学习Blinker的基本使用方法。",
+        "path": "blinker_joy",
+        "url": "https://www.diandeng.tech/home"
+      },
+      {
+        "nickname": "blinker_led",
+        "description": "通过Blinker APP控制LED灯的开关，学习Blinker的基本使用方法。",
+        "path": "blinker_led",
+        "url": "https://www.diandeng.tech/home"
+      },
+      {
+        "nickname": "光照分析",
+        "description": "通过Blinker APP读取光照传感器的光照强度数据，学习Blinker的基本使用方法。",
+        "path": "blinker_light",
+        "url": "https://www.diandeng.tech/home"
+      },
+      {
+        "nickname": "blinker_RGB",
+        "description": "通过Blinker APP控制RGB灯的颜色和亮度、学习Blinker的基本使用方法。",
+        "path": "blinker_RGB",
+        "url": "https://www.diandeng.tech/home"
+      },
+      {
+        "nickname": "Blinker控制风扇转速",
+        "description": "通过Blinker APP控制风扇的转速，学习Blinker的基本使用方法。",
+        "path": "blinker_speed",
+        "url": "https://www.diandeng.tech/home"
+      }
+    ]
+  },
+  {
+    "name": "@aily-project/example-qixiangzhan",
+    "nickname": "气象物联网大师套件使用教程",
+    "description": "OpenJumper气象物联网大师套件 是一款专为物联网与气象学习设计的全能教学工具。它集成了风速、风向、雨量、温湿度、气压、光照、空气质量等多种高精度传感器，通过RJ-11接口便捷连接，搭配blinker物联网云平台，以及详细教程，让用户轻松采集、分析气象数据。无论是教学实验、创客项目，还是物联网开发，这套件都能提供完整的解决方案，助力探索智能气象的奥秘！",
+    "author": "openjumper",
+    "url": "https://openjumper.com/doc/weather-meter-iot",
+    "img": "qx-subject.png",
+    "examples": [
+      {
+        "nickname": "BH1750 光照传感器",
+        "description": "采集BH1750光照数据，并进行串口输出，学习光照传感器的基本使用方法。",
+        "path": "BH1750",
+        "url": "https://openjumper.com/doc/weather-meter-iot"
+      },
+      {
+        "nickname": "BMP280 温度气压海拔传感器",
+        "description": "采集BMP280气压、温度和海拔数据，并进行串口输出，学习BMP280传感器的基本使用方法。",
+        "path": "BMP280",
+        "url": "https://openjumper.com/doc/weather-meter-iot"
+      },
+      {
+        "nickname": "气象物联网大师套件综合例程",
+        "description": "本项目是气象物联网大师套件的综合示例，涵盖了多种传感器的使用方法和数据处理流程，帮助用户快速上手气象监测与物联网应用。",
+        "path": "Climatic",
+        "url": "https://openjumper.com/doc/weather-meter-iot"
+      },
+      {
+        "nickname": "SGP30 空气质量传感器",
+        "description": "利用SGP30进行空气质量检测（总挥发性有机物）及二氧化碳浓度检测，学习气象数据采集的基本方法。",
+        "path": "SGP30",
+        "url": "https://openjumper.com/doc/weather-meter-iot"
+      },
+      {
+        "nickname": "Si7021 温湿度传感器",
+        "description": "利用Si7021进行温湿度检测，学习气象数据采集的基本方法。",
+        "path": "Si7021",
+        "url": "https://openjumper.com/doc/weather-meter-iot"
+      },
+      {
+        "nickname": "风速风向雨量传感器",
+        "description": "控制风速风向雨量传感器进行相关测量，学习气象数据采集的基本方法。",
+        "path": "Wind_Rain",
+        "url": "https://openjumper.com/doc/weather-meter-iot"
       }
     ]
   },
@@ -69,7 +219,7 @@
     "description": "针对物联网初学者的基础教程，包含物联网概念、基本电路连接、常用组件介绍（传感器、执行器等）、基础编程语法、简单项目实践。适合零基础学习者快速掌握物联网开发环境和基本技能。",
     "author": "奈何col",
     "url": "https://arduino.me/s/blinker-arduino",
-    "img": "subject.png",
+    "img": "AIOT_subject.png",
     "examples": [
       {
         "nickname": "LED闪烁（Blink）",
@@ -78,87 +228,80 @@
         "url": ""
       },
       {
+        "nickname": "DHT11 温湿度传感器",
+        "description": "使用DHT11传感器采集温湿度数据，掌握基础的环境监测方法。",
+        "path": "ESP32_DHT11",
+        "url": "https://arduino.me/s/52?aid=3112"
+      },
+      {
+        "nickname": "ESP32 编码器",
+        "description": "通过编码器模块测量旋转角度，了解运动检测与控制的基本原理。",
+        "path": "ESP32_Encoder",
+        "url": "https://arduino.me/s/52?aid=3119"
+      },
+      {
+        "nickname": "INA219 电流传感器",
+        "description": "通过INA219模块测量电流，了解电流监测的基本原理。",
+        "path": "ESP32_Ina219",
+        "url": "https://arduino.me/s/52?aid=3126"
+      },
+      {
+        "nickname": "LCD屏幕显示",
+        "description": "控制LCD屏幕显示文字、图形和数据，学习LCD屏幕的基本使用方法。",
+        "path": "ESP32_LCD_GFX",
+        "url": "https://arduino.me/s/52?aid=3115"
+      },
+      {
+        "nickname": "ESP32 音频麦克风",
+        "description": "使用数字麦克风采集音频数据，学习音频信号处理与录制的基础操作。",
+        "path": "ESP32_Microphone",
+        "url": "https://arduino.me/s/52?aid=3120"
+      },
+      {
+        "nickname": "NTC热敏电阻",
+        "description": "学习如何通过NTC热敏电阻进行温度测量",
+        "path": "ESP32_NTC",
+        "url": "https://arduino.me/s/52?aid=3116"
+      },
+      {
+        "nickname": "SD卡读写",
+        "description": "控制SD卡进行文件读写等，学习SD卡的基本使用方法。",
+        "path": "ESP32_SD",
+        "url": "https://arduino.me/s/52?aid=3122"
+      },
+      {
+        "nickname": "ESP32 音频播放器",
+        "description": "控制音频播放器，学习音频播放的基本操作。",
+        "path": "ESP32_Speaker",
+        "url": "https://arduino.me/s/52?aid=3121"
+      },
+      {
+        "nickname": "VL53L0X 激光测距",
+        "description": "利用VL53L0X模块进行测距，学习激光测距的基本方法。",
+        "path": "ESP32_VL53L0X",
+        "url": "https://arduino.me/s/52?aid=3123"
+      },
+      {
         "nickname": "LED与按钮控制",
         "description": "使用按钮控制LED的开关状态，学习数字输入的基础操作。",
         "path": "led_button",
         "url": ""
       },
       {
-        "nickname": "ESP32 数字麦克风",
-        "description": "使用数字麦克风采集音频数据，学习音频信号处理与录制的基础操作。",
-        "path": "esp32_microphone",
-        "url": "https://arduino.me/s/52?aid=3120"
-      },
-      {
-        "nickname": "DHT11 温湿度传感器",
-        "description": "使用DHT11传感器采集温湿度数据，掌握基础的环境监测方法。",
-        "path": "esp_dht11",
-        "url": "https://arduino.me/s/52?aid=3112"
-      },
-      {
-        "nickname": "ESP32 编码器",
-        "description": "通过编码器模块测量旋转角度，了解运动检测与控制的基本原理。",
-        "path": "esp_encoder",
-        "url": "https://arduino.me/s/52?aid=3119"
-      },
-      {
-        "nickname": "INA219 电流传感器",
-        "description": "通过INA219模块测量电流，了解电流监测的基本原理。",
-        "path": "esp_ina219",
-        "url": "https://arduino.me/s/52?aid=3126"
-      },
-      {
-        "nickname": "LCD屏幕显示",
-        "description": "控制LCD屏幕显示文字、图形和数据，学习LCD屏幕的基本使用方法。",
-        "path": "esp32_tft",
-        "url": "https://arduino.me/s/52?aid=3115"
-      },
-      {
-        "nickname": "NTC热敏电阻",
-        "description": "学习如何通过NTC热敏电阻进行温度测量",
-        "path": "esp32_ntc_thermistor",
-        "url": "https://arduino.me/s/52?aid=3116"
-      },
-      {
-        "nickname": "SD卡读写",
-        "description": "控制SD卡进行文件读写等，学习SD卡的基本使用方法。",
-        "path": "esp32-sd-card",
-        "url": "https://arduino.me/s/52?aid=3122"
-      },
-      {
-        "nickname": "ESP32 音频播放器",
-        "description": "控制音频播放器，学习音频播放的基本操作。",
-        "path": "esp32_speaker",
-        "url": "https://arduino.me/s/52?aid=3121"
-      },
-      {
-        "nickname": "VL53L0X 激光测距",
-        "description": "利用VL53L0X模块进行测距，学习激光测距的基本方法。",
-        "path": "esp_vl53l0x",
-        "url": "https://arduino.me/s/52?aid=3123"
-      },
-      {
         "nickname": "TB6612 电机驱动",
         "description": "控制TB6612电机驱动模块，学习电机控制的基本方法。",
-        "path": "esp_tb6612",
+        "path": "TB6612",
         "url": "https://arduino.me/s/52?aid=3111"
       }
     ]
   },
   {
-    "name": "@aily-project/example-qixiangzhan",
-    "nickname": "气象站套件使用教程",
-    "description": "本教程面向气象站套件初学者，涵盖模块功能、基础编程知识及简单项目实操，帮助零基础用户快速入门并应用气象站套件。",
+    "name": "@aily-project/example-jinniu",
+    "nickname": "金牛板使用教程",
+    "description": "针对金牛创客板的基础教程，包含基础模块的使用、基本电路连接、常用组件介绍（传感器、执行器等）、基础编程语法、简单项目实践。适合零基础学习者快速掌握金牛板的使用。",
     "author": "openjumper",
-    "url": "https://openjumper.com/doc/weather-meter-iot",
-    "img":"qixiangzhan_subject.png",
-    "examples": [
-      {
-        "nickname": "",
-        "description": "",
-        "path": "",
-        "url": "https://openjumper.com/doc/weather-meter-iot"
-      }
-    ]
+    "url": "",
+    "img": "jinniu_subject.png",
+    "examples": []
   }
 ]
