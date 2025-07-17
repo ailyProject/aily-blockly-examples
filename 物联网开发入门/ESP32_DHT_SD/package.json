@@ -1,0 +1,21 @@
+{
+  "name": "dht_sd",
+  "nickname": "综合例程 温湿度记录器",
+  "url": "https://arduino.me/s/52?aid=3095",
+  "description": "使用DHT11传感器采集温湿度数据，并将数据存储到SD卡中。",
+  "version": "1.0.0",
+  "board": "ESP32 board",
+  "dependencies": {
+    "@aily-project/board-esp32s3": "1.0.0",
+    "@aily-project/lib-core-io": "1.0.0",
+    "@aily-project/lib-core-logic": "0.0.1",
+    "@aily-project/lib-core-loop": "0.0.1",
+    "@aily-project/lib-core-math": "0.0.1",
+    "@aily-project/lib-core-serial": "0.0.1",
+    "@aily-project/lib-core-text": "0.0.1",
+    "@aily-project/lib-core-time": "0.0.1",
+    "@aily-project/lib-core-variables": "0.0.1",
+    "@aily-project/lib-dht": "^1.0.0",
+    "@aily-project/lib-esp32-sd": "^0.0.1"
+  }
+}

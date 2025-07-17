@@ -1,0 +1,360 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": ")Lmp4TtA`t2$(V.*X#TO",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "dht_init",
+                  "id": "n9v70JM8E*T4D^mBa`q?",
+                  "fields": {
+                    "TYPE": "DHT11",
+                    "PIN": "6"
+                  },
+                  "next": {
+                    "block": {
+                      "type": "sd_init",
+                      "id": "(^!O%oxJ?NFp5Xx?X,W6",
+                      "fields": {
+                        "SPI_TYPE": "HSPI",
+                        "SPI_VAR_NAME": "spi"
+                      },
+                      "inputs": {
+                        "SCK_PIN": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": ".(Rhe+~/MSX9u4Dy6(89",
+                            "fields": {
+                              "NUM": 3
+                            }
+                          }
+                        },
+                        "MISO_PIN": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "+1mPwKp]k,}0%?!iuXym",
+                            "fields": {
+                              "NUM": 35
+                            }
+                          }
+                        },
+                        "MOSI_PIN": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "#4vCryD.xk83J(?XM[?k",
+                            "fields": {
+                              "NUM": 14
+                            }
+                          }
+                        },
+                        "CS_PIN": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "7lm1Qt5@(}6L!W~aa9(E",
+                            "fields": {
+                              "NUM": 46
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 390,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "controls_if",
+              "id": "7_UOr:zNPC*irDLq*+wS",
+              "inputs": {
+                "IF0": {
+                  "block": {
+                    "type": "dht_read_success",
+                    "id": "SF?VN6*[r:-vDWmj1x3:",
+                    "fields": {
+                      "TYPE": "DHT11",
+                      "PIN": "6"
+                    }
+                  }
+                },
+                "DO0": {
+                  "block": {
+                    "type": "sd_write_file",
+                    "id": "}7Liv-P^ZTj_}k.@@Zxa",
+                    "fields": {
+                      "MODE": "APPEND"
+                    },
+                    "inputs": {
+                      "DATA": {
+                        "shadow": {
+                          "type": "text",
+                          "id": ";l*i;J@6D1;N%(DPO_c#",
+                          "fields": {
+                            "TEXT": "Hello, world!"
+                          }
+                        },
+                        "block": {
+                          "type": "number_to_string",
+                          "id": "bah_2gYk^nd7T{G[B22F",
+                          "inputs": {
+                            "NUM": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "hLi~=EwQ~z!5}_,85*fm",
+                                "fields": {
+                                  "NUM": 0
+                                }
+                              },
+                              "block": {
+                                "type": "dht_read_humidity",
+                                "id": "x^$A5BRP|D:9gO|X-OF$",
+                                "fields": {
+                                  "TYPE": "DHT11",
+                                  "PIN": "6"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "PATH": {
+                        "shadow": {
+                          "type": "text",
+                          "id": "?LEhhM%uIHj0Iq-5l:U-",
+                          "fields": {
+                            "TEXT": "/Humdata.txt"
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "sd_write_file",
+                        "id": "`*CW@$D91G|B6$}$l.gI",
+                        "fields": {
+                          "MODE": "APPEND"
+                        },
+                        "inputs": {
+                          "DATA": {
+                            "shadow": {
+                              "type": "text",
+                              "id": "`D[u}:3Q)!jF)`9X#J*3",
+                              "fields": {
+                                "TEXT": "%，"
+                              }
+                            }
+                          },
+                          "PATH": {
+                            "shadow": {
+                              "type": "text",
+                              "id": "|qrvBd+5YXn$1c[sqc3H",
+                              "fields": {
+                                "TEXT": "/Humdata.txt"
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "sd_write_file",
+                            "id": "J~c~7*pd;;~Y4oNvejR:",
+                            "fields": {
+                              "MODE": "APPEND"
+                            },
+                            "inputs": {
+                              "DATA": {
+                                "shadow": {
+                                  "type": "text",
+                                  "id": "5jeBA:kc$wm}m]f!@ek$",
+                                  "fields": {
+                                    "TEXT": "Hello, world!"
+                                  }
+                                },
+                                "block": {
+                                  "type": "number_to_string",
+                                  "id": "%4!bOcm}_)/VxO,t.wYs",
+                                  "inputs": {
+                                    "NUM": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "id": "N]FMDv;OM;e#A:`r;j;?",
+                                        "fields": {
+                                          "NUM": 0
+                                        }
+                                      },
+                                      "block": {
+                                        "type": "dht_read_temperature",
+                                        "id": "`gG-)C/a5u)n6+)}#EHZ",
+                                        "fields": {
+                                          "TYPE": "DHT11",
+                                          "PIN": "6"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "PATH": {
+                                "shadow": {
+                                  "type": "text",
+                                  "id": "Mo+7vJZAq+-Tq4i9LCi;",
+                                  "fields": {
+                                    "TEXT": "/Temdata.txt"
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "sd_write_file",
+                                "id": "ol,e2ba2r71Rh#eFf?(+",
+                                "fields": {
+                                  "MODE": "APPEND"
+                                },
+                                "inputs": {
+                                  "DATA": {
+                                    "shadow": {
+                                      "type": "text",
+                                      "id": "3[/CAqk1^D|rZK(WNyeC",
+                                      "fields": {
+                                        "TEXT": "°C，"
+                                      }
+                                    }
+                                  },
+                                  "PATH": {
+                                    "shadow": {
+                                      "type": "text",
+                                      "id": "*k/*lUmLug[ujV=FuL]q",
+                                      "fields": {
+                                        "TEXT": "/Temdata.txt"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_println",
+                  "id": "]EMx7st?O,6)//bh.S,!",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "E:Zl{sT1Jwy-(3A=4#nI",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      },
+                      "block": {
+                        "type": "sd_read_file",
+                        "id": "{taz)wEtY:)nv,~q7CD@",
+                        "inputs": {
+                          "PATH": {
+                            "block": {
+                              "type": "text",
+                              "id": "+(*TR(()Y}^kJfTr;#7W",
+                              "fields": {
+                                "TEXT": "/Humdata.txt"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_println",
+                      "id": "F4;Ga|saoPP)ugFwW9D1",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "{s-p5OaEMHMEA+I*Pr][",
+                            "fields": {
+                              "TEXT": ""
+                            }
+                          },
+                          "block": {
+                            "type": "sd_read_file",
+                            "id": "1bjAE)HROY19L)*:n;vR",
+                            "inputs": {
+                              "PATH": {
+                                "block": {
+                                  "type": "text",
+                                  "id": "UmJBe:Lo8.qZhNrKBv-8",
+                                  "fields": {
+                                    "TEXT": "/Temdata.txt"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "time_delay",
+                          "id": "2viP;K[ZS(IFgf,e~58C",
+                          "inputs": {
+                            "DELAY_TIME": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "-EZMv+9SJ$1;9U{`A=*C",
+                                "fields": {
+                                  "NUM": 1000
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
