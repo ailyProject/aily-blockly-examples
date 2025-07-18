@@ -1,0 +1,1052 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "u8g2_begin",
+              "id": "W0BO}S@BUe6*2m(w+s[$",
+              "fields": {
+                "TYPE": "SSD1306",
+                "RESOLUTION": "128X64_NONAME_F",
+                "PROTOCOL": "_SW_I2C",
+                "CLOCK_PIN": "5",
+                "DATA_PIN": "4",
+                "RESET_PIN": "U8X8_PIN_NONE"
+              },
+              "next": {
+                "block": {
+                  "type": "dht_init",
+                  "id": "|P5wg:?USX6)*J`2/J+$",
+                  "fields": {
+                    "TYPE": "DHT11",
+                    "PIN": "8"
+                  },
+                  "next": {
+                    "block": {
+                      "type": "sd_init",
+                      "id": "tTh0nGoA=B,y]H%EI;r;",
+                      "fields": {
+                        "SPI_TYPE": "HSPI",
+                        "SPI_VAR_NAME": "spi"
+                      },
+                      "inputs": {
+                        "SCK_PIN": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "0s:1eRu5R2sp*P`bfgY8",
+                            "fields": {
+                              "NUM": 3
+                            }
+                          }
+                        },
+                        "MISO_PIN": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "h4/=oSEfcoYXYDcy^L$U",
+                            "fields": {
+                              "NUM": 35
+                            }
+                          }
+                        },
+                        "MOSI_PIN": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "W0YYWi|:t^%)yX`}DqVg",
+                            "fields": {
+                              "NUM": 14
+                            }
+                          }
+                        },
+                        "CS_PIN": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "*wLQB)EC2|L|+0}}r$F_",
+                            "fields": {
+                              "NUM": 46
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 370,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "controls_if",
+              "id": "j}Ya{pn)SQ=h[%oOKeVt",
+              "inputs": {
+                "IF0": {
+                  "block": {
+                    "type": "dht_read_success",
+                    "id": "Xv$.N]@tOe.OoQU+T{^v",
+                    "fields": {
+                      "TYPE": "DHT11",
+                      "PIN": "8"
+                    }
+                  }
+                },
+                "DO0": {
+                  "block": {
+                    "type": "u8g2_draw_str",
+                    "id": "q,pn,mFGCRKF:,kZkCbN",
+                    "inputs": {
+                      "X": {
+                        "shadow": {
+                          "type": "math_number",
+                          "id": "ebeWQ|[wY:U#tU8~F#Xz",
+                          "fields": {
+                            "NUM": 5
+                          }
+                        }
+                      },
+                      "Y": {
+                        "shadow": {
+                          "type": "math_number",
+                          "id": "Pn(dunzwcG5bs5R0yO_C",
+                          "fields": {
+                            "NUM": 10
+                          }
+                        }
+                      },
+                      "TEXT": {
+                        "shadow": {
+                          "type": "text",
+                          "id": "GNRxJZAimdyV=@L+Fd=#",
+                          "fields": {
+                            "TEXT": "tem:"
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "u8g2_draw_str",
+                        "id": "Eg!,Wju[@x+,yiJ,yc|y",
+                        "inputs": {
+                          "X": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": ";{GbJa96Dw=/d+n8-4]H",
+                              "fields": {
+                                "NUM": 30
+                              }
+                            }
+                          },
+                          "Y": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "H{K=m4eD~ls:qK6Mpr`R",
+                              "fields": {
+                                "NUM": 10
+                              }
+                            }
+                          },
+                          "TEXT": {
+                            "shadow": {
+                              "type": "text",
+                              "id": "-KBewt6CSND/OTKseC~(",
+                              "fields": {
+                                "TEXT": "Hello World"
+                              }
+                            },
+                            "block": {
+                              "type": "string_to_something",
+                              "id": "[f|!v,CLNy*YYNe2wJ{]",
+                              "fields": {
+                                "TYPE": "c_str"
+                              },
+                              "inputs": {
+                                "TEXT": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "|%O4?/4k3{m`I(+CA-fG",
+                                    "fields": {
+                                      "TEXT": "123"
+                                    }
+                                  },
+                                  "block": {
+                                    "type": "number_to_string",
+                                    "id": "!hu+c_|XIYg]4@==zbIK",
+                                    "inputs": {
+                                      "NUM": {
+                                        "shadow": {
+                                          "type": "math_number",
+                                          "id": "z^X=+lM!/la6+ayJ`yHx",
+                                          "fields": {
+                                            "NUM": 0
+                                          }
+                                        },
+                                        "block": {
+                                          "type": "dht_read_temperature",
+                                          "id": "Voj4xQ:X?[|Z24xB;jT.",
+                                          "fields": {
+                                            "TYPE": "DHT11",
+                                            "PIN": "8"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "u8g2_draw_str",
+                            "id": "e%~==74uI!NU}mTq#x~r",
+                            "inputs": {
+                              "X": {
+                                "shadow": {
+                                  "type": "math_number",
+                                  "id": "N^/EFEX=8xJ}N_5}3=Qm",
+                                  "fields": {
+                                    "NUM": 60
+                                  }
+                                }
+                              },
+                              "Y": {
+                                "shadow": {
+                                  "type": "math_number",
+                                  "id": "PSQ0SAVz7]42:$^YWRWk",
+                                  "fields": {
+                                    "NUM": 10
+                                  }
+                                }
+                              },
+                              "TEXT": {
+                                "shadow": {
+                                  "type": "text",
+                                  "id": "knK=v2wSVQng;WuEH*h1",
+                                  "fields": {
+                                    "TEXT": "°C"
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "u8g2_draw_str",
+                                "id": "i|^VUs/F2i=X*T;,H))d",
+                                "inputs": {
+                                  "X": {
+                                    "shadow": {
+                                      "type": "math_number",
+                                      "id": "(?t;i^?9ufZt{GqK$+8[",
+                                      "fields": {
+                                        "NUM": 5
+                                      }
+                                    }
+                                  },
+                                  "Y": {
+                                    "shadow": {
+                                      "type": "math_number",
+                                      "id": "*XigIFH/z1{wy{;hzEl,",
+                                      "fields": {
+                                        "NUM": 20
+                                      }
+                                    }
+                                  },
+                                  "TEXT": {
+                                    "shadow": {
+                                      "type": "text",
+                                      "id": "a??.$]ni/-{Yc1G(l^iM",
+                                      "fields": {
+                                        "TEXT": "hum:"
+                                      }
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "u8g2_draw_str",
+                                    "id": "F$SfoLr{ME%P$g:GXL6t",
+                                    "inputs": {
+                                      "X": {
+                                        "shadow": {
+                                          "type": "math_number",
+                                          "id": "r8eEsP_NC9QqJ#B+sQq_",
+                                          "fields": {
+                                            "NUM": 35
+                                          }
+                                        }
+                                      },
+                                      "Y": {
+                                        "shadow": {
+                                          "type": "math_number",
+                                          "id": "Vb^X{lC8o]!^nM-]E}O+",
+                                          "fields": {
+                                            "NUM": 20
+                                          }
+                                        }
+                                      },
+                                      "TEXT": {
+                                        "shadow": {
+                                          "type": "text",
+                                          "id": "{.w6zR-rv[UgrCm!Ygds",
+                                          "fields": {
+                                            "TEXT": "Hello World"
+                                          }
+                                        },
+                                        "block": {
+                                          "type": "string_to_something",
+                                          "id": "w1DetIHSjkx1/nGWQ+bi",
+                                          "fields": {
+                                            "TYPE": "c_str"
+                                          },
+                                          "inputs": {
+                                            "TEXT": {
+                                              "shadow": {
+                                                "type": "text",
+                                                "id": "]DK4Y48^ICZ~h|pFb)~j",
+                                                "fields": {
+                                                  "TEXT": "123"
+                                                }
+                                              },
+                                              "block": {
+                                                "type": "number_to_string",
+                                                "id": "?Vv4]G]65R22,2q$|Rua",
+                                                "inputs": {
+                                                  "NUM": {
+                                                    "shadow": {
+                                                      "type": "math_number",
+                                                      "id": "z^X=+lM!/la6+ayJ`yHx",
+                                                      "fields": {
+                                                        "NUM": 0
+                                                      }
+                                                    },
+                                                    "block": {
+                                                      "type": "dht_read_humidity",
+                                                      "id": "A.uR1T11*6=CWB)_2Bx4",
+                                                      "fields": {
+                                                        "TYPE": "DHT11",
+                                                        "PIN": "8"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "next": {
+                                      "block": {
+                                        "type": "u8g2_draw_str",
+                                        "id": ".CfhUT|DXhH.uj[HxE`a",
+                                        "inputs": {
+                                          "X": {
+                                            "shadow": {
+                                              "type": "math_number",
+                                              "id": "O:mLkPnmui-/68ly*;TI",
+                                              "fields": {
+                                                "NUM": 65
+                                              }
+                                            }
+                                          },
+                                          "Y": {
+                                            "shadow": {
+                                              "type": "math_number",
+                                              "id": "I$H]zCgWQicG0K#-p;V4",
+                                              "fields": {
+                                                "NUM": 20
+                                              }
+                                            }
+                                          },
+                                          "TEXT": {
+                                            "shadow": {
+                                              "type": "text",
+                                              "id": "8bq2eNj-Q_05a2Jf*Nk~",
+                                              "fields": {
+                                                "TEXT": "%"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "u8g2_draw_str",
+                  "id": "VZpj_I$K}+BB.}ULjHCh",
+                  "inputs": {
+                    "X": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "Qmh%7S}[`/V.QpQSZDI;",
+                        "fields": {
+                          "NUM": 5
+                        }
+                      }
+                    },
+                    "Y": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "4D,nxNA*qnKhp!}?B,wI",
+                        "fields": {
+                          "NUM": 30
+                        }
+                      }
+                    },
+                    "TEXT": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "Q4|I=oi(+rjuKT$cwcV1",
+                        "fields": {
+                          "TEXT": "MQX:"
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "u8g2_draw_str",
+                      "id": "~vBSd0T`[r-1HVIgOS-;",
+                      "inputs": {
+                        "X": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "(bG5W..BToj|mb[!17U]",
+                            "fields": {
+                              "NUM": 40
+                            }
+                          }
+                        },
+                        "Y": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "vYWj!WobFtw~kLi7nw^p",
+                            "fields": {
+                              "NUM": 30
+                            }
+                          }
+                        },
+                        "TEXT": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "oYu5S}BRP@)E-N~4P40D",
+                            "fields": {
+                              "TEXT": "Hello World"
+                            }
+                          },
+                          "block": {
+                            "type": "string_to_something",
+                            "id": ")D8K)oG:o2WHw)U2rX,M",
+                            "fields": {
+                              "TYPE": "c_str"
+                            },
+                            "inputs": {
+                              "TEXT": {
+                                "shadow": {
+                                  "type": "text",
+                                  "id": "]DK4Y48^ICZ~h|pFb)~j",
+                                  "fields": {
+                                    "TEXT": "123"
+                                  }
+                                },
+                                "block": {
+                                  "type": "number_to_string",
+                                  "id": "NyW[nU4K5!nhq*v?hl.*",
+                                  "inputs": {
+                                    "NUM": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "id": "z^X=+lM!/la6+ayJ`yHx",
+                                        "fields": {
+                                          "NUM": 0
+                                        }
+                                      },
+                                      "block": {
+                                        "type": "io_analogread",
+                                        "id": "3SB5aEBJb`1GQMCH1},n",
+                                        "inputs": {
+                                          "PIN": {
+                                            "shadow": {
+                                              "type": "io_pin_adc",
+                                              "id": "GHs3xr/V,qs)*aUTt%[=",
+                                              "fields": {
+                                                "PIN": "7"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "u8g2_draw_str",
+                          "id": "wc1*LhRO:!s)W+a~uZr]",
+                          "inputs": {
+                            "X": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "x.`5#E$*mm*.rkL73Mb-",
+                                "fields": {
+                                  "NUM": 5
+                                }
+                              }
+                            },
+                            "Y": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "=UPB+t?qw9hC~oAavuks",
+                                "fields": {
+                                  "NUM": 40
+                                }
+                              }
+                            },
+                            "TEXT": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "0vHcWbBS3-+^XJ.J0XQ3",
+                                "fields": {
+                                  "TEXT": "Light:"
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "u8g2_draw_str",
+                              "id": "9$y,Yy[lq(Fgr#@PJH|u",
+                              "inputs": {
+                                "X": {
+                                  "shadow": {
+                                    "type": "math_number",
+                                    "id": "Kn7e7qgb2@;q1!_pQImJ",
+                                    "fields": {
+                                      "NUM": 40
+                                    }
+                                  }
+                                },
+                                "Y": {
+                                  "shadow": {
+                                    "type": "math_number",
+                                    "id": "kTb[:jkQLVs_}D_Sz)^?",
+                                    "fields": {
+                                      "NUM": 40
+                                    }
+                                  }
+                                },
+                                "TEXT": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "#j(31Fe[^D?8vjt[E{#J",
+                                    "fields": {
+                                      "TEXT": "Hello World"
+                                    }
+                                  },
+                                  "block": {
+                                    "type": "string_to_something",
+                                    "id": "P`LXYMZe51/SC}wYMQF)",
+                                    "fields": {
+                                      "TYPE": "c_str"
+                                    },
+                                    "inputs": {
+                                      "TEXT": {
+                                        "shadow": {
+                                          "type": "text",
+                                          "id": "]DK4Y48^ICZ~h|pFb)~j",
+                                          "fields": {
+                                            "TEXT": "123"
+                                          }
+                                        },
+                                        "block": {
+                                          "type": "number_to_string",
+                                          "id": "$)*K2svN-F3}FEVd]8Bp",
+                                          "inputs": {
+                                            "NUM": {
+                                              "shadow": {
+                                                "type": "math_number",
+                                                "id": "z^X=+lM!/la6+ayJ`yHx",
+                                                "fields": {
+                                                  "NUM": 0
+                                                }
+                                              },
+                                              "block": {
+                                                "type": "io_analogread",
+                                                "id": "NUOoB|55%^iIgZ7~K6|I",
+                                                "inputs": {
+                                                  "PIN": {
+                                                    "shadow": {
+                                                      "type": "io_pin_adc",
+                                                      "id": "$TRa$b57X+4cbA[T4!P$",
+                                                      "fields": {
+                                                        "PIN": "12"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "controls_if",
+                                  "id": "fn6W]q4ZD}du|,i5aK5=",
+                                  "inputs": {
+                                    "IF0": {
+                                      "block": {
+                                        "type": "logic_compare",
+                                        "id": "PA2I2([Al13s^R5@;XSu",
+                                        "fields": {
+                                          "OP": "GT"
+                                        },
+                                        "inputs": {
+                                          "A": {
+                                            "block": {
+                                              "type": "io_analogread",
+                                              "id": "L=H8Z)s2FLVitg7Q`R3%",
+                                              "inputs": {
+                                                "PIN": {
+                                                  "shadow": {
+                                                    "type": "io_pin_adc",
+                                                    "id": "XBx~K?d|D6`_4PaQB6/?",
+                                                    "fields": {
+                                                      "PIN": "7"
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "B": {
+                                            "block": {
+                                              "type": "math_number",
+                                              "id": "GzwfLFXLkqGwjiqe}2Ra",
+                                              "fields": {
+                                                "NUM": 500
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "DO0": {
+                                      "block": {
+                                        "type": "io_digitalwrite",
+                                        "id": "C!KQ0)M#QD^oLVX%#O*P",
+                                        "inputs": {
+                                          "PIN": {
+                                            "shadow": {
+                                              "type": "io_pin_digi",
+                                              "id": "N.po]:om9bz2MnthM~m5",
+                                              "fields": {
+                                                "PIN": "0"
+                                              }
+                                            }
+                                          },
+                                          "STATE": {
+                                            "shadow": {
+                                              "type": "io_state",
+                                              "id": "1e}puyl$!agF)k!d)7IR",
+                                              "fields": {
+                                                "STATE": "HIGH"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "sd_write_file",
+                                      "id": "?Z*bEV(8q/[oXMv6|0__",
+                                      "fields": {
+                                        "MODE": "APPEND"
+                                      },
+                                      "inputs": {
+                                        "DATA": {
+                                          "shadow": {
+                                            "type": "text",
+                                            "id": "n*V`Pmw.Pe])L|40Qr6v",
+                                            "fields": {
+                                              "TEXT": "温度："
+                                            }
+                                          }
+                                        },
+                                        "PATH": {
+                                          "shadow": {
+                                            "type": "text",
+                                            "id": "`DdW*y(xGvc:jf}(oWTs",
+                                            "fields": {
+                                              "TEXT": "/Tem.txt"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "sd_write_file",
+                                          "id": "ZB5wI%biBwc(vBL9Gi^Y",
+                                          "fields": {
+                                            "MODE": "APPEND"
+                                          },
+                                          "inputs": {
+                                            "DATA": {
+                                              "shadow": {
+                                                "type": "text",
+                                                "id": "%YXskA7{Yx@=tG~VN+fr",
+                                                "fields": {
+                                                  "TEXT": "Hello, world!"
+                                                }
+                                              },
+                                              "block": {
+                                                "type": "number_to_string",
+                                                "id": "Qp.f!rJd=?K=USs2tu.(",
+                                                "inputs": {
+                                                  "NUM": {
+                                                    "shadow": {
+                                                      "type": "math_number",
+                                                      "id": "z^X=+lM!/la6+ayJ`yHx",
+                                                      "fields": {
+                                                        "NUM": 0
+                                                      }
+                                                    },
+                                                    "block": {
+                                                      "type": "dht_read_temperature",
+                                                      "id": "e-fL_`OThpviCUI^%Ir1",
+                                                      "fields": {
+                                                        "TYPE": "DHT11",
+                                                        "PIN": "8"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "PATH": {
+                                              "shadow": {
+                                                "type": "text",
+                                                "id": "^FX=~M3w8AwI(UQiT%P2",
+                                                "fields": {
+                                                  "TEXT": "/Tem.txt"
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "sd_write_file",
+                                              "id": "WS@88r2{zs)_8sED^#bA",
+                                              "fields": {
+                                                "MODE": "APPEND"
+                                              },
+                                              "inputs": {
+                                                "DATA": {
+                                                  "shadow": {
+                                                    "type": "text",
+                                                    "id": "s^|%A@M$;..VN7_P6M|-",
+                                                    "fields": {
+                                                      "TEXT": "°C"
+                                                    }
+                                                  }
+                                                },
+                                                "PATH": {
+                                                  "shadow": {
+                                                    "type": "text",
+                                                    "id": "qUdL(AfN@xjww?t^[Z]8",
+                                                    "fields": {
+                                                      "TEXT": "/Tem.txt"
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "sd_write_file",
+                                                  "id": "^!KyqvE_iEDb4zW`D~ti",
+                                                  "fields": {
+                                                    "MODE": "APPEND"
+                                                  },
+                                                  "inputs": {
+                                                    "DATA": {
+                                                      "shadow": {
+                                                        "type": "text",
+                                                        "id": "YPzK;;bTK[H1Go7+4)3k",
+                                                        "fields": {
+                                                          "TEXT": "湿度："
+                                                        }
+                                                      }
+                                                    },
+                                                    "PATH": {
+                                                      "shadow": {
+                                                        "type": "text",
+                                                        "id": "[v2u!__/-dvw}_}8,A6a",
+                                                        "fields": {
+                                                          "TEXT": "/Hum.txt"
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "sd_write_file",
+                                                      "id": "O|l-z4]~7sj8/Q~TdPx:",
+                                                      "fields": {
+                                                        "MODE": "APPEND"
+                                                      },
+                                                      "inputs": {
+                                                        "DATA": {
+                                                          "shadow": {
+                                                            "type": "text",
+                                                            "id": "Vx+7(L7cpI^~o6hai%]N",
+                                                            "fields": {
+                                                              "TEXT": "Hello, world!"
+                                                            }
+                                                          },
+                                                          "block": {
+                                                            "type": "number_to_string",
+                                                            "id": "DtA`quV)}hk5GucZT33J",
+                                                            "inputs": {
+                                                              "NUM": {
+                                                                "shadow": {
+                                                                  "type": "math_number",
+                                                                  "id": "z^X=+lM!/la6+ayJ`yHx",
+                                                                  "fields": {
+                                                                    "NUM": 0
+                                                                  }
+                                                                },
+                                                                "block": {
+                                                                  "type": "dht_read_humidity",
+                                                                  "id": "#ly@!{Ef6DC?j@dp9Ow;",
+                                                                  "fields": {
+                                                                    "TYPE": "DHT11",
+                                                                    "PIN": "8"
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "PATH": {
+                                                          "shadow": {
+                                                            "type": "text",
+                                                            "id": "PErcSFBuu7;aWHs@/!=f",
+                                                            "fields": {
+                                                              "TEXT": "/Hum.txt"
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "next": {
+                                                        "block": {
+                                                          "type": "sd_write_file",
+                                                          "id": "k6RTUj#0(HKVR_9aT3}4",
+                                                          "fields": {
+                                                            "MODE": "APPEND"
+                                                          },
+                                                          "inputs": {
+                                                            "DATA": {
+                                                              "shadow": {
+                                                                "type": "text",
+                                                                "id": "5?GAQTfOsWOUa0pJ,!$_",
+                                                                "fields": {
+                                                                  "TEXT": "%"
+                                                                }
+                                                              }
+                                                            },
+                                                            "PATH": {
+                                                              "shadow": {
+                                                                "type": "text",
+                                                                "id": "%BE]8p?7f*(@*bcif#$e",
+                                                                "fields": {
+                                                                  "TEXT": "/Hum.txt"
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "next": {
+                                                            "block": {
+                                                              "type": "sd_write_file",
+                                                              "id": "^DsSxTt`vg7mQI%~%fg_",
+                                                              "fields": {
+                                                                "MODE": "APPEND"
+                                                              },
+                                                              "inputs": {
+                                                                "DATA": {
+                                                                  "shadow": {
+                                                                    "type": "text",
+                                                                    "id": "UhT.@[fo5Y9|lnCt.%^~",
+                                                                    "fields": {
+                                                                      "TEXT": "Hello, world!"
+                                                                    }
+                                                                  },
+                                                                  "block": {
+                                                                    "type": "number_to_string",
+                                                                    "id": "PI=6gacM$%0v~ienkRJb",
+                                                                    "inputs": {
+                                                                      "NUM": {
+                                                                        "shadow": {
+                                                                          "type": "math_number",
+                                                                          "id": "z^X=+lM!/la6+ayJ`yHx",
+                                                                          "fields": {
+                                                                            "NUM": 0
+                                                                          }
+                                                                        },
+                                                                        "block": {
+                                                                          "type": "io_analogread",
+                                                                          "id": "5*:+sc%=.tecY0/z}T7Y",
+                                                                          "inputs": {
+                                                                            "PIN": {
+                                                                              "shadow": {
+                                                                                "type": "io_pin_adc",
+                                                                                "id": "h#2Bcf]Z|$7R2%y*95vq",
+                                                                                "fields": {
+                                                                                  "PIN": "7"
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "PATH": {
+                                                                  "shadow": {
+                                                                    "type": "text",
+                                                                    "id": "yIZhPJ,jeQ-9^6BWnK7w",
+                                                                    "fields": {
+                                                                      "TEXT": "/MQ2.txt"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "next": {
+                                                                "block": {
+                                                                  "type": "sd_write_file",
+                                                                  "id": "N_n=h5|1H9L%GtIfW^H[",
+                                                                  "fields": {
+                                                                    "MODE": "APPEND"
+                                                                  },
+                                                                  "inputs": {
+                                                                    "DATA": {
+                                                                      "shadow": {
+                                                                        "type": "text",
+                                                                        "id": "V**:5An|41kFVCau^i[M",
+                                                                        "fields": {
+                                                                          "TEXT": "Hello, world!"
+                                                                        }
+                                                                      },
+                                                                      "block": {
+                                                                        "type": "number_to_string",
+                                                                        "id": "EUHQ[f[clmQcy`v,jZ$a",
+                                                                        "inputs": {
+                                                                          "NUM": {
+                                                                            "shadow": {
+                                                                              "type": "math_number",
+                                                                              "id": "z^X=+lM!/la6+ayJ`yHx",
+                                                                              "fields": {
+                                                                                "NUM": 0
+                                                                              }
+                                                                            },
+                                                                            "block": {
+                                                                              "type": "io_analogread",
+                                                                              "id": ",1sRY!2ONm.wNceMt=1h",
+                                                                              "inputs": {
+                                                                                "PIN": {
+                                                                                  "shadow": {
+                                                                                    "type": "io_pin_adc",
+                                                                                    "id": "M$f)7S9;l:qDisDKEdxJ",
+                                                                                    "fields": {
+                                                                                      "PIN": "12"
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "PATH": {
+                                                                      "shadow": {
+                                                                        "type": "text",
+                                                                        "id": "/+3=O_nAbqHHq^bMq;(0",
+                                                                        "fields": {
+                                                                          "TEXT": "/Light.txt"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

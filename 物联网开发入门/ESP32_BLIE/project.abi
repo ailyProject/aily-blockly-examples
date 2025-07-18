@@ -1,0 +1,282 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 50,
+        "y": 110,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "ble_keyboard_begin",
+              "id": "=|pA)k0{I`kxzlL2SqF]",
+              "fields": {
+                "DEVICE_NAME": "ESP32 Keyboard"
+              },
+              "next": {
+                "block": {
+                  "type": "vl53l0x_init_with_wire",
+                  "id": "jr*y.0kKqrx;=$k-W$B7",
+                  "fields": {
+                    "SENSOR": {
+                      "id": "6M:;?d}jtcMiED~aa(A("
+                    },
+                    "WIRE": "Wire"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 50,
+        "y": 270,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "vl53l0x_ranging_test",
+              "id": "pYldP#Aa.u)m(]2~_9lZ",
+              "fields": {
+                "SENSOR": {
+                  "id": "8]M}uN,dB3TYnK:q)|(+"
+                },
+                "MEASURE": {
+                  "id": "?hBGLx5ofSaR1uoNwiNO"
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "controls_if",
+                  "id": "juH!yhz`=d%TGg7/_l!N",
+                  "inputs": {
+                    "IF0": {
+                      "block": {
+                        "type": "vl53l0x_check_range_valid",
+                        "id": ".]-|pbqjfq}:2K]7W!}L",
+                        "fields": {
+                          "MEASURE": {
+                            "id": "?hBGLx5ofSaR1uoNwiNO"
+                          }
+                        }
+                      }
+                    },
+                    "DO0": {
+                      "block": {
+                        "type": "controls_ifelse",
+                        "id": "f$o0G5,N2_qKff|j2PoN",
+                        "inputs": {
+                          "IF0": {
+                            "block": {
+                              "type": "logic_compare",
+                              "id": "GH1)^Z1KV~y!(`WE2tJQ",
+                              "fields": {
+                                "OP": "LT"
+                              },
+                              "inputs": {
+                                "A": {
+                                  "block": {
+                                    "type": "vl53l0x_get_range_mm",
+                                    "id": "rlsyjRnYhphl5zri+mh9",
+                                    "fields": {
+                                      "MEASURE": {
+                                        "id": "?hBGLx5ofSaR1uoNwiNO"
+                                      }
+                                    }
+                                  }
+                                },
+                                "B": {
+                                  "block": {
+                                    "type": "math_number",
+                                    "id": "L__0tcKUSz0UGabRs~o~",
+                                    "fields": {
+                                      "NUM": 300
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "DO0": {
+                            "block": {
+                              "type": "ble_keyboard_press",
+                              "id": "sxB8Ii=3;W+2o{?/.y+r",
+                              "inputs": {
+                                "KEY": {
+                                  "shadow": {
+                                    "type": "ble_keyboard_special_key",
+                                    "id": "8kNn`D.mXd]I,QQA/yH1",
+                                    "fields": {
+                                      "KEY": "KEY_RIGHTMETA"
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "ble_keyboard_press",
+                                  "id": "*FKidpcpcf7%iqdsKaEP",
+                                  "inputs": {
+                                    "KEY": {
+                                      "shadow": {
+                                        "type": "ble_keyboard_special_key",
+                                        "id": "{c83L=X%gp)ODI?Tqpyi",
+                                        "fields": {
+                                          "KEY": "KEY_LEFTCTRL"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "ble_keyboard_press",
+                                      "id": "lbtf3:A[h?S}/#pA;+Bu",
+                                      "inputs": {
+                                        "KEY": {
+                                          "shadow": {
+                                            "type": "ble_keyboard_special_key",
+                                            "id": "Y|,DiP!DB?V/$Ym4Pno+",
+                                            "fields": {
+                                              "KEY": "KEY_RIGHT"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "time_delay",
+                                          "id": "Y7@.vv@?%af/sSH1Bbo,",
+                                          "inputs": {
+                                            "DELAY_TIME": {
+                                              "shadow": {
+                                                "type": "math_number",
+                                                "id": "CZ+|5:ojN)LKN_-}VC[T",
+                                                "fields": {
+                                                  "NUM": 10
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "ble_keyboard_release_all",
+                                              "id": "q0X-a[|Jw{l){20D8e)W"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "ELSE": {
+                            "block": {
+                              "type": "ble_keyboard_press",
+                              "id": "}7S{,)Ajl|xw_QIB|EmK",
+                              "inputs": {
+                                "KEY": {
+                                  "shadow": {
+                                    "type": "ble_keyboard_special_key",
+                                    "id": "$)akyTW4.07GPMc0{/}U",
+                                    "fields": {
+                                      "KEY": "KEY_RIGHTMETA"
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "ble_keyboard_press",
+                                  "id": "?:Y5dgb:dWk..qJ=0{|m",
+                                  "inputs": {
+                                    "KEY": {
+                                      "shadow": {
+                                        "type": "ble_keyboard_special_key",
+                                        "id": "%As+6SE/:A$s/GmV-j{|",
+                                        "fields": {
+                                          "KEY": "KEY_LEFTCTRL"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "ble_keyboard_press",
+                                      "id": "ZGqZN{_yem:=LVXV.N(I",
+                                      "inputs": {
+                                        "KEY": {
+                                          "shadow": {
+                                            "type": "ble_keyboard_special_key",
+                                            "id": "`C`3RzH:x+mAhC{]zsb5",
+                                            "fields": {
+                                              "KEY": "KEY_LEFT"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "time_delay",
+                                          "id": "$eP48^[j/CXAMug9tp#0",
+                                          "inputs": {
+                                            "DELAY_TIME": {
+                                              "shadow": {
+                                                "type": "math_number",
+                                                "id": "!{iVWctDDh.6*ON8jceb",
+                                                "fields": {
+                                                  "NUM": 10
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "ble_keyboard_release_all",
+                                              "id": "l;GuY{xHwc{6`@N~OG1I"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "sensor",
+      "id": "6M:;?d}jtcMiED~aa(A("
+    },
+    {
+      "name": "sensor",
+      "id": "8]M}uN,dB3TYnK:q)|(+",
+      "type": "Adafruit_VL53L0X"
+    },
+    {
+      "name": "measure",
+      "id": "?hBGLx5ofSaR1uoNwiNO",
+      "type": "VL53L0X_RangingMeasurementData_t"
+    }
+  ]
+}

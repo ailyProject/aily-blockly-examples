@@ -1,0 +1,21 @@
+{
+  "name": "esp32_ble_keyboard",
+  "nickname": "综合例程 蓝牙桌面控制器",
+  "url": "https://arduino.me/s/52?aid=3096",
+  "description": "使用蓝牙BLE功能和VL53L0X传感器，完成蓝牙键盘控制桌面",
+  "version": "1.0.0",
+  "board": "ESP32S3 board",
+  "dependencies": {
+    "@aily-project/board-esp32s3": "1.0.0",
+    "@aily-project/lib-adafruit-vl53l0x": "^1.0.0",
+    "@aily-project/lib-core-io": "1.0.0",
+    "@aily-project/lib-core-logic": "0.0.1",
+    "@aily-project/lib-core-loop": "0.0.1",
+    "@aily-project/lib-core-math": "0.0.1",
+    "@aily-project/lib-core-serial": "0.0.1",
+    "@aily-project/lib-core-text": "0.0.1",
+    "@aily-project/lib-core-time": "0.0.1",
+    "@aily-project/lib-core-variables": "0.0.1",
+    "@aily-project/lib-esp32-ble-keyboard": "^1.0.0"
+  }
+}

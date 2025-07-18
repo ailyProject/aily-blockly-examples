@@ -1,0 +1,320 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "gd3800_init",
+              "id": "dpyRr@$53]~+t,BZlI$Z",
+              "inputs": {
+                "PIN_TX": {
+                  "block": {
+                    "type": "math_number",
+                    "id": "nXW``WiN54Jqajuoj8R,",
+                    "fields": {
+                      "NUM": 14
+                    }
+                  }
+                },
+                "PIN_RX": {
+                  "block": {
+                    "type": "math_number",
+                    "id": "=lrPFV.zG~s#T]/_S5U1",
+                    "fields": {
+                      "NUM": 15
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "gd3800_setvolume",
+                  "id": "Hm_D?luoAg/loE%W]h_m",
+                  "inputs": {
+                    "SETVOLUME": {
+                      "block": {
+                        "type": "math_number",
+                        "id": "[4F_.nVV2svdj2*V5lJL",
+                        "fields": {
+                          "NUM": 20
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "blinker_init_wifi",
+                      "id": "_:o?^}aFiT[;Np5;v9M4",
+                      "fields": {
+                        "MODE": "手动配网"
+                      },
+                      "inputs": {
+                        "AUTH": {
+                          "block": {
+                            "type": "text",
+                            "id": "Gg0T2,OY6+H$t:T**_bP",
+                            "fields": {
+                              "TEXT": ""
+                            }
+                          }
+                        },
+                        "SSID": {
+                          "block": {
+                            "type": "text",
+                            "id": "v*flU6)(@KUZCWeofD$_",
+                            "fields": {
+                              "TEXT": ""
+                            }
+                          }
+                        },
+                        "PSWD": {
+                          "block": {
+                            "type": "text",
+                            "id": "N)]~MKXy]?nh+z9RSFVF",
+                            "fields": {
+                              "TEXT": ""
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 50,
+        "y": 370,
+        "deletable": false
+      },
+      {
+        "type": "blinker_button",
+        "id": "QE#c;hA;LtH~?V,JC:sW",
+        "x": 290,
+        "y": 310,
+        "fields": {
+          "KEY": "btn-abj"
+        },
+        "inputs": {
+          "NAME": {
+            "block": {
+              "type": "controls_if",
+              "id": "Y(G;N+m+?g8x:*omrwp1",
+              "inputs": {
+                "IF0": {
+                  "block": {
+                    "type": "blinker_button_state",
+                    "id": "]A,$F,oBhD*k$Vu,5{^_",
+                    "fields": {
+                      "STATE": "tap"
+                    }
+                  }
+                },
+                "DO0": {
+                  "block": {
+                    "type": "gd3800_set",
+                    "id": "2;xNVldI.Af*[+_nrL.5",
+                    "fields": {
+                      "GD3800_SETSTATE": "next"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "blinker_button",
+        "id": "/m|Qe1hRh@j[,C+C5:|^",
+        "x": 710,
+        "y": 110,
+        "fields": {
+          "KEY": "btn-abh"
+        },
+        "inputs": {
+          "NAME": {
+            "block": {
+              "type": "controls_if",
+              "id": ";CLOvw(gfY5$*FyrX`aD",
+              "inputs": {
+                "IF0": {
+                  "block": {
+                    "type": "blinker_button_state",
+                    "id": ";|hSFd-W%*Jn`.rI|txl",
+                    "fields": {
+                      "STATE": "on"
+                    }
+                  }
+                },
+                "DO0": {
+                  "block": {
+                    "type": "gd3800_play",
+                    "id": "]GlE/EE{`~YwjlRMt.:+",
+                    "inputs": {
+                      "MUSICNUM": {
+                        "block": {
+                          "type": "math_number",
+                          "id": "s_rvHQBQ4Ec3fvhC4.Bu",
+                          "fields": {
+                            "NUM": 1
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "gd3800_set",
+                        "id": "R]=k,ztS=scC#m`sheB}",
+                        "fields": {
+                          "GD3800_SETSTATE": "play"
+                        },
+                        "next": {
+                          "block": {
+                            "type": "blinker_widget_print",
+                            "id": "|~N#mM-,!+7V$.t*Skvi",
+                            "extraState": {
+                              "itemCount": 2
+                            },
+                            "fields": {
+                              "WIDGET": "btn-abh"
+                            },
+                            "inputs": {
+                              "INPUT0": {
+                                "block": {
+                                  "type": "blinker_state",
+                                  "id": "=IN]sD_0sT~Q#yt@29oS",
+                                  "inputs": {
+                                    "STATE": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "9iK0XMG:V4x.,^u@0Bx2",
+                                        "fields": {
+                                          "TEXT": "on"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "controls_if",
+                  "id": "}t*@uAol7N*BLx:X/y5H",
+                  "inputs": {
+                    "IF0": {
+                      "block": {
+                        "type": "blinker_button_state",
+                        "id": "kX)t)tK+:DgnMw*1;fVz",
+                        "fields": {
+                          "STATE": "off"
+                        }
+                      }
+                    },
+                    "DO0": {
+                      "block": {
+                        "type": "gd3800_set",
+                        "id": "#j`|L11BJj1p}{m7Nyk-",
+                        "fields": {
+                          "GD3800_SETSTATE": "pause"
+                        },
+                        "next": {
+                          "block": {
+                            "type": "blinker_widget_print",
+                            "id": "8;2uid5}cQ]fVva=Ay92",
+                            "extraState": {
+                              "itemCount": 2
+                            },
+                            "fields": {
+                              "WIDGET": "btn-abh"
+                            },
+                            "inputs": {
+                              "INPUT0": {
+                                "block": {
+                                  "type": "blinker_state",
+                                  "id": ";5+bSG==ba7+Q4iF5rMv",
+                                  "inputs": {
+                                    "STATE": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "{aU:6}(N_%_#$*ATX=x3",
+                                        "fields": {
+                                          "TEXT": "off"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "blinker_button",
+        "id": "H-pBafwHUu^IDbhBN75;",
+        "x": 170,
+        "y": 570,
+        "fields": {
+          "KEY": "btn-abk"
+        },
+        "inputs": {
+          "NAME": {
+            "block": {
+              "type": "controls_if",
+              "id": "~rAln9X5^R12@0(LiuW(",
+              "inputs": {
+                "IF0": {
+                  "block": {
+                    "type": "blinker_button_state",
+                    "id": "RmML,T.;VN;%`Zv?I9bg",
+                    "fields": {
+                      "STATE": "tap"
+                    }
+                  }
+                },
+                "DO0": {
+                  "block": {
+                    "type": "gd3800_set",
+                    "id": "/Tu~S;7UkfE*pmbZ)y4j",
+                    "fields": {
+                      "GD3800_SETSTATE": "prev"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

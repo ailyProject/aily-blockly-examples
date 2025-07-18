@@ -1,0 +1,652 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": -30,
+        "y": -130,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "!v/he^W%Q8{cqGY7(}+z",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "stepper_init",
+                  "id": "onTR1ZT.d.syCh!rMS4R",
+                  "fields": {
+                    "STEPPER": {
+                      "id": "bD/~SeRsF?}5)5sb*9R@"
+                    },
+                    "STEPS": 4096,
+                    "PIN1": "43",
+                    "PIN2": "45",
+                    "PIN3": "46",
+                    "PIN4": "47"
+                  },
+                  "next": {
+                    "block": {
+                      "type": "stepper_set_speed",
+                      "id": "DdfZVD(}^?_1(JYX}h21",
+                      "fields": {
+                        "STEPPER": {
+                          "id": "bD/~SeRsF?}5)5sb*9R@"
+                        },
+                        "SPEED": 10
+                      },
+                      "next": {
+                        "block": {
+                          "type": "blinker_init_wifi",
+                          "id": "^H9ItrV,I(Dwq^KaMcx~",
+                          "fields": {
+                            "MODE": "手动配网"
+                          },
+                          "inputs": {
+                            "AUTH": {
+                              "block": {
+                                "type": "text",
+                                "id": "8m^0qVr:+cI3XiOcK8)G",
+                                "fields": {
+                                  "TEXT": "c9519d1aa0b0"
+                                }
+                              }
+                            },
+                            "SSID": {
+                              "block": {
+                                "type": "text",
+                                "id": "f^t6LIE#nY$]}?$=,%[E",
+                                "fields": {
+                                  "TEXT": "openjumper_2.4G"
+                                }
+                              }
+                            },
+                            "PSWD": {
+                              "block": {
+                                "type": "text",
+                                "id": "Nft)(;q3)qAu%^!x0UWN",
+                                "fields": {
+                                  "TEXT": "cd85586651"
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "serial_println",
+                              "id": "b-*,8hjooA~*m|Yh(l)y",
+                              "fields": {
+                                "SERIAL": "Serial"
+                              },
+                              "inputs": {
+                                "VAR": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "14pUwn}5+/8;CeY)G38t",
+                                    "fields": {
+                                      "TEXT": "开始运行"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": -250,
+        "y": -90,
+        "deletable": false
+      },
+      {
+        "type": "blinker_button",
+        "id": "W{zq5EpJq7.mfIEokI:m",
+        "x": -230,
+        "y": 170,
+        "fields": {
+          "KEY": "btn-abf"
+        },
+        "inputs": {
+          "NAME": {
+            "block": {
+              "type": "controls_if",
+              "id": "*)k}Ie}l6WWC;li*eUmb",
+              "inputs": {
+                "IF0": {
+                  "block": {
+                    "type": "blinker_button_state",
+                    "id": "UxX(;?@OtWGz;L6jR-~X",
+                    "fields": {
+                      "STATE": "tap"
+                    }
+                  }
+                },
+                "DO0": {
+                  "block": {
+                    "type": "serial_print",
+                    "id": ";dkh_cFy)6W0`{mx*Wz!",
+                    "fields": {
+                      "SERIAL": "Serial"
+                    },
+                    "inputs": {
+                      "VAR": {
+                        "shadow": {
+                          "type": "text",
+                          "id": "+Eiu?VnJBUcH!vK,?!bN",
+                          "fields": {
+                            "TEXT": "1"
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "stepper_step",
+                        "id": "U5-$|6G)f;HhUTy0(!=j",
+                        "fields": {
+                          "STEPPER": {
+                            "id": "bD/~SeRsF?}5)5sb*9R@"
+                          }
+                        },
+                        "inputs": {
+                          "STEPS": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": ".ucc~sK-Kr[[dHa[c:($",
+                              "fields": {
+                                "NUM": 4096
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "blinker_button",
+        "id": "rx}-AdQmD/+g)]azk5w%",
+        "x": 190,
+        "y": 150,
+        "fields": {
+          "KEY": "btn-abg"
+        },
+        "inputs": {
+          "NAME": {
+            "block": {
+              "type": "controls_if",
+              "id": "Vh36m*iB(}%Crs8fo=_/",
+              "inputs": {
+                "IF0": {
+                  "block": {
+                    "type": "blinker_button_state",
+                    "id": "tT7g20lJuZ(;z+hv/0r=",
+                    "fields": {
+                      "STATE": "tap"
+                    }
+                  }
+                },
+                "DO0": {
+                  "block": {
+                    "type": "serial_print",
+                    "id": "_9/A6/wfYL@;S(WE{6n@",
+                    "fields": {
+                      "SERIAL": "Serial"
+                    },
+                    "inputs": {
+                      "VAR": {
+                        "shadow": {
+                          "type": "text",
+                          "id": "xlv?Ke2@N9nFaB2irNz.",
+                          "fields": {
+                            "TEXT": "2"
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "stepper_step",
+                        "id": "oTyXCYj0DaM5aNjx,#}$",
+                        "fields": {
+                          "STEPPER": {
+                            "id": "bD/~SeRsF?}5)5sb*9R@"
+                          }
+                        },
+                        "inputs": {
+                          "STEPS": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "amACtUDOF3bIeM,vt]Q)",
+                              "fields": {
+                                "NUM": -4096
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "blinker_button",
+        "id": "g9vKS;i2MK`:r;g*)Bjk",
+        "x": 70,
+        "y": 330,
+        "fields": {
+          "KEY": "btn-abi"
+        },
+        "inputs": {
+          "NAME": {
+            "block": {
+              "type": "controls_if",
+              "id": "I+Uiz:`Fj=Y)@EP/!m{T",
+              "inputs": {
+                "IF0": {
+                  "block": {
+                    "type": "blinker_button_state",
+                    "id": "+33cBK11F2}D7zHV`o=A",
+                    "fields": {
+                      "STATE": "off"
+                    }
+                  }
+                },
+                "DO0": {
+                  "block": {
+                    "type": "servo_write_float",
+                    "id": "a`L+z[=V|gRM`)2x_gj-",
+                    "fields": {
+                      "PIN": "12"
+                    },
+                    "inputs": {
+                      "ANGLE": {
+                        "shadow": {
+                          "type": "servo_angle",
+                          "id": "+A`Q%VUsXoSrwkePN,/Y",
+                          "fields": {
+                            "ANGLE": 0
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "serial_print",
+                        "id": "la[zm;N$DK$7wGE^c:`=",
+                        "fields": {
+                          "SERIAL": "Serial"
+                        },
+                        "inputs": {
+                          "VAR": {
+                            "shadow": {
+                              "type": "text",
+                              "id": "WfN_,%Wu/bUhm5ayvlO4",
+                              "fields": {
+                                "TEXT": "1"
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "blinker_widget_print",
+                            "id": "dky3:WY~mlzpOAW.MKxv",
+                            "extraState": {
+                              "itemCount": 2
+                            },
+                            "fields": {
+                              "WIDGET": "btn-abi"
+                            },
+                            "inputs": {
+                              "INPUT0": {
+                                "block": {
+                                  "type": "blinker_state",
+                                  "id": "Vc![]Kj7Ml98,i{#R6wC",
+                                  "inputs": {
+                                    "STATE": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "UumVV+GOd?hySZRz},]X",
+                                        "fields": {
+                                          "TEXT": "off"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "controls_if",
+                  "id": "}*y%iI.;Q~v(sd:VaB]y",
+                  "inputs": {
+                    "IF0": {
+                      "block": {
+                        "type": "blinker_button_state",
+                        "id": "u~ofs/-[#7ytuE-xi@!C",
+                        "fields": {
+                          "STATE": "on"
+                        }
+                      }
+                    },
+                    "DO0": {
+                      "block": {
+                        "type": "servo_write_float",
+                        "id": "VjSEqSRv@g:l|(p4z{|(",
+                        "fields": {
+                          "PIN": "12"
+                        },
+                        "inputs": {
+                          "ANGLE": {
+                            "shadow": {
+                              "type": "servo_angle",
+                              "id": "55t35N6m/*uHG60qzA^v",
+                              "fields": {
+                                "ANGLE": 90
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "serial_print",
+                            "id": "W86_:Lw%|KUJ#oWC77V)",
+                            "fields": {
+                              "SERIAL": "Serial"
+                            },
+                            "inputs": {
+                              "VAR": {
+                                "shadow": {
+                                  "type": "text",
+                                  "id": "heY5=Q-FBV35Z~8wo;@L",
+                                  "fields": {
+                                    "TEXT": "6"
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "blinker_widget_print",
+                                "id": "Xe1E;y2Sary|w_X$ECXa",
+                                "extraState": {
+                                  "itemCount": 2
+                                },
+                                "fields": {
+                                  "WIDGET": "btn-abi"
+                                },
+                                "inputs": {
+                                  "INPUT0": {
+                                    "block": {
+                                      "type": "blinker_state",
+                                      "id": "cj[$zp.k1+y/J70*YySU",
+                                      "inputs": {
+                                        "STATE": {
+                                          "shadow": {
+                                            "type": "text",
+                                            "id": "G{PMPSP7{A0k]isyMrNh",
+                                            "fields": {
+                                              "TEXT": "on"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "blinker_button",
+        "id": "Qx5M(UuE:9,IAaz{/(T}",
+        "x": 670,
+        "y": -10,
+        "fields": {
+          "KEY": "btn-fan"
+        },
+        "inputs": {
+          "NAME": {
+            "block": {
+              "type": "controls_if",
+              "id": "QEsCcy{0%^j^Jq@aT%|@",
+              "inputs": {
+                "IF0": {
+                  "block": {
+                    "type": "blinker_button_state",
+                    "id": "~qZ54C5-hIwI%FbZ9Z%!",
+                    "fields": {
+                      "STATE": "on"
+                    }
+                  }
+                },
+                "DO0": {
+                  "block": {
+                    "type": "io_digitalwrite",
+                    "id": "p1u@qk+vj9(q+*`DI*(5",
+                    "inputs": {
+                      "PIN": {
+                        "shadow": {
+                          "type": "io_pin_digi",
+                          "id": "[~p2d8VO]vp;*GgzHQ(d",
+                          "fields": {
+                            "PIN": "21"
+                          }
+                        }
+                      },
+                      "STATE": {
+                        "shadow": {
+                          "type": "io_state",
+                          "id": "Wwc-2DUbGExp5fWd/Gkq",
+                          "fields": {
+                            "STATE": "HIGH"
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "serial_print",
+                        "id": "r3W^h0Wrjs}M.F$([:S8",
+                        "fields": {
+                          "SERIAL": "Serial"
+                        },
+                        "inputs": {
+                          "VAR": {
+                            "shadow": {
+                              "type": "text",
+                              "id": "#b$$w#DtOGG#W14}l@Aq",
+                              "fields": {
+                                "TEXT": "4"
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "blinker_widget_print",
+                            "id": "xef2pwzONcq5h8rm7zvF",
+                            "extraState": {
+                              "itemCount": 2
+                            },
+                            "fields": {
+                              "WIDGET": "btn-fan"
+                            },
+                            "inputs": {
+                              "INPUT0": {
+                                "block": {
+                                  "type": "blinker_state",
+                                  "id": "~i[w,~(Ik0LZ:Q5|$QCM",
+                                  "inputs": {
+                                    "STATE": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "Re6~8z97hTA_uZZ`[1W1",
+                                        "fields": {
+                                          "TEXT": "on"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "controls_if",
+                  "id": "1)5FWF-1cKs[9:]WUo)l",
+                  "inputs": {
+                    "IF0": {
+                      "block": {
+                        "type": "blinker_button_state",
+                        "id": "u562Rke{gyf]dnK_98Q}",
+                        "fields": {
+                          "STATE": "off"
+                        }
+                      }
+                    },
+                    "DO0": {
+                      "block": {
+                        "type": "io_digitalwrite",
+                        "id": "hVEO6?X3{g,eKd@Jk735",
+                        "inputs": {
+                          "PIN": {
+                            "shadow": {
+                              "type": "io_pin_digi",
+                              "id": "x8N?St715?=yhx1ebz_n",
+                              "fields": {
+                                "PIN": "21"
+                              }
+                            }
+                          },
+                          "STATE": {
+                            "shadow": {
+                              "type": "io_state",
+                              "id": "7lmHVuPN_H|_l#qaRBBF",
+                              "fields": {
+                                "STATE": "LOW"
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "serial_print",
+                            "id": "5l5rcF~Oyf2jme::`W26",
+                            "fields": {
+                              "SERIAL": "Serial"
+                            },
+                            "inputs": {
+                              "VAR": {
+                                "shadow": {
+                                  "type": "text",
+                                  "id": "tI258`Y#B83y$!|`71Q#",
+                                  "fields": {
+                                    "TEXT": "5"
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "blinker_widget_print",
+                                "id": "@!F}zE52V=deg7ewp[Pq",
+                                "extraState": {
+                                  "itemCount": 2
+                                },
+                                "fields": {
+                                  "WIDGET": "btn-fan"
+                                },
+                                "inputs": {
+                                  "INPUT0": {
+                                    "block": {
+                                      "type": "blinker_state",
+                                      "id": "bV+fJg177ucRrr{.~zB;",
+                                      "inputs": {
+                                        "STATE": {
+                                          "shadow": {
+                                            "type": "text",
+                                            "id": "?nG~]%FzVJYciks^j8m9",
+                                            "fields": {
+                                              "TEXT": "off"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "stepper1",
+      "id": "bD/~SeRsF?}5)5sb*9R@",
+      "type": "Stepper"
+    }
+  ]
+}
