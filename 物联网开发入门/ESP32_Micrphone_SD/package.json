@@ -1,0 +1,20 @@
+{
+  "name": "microphone_sd",
+  "nickname": "综合例程 麦克风录音至SD卡",
+  "url": "https://arduino.me/s/52?aid=3107",
+  "description": "使用数字麦克风录制音频，并将音频存储到SD卡中。",
+  "version": "1.0.0",
+  "board": "ESP32S3 board",
+  "dependencies": {
+    "@aily-project/board-esp32s3": "1.0.0",
+    "@aily-project/lib-core-io": "1.0.0",
+    "@aily-project/lib-core-logic": "0.0.1",
+    "@aily-project/lib-core-loop": "0.0.1",
+    "@aily-project/lib-core-math": "0.0.1",
+    "@aily-project/lib-core-serial": "0.0.1",
+    "@aily-project/lib-core-text": "0.0.1",
+    "@aily-project/lib-core-time": "0.0.1",
+    "@aily-project/lib-core-variables": "0.0.1",
+    "@aily-project/lib-esp32-i2s": "^1.0.0"
+  }
+}

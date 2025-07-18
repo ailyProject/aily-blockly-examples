@@ -1,0 +1,526 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "8P.gS$c|{oe(~n!Bax(Z",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "esp32_sd_init",
+                  "id": "`Nf2]!RnJSL+jM#arN*v",
+                  "inputs": {
+                    "CS_PIN": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "%5E9iBDN:m.bvn^kY5tv",
+                        "fields": {
+                          "NUM": 46
+                        }
+                      }
+                    },
+                    "SCK_PIN": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "F$|.EWTZ8^$P9{}W2z?p",
+                        "fields": {
+                          "NUM": 3
+                        }
+                      }
+                    },
+                    "MOSI_PIN": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": ":N6gwZ$`;.+N(#TyZU:4",
+                        "fields": {
+                          "NUM": 14
+                        }
+                      }
+                    },
+                    "MISO_PIN": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "9d)kvuB*Z$@F%=$|TKHi",
+                        "fields": {
+                          "NUM": 35
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "esp32_i2s_init_and_begin",
+                      "id": "r%}Z+g_(|B].I07T;V6h",
+                      "fields": {
+                        "SAMPLE_RATE": "8000",
+                        "BUFFER_SIZE": "512"
+                      },
+                      "inputs": {
+                        "SCK_PIN": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "Ye:.e|;}YTVD+nPz][iR",
+                            "fields": {
+                              "NUM": 41
+                            }
+                          }
+                        },
+                        "WS_PIN": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "NFM^m#L7`0oe8Tq+[Vx}",
+                            "fields": {
+                              "NUM": 42
+                            }
+                          }
+                        },
+                        "SD_PIN": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "[0H:e)Ei%NE%*)5)SBGw",
+                            "fields": {
+                              "NUM": 2
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "esp32_i2s_init_speaker",
+                          "id": "WbPZ13X+h/x,0cR4Q|[%",
+                          "inputs": {
+                            "BCLK_PIN": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "KWJG/pYsWRa5~mcqqpe=",
+                                "fields": {
+                                  "NUM": 39
+                                }
+                              }
+                            },
+                            "LRC_PIN": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "-JMOWV7D@Mb|/j7Y@9IB",
+                                "fields": {
+                                  "NUM": 40
+                                }
+                              }
+                            },
+                            "DIN_PIN": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "|fj]3(,RCKq|!Zq~$%UQ",
+                                "fields": {
+                                  "NUM": 38
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "esp32_i2s_set_volume",
+                              "id": "ILn_x+0AU:S^(ZW2.+kI",
+                              "fields": {
+                                "OBJECT": {
+                                  "id": "*~RiA8p2qvRxY#ulYD7v"
+                                }
+                              },
+                              "inputs": {
+                                "VOLUME": {
+                                  "shadow": {
+                                    "type": "math_number",
+                                    "id": "YS!I}vFT!Q8WcPs=*Zmh",
+                                    "fields": {
+                                      "NUM": 0.5
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "io_digitalwrite",
+                                  "id": "vt?/lh]~SIb55mJQy(x!",
+                                  "inputs": {
+                                    "PIN": {
+                                      "shadow": {
+                                        "type": "io_pin_digi",
+                                        "id": "jQw{E(7U3PfuF1ZR_Vat",
+                                        "fields": {
+                                          "PIN": "12"
+                                        }
+                                      }
+                                    },
+                                    "STATE": {
+                                      "shadow": {
+                                        "type": "io_state",
+                                        "id": "V|vX3!2np57f73Q%I#G_",
+                                        "fields": {
+                                          "STATE": "LOW"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 10,
+        "y": 370,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "esp32_i2s_update_recording",
+              "id": "C,mSYTAb%Dh5JB;T.*J8",
+              "fields": {
+                "OBJECT": {
+                  "id": "*~RiA8p2qvRxY#ulYD7v"
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "esp32_i2s_update_playback",
+                  "id": "7q7TcB:`D/C7SJ:7?w}%",
+                  "fields": {
+                    "OBJECT": {
+                      "id": "*~RiA8p2qvRxY#ulYD7v"
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "controls_if",
+                      "id": "8dL2ocRrp~Lq;LT@u%Yc",
+                      "inputs": {
+                        "IF0": {
+                          "block": {
+                            "type": "logic_compare",
+                            "id": "]X?)gqM}qnE~(yT^|a-y",
+                            "fields": {
+                              "OP": "EQ"
+                            },
+                            "inputs": {
+                              "A": {
+                                "block": {
+                                  "type": "io_digitalread",
+                                  "id": "nV6}w:9*WCRz{[[i(VCT",
+                                  "inputs": {
+                                    "PIN": {
+                                      "shadow": {
+                                        "type": "io_pin_digi",
+                                        "id": ";Wkp2jg4m4mK2OkTok^G",
+                                        "fields": {
+                                          "PIN": "7"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "B": {
+                                "block": {
+                                  "type": "io_state",
+                                  "id": "$Zs5Oih0tAb3|kETnU$h",
+                                  "fields": {
+                                    "STATE": "LOW"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "DO0": {
+                          "block": {
+                            "type": "esp32_i2s_start_recording",
+                            "id": "CE=NR4UzyBqUyDI(Ysse",
+                            "fields": {
+                              "OBJECT": {
+                                "id": "*~RiA8p2qvRxY#ulYD7v"
+                              }
+                            },
+                            "inputs": {
+                              "FILENAME": {
+                                "shadow": {
+                                  "type": "text",
+                                  "id": "Hxo{DDgxui+V56197Egd",
+                                  "fields": {
+                                    "TEXT": "test.wav"
+                                  }
+                                }
+                              },
+                              "DURATION": {
+                                "shadow": {
+                                  "type": "math_number",
+                                  "id": "%n$AM,9Z`}yW-65^A^=~",
+                                  "fields": {
+                                    "NUM": 10
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "controls_ifelse",
+                          "id": "Rs5XM~@;$)`o,}0QPfbk",
+                          "inputs": {
+                            "IF0": {
+                              "block": {
+                                "type": "esp32_i2s_is_recording",
+                                "id": "te$l|.xN3o1H0~7aL*M/",
+                                "fields": {
+                                  "OBJECT": {
+                                    "id": "*~RiA8p2qvRxY#ulYD7v"
+                                  }
+                                }
+                              }
+                            },
+                            "DO0": {
+                              "block": {
+                                "type": "io_digitalwrite",
+                                "id": "d2dM{I@u=e=n;oy%Q)7V",
+                                "inputs": {
+                                  "PIN": {
+                                    "shadow": {
+                                      "type": "io_pin_digi",
+                                      "id": "]cG6rB)V}iMAgULgF6|(",
+                                      "fields": {
+                                        "PIN": "12"
+                                      }
+                                    }
+                                  },
+                                  "STATE": {
+                                    "shadow": {
+                                      "type": "io_state",
+                                      "id": "SE4~=GS|@Z19F00E^o}n",
+                                      "fields": {
+                                        "STATE": "HIGH"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "ELSE": {
+                              "block": {
+                                "type": "io_digitalwrite",
+                                "id": "b[fm.(;,:b,h*39o.@~K",
+                                "inputs": {
+                                  "PIN": {
+                                    "shadow": {
+                                      "type": "io_pin_digi",
+                                      "id": "$Y_78Zqlt7C}H`V]I;Sw",
+                                      "fields": {
+                                        "PIN": "12"
+                                      }
+                                    }
+                                  },
+                                  "STATE": {
+                                    "shadow": {
+                                      "type": "io_state",
+                                      "id": "#uf~LKNLylmkB]FxIAN5",
+                                      "fields": {
+                                        "STATE": "LOW"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "controls_if",
+                              "id": "e2)M5E1P86b;4}ukNkO)",
+                              "inputs": {
+                                "IF0": {
+                                  "block": {
+                                    "type": "logic_compare",
+                                    "id": "zX7^7g1e|Zw![[V=f}Ae",
+                                    "fields": {
+                                      "OP": "EQ"
+                                    },
+                                    "inputs": {
+                                      "A": {
+                                        "block": {
+                                          "type": "io_digitalread",
+                                          "id": "bL3UwM?2nnB.q1[QrTSq",
+                                          "inputs": {
+                                            "PIN": {
+                                              "shadow": {
+                                                "type": "io_pin_digi",
+                                                "id": "G~T0RkV?GCH+a={FBgFe",
+                                                "fields": {
+                                                  "PIN": "17"
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "B": {
+                                        "block": {
+                                          "type": "io_state",
+                                          "id": "fk`bLK:4L#E3|.r1i.H~",
+                                          "fields": {
+                                            "STATE": "LOW"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "DO0": {
+                                  "block": {
+                                    "type": "esp32_i2s_play_wav_file",
+                                    "id": "#3{K;:q[!:QLYL9,jAzd",
+                                    "fields": {
+                                      "OBJECT": {
+                                        "id": "*~RiA8p2qvRxY#ulYD7v"
+                                      }
+                                    },
+                                    "inputs": {
+                                      "FILENAME": {
+                                        "shadow": {
+                                          "type": "text",
+                                          "id": "K$o{/CvU2nis}o0TlPj7",
+                                          "fields": {
+                                            "TEXT": "test.wav"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "controls_ifelse",
+                                  "id": "tqPw2$s+:{?VSu=Sx_Zd",
+                                  "inputs": {
+                                    "IF0": {
+                                      "block": {
+                                        "type": "esp32_i2s_is_playing",
+                                        "id": "GBl2OJa{ErbFUaNI8o_M",
+                                        "fields": {
+                                          "OBJECT": {
+                                            "id": "*~RiA8p2qvRxY#ulYD7v"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "DO0": {
+                                      "block": {
+                                        "type": "io_digitalwrite",
+                                        "id": "VBX!dF:#1.]QUu)rrgYY",
+                                        "inputs": {
+                                          "PIN": {
+                                            "shadow": {
+                                              "type": "io_pin_digi",
+                                              "id": "%Yq.OuQqr,~ZaYKaFwb#",
+                                              "fields": {
+                                                "PIN": "12"
+                                              }
+                                            }
+                                          },
+                                          "STATE": {
+                                            "shadow": {
+                                              "type": "io_state",
+                                              "id": ";!z9^u4o@,}lUGTE#AkF",
+                                              "fields": {
+                                                "STATE": "HIGH"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "ELSE": {
+                                      "block": {
+                                        "type": "io_digitalwrite",
+                                        "id": "UJAdW;24/g:~p+:V5b1w",
+                                        "inputs": {
+                                          "PIN": {
+                                            "shadow": {
+                                              "type": "io_pin_digi",
+                                              "id": "9nL6Zm[8*[B|u^dUEvu3",
+                                              "fields": {
+                                                "PIN": "12"
+                                              }
+                                            }
+                                          },
+                                          "STATE": {
+                                            "shadow": {
+                                              "type": "io_state",
+                                              "id": "(+[-|7ILQoY/8z7efDYh",
+                                              "fields": {
+                                                "STATE": "LOW"
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "next": {
+                                          "block": {
+                                            "type": "esp32_i2s_stop_playback",
+                                            "id": "3WUhvd{*zG:yl;!p7Tz$",
+                                            "fields": {
+                                              "OBJECT": {
+                                                "id": "*~RiA8p2qvRxY#ulYD7v"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "microphone",
+      "id": "*~RiA8p2qvRxY#ulYD7v",
+      "type": "EspI2S"
+    }
+  ]
+}
