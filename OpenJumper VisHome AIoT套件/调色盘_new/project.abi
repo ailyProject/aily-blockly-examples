@@ -1,0 +1,181 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "fastled_init",
+              "id": "gU!*EX9C5QQB`ffE8SU5",
+              "fields": {
+                "DATA_PIN": "3",
+                "TYPE": "WS2812B",
+                "NUM_LEDS": 7
+              },
+              "next": {
+                "block": {
+                  "type": "blinker_init_wifi",
+                  "id": "{W|nZ!cuByQcM;Ns`w1h",
+                  "fields": {
+                    "MODE": "手动配网"
+                  },
+                  "inputs": {
+                    "AUTH": {
+                      "block": {
+                        "type": "text",
+                        "id": "oZ@Y692Hq|V/FwFaw01l",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      }
+                    },
+                    "SSID": {
+                      "block": {
+                        "type": "text",
+                        "id": "omq5oUwRj#;t{CX9Iu`0",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      }
+                    },
+                    "PSWD": {
+                      "block": {
+                        "type": "text",
+                        "id": "gYR8U1zV!uSH#[DIYzu|",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 310,
+        "deletable": false
+      },
+      {
+        "type": "blinker_colorpicker",
+        "id": "ZLe/vN[PWZ/pY|ZpCU0W",
+        "x": 70,
+        "y": 470,
+        "fields": {
+          "KEY": "col-abc"
+        },
+        "inputs": {
+          "NAME": {
+            "block": {
+              "type": "fastled_brightness",
+              "id": "vE!Gg^4H6i^w!Yfa3ldM",
+              "inputs": {
+                "BRIGHTNESS": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "39bd~|HRd~^nE{2;*H}E",
+                    "fields": {
+                      "NUM": 100
+                    }
+                  },
+                  "block": {
+                    "type": "blinker_colorpicker_value",
+                    "id": "XkL~pb~cAhRB8dAD+aLH",
+                    "fields": {
+                      "KEY": "bright_value"
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "fastled_fill_solid",
+                  "id": "zi$QxH2Dn/3HOJreYTwE",
+                  "fields": {
+                    "DATA_PIN": "3"
+                  },
+                  "inputs": {
+                    "COLOR": {
+                      "shadow": {
+                        "type": "fastled_preset_color",
+                        "id": "rP:LylG5~YoaiN{QpKWM",
+                        "fields": {
+                          "COLOR": "#ffffff"
+                        }
+                      },
+                      "block": {
+                        "type": "fastled_rgb",
+                        "id": "R2.-{;p7j[@Ny#iB)jTO",
+                        "inputs": {
+                          "RED": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "V3n7RC$zN!.0kt8).[Pd",
+                              "fields": {
+                                "NUM": 255
+                              }
+                            },
+                            "block": {
+                              "type": "blinker_colorpicker_value",
+                              "id": "kkoo}/|:^`G]*T*rpZgF",
+                              "fields": {
+                                "KEY": "r_value"
+                              }
+                            }
+                          },
+                          "GREEN": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "qcmigYCwBC,MhUhdiAza",
+                              "fields": {
+                                "NUM": 0
+                              }
+                            },
+                            "block": {
+                              "type": "blinker_colorpicker_value",
+                              "id": "-Cbf@5gb3wcTH~NjNF=l",
+                              "fields": {
+                                "KEY": "g_value"
+                              }
+                            }
+                          },
+                          "BLUE": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "tVO[aB=Rx^$5A#/A?$t}",
+                              "fields": {
+                                "NUM": 0
+                              }
+                            },
+                            "block": {
+                              "type": "blinker_colorpicker_value",
+                              "id": "KYHKzz?y77T1__!5k:Ib",
+                              "fields": {
+                                "KEY": "b_value"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

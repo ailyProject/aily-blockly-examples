@@ -1,0 +1,22 @@
+{
+  "name": "esp32_mq2_dht_oled",
+  "nickname": "综合例程 环境监测站",
+  "url": "https://arduino.me/s/52?aid=3099",
+  "description": "实时显示温湿度、光照强度、空气质量数据，OLED显示当前数据，SD卡存储历史数据，当烟雾浓度超标时，蜂鸣器报警。",
+  "version": "1.0.0",
+  "board": "ESP32S3 board",
+  "dependencies": {
+    "@aily-project/board-esp32s3": "1.0.0",
+    "@aily-project/lib-core-io": "1.0.0",
+    "@aily-project/lib-core-logic": "0.0.1",
+    "@aily-project/lib-core-loop": "0.0.1",
+    "@aily-project/lib-core-math": "0.0.1",
+    "@aily-project/lib-core-serial": "0.0.1",
+    "@aily-project/lib-core-text": "0.0.1",
+    "@aily-project/lib-core-time": "0.0.1",
+    "@aily-project/lib-core-variables": "0.0.1",
+    "@aily-project/lib-dht": "^1.0.0",
+    "@aily-project/lib-esp32-sd": "^0.0.1",
+    "@aily-project/lib-u8g2": "^1.0.0"
+  }
+}
