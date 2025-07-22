@@ -1,0 +1,1003 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "aivox_init_wifi",
+              "id": "E3b9ikz[zUO;jCazEv)d",
+              "inputs": {
+                "wifi_ssid": {
+                  "shadow": {
+                    "type": "text",
+                    "id": ":};NS0IY(:E6[5FSNGOp",
+                    "fields": {
+                      "TEXT": "603"
+                    }
+                  }
+                },
+                "wifi_pwd": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "?8?/6Hl6X5qY@-0}=O,f",
+                    "fields": {
+                      "TEXT": "12345678"
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "aivox_register_ultrasonic_sensor_driver_status",
+                  "id": "#2a~[+]:ye_Gbd)Af!B%",
+                  "inputs": {
+                    "driver_name": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "NR$WV%iE7#^7!J)Nt`Y+",
+                        "fields": {
+                          "TEXT": "distance"
+                        }
+                      }
+                    },
+                    "driver_properties": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "+J](9$HlBTXra4RVky)5",
+                        "fields": {
+                          "TEXT": "超声波获取距离"
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "dht_init",
+                      "id": "CnO-iwneN+Jd%d|n4ksn",
+                      "fields": {
+                        "TYPE": "DHT11",
+                        "PIN": "44"
+                      },
+                      "next": {
+                        "block": {
+                          "type": "aivox_register_dht11_sensor_driver_status",
+                          "id": "!irD0ooE2~+a!zY0hUMa",
+                          "inputs": {
+                            "dht11_temp_name": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "BA.?eif$_t]8({cC0c6]",
+                                "fields": {
+                                  "TEXT": "temp"
+                                }
+                              }
+                            },
+                            "temp_properties": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "nT+JnHYWbOSY=/+|ow_v",
+                                "fields": {
+                                  "TEXT": "获取温湿度传感器的温度值"
+                                }
+                              }
+                            },
+                            "dht11_humidity_name": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "xXpq0[)7x-Wm0;i}/ZR=",
+                                "fields": {
+                                  "TEXT": "hum"
+                                }
+                              }
+                            },
+                            "humidity_properties": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "xWN$#b91f$cP:Fb:kd53",
+                                "fields": {
+                                  "TEXT": "获取温湿度传感器的湿度值"
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "aivox_register_analog_sensor_driver_status",
+                              "id": "rn.kHt~?h6},d!{1TQ8u",
+                              "inputs": {
+                                "aivox_analog_name": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "nK*lf%.%RLK/)]$S#?t-",
+                                    "fields": {
+                                      "TEXT": "guangmin"
+                                    }
+                                  }
+                                },
+                                "aivox_analog_desc": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "H}}Q2dxM^qC-+UZ+`SE%",
+                                    "fields": {
+                                      "TEXT": "光敏传感器"
+                                    }
+                                  }
+                                },
+                                "aivox_analog_status": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "qXF_,{FI%.(ftRFzbl?b",
+                                    "fields": {
+                                      "TEXT": "当前光敏值"
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "aivox_init_std",
+                                  "id": "r(9PquZrNeJO/v|{Ayma",
+                                  "fields": {
+                                    "MIC_BCLK": "5",
+                                    "MIC_WS": "2",
+                                    "MIC_DIN": "4",
+                                    "SPK_BCLK": "13",
+                                    "SPK_WS": "12",
+                                    "SPK_DOUT": "1",
+                                    "TRIGGER_PIN": "0"
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "aivox_init_lcd",
+                                      "id": "FbiildFs3gAXt12j0_l+",
+                                      "fields": {
+                                        "backLight": "11",
+                                        "MOSI": "17",
+                                        "CLK": "16",
+                                        "DC": "12",
+                                        "RST": "21",
+                                        "CS": "15"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 90,
+        "y": 410,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "aivox_loop",
+              "id": "hiaTb?DW7%P.,![+9@DK",
+              "inputs": {
+                "DO": {
+                  "block": {
+                    "type": "aivox_event_is_activation",
+                    "id": "{JG(Qnj`?0u{kJ/Jeq;}",
+                    "inputs": {
+                      "DO": {
+                        "block": {
+                          "type": "aivox_lcd_show_chat_message",
+                          "id": "U{A5Ly%j]*ht:j|Q{]b0",
+                          "fields": {
+                            "ai_vox_display_role": "Display::Role::kSystem"
+                          },
+                          "inputs": {
+                            "ai_vox_chat_message": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "sk4)9F?}6F{h1GUtf;Xf",
+                                "fields": {
+                                  "TEXT": "test"
+                                }
+                              },
+                              "block": {
+                                "type": "aivox_get_activation_message",
+                                "id": "BB3)L7X*3.El9c^f#[p*"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "aivox_event_is_state_change",
+                        "id": ":aO1J_^e--_Ntsg$nf;2",
+                        "inputs": {
+                          "DO": {
+                            "block": {
+                              "type": "controls_if",
+                              "id": "-Z+i,J~2G!HDVQljJ|aM",
+                              "inputs": {
+                                "IF0": {
+                                  "block": {
+                                    "type": "logic_compare",
+                                    "id": "eES#rl3-SwMejAQs9Wrb",
+                                    "fields": {
+                                      "OP": "EQ"
+                                    },
+                                    "inputs": {
+                                      "A": {
+                                        "block": {
+                                          "type": "aivox_get_new_state",
+                                          "id": "O+T(gbiO]5.ubo^Uf}D-"
+                                        }
+                                      },
+                                      "B": {
+                                        "block": {
+                                          "type": "aivox_state_enum",
+                                          "id": "]$?t}@Q!yY/U.){XbFJ7",
+                                          "fields": {
+                                            "STATE": "ai_vox::ChatState::kIdle"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "DO0": {
+                                  "block": {
+                                    "type": "aivox_lcd_show_status",
+                                    "id": "mp$1{N.|E0-yQSmeI;}7",
+                                    "inputs": {
+                                      "ai_vox_status": {
+                                        "shadow": {
+                                          "type": "text",
+                                          "id": ".kUQy84dZ:Z.!iLX%X}D",
+                                          "fields": {
+                                            "TEXT": "空闲中....."
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "controls_if",
+                                  "id": "O2:~1P(u_@Ay41GP4P|g",
+                                  "inputs": {
+                                    "IF0": {
+                                      "block": {
+                                        "type": "logic_compare",
+                                        "id": ")y25b#3wvuUkcF;GaqMJ",
+                                        "fields": {
+                                          "OP": "EQ"
+                                        },
+                                        "inputs": {
+                                          "A": {
+                                            "block": {
+                                              "type": "aivox_get_new_state",
+                                              "id": "SP^hyxdUII~bxiD(+fqH"
+                                            }
+                                          },
+                                          "B": {
+                                            "block": {
+                                              "type": "aivox_state_enum",
+                                              "id": "v3N~UwOyo$,q%qDr[SdD",
+                                              "fields": {
+                                                "STATE": "ai_vox::ChatState::kIniting"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "DO0": {
+                                      "block": {
+                                        "type": "aivox_lcd_show_status",
+                                        "id": "hk6A;|h?Nkjgn0g+JT9s",
+                                        "inputs": {
+                                          "ai_vox_status": {
+                                            "shadow": {
+                                              "type": "text",
+                                              "id": "CIx]j,SG?o(9nuPwueBV",
+                                              "fields": {
+                                                "TEXT": "初始化中....."
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "controls_if",
+                                      "id": "0Sz-5{_^f_?,{4AfGr0{",
+                                      "inputs": {
+                                        "IF0": {
+                                          "block": {
+                                            "type": "logic_compare",
+                                            "id": "JitkPsn28PF8DW|TMM;/",
+                                            "fields": {
+                                              "OP": "EQ"
+                                            },
+                                            "inputs": {
+                                              "A": {
+                                                "block": {
+                                                  "type": "aivox_get_new_state",
+                                                  "id": "lxlbW2Osrd~rf{[IunNA"
+                                                }
+                                              },
+                                              "B": {
+                                                "block": {
+                                                  "type": "aivox_state_enum",
+                                                  "id": "1FiWFPguHvuF;F5c3_!y",
+                                                  "fields": {
+                                                    "STATE": "ai_vox::ChatState::kStandby"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "DO0": {
+                                          "block": {
+                                            "type": "aivox_lcd_show_status",
+                                            "id": "KaN#@_RX|h[53d|SQr[j",
+                                            "inputs": {
+                                              "ai_vox_status": {
+                                                "shadow": {
+                                                  "type": "text",
+                                                  "id": "p--O2QG3S@~tRvttZR+K",
+                                                  "fields": {
+                                                    "TEXT": "待命....."
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "controls_if",
+                                          "id": "d+eJoCm=wo+SuAC;9}Ul",
+                                          "inputs": {
+                                            "IF0": {
+                                              "block": {
+                                                "type": "logic_compare",
+                                                "id": "2WL4q#?^4g-m@YFV_?gl",
+                                                "fields": {
+                                                  "OP": "EQ"
+                                                },
+                                                "inputs": {
+                                                  "A": {
+                                                    "block": {
+                                                      "type": "aivox_get_new_state",
+                                                      "id": "nz=/FVmTWDW()aCOPL0T"
+                                                    }
+                                                  },
+                                                  "B": {
+                                                    "block": {
+                                                      "type": "aivox_state_enum",
+                                                      "id": "Y:HaBTXpFJDQ?/|`}(x|",
+                                                      "fields": {
+                                                        "STATE": "ai_vox::ChatState::kConnecting"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "DO0": {
+                                              "block": {
+                                                "type": "aivox_lcd_show_status",
+                                                "id": ":p0`HIaF~?fR^}uxAZ!w",
+                                                "inputs": {
+                                                  "ai_vox_status": {
+                                                    "shadow": {
+                                                      "type": "text",
+                                                      "id": "nk[=q-YW9@D`:r#6QF?O",
+                                                      "fields": {
+                                                        "TEXT": "连接中....."
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "controls_if",
+                                              "id": ":!oZ$dDZ%MG`JTb`o_w5",
+                                              "inputs": {
+                                                "IF0": {
+                                                  "block": {
+                                                    "type": "logic_compare",
+                                                    "id": "DiC%U7yGBqhTHWvQ+enG",
+                                                    "fields": {
+                                                      "OP": "EQ"
+                                                    },
+                                                    "inputs": {
+                                                      "A": {
+                                                        "block": {
+                                                          "type": "aivox_get_new_state",
+                                                          "id": "w}G%X||!|`Vu(D)-mkX]"
+                                                        }
+                                                      },
+                                                      "B": {
+                                                        "block": {
+                                                          "type": "aivox_state_enum",
+                                                          "id": "{YE^7Ml{n6yD[N)u8y)C",
+                                                          "fields": {
+                                                            "STATE": "ai_vox::ChatState::kListening"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "DO0": {
+                                                  "block": {
+                                                    "type": "aivox_lcd_show_status",
+                                                    "id": "c;S;*WAGh)fa5i2kOf,Z",
+                                                    "inputs": {
+                                                      "ai_vox_status": {
+                                                        "shadow": {
+                                                          "type": "text",
+                                                          "id": "2{X#{GZwnL?C@O!C`~qG",
+                                                          "fields": {
+                                                            "TEXT": "聆听中....."
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "controls_if",
+                                                  "id": "xg%{GS6?bva}@_c}?C|r",
+                                                  "inputs": {
+                                                    "IF0": {
+                                                      "block": {
+                                                        "type": "logic_compare",
+                                                        "id": "Tk3.C0kL$KKh4WuvZM[N",
+                                                        "fields": {
+                                                          "OP": "EQ"
+                                                        },
+                                                        "inputs": {
+                                                          "A": {
+                                                            "block": {
+                                                              "type": "aivox_get_new_state",
+                                                              "id": "G|3E=lS4}S{+|Tl.?ad("
+                                                            }
+                                                          },
+                                                          "B": {
+                                                            "block": {
+                                                              "type": "aivox_state_enum",
+                                                              "id": "b@}v#%|{au%.2;~TFZr#",
+                                                              "fields": {
+                                                                "STATE": "ai_vox::ChatState::kSpeaking"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "DO0": {
+                                                      "block": {
+                                                        "type": "aivox_lcd_show_status",
+                                                        "id": "+Dn^wH2x=tsdA!Yh8c*h",
+                                                        "inputs": {
+                                                          "ai_vox_status": {
+                                                            "shadow": {
+                                                              "type": "text",
+                                                              "id": "eA-v/`?(6fTicjjqwa^Q",
+                                                              "fields": {
+                                                                "TEXT": "说话中....."
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "aivox_event_is_emotion",
+                            "id": "=J9?GAw/m{GE-XepWBk{",
+                            "inputs": {
+                              "DO": {
+                                "block": {
+                                  "type": "aivox_lcd_show_emotion",
+                                  "id": "KBeQ.30=FuBQsanm*7io",
+                                  "inputs": {
+                                    "ai_vox_emotion": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "sIS}5aguO!1tVwR4(3x=",
+                                        "fields": {
+                                          "TEXT": "test"
+                                        }
+                                      },
+                                      "block": {
+                                        "type": "aivox_get_emotion",
+                                        "id": "u){]T+gIzt(1cG4J6pzc"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "aivox_event_is_chat_message",
+                                "id": "ANnIA-3D]3zKRnNT=O|Q",
+                                "inputs": {
+                                  "DO": {
+                                    "block": {
+                                      "type": "controls_if",
+                                      "id": "P%iNz]Xu]A3mHR[k+is|",
+                                      "inputs": {
+                                        "IF0": {
+                                          "block": {
+                                            "type": "logic_compare",
+                                            "id": "CV!+vDlI~V_:,OA$D[-3",
+                                            "fields": {
+                                              "OP": "EQ"
+                                            },
+                                            "inputs": {
+                                              "A": {
+                                                "block": {
+                                                  "type": "aivox_get_chat_role",
+                                                  "id": "zaT[$!)h}1~i]9[Am+!L"
+                                                }
+                                              },
+                                              "B": {
+                                                "block": {
+                                                  "type": "aivox_chat_role_enum",
+                                                  "id": ".#,a5lGJ^NN2:`/8#M4|",
+                                                  "fields": {
+                                                    "chat_role": "ai_vox::ChatRole::kAssistant"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "DO0": {
+                                          "block": {
+                                            "type": "aivox_lcd_show_chat_message",
+                                            "id": "gn:!je%tSmkGmGxLdbAv",
+                                            "fields": {
+                                              "ai_vox_display_role": "Display::Role::kAssistant"
+                                            },
+                                            "inputs": {
+                                              "ai_vox_chat_message": {
+                                                "shadow": {
+                                                  "type": "text",
+                                                  "id": "xMT2@kx5YU-(oYS[#1q7",
+                                                  "fields": {
+                                                    "TEXT": "test"
+                                                  }
+                                                },
+                                                "block": {
+                                                  "type": "aivox_get_chat_content",
+                                                  "id": "h~8S)KD7K!Jr6y!2xsm["
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "controls_if",
+                                          "id": "SB_Yl8x=ia2Y$Hs?(sq8",
+                                          "inputs": {
+                                            "IF0": {
+                                              "block": {
+                                                "type": "logic_compare",
+                                                "id": "a%@XkSd3EV#A|)4Z;BMm",
+                                                "fields": {
+                                                  "OP": "EQ"
+                                                },
+                                                "inputs": {
+                                                  "A": {
+                                                    "block": {
+                                                      "type": "aivox_get_chat_role",
+                                                      "id": "x00U+zxc=2_{R[A^AdKf"
+                                                    }
+                                                  },
+                                                  "B": {
+                                                    "block": {
+                                                      "type": "aivox_chat_role_enum",
+                                                      "id": "j9f^x|:+lmq4M.pmYDtE",
+                                                      "fields": {
+                                                        "chat_role": "ai_vox::ChatRole::kUser"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "DO0": {
+                                              "block": {
+                                                "type": "aivox_lcd_show_chat_message",
+                                                "id": "d|a6I5#W_OQR6]$7uwO+",
+                                                "fields": {
+                                                  "ai_vox_display_role": "Display::Role::kUser"
+                                                },
+                                                "inputs": {
+                                                  "ai_vox_chat_message": {
+                                                    "shadow": {
+                                                      "type": "text",
+                                                      "id": "xMT2@kx5YU-(oYS[#1q7",
+                                                      "fields": {
+                                                        "TEXT": "test"
+                                                      }
+                                                    },
+                                                    "block": {
+                                                      "type": "aivox_get_chat_content",
+                                                      "id": "#ITC@N%JdV}TbGp^^H?z"
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "aivox_event_is_iot_message",
+                                    "id": ";tp;Xpv6SU7hxGBu]F+@",
+                                    "inputs": {
+                                      "DO": {
+                                        "block": {
+                                          "type": "controls_if",
+                                          "id": "h0;Afy-BoUfZ1ltj8I-5",
+                                          "inputs": {
+                                            "IF0": {
+                                              "block": {
+                                                "type": "logic_compare",
+                                                "id": "X3/_$JGsit+/vPhtMy5S",
+                                                "fields": {
+                                                  "OP": "EQ"
+                                                },
+                                                "inputs": {
+                                                  "A": {
+                                                    "block": {
+                                                      "type": "aivox_get_iot_message_event_name",
+                                                      "id": "xB[If_/r4nq{boW@ZcF#"
+                                                    }
+                                                  },
+                                                  "B": {
+                                                    "block": {
+                                                      "type": "text",
+                                                      "id": "6|8w|@8@1PIla`y#R$ia",
+                                                      "fields": {
+                                                        "TEXT": "distance"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "DO0": {
+                                              "block": {
+                                                "type": "aivox_update_ultrasonic_iot_state",
+                                                "id": "fW:{(v!;9WmkF,l=W(NF",
+                                                "inputs": {
+                                                  "aivox_ultrasonic": {
+                                                    "shadow": {
+                                                      "type": "text",
+                                                      "id": "9Xoeeyc;3^7Vkzs.m#0P",
+                                                      "fields": {
+                                                        "TEXT": "distance"
+                                                      }
+                                                    }
+                                                  },
+                                                  "aivox_ultrasonic_distance": {
+                                                    "shadow": {
+                                                      "type": "math_number",
+                                                      "id": "NBDx#n#k{=mu@~RYW4im",
+                                                      "fields": {
+                                                        "NUM": 12345678
+                                                      }
+                                                    },
+                                                    "block": {
+                                                      "type": "ultrasonic_ranging",
+                                                      "id": "QtW{}EW`a2fHAGd~i4ep",
+                                                      "inputs": {
+                                                        "PIN1": {
+                                                          "block": {
+                                                            "type": "io_pin_digi",
+                                                            "id": "xhihc$I90ETBZC4~i^wb",
+                                                            "fields": {
+                                                              "PIN": "45"
+                                                            }
+                                                          }
+                                                        },
+                                                        "PIN2": {
+                                                          "block": {
+                                                            "type": "io_pin_digi",
+                                                            "id": "hk8aVwdXPJqapRWDf?v3",
+                                                            "fields": {
+                                                              "PIN": "46"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "controls_if",
+                                              "id": "X)#A!G}PCwRHyH.u37nn",
+                                              "inputs": {
+                                                "IF0": {
+                                                  "block": {
+                                                    "type": "logic_compare",
+                                                    "id": "[f7Yje@1QIdt_j+Johy(",
+                                                    "fields": {
+                                                      "OP": "EQ"
+                                                    },
+                                                    "inputs": {
+                                                      "A": {
+                                                        "block": {
+                                                          "type": "aivox_get_iot_message_event_name",
+                                                          "id": "|;h@+dib(VC)5HO}5Z8E"
+                                                        }
+                                                      },
+                                                      "B": {
+                                                        "block": {
+                                                          "type": "text",
+                                                          "id": "I$O,JZFB|:i6D1kp02h/",
+                                                          "fields": {
+                                                            "TEXT": "temp"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "DO0": {
+                                                  "block": {
+                                                    "type": "aivox_update_dht11_iot_state",
+                                                    "id": "#Y4395QN_o5%R2Ma)VhU",
+                                                    "inputs": {
+                                                      "aivox_dht11": {
+                                                        "shadow": {
+                                                          "type": "text",
+                                                          "id": "^J3X8N@zK(`35Fe;=rh%",
+                                                          "fields": {
+                                                            "TEXT": "temp"
+                                                          }
+                                                        }
+                                                      },
+                                                      "aivox_dnt11_value": {
+                                                        "shadow": {
+                                                          "type": "text",
+                                                          "id": "[zQ:+pT(DMqLRV14.yAP",
+                                                          "fields": {
+                                                            "TEXT": "12345678"
+                                                          }
+                                                        },
+                                                        "block": {
+                                                          "type": "dht_read_temperature",
+                                                          "id": "%@f%bw6.=q=hW;v.P5ys",
+                                                          "fields": {
+                                                            "TYPE": "DHT11",
+                                                            "PIN": "44"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "controls_if",
+                                                  "id": "ne%60F{3.d`,2_X2/YeI",
+                                                  "inputs": {
+                                                    "IF0": {
+                                                      "block": {
+                                                        "type": "logic_compare",
+                                                        "id": "(nBwhdR|[_F*($uh;$Rd",
+                                                        "fields": {
+                                                          "OP": "EQ"
+                                                        },
+                                                        "inputs": {
+                                                          "A": {
+                                                            "block": {
+                                                              "type": "aivox_get_iot_message_event_name",
+                                                              "id": "+z|VpD$QW/]kT@6u!_qE"
+                                                            }
+                                                          },
+                                                          "B": {
+                                                            "block": {
+                                                              "type": "text",
+                                                              "id": "eb-M%0ImEM)F}P7(!|^N",
+                                                              "fields": {
+                                                                "TEXT": "hum"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "DO0": {
+                                                      "block": {
+                                                        "type": "aivox_update_dht11_iot_state",
+                                                        "id": "IyD;GlTAG*yeq(H2Bgw5",
+                                                        "inputs": {
+                                                          "aivox_dht11": {
+                                                            "shadow": {
+                                                              "type": "text",
+                                                              "id": "{Cf7jORa^?ergz+|V.N$",
+                                                              "fields": {
+                                                                "TEXT": "temp"
+                                                              }
+                                                            }
+                                                          },
+                                                          "aivox_dnt11_value": {
+                                                            "shadow": {
+                                                              "type": "text",
+                                                              "id": "[zQ:+pT(DMqLRV14.yAP",
+                                                              "fields": {
+                                                                "TEXT": "12345678"
+                                                              }
+                                                            },
+                                                            "block": {
+                                                              "type": "dht_read_humidity",
+                                                              "id": "3+kwmSizSvKOG0,RnN=f",
+                                                              "fields": {
+                                                                "TYPE": "DHT11",
+                                                                "PIN": "44"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "controls_if",
+                                                      "id": "_2!*Jj~TTrrVpfFp(^Jn",
+                                                      "inputs": {
+                                                        "IF0": {
+                                                          "block": {
+                                                            "type": "logic_compare",
+                                                            "id": "pE0k^SlqFwggO1`NtXGm",
+                                                            "fields": {
+                                                              "OP": "EQ"
+                                                            },
+                                                            "inputs": {
+                                                              "A": {
+                                                                "block": {
+                                                                  "type": "aivox_get_iot_message_event_name",
+                                                                  "id": "G{^V4iVYHu$}g+I_yBvj"
+                                                                }
+                                                              },
+                                                              "B": {
+                                                                "block": {
+                                                                  "type": "text",
+                                                                  "id": "S,izaI49rSpb8!yL.K[3",
+                                                                  "fields": {
+                                                                    "TEXT": "guangmin"
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "DO0": {
+                                                          "block": {
+                                                            "type": "aivox_update_dht11_iot_state",
+                                                            "id": ")hI.}PsHiae916jPf[_P",
+                                                            "inputs": {
+                                                              "aivox_dht11": {
+                                                                "shadow": {
+                                                                  "type": "text",
+                                                                  "id": "zX_T0zxrz5X=gq1DbVcP",
+                                                                  "fields": {
+                                                                    "TEXT": "guangmin"
+                                                                  }
+                                                                }
+                                                              },
+                                                              "aivox_dnt11_value": {
+                                                                "shadow": {
+                                                                  "type": "text",
+                                                                  "id": "[zQ:+pT(DMqLRV14.yAP",
+                                                                  "fields": {
+                                                                    "TEXT": "12345678"
+                                                                  }
+                                                                },
+                                                                "block": {
+                                                                  "type": "io_analogread",
+                                                                  "id": "sV*|*,JSOuFE)zcczEe~",
+                                                                  "inputs": {
+                                                                    "PIN": {
+                                                                      "block": {
+                                                                        "type": "io_pin_adc",
+                                                                        "id": "cb%PfGWCp3S=M~LA4#`/",
+                                                                        "fields": {
+                                                                          "PIN": "9"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
