@@ -5,7 +5,7 @@
     "description": "AI小智使用入门，包含AI小智的基本使用方法、语音交互、简单编程示例等内容，适合初学者快速上手。",
     "author": "nulllab",
     "url": "https://dcnmu33qx4fc.feishu.cn/docx/Lpy7dfEYAo04PzxJNI0ceTj5nxg",
-    "img": "ai-vox-subject.png",
+    "img": "ai-vox-subject.webp",
     "examples": [
       {
         "nickname": "AI小智使用入门",
@@ -21,7 +21,7 @@
     "description": "针对Arduino初学者的基础教程，包含Arduino IDE安装配置、基本电路连接、常用组件介绍（LED、按钮、传感器等）、基础编程语法、简单项目实践。适合零基础学习者快速掌握Arduino开发环境和基本技能。",
     "author": "奈何col",
     "url": "https://arduino.me/s/arduino-getting-started",
-    "img": "arduino_subject.png",
+    "img": "arduino-basic-subject.webp",
     "examples": [
       {
         "nickname": "读取光敏电阻的值",
@@ -127,7 +127,7 @@
     "description": "学习使用Blinker APP基本功能，包括基本组件使用、数据上传、常用组件介绍（按键，调色、滑块等）、简单项目实践。适合零基础学习者快速掌握Blinker的使用。",
     "author": "mango",
     "url": "",
-    "img": "Blinker_subject.png",
+    "img": "Blinker_subject.webp",
     "examples": [
       {
         "nickname": "环境检测装置",
@@ -168,12 +168,46 @@
     ]
   },
   {
+    "name": "@aily-project/example-zhinengjiaju",
+    "nickname": "VisHome AIoT套件使用教程",
+    "description": "【OpenJumper VisHome AIoT教学套件】采用创新性木板与高透亚克力复合结构，通过精密螺丝装配工艺，在确保教学演示稳固性的同时，呈现极简科技美学。套件核心搭载WiFiduino32S3智能控制器，配合模块化传感器阵列，结合Blinker物联网云平台实现数据可视化交互。通过沉浸式智能家居场景实践，学习者可快速掌握物联网系统架构、云端控制的全链路开发技能，也能学习了解生成式人工智能（小智AI）与硬件结合的专业知识，是AIoT入门教育的理想实训平台。",
+    "author": "OpenJumper",
+    "url": "",
+    "img": "subject.webp",
+    "examples": [
+      {
+        "nickname": "blinker控制开关灯",
+        "description": "通过物联网云平台blinker，实现对LED灯的远程控制，支持开关灯、调节亮度等功能。",
+        "path": "blinker控制开关灯",
+        "url": ""
+      },
+      {
+        "nickname": "MP3播放器",
+        "description": "MP3播放器控制，支持播放、暂停、切换歌曲等功能。",
+        "path": "MP3",
+        "url": ""
+      },
+      {
+        "nickname": "步进电机控制窗帘",
+        "description": "通过步进电机控制窗帘的开合，支持设置角度和速度等功能。",
+        "path": "步进电机控制窗帘",
+        "url": ""
+      },
+      {
+        "nickname": "调色盘",
+        "description": "通过调色盘控制灯带颜色和亮度，实现远程RGB灯光调节。",
+        "path": "调色盘_new",
+        "url": ""
+      }
+    ]
+  },
+  {
     "name": "@aily-project/example-qixiangzhan",
     "nickname": "气象物联网大师套件使用教程",
     "description": "OpenJumper气象物联网大师套件 是一款专为物联网与气象学习设计的全能教学工具。它集成了风速、风向、雨量、温湿度、气压、光照、空气质量等多种高精度传感器，通过RJ-11接口便捷连接，搭配blinker物联网云平台，以及详细教程，让用户轻松采集、分析气象数据。无论是教学实验、创客项目，还是物联网开发，这套件都能提供完整的解决方案，助力探索智能气象的奥秘！",
     "author": "openjumper",
     "url": "https://openjumper.com/doc/weather-meter-iot",
-    "img": "qx-subject.png",
+    "img": "qx-subject.webp",
     "examples": [
       {
         "nickname": "BH1750 光照传感器",
@@ -219,7 +253,7 @@
     "description": "针对物联网初学者的基础教程，包含物联网概念、基本电路连接、常用组件介绍（传感器、执行器等）、基础编程语法、简单项目实践。适合零基础学习者快速掌握物联网开发环境和基本技能。",
     "author": "奈何col",
     "url": "https://arduino.me/s/blinker-arduino",
-    "img": "AIOT_subject.png",
+    "img": "AIOT_subject.webp",
     "examples": [
       {
         "nickname": "LED闪烁（Blink）",
@@ -228,16 +262,34 @@
         "url": ""
       },
       {
+        "nickname": "综合例程 蓝牙桌面控制器",
+        "description": "使用蓝牙BLE功能和VL53L0X传感器，完成蓝牙键盘控制桌面",
+        "path": "ESP32_BLIE",
+        "url": "https://arduino.me/s/52?aid=3096"
+      },
+      {
         "nickname": "DHT11 温湿度传感器",
         "description": "使用DHT11传感器采集温湿度数据，掌握基础的环境监测方法。",
         "path": "ESP32_DHT11",
         "url": "https://arduino.me/s/52?aid=3112"
       },
       {
+        "nickname": "综合例程 温湿度记录器",
+        "description": "使用DHT11传感器采集温湿度数据，并将数据存储到SD卡中。",
+        "path": "ESP32_DHT_SD",
+        "url": "https://arduino.me/s/52?aid=3095"
+      },
+      {
         "nickname": "ESP32 编码器",
         "description": "通过编码器模块测量旋转角度，了解运动检测与控制的基本原理。",
         "path": "ESP32_Encoder",
         "url": "https://arduino.me/s/52?aid=3119"
+      },
+      {
+        "nickname": "综合例程 简易录音与回放系统",
+        "description": "使用数字麦克风录制音频，并将音频存储到SD卡中，同时可以通过扬声器播放SD卡中录制的音频。",
+        "path": "ESP32_I2S_SD",
+        "url": "https://arduino.me/s/52?aid=3108"
       },
       {
         "nickname": "INA219 电流传感器",
@@ -256,6 +308,18 @@
         "description": "使用数字麦克风采集音频数据，学习音频信号处理与录制的基础操作。",
         "path": "ESP32_Microphone",
         "url": "https://arduino.me/s/52?aid=3120"
+      },
+      {
+        "nickname": "综合例程 麦克风录音至SD卡",
+        "description": "使用数字麦克风录制音频，并将音频存储到SD卡中。",
+        "path": "ESP32_Micrphone_SD",
+        "url": "https://arduino.me/s/52?aid=3107"
+      },
+      {
+        "nickname": "综合例程 环境监测站",
+        "description": "实时显示温湿度、光照强度、空气质量数据，OLED显示当前数据，SD卡存储历史数据，当烟雾浓度超标时，蜂鸣器报警。",
+        "path": "ESP32_MQ2_DHT_OLED",
+        "url": "https://arduino.me/s/52?aid=3099"
       },
       {
         "nickname": "NTC热敏电阻",
@@ -301,7 +365,7 @@
     "description": "针对金牛创客板的基础教程，包含基础模块的使用、基本电路连接、常用组件介绍（传感器、执行器等）、基础编程语法、简单项目实践。适合零基础学习者快速掌握金牛板的使用。",
     "author": "openjumper",
     "url": "",
-    "img": "jinniu_subject.png",
+    "img": "jinniu_subject.webp",
     "examples": []
   }
 ]
