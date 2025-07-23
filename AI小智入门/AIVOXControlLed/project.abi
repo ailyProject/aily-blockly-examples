@@ -5,27 +5,27 @@
       {
         "type": "arduino_setup",
         "id": "arduino_setup_id0",
-        "x": 110,
+        "x": 30,
         "y": 30,
         "inputs": {
           "ARDUINO_SETUP": {
             "block": {
               "type": "aivox_init_wifi",
-              "id": "s:@#]B$!*,mAzV~|7K]9",
+              "id": "Ah8z4lV14/CS(},lH9:W",
               "inputs": {
                 "wifi_ssid": {
                   "shadow": {
                     "type": "text",
-                    "id": "#II~;#4aW)O#WE+~p~*8",
+                    "id": "p|ajFYJrATnm*3cI9t||",
                     "fields": {
-                      "TEXT": "NULLLAB"
+                      "TEXT": "603"
                     }
                   }
                 },
                 "wifi_pwd": {
                   "shadow": {
                     "type": "text",
-                    "id": "TMg0h_}M9?t=O?w)PTm!",
+                    "id": "XE_xL!Sc!yQ5[iVxCXz0",
                     "fields": {
                       "TEXT": "12345678"
                     }
@@ -34,70 +34,79 @@
               },
               "next": {
                 "block": {
-                  "type": "aivox_register_driver_status",
-                  "id": "pa^$$W]*H@vj,~3Zz8P3",
+                  "type": "aivox_register_led_driver_status",
+                  "id": "A,p-%Kdf:Z`LT99(a-f@",
                   "inputs": {
                     "driver_name": {
                       "shadow": {
                         "type": "text",
-                        "id": "-6*]gax4E_9:hKi:@6.q",
+                        "id": "{aYO#~6B]08/i/p%8KZ^",
                         "fields": {
                           "TEXT": "LED"
+                        }
+                      }
+                    },
+                    "driver_num": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "kFFvT(dvpNF*n0yf-Cnq",
+                        "fields": {
+                          "NUM": 1
                         }
                       }
                     },
                     "driver_properties": {
                       "shadow": {
                         "type": "text",
-                        "id": "P|[Ex$Cq~%3Ub|zQuoZP",
+                        "id": "oA(y*]MM+WEhrYlHh[(n",
                         "fields": {
-                          "TEXT": "LED灯的状态"
+                          "TEXT": "led灯的状态"
                         }
                       }
                     },
                     "driver_open": {
                       "shadow": {
                         "type": "text",
-                        "id": "PZ|@)zyUh=6CzV[y1VD*",
+                        "id": "fv(Ybq*=OccYQlgdk9s2",
                         "fields": {
-                          "TEXT": "打开灯光"
+                          "TEXT": "打开LED"
                         }
                       }
                     },
                     "driver_close": {
                       "shadow": {
                         "type": "text",
-                        "id": "0mcKgv^$={dZ)9)_9Yi@",
+                        "id": "pH;?t*;3;(+~ojd/k^$/",
                         "fields": {
-                          "TEXT": "关闭灯光"
+                          "TEXT": "关闭LED"
                         }
                       }
                     }
                   },
                   "next": {
                     "block": {
-                      "type": "aivox_init_lcd",
-                      "id": "Fw7^C6JuJ9(?B_$u+,,J",
+                      "type": "aivox_init_std",
+                      "id": "?=3[MJs`ZPv9A2?-kq[K",
                       "fields": {
-                        "backLight": "11",
-                        "MOSI": "17",
-                        "CLK": "16",
-                        "DC": "12",
-                        "RST": "21",
-                        "CS": "15"
+                        "MIC_BCLK": "5",
+                        "MIC_WS": "2",
+                        "MIC_DIN": "4",
+                        "SPK_BCLK": "13",
+                        "SPK_WS": "12",
+                        "SPK_DOUT": "1",
+                        "TRIGGER_PIN": "0"
                       },
                       "next": {
                         "block": {
-                          "type": "aivox_init_std",
-                          "id": ".K^MA7{sXhsfiJ=YC`2`",
+                          "type": "aivox_init_lcd",
+                          "id": "gDL=3oll|1{gIrJ;W5e=",
                           "fields": {
-                            "MIC_BCLK": "5",
-                            "MIC_WS": "2",
-                            "MIC_DIN": "4",
-                            "SPK_BCLK": "13",
-                            "SPK_WS": "14",
-                            "SPK_DOUT": "1",
-                            "TRIGGER_PIN": "0"
+                            "backLight": "11",
+                            "MOSI": "17",
+                            "CLK": "16",
+                            "DC": "12",
+                            "RST": "21",
+                            "CS": "15"
                           }
                         }
                       }
@@ -112,55 +121,38 @@
       {
         "type": "arduino_loop",
         "id": "arduino_loop_id0",
-        "x": 119,
-        "y": 381,
+        "x": 70,
+        "y": 310,
         "inputs": {
           "ARDUINO_LOOP": {
             "block": {
               "type": "aivox_loop",
-              "id": "J0mw!4zMXcbH$k*{Uq$U",
+              "id": "d5CRYlXz,6=SK3m?1;D`",
               "inputs": {
                 "DO": {
                   "block": {
                     "type": "aivox_event_is_activation",
-                    "id": "h*/$[2FsarY_Z{KOdr(H",
+                    "id": "h5wMV$KeW#6;b:_?JG5p",
                     "inputs": {
                       "DO": {
                         "block": {
-                          "type": "aivox_lcd_show_status",
-                          "id": "b|[!f|JqYm{I$74,oTgk",
+                          "type": "aivox_lcd_show_chat_message",
+                          "id": "n%:zmTL_;j6]G~mxl)FG",
+                          "fields": {
+                            "ai_vox_display_role": "Display::Role::kSystem"
+                          },
                           "inputs": {
-                            "ai_vox_status": {
+                            "ai_vox_chat_message": {
                               "shadow": {
                                 "type": "text",
-                                "id": "d/@p0*JMNZjYOfpmW,2s",
+                                "id": "OS6y;8G(C]mqzXr3ZPd$",
                                 "fields": {
-                                  "TEXT": "激活设备"
+                                  "TEXT": "test"
                                 }
-                              }
-                            }
-                          },
-                          "next": {
-                            "block": {
-                              "type": "aivox_lcd_show_chat_message",
-                              "id": "ZPFot~x#wf2jc(;SWC2(",
-                              "fields": {
-                                "ai_vox_display_role": "Display::Role::kSystem"
                               },
-                              "inputs": {
-                                "ai_vox_chat_message": {
-                                  "shadow": {
-                                    "type": "text",
-                                    "id": "MWMy!^CBw-;MWl7HBM)$",
-                                    "fields": {
-                                      "TEXT": ""
-                                    }
-                                  },
-                                  "block": {
-                                    "type": "aivox_get_activation_message",
-                                    "id": "#@;IrkNou7p%FWCf[,@%"
-                                  }
-                                }
+                              "block": {
+                                "type": "aivox_get_activation_message",
+                                "id": "=YNiwBaS6f5!#DvhPYK5"
                               }
                             }
                           }
@@ -170,17 +162,17 @@
                     "next": {
                       "block": {
                         "type": "aivox_event_is_state_change",
-                        "id": "v!@]wJhS8JYg,4tB?hiZ",
+                        "id": "|*axUDAyJ,ED-A+%?uEi",
                         "inputs": {
                           "DO": {
                             "block": {
                               "type": "controls_if",
-                              "id": "+ZC3.#,|#vI6Xu9Zh0iM",
+                              "id": "0gZo7nn/8F%$pZ9wu+XX",
                               "inputs": {
                                 "IF0": {
                                   "block": {
                                     "type": "logic_compare",
-                                    "id": "Q7c7nToPDb)Wq8NLBDzZ",
+                                    "id": ".6n%3~ynjZKeZyRBi:Zz",
                                     "fields": {
                                       "OP": "EQ"
                                     },
@@ -188,13 +180,13 @@
                                       "A": {
                                         "block": {
                                           "type": "aivox_get_new_state",
-                                          "id": "[XLRlA3A;gS1KakUj9[$"
+                                          "id": "v%,EzgY_Wu{NI*=_E{ul"
                                         }
                                       },
                                       "B": {
                                         "block": {
                                           "type": "aivox_state_enum",
-                                          "id": "?Tuk~um{pmT=?z0g4;{-",
+                                          "id": "AUuqOB]h2d.ztZ=lUF3X",
                                           "fields": {
                                             "STATE": "ai_vox::ChatState::kIdle"
                                           }
@@ -205,18 +197,15 @@
                                 },
                                 "DO0": {
                                   "block": {
-                                    "type": "serial_println",
-                                    "id": "Z02tOTT4CY670[nh@@VF",
-                                    "fields": {
-                                      "SERIAL": "Serial"
-                                    },
+                                    "type": "aivox_lcd_show_status",
+                                    "id": "c2pWW:CaCC8}qrPNYsle",
                                     "inputs": {
-                                      "VAR": {
+                                      "ai_vox_status": {
                                         "shadow": {
                                           "type": "text",
-                                          "id": "2`*5y=?vR+@P.X([H1Jd",
+                                          "id": "x0^`J`97qj:Mw]|k}Y#Q",
                                           "fields": {
-                                            "TEXT": "IDLE...."
+                                            "TEXT": "空闲。。。。"
                                           }
                                         }
                                       }
@@ -227,12 +216,12 @@
                               "next": {
                                 "block": {
                                   "type": "controls_if",
-                                  "id": "n@fIcV^WPh)80g{F)x$x",
+                                  "id": "j`i|Xpi@yom5sAQtTEjQ",
                                   "inputs": {
                                     "IF0": {
                                       "block": {
                                         "type": "logic_compare",
-                                        "id": "{3`#b[xuNJ}$+o4r.oEX",
+                                        "id": "O*E@%tE*WDJ*PTbsISSO",
                                         "fields": {
                                           "OP": "EQ"
                                         },
@@ -240,13 +229,13 @@
                                           "A": {
                                             "block": {
                                               "type": "aivox_get_new_state",
-                                              "id": "ENSi)W|?}Gr$dq@#?vcM"
+                                              "id": ")rX)PRbwIY!6oQ6YgY#`"
                                             }
                                           },
                                           "B": {
                                             "block": {
                                               "type": "aivox_state_enum",
-                                              "id": "1ypWEzd{3;eZI496;uEG",
+                                              "id": "$99e]+Zwj:~k)@9`jx1[",
                                               "fields": {
                                                 "STATE": "ai_vox::ChatState::kIniting"
                                               }
@@ -257,35 +246,15 @@
                                     },
                                     "DO0": {
                                       "block": {
-                                        "type": "serial_println",
-                                        "id": "3`WM,[{hc{EUq.#h~IMP",
-                                        "fields": {
-                                          "SERIAL": "Serial"
-                                        },
+                                        "type": "aivox_lcd_show_status",
+                                        "id": "x`MC-5`:tFE5*3VCLjX;",
                                         "inputs": {
-                                          "VAR": {
+                                          "ai_vox_status": {
                                             "shadow": {
                                               "type": "text",
-                                              "id": ",()W;*,^s4[PDZwW@!Z*",
+                                              "id": "[CPRysuUaJcE5_=s^5x2",
                                               "fields": {
-                                                "TEXT": "初始化..."
-                                              }
-                                            }
-                                          }
-                                        },
-                                        "next": {
-                                          "block": {
-                                            "type": "aivox_lcd_show_status",
-                                            "id": "u%-=Y~@,1v~Px-Kqwz~i",
-                                            "inputs": {
-                                              "ai_vox_status": {
-                                                "shadow": {
-                                                  "type": "text",
-                                                  "id": "n_jvrUkY5Lw$q^rrI(0~",
-                                                  "fields": {
-                                                    "TEXT": "初始化..."
-                                                  }
-                                                }
+                                                "TEXT": "初始化。。。。"
                                               }
                                             }
                                           }
@@ -296,12 +265,12 @@
                                   "next": {
                                     "block": {
                                       "type": "controls_if",
-                                      "id": "b)?y^H}ki6+N(qOz!2K;",
+                                      "id": "#YJ.I6sDgo;^)lieCkZl",
                                       "inputs": {
                                         "IF0": {
                                           "block": {
                                             "type": "logic_compare",
-                                            "id": "Y3NjDgq??T{#^v;G!CVd",
+                                            "id": "_mR2)zX|G*Cxc{Txl@u(",
                                             "fields": {
                                               "OP": "EQ"
                                             },
@@ -309,13 +278,13 @@
                                               "A": {
                                                 "block": {
                                                   "type": "aivox_get_new_state",
-                                                  "id": "WZfiW19{C9apCk~IZaE="
+                                                  "id": "b.O(la6R|-?iN:a7f.-$"
                                                 }
                                               },
                                               "B": {
                                                 "block": {
                                                   "type": "aivox_state_enum",
-                                                  "id": "Q%j%Npmx^e5-zPy5/im2",
+                                                  "id": "ojH9O?dg1QN/x!dpAVBt",
                                                   "fields": {
                                                     "STATE": "ai_vox::ChatState::kStandby"
                                                   }
@@ -326,35 +295,15 @@
                                         },
                                         "DO0": {
                                           "block": {
-                                            "type": "serial_println",
-                                            "id": "{PMfx4w!4G+`[Jhbj)A*",
-                                            "fields": {
-                                              "SERIAL": "Serial"
-                                            },
+                                            "type": "aivox_lcd_show_status",
+                                            "id": "ajZ0@}?7$V^272]6,PoL",
                                             "inputs": {
-                                              "VAR": {
+                                              "ai_vox_status": {
                                                 "shadow": {
                                                   "type": "text",
-                                                  "id": "Fklunj}362S28zv!}EoN",
+                                                  "id": "`J)F}`~8f9G:@OiC.=0k",
                                                   "fields": {
-                                                    "TEXT": "待命..."
-                                                  }
-                                                }
-                                              }
-                                            },
-                                            "next": {
-                                              "block": {
-                                                "type": "aivox_lcd_show_status",
-                                                "id": "jllT|VoxWlvbSt9[uj3e",
-                                                "inputs": {
-                                                  "ai_vox_status": {
-                                                    "shadow": {
-                                                      "type": "text",
-                                                      "id": "$FHKrc4t9g0jn8V;QJlH",
-                                                      "fields": {
-                                                        "TEXT": "待命..."
-                                                      }
-                                                    }
+                                                    "TEXT": "带命中。。。。"
                                                   }
                                                 }
                                               }
@@ -365,12 +314,12 @@
                                       "next": {
                                         "block": {
                                           "type": "controls_if",
-                                          "id": ".xY^@*ykEENT!uBPzj%G",
+                                          "id": "+/bx_NzE[9fW@_aiF~+h",
                                           "inputs": {
                                             "IF0": {
                                               "block": {
                                                 "type": "logic_compare",
-                                                "id": "#w3q|k?djzbU4k6*t2]q",
+                                                "id": "hy3]!P^{`6z1Am;^r$J9",
                                                 "fields": {
                                                   "OP": "EQ"
                                                 },
@@ -378,13 +327,13 @@
                                                   "A": {
                                                     "block": {
                                                       "type": "aivox_get_new_state",
-                                                      "id": "s*0-{=j9ZNC![h@.jM1I"
+                                                      "id": "GHbpCk4),I-#5=s9xm5:"
                                                     }
                                                   },
                                                   "B": {
                                                     "block": {
                                                       "type": "aivox_state_enum",
-                                                      "id": "@9H)=t#3VMj,cl3EWTG,",
+                                                      "id": "Z!r(4(OlJW)v-U[q7XUK",
                                                       "fields": {
                                                         "STATE": "ai_vox::ChatState::kConnecting"
                                                       }
@@ -395,35 +344,15 @@
                                             },
                                             "DO0": {
                                               "block": {
-                                                "type": "serial_println",
-                                                "id": "3Q@I#`b=SS$=EoCRvA{I",
-                                                "fields": {
-                                                  "SERIAL": "Serial"
-                                                },
+                                                "type": "aivox_lcd_show_status",
+                                                "id": "TNKW70o~eNnoO-;*D,,5",
                                                 "inputs": {
-                                                  "VAR": {
+                                                  "ai_vox_status": {
                                                     "shadow": {
                                                       "type": "text",
-                                                      "id": "fg?!}[Qcva5t5XJ7o)jn",
+                                                      "id": "gm^}^x#Ss]j-~s6qRZnf",
                                                       "fields": {
-                                                        "TEXT": "连接中..."
-                                                      }
-                                                    }
-                                                  }
-                                                },
-                                                "next": {
-                                                  "block": {
-                                                    "type": "aivox_lcd_show_status",
-                                                    "id": "}XuUyP@M29Fw3m(n9Ep@",
-                                                    "inputs": {
-                                                      "ai_vox_status": {
-                                                        "shadow": {
-                                                          "type": "text",
-                                                          "id": "Z9G5Tyl9vW/AXFsq1z}M",
-                                                          "fields": {
-                                                            "TEXT": "连接中..."
-                                                          }
-                                                        }
+                                                        "TEXT": "连接中。。。。"
                                                       }
                                                     }
                                                   }
@@ -434,12 +363,12 @@
                                           "next": {
                                             "block": {
                                               "type": "controls_if",
-                                              "id": "qjiTK/eq.aD@::;dW?u(",
+                                              "id": "6?){q5[DqKm~*8KVS]Z;",
                                               "inputs": {
                                                 "IF0": {
                                                   "block": {
                                                     "type": "logic_compare",
-                                                    "id": "T89B^GJ[L:B|6r?95t6K",
+                                                    "id": "M|C_hVbscO0#DZkf6}h;",
                                                     "fields": {
                                                       "OP": "EQ"
                                                     },
@@ -447,13 +376,13 @@
                                                       "A": {
                                                         "block": {
                                                           "type": "aivox_get_new_state",
-                                                          "id": "#{e59DXU[#b$m7@PK:Z5"
+                                                          "id": "T(w!du![H*Ps.5)Qk86."
                                                         }
                                                       },
                                                       "B": {
                                                         "block": {
                                                           "type": "aivox_state_enum",
-                                                          "id": "Z.0v^91_R0=K38M5t64J",
+                                                          "id": "1Sg?u`c-V5Wnv4+4En8m",
                                                           "fields": {
                                                             "STATE": "ai_vox::ChatState::kListening"
                                                           }
@@ -464,35 +393,15 @@
                                                 },
                                                 "DO0": {
                                                   "block": {
-                                                    "type": "serial_println",
-                                                    "id": "%b]#Odj2Q8M3~+~hK5;,",
-                                                    "fields": {
-                                                      "SERIAL": "Serial"
-                                                    },
+                                                    "type": "aivox_lcd_show_status",
+                                                    "id": "WpFI?o-Q![IP5pmgQ+uc",
                                                     "inputs": {
-                                                      "VAR": {
+                                                      "ai_vox_status": {
                                                         "shadow": {
                                                           "type": "text",
-                                                          "id": "s4##Cnc!0M84-f`V:[nu",
+                                                          "id": "yajo4`_BYmTg_}D8:MBA",
                                                           "fields": {
-                                                            "TEXT": "聆听中..."
-                                                          }
-                                                        }
-                                                      }
-                                                    },
-                                                    "next": {
-                                                      "block": {
-                                                        "type": "aivox_lcd_show_status",
-                                                        "id": "[y##`S#_xx;fmgxEB5A9",
-                                                        "inputs": {
-                                                          "ai_vox_status": {
-                                                            "shadow": {
-                                                              "type": "text",
-                                                              "id": "?@DZhl+gX`Mk.jqM-#x%",
-                                                              "fields": {
-                                                                "TEXT": "聆听中..."
-                                                              }
-                                                            }
+                                                            "TEXT": "聆听中。。。。"
                                                           }
                                                         }
                                                       }
@@ -503,12 +412,12 @@
                                               "next": {
                                                 "block": {
                                                   "type": "controls_if",
-                                                  "id": "xsKGypY=8Q-0SMD!$?2C",
+                                                  "id": "^Y_qA8B!Xn:))|Ks6nr-",
                                                   "inputs": {
                                                     "IF0": {
                                                       "block": {
                                                         "type": "logic_compare",
-                                                        "id": "$gCIvcVFl3,IdP#9;tIJ",
+                                                        "id": "cvLfW=PDxxPwnu[kN~Ox",
                                                         "fields": {
                                                           "OP": "EQ"
                                                         },
@@ -516,13 +425,13 @@
                                                           "A": {
                                                             "block": {
                                                               "type": "aivox_get_new_state",
-                                                              "id": ":bXd`a#Ax-(Qh18~RiC@"
+                                                              "id": "=JQ=K@S/dDPk/*/fD23["
                                                             }
                                                           },
                                                           "B": {
                                                             "block": {
                                                               "type": "aivox_state_enum",
-                                                              "id": "mkd?[Y1e:Bs(A-3y;%u~",
+                                                              "id": "eq-a[b/+AjA3DNmXPu%V",
                                                               "fields": {
                                                                 "STATE": "ai_vox::ChatState::kSpeaking"
                                                               }
@@ -533,35 +442,15 @@
                                                     },
                                                     "DO0": {
                                                       "block": {
-                                                        "type": "serial_println",
-                                                        "id": "O}b]pkra`wQw?4ZY74Kh",
-                                                        "fields": {
-                                                          "SERIAL": "Serial"
-                                                        },
+                                                        "type": "aivox_lcd_show_status",
+                                                        "id": "S|f3e|Kl+3Rmq)P4`=`E",
                                                         "inputs": {
-                                                          "VAR": {
+                                                          "ai_vox_status": {
                                                             "shadow": {
                                                               "type": "text",
-                                                              "id": "R;kzbSF?m%/M_0QjMw5Y",
+                                                              "id": "2*;(2yn@KF5l@3pk+/ID",
                                                               "fields": {
-                                                                "TEXT": "说话中..."
-                                                              }
-                                                            }
-                                                          }
-                                                        },
-                                                        "next": {
-                                                          "block": {
-                                                            "type": "aivox_lcd_show_status",
-                                                            "id": "jLel!Dnt74mB(@8isC-f",
-                                                            "inputs": {
-                                                              "ai_vox_status": {
-                                                                "shadow": {
-                                                                  "type": "text",
-                                                                  "id": "Qj~MAR-V!~p4=FGPqBO|",
-                                                                  "fields": {
-                                                                    "TEXT": "说话中..."
-                                                                  }
-                                                                }
+                                                                "TEXT": "说话中。。。。"
                                                               }
                                                             }
                                                           }
@@ -585,48 +474,24 @@
                         "next": {
                           "block": {
                             "type": "aivox_event_is_emotion",
-                            "id": "sHZMfbVWw9l`DkVsC5)T",
+                            "id": "7tqp1i;As0fNucox$#=n",
                             "inputs": {
                               "DO": {
                                 "block": {
-                                  "type": "serial_println",
-                                  "id": ":627[lm:2M9iZvCyo03I",
-                                  "fields": {
-                                    "SERIAL": "Serial"
-                                  },
+                                  "type": "aivox_lcd_show_emotion",
+                                  "id": "`C(9.FU#bl)_un@t_P[:",
                                   "inputs": {
-                                    "VAR": {
+                                    "ai_vox_emotion": {
                                       "shadow": {
                                         "type": "text",
-                                        "id": "*W(Sdo2fo;7bLs6k,/yf",
+                                        "id": ";MY,,jdfVJld/e#Bb5Hv",
                                         "fields": {
-                                          "TEXT": "说话中..."
+                                          "TEXT": "test"
                                         }
                                       },
                                       "block": {
                                         "type": "aivox_get_emotion",
-                                        "id": "TC^:CX`g/%T[)Rb9j=ff"
-                                      }
-                                    }
-                                  },
-                                  "next": {
-                                    "block": {
-                                      "type": "aivox_lcd_show_emotion",
-                                      "id": "WLO)iFjSg7u:JTYkU|Sb",
-                                      "inputs": {
-                                        "ai_vox_emotion": {
-                                          "shadow": {
-                                            "type": "text",
-                                            "id": "%qLUm/:jZ:.|ZJ,Bu$;F",
-                                            "fields": {
-                                              "TEXT": ""
-                                            }
-                                          },
-                                          "block": {
-                                            "type": "aivox_get_emotion",
-                                            "id": "Em8p+|wG8hFlq2il]27,"
-                                          }
-                                        }
+                                        "id": "7Em?6+V2LJpVo_=atMT{"
                                       }
                                     }
                                   }
@@ -636,17 +501,17 @@
                             "next": {
                               "block": {
                                 "type": "aivox_event_is_chat_message",
-                                "id": "a1Jbl#=lFqHc_A^XA)}|",
+                                "id": "uSCEq#%o3Hg}!N#v-I1t",
                                 "inputs": {
                                   "DO": {
                                     "block": {
                                       "type": "controls_if",
-                                      "id": "}C7o9s(Ra|vZn-I*gk(:",
+                                      "id": ";fj8{g7Hvg.r%msq9m=Q",
                                       "inputs": {
                                         "IF0": {
                                           "block": {
                                             "type": "logic_compare",
-                                            "id": "Hn(Dhtl^:X-;U~t(|vpt",
+                                            "id": "-K00d=1S$+ro,FI;d$jn",
                                             "fields": {
                                               "OP": "EQ"
                                             },
@@ -654,13 +519,13 @@
                                               "A": {
                                                 "block": {
                                                   "type": "aivox_get_chat_role",
-                                                  "id": ":R(?+bK7]vG]SkO/evO+"
+                                                  "id": "xD@V^z2pp1GIY@7a7{.9"
                                                 }
                                               },
                                               "B": {
                                                 "block": {
                                                   "type": "aivox_chat_role_enum",
-                                                  "id": "w#GPko:zs4:weRT/[3DK",
+                                                  "id": "@`8JjjGJJ6XD@(`sYR(o",
                                                   "fields": {
                                                     "chat_role": "ai_vox::ChatRole::kAssistant"
                                                   }
@@ -672,7 +537,7 @@
                                         "DO0": {
                                           "block": {
                                             "type": "aivox_lcd_show_chat_message",
-                                            "id": "3J$V~KTzMR}$.8Y=RL@H",
+                                            "id": "Y[_vp;~]g@SH3yBiAy{k",
                                             "fields": {
                                               "ai_vox_display_role": "Display::Role::kAssistant"
                                             },
@@ -680,14 +545,14 @@
                                               "ai_vox_chat_message": {
                                                 "shadow": {
                                                   "type": "text",
-                                                  "id": "t~sNv%9HxDqG2@RwxFBc",
+                                                  "id": "1dnCrJf-xrM0=fHN;GHR",
                                                   "fields": {
-                                                    "TEXT": ""
+                                                    "TEXT": "test"
                                                   }
                                                 },
                                                 "block": {
                                                   "type": "aivox_get_chat_content",
-                                                  "id": "5RYQou=m8Xn+;@D7+(VW"
+                                                  "id": "!XCDS4(+Q*cOI.n-rnSt"
                                                 }
                                               }
                                             }
@@ -697,12 +562,12 @@
                                       "next": {
                                         "block": {
                                           "type": "controls_if",
-                                          "id": "zSU|R!(D7OF5]sq*6;yn",
+                                          "id": "1]%@NWIb31-+UEF~W-@=",
                                           "inputs": {
                                             "IF0": {
                                               "block": {
                                                 "type": "logic_compare",
-                                                "id": "REqKy?(J52;-*5zH!0|d",
+                                                "id": "_+K]uBP(:h%=^Cqm!b%`",
                                                 "fields": {
                                                   "OP": "EQ"
                                                 },
@@ -710,13 +575,13 @@
                                                   "A": {
                                                     "block": {
                                                       "type": "aivox_get_chat_role",
-                                                      "id": "/Le*W]%x`S{RT9`j%L`/"
+                                                      "id": "k:FSCFb*5#MPum3I_(9^"
                                                     }
                                                   },
                                                   "B": {
                                                     "block": {
                                                       "type": "aivox_chat_role_enum",
-                                                      "id": "!23mtLuP~MA[RoT.T]Gj",
+                                                      "id": "q#eb.GUv4A5G7$*:Mp;`",
                                                       "fields": {
                                                         "chat_role": "ai_vox::ChatRole::kUser"
                                                       }
@@ -728,7 +593,7 @@
                                             "DO0": {
                                               "block": {
                                                 "type": "aivox_lcd_show_chat_message",
-                                                "id": "?%^IUYR/QGw;[4k`-f~?",
+                                                "id": "TBdW;P6)c#eOzi)c^Y](",
                                                 "fields": {
                                                   "ai_vox_display_role": "Display::Role::kUser"
                                                 },
@@ -736,14 +601,14 @@
                                                   "ai_vox_chat_message": {
                                                     "shadow": {
                                                       "type": "text",
-                                                      "id": "t~sNv%9HxDqG2@RwxFBc",
+                                                      "id": "1dnCrJf-xrM0=fHN;GHR",
                                                       "fields": {
-                                                        "TEXT": ""
+                                                        "TEXT": "test"
                                                       }
                                                     },
                                                     "block": {
                                                       "type": "aivox_get_chat_content",
-                                                      "id": "Op8KjtES~_)nnx9QCE%C"
+                                                      "id": "*j:~Ncz|Hj5p%yb1N-In"
                                                     }
                                                   }
                                                 }
@@ -758,17 +623,17 @@
                                 "next": {
                                   "block": {
                                     "type": "aivox_event_is_iot_message",
-                                    "id": "(#SbBFWlxC_iFuxTp/]6",
+                                    "id": "cK+@KhM=)bv_@*5xVgPe",
                                     "inputs": {
                                       "DO": {
                                         "block": {
                                           "type": "controls_if",
-                                          "id": "0/[w@qK587IRbGwPCCmR",
+                                          "id": "%cIuY;|+98X,Y-(NX?I}",
                                           "inputs": {
                                             "IF0": {
                                               "block": {
                                                 "type": "logic_compare",
-                                                "id": "NW|0^cXA~QSMziyyVFC(",
+                                                "id": "obs63(C-[;[`S3+%/NYV",
                                                 "fields": {
                                                   "OP": "EQ"
                                                 },
@@ -776,13 +641,13 @@
                                                   "A": {
                                                     "block": {
                                                       "type": "aivox_get_iot_message_event_name",
-                                                      "id": "NV2l_bavyXnqtcY.5u@!"
+                                                      "id": "5!!uHMPGVB;2MfE)RvXg"
                                                     }
                                                   },
                                                   "B": {
                                                     "block": {
                                                       "type": "text",
-                                                      "id": "])G#:y8Y6FmrP,Fm$(6~",
+                                                      "id": "i7xpE606E#pk#=c`#JwI",
                                                       "fields": {
                                                         "TEXT": "LED"
                                                       }
@@ -794,12 +659,12 @@
                                             "DO0": {
                                               "block": {
                                                 "type": "controls_if",
-                                                "id": "Pit(a;Vi3(LfK+k1[gq#",
+                                                "id": "Dr2)GHy!r_)ig2W`I!:M",
                                                 "inputs": {
                                                   "IF0": {
                                                     "block": {
-                                                      "type": "aivox_get_iot_message_event_fuction",
-                                                      "id": ",q!K$#`D+[dO,ui8%22;",
+                                                      "type": "aivox_get_iot_led_message_event_fuction",
+                                                      "id": "Os-v]fG28E.=nh;sN;[s",
                                                       "fields": {
                                                         "event_fuction": "TurnOn"
                                                       }
@@ -808,12 +673,12 @@
                                                   "DO0": {
                                                     "block": {
                                                       "type": "io_digitalwrite",
-                                                      "id": "Q/`UYF=Bo|`$H~cvnFx=",
+                                                      "id": "nY`?eihRck)V2y![ty7H",
                                                       "inputs": {
                                                         "PIN": {
                                                           "block": {
                                                             "type": "io_pin_digi",
-                                                            "id": "`)Z8:b{rpE`AF=Y(JO4Q",
+                                                            "id": "$q..=y@r?u/3=IYgyf4e",
                                                             "fields": {
                                                               "PIN": "45"
                                                             }
@@ -822,7 +687,7 @@
                                                         "STATE": {
                                                           "block": {
                                                             "type": "io_state",
-                                                            "id": "*W,kZgp]jQp]o!}Plqlq",
+                                                            "id": "#$e]~8+Fr2Hd]kC7%M(9",
                                                             "fields": {
                                                               "STATE": "HIGH"
                                                             }
@@ -831,13 +696,13 @@
                                                       },
                                                       "next": {
                                                         "block": {
-                                                          "type": "aivox_update_iot_state",
-                                                          "id": "mD{i![b`[oO!QQ*[jG)4",
+                                                          "type": "aivox_update_led_iot_state",
+                                                          "id": ",l3n,_OExwVYt2#FiM+l",
                                                           "inputs": {
                                                             "aivox_drive": {
                                                               "shadow": {
                                                                 "type": "text",
-                                                                "id": "ksLvCi=%7lf-P!b;;vo;",
+                                                                "id": "[Cn8F}/UDbV4,3G|I$(s",
                                                                 "fields": {
                                                                   "TEXT": "LED"
                                                                 }
@@ -845,10 +710,10 @@
                                                             },
                                                             "aivox_drive_state": {
                                                               "shadow": {
-                                                                "type": "text",
-                                                                "id": "yVDz$^95b)?EEPUke6av",
+                                                                "type": "logic_boolean",
+                                                                "id": "cTx:U-VtQu+z|6NhRB:I",
                                                                 "fields": {
-                                                                  "TEXT": "open"
+                                                                  "BOOL": "true"
                                                                 }
                                                               }
                                                             }
@@ -861,12 +726,12 @@
                                                 "next": {
                                                   "block": {
                                                     "type": "controls_if",
-                                                    "id": "~9wyx|3-XVxfEaZn6SA0",
+                                                    "id": "vk*/2uvi7{2WU0l.pkD$",
                                                     "inputs": {
                                                       "IF0": {
                                                         "block": {
-                                                          "type": "aivox_get_iot_message_event_fuction",
-                                                          "id": "5LKkG*$d!1?}xqy?5)=u",
+                                                          "type": "aivox_get_iot_led_message_event_fuction",
+                                                          "id": "I_q@hI8y}C@e3C(bo%P,",
                                                           "fields": {
                                                             "event_fuction": "TurnOff"
                                                           }
@@ -875,12 +740,12 @@
                                                       "DO0": {
                                                         "block": {
                                                           "type": "io_digitalwrite",
-                                                          "id": ")Fd3__ip0ch,utIq3@U6",
+                                                          "id": "(,!0]W};O%Z#/Goj(.]M",
                                                           "inputs": {
                                                             "PIN": {
                                                               "block": {
                                                                 "type": "io_pin_digi",
-                                                                "id": "_`D[..=2U34sjgnHrtyP",
+                                                                "id": "gU!n/`wkEl8ix(BNkp/m",
                                                                 "fields": {
                                                                   "PIN": "45"
                                                                 }
@@ -889,7 +754,7 @@
                                                             "STATE": {
                                                               "block": {
                                                                 "type": "io_state",
-                                                                "id": "lCt~j5O1/Ea=sT73j@el",
+                                                                "id": "z{]x-sMES^qYsVNSjn4y",
                                                                 "fields": {
                                                                   "STATE": "LOW"
                                                                 }
@@ -898,13 +763,13 @@
                                                           },
                                                           "next": {
                                                             "block": {
-                                                              "type": "aivox_update_iot_state",
-                                                              "id": "|85Q]}*c|@[^k]4Ll+|t",
+                                                              "type": "aivox_update_led_iot_state",
+                                                              "id": ":V=5w_hQl4!TKtD)EVsh",
                                                               "inputs": {
                                                                 "aivox_drive": {
                                                                   "shadow": {
                                                                     "type": "text",
-                                                                    "id": "BtIiJwO0CL^3hk`;]+3%",
+                                                                    "id": "4AcnSTad6Lf)zv#f9pkF",
                                                                     "fields": {
                                                                       "TEXT": "LED"
                                                                     }
@@ -912,10 +777,10 @@
                                                                 },
                                                                 "aivox_drive_state": {
                                                                   "shadow": {
-                                                                    "type": "text",
-                                                                    "id": ")j!UXs?1HS}4}kY_U!lE",
+                                                                    "type": "logic_boolean",
+                                                                    "id": "an)-QIsad#TWQ/FGS]Qv",
                                                                     "fields": {
-                                                                      "TEXT": "close"
+                                                                      "BOOL": "false"
                                                                     }
                                                                   }
                                                                 }

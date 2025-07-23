@@ -30,7 +30,7 @@ subject_name               // 程序集目录
         "description": "针对Arduino初学者的基础教程，包含Arduino IDE安装配置、基本电路连接、常用组件介绍（LED、按钮、传感器等）、基础编程语法、简单项目实践。适合零基础学习者快速掌握Arduino开发环境和基本技能。",  // 程序集package.json中的description
         "author":"奈何col",                                    // 程序集package.json中的author
         "url":"https://arduino.me/s/arduino-getting-started", // 程序集package.json中的url
-        "img":"subject.png",                                  // 程序集package.json中的img
+        "img":"subject.webp",                                  // 程序集package.json中的img
         "examples":[
             {
                 "nickname": "LED闪烁（Blink）", // 项目package.json中的nickname，如果没有则使用name
@@ -84,7 +84,7 @@ subject_name               // 程序集目录
 ```
 
 #### 封面图片
-放置一张封面图subject.png到你的示例目录，然后在package中添加`"img":"subject.png"`,即可显示
+放置一张封面图subject.png到你的示例目录，然后在package中添加`"img":"subject.webp"`,即可显示
 分辨率要求：500 x 250px
 
 ## 生成索引文件
