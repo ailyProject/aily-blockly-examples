@@ -33,11 +33,12 @@ jobs:
           
           echo "Comparing $BASE_SHA...$HEAD_SHA"
           
-          PACKAGE_DIRS=$(find . -name "package.json" -not -path "*/node_modules/*" -not -path "./package.json" -exec dirname {} \; | sed 's/^\.\///')
+          # 使用数组来存储目录路径，避免空格问题
+          readarray -t PACKAGE_DIRS < <(find . -name "package.json" -not -path "*/node_modules/*" -not -path "./package.json" -exec dirname {} \; | sed 's/^\.\///')
 
           CHANGED_PACKAGES=()
           
-          for dir in $PACKAGE_DIRS; do
+          for dir in "${PACKAGE_DIRS[@]}"; do
             if git diff --quiet --diff-filter=ACMRT $BASE_SHA $HEAD_SHA -- "$dir"; then
               echo "No changes in $dir"
             else
@@ -55,7 +56,12 @@ jobs:
             echo "matrix={\"package\":[]}" >> $GITHUB_OUTPUT
             echo "No packages changed"
           else
-            JSON_ARRAY=$(printf '"%s",' "${UNIQUE_CHANGED_PACKAGES[@]}" | sed 's/,$//')
+            # 正确处理包含空格的目录名
+            JSON_ARRAY=""
+            for pkg in "${UNIQUE_CHANGED_PACKAGES[@]}"; do
+              JSON_ARRAY="$JSON_ARRAY\"$pkg\","
+            done
+            JSON_ARRAY="${JSON_ARRAY%,}"  # 移除最后的逗号
             echo "matrix={\"package\":[$JSON_ARRAY]}" >> $GITHUB_OUTPUT
             echo "Changed packages: ${UNIQUE_CHANGED_PACKAGES[@]}"
           fi
@@ -97,7 +103,7 @@ jobs:
       - name: Build package
         if: steps.check-update-all.outputs.should_skip != 'true'
         run: |
-          cd ${{ matrix.package }}
+          cd "${{ matrix.package }}"
           npm run build --if-present
       
       - name: Publish to NPM
@@ -105,7 +111,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          cd ${{ matrix.package }}
+          cd "${{ matrix.package }}"
           
           # 获取当前版本号
           CURRENT_VERSION=$(node -p "require('./package.json').version")
@@ -155,24 +161,28 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          PACKAGE_DIRS=$(find . -name "package.json" -not -path "*/node_modules/*" -not -path "./package.json" -exec dirname {} \; | sed 's/^\.\///')
-          echo "Found packages: $PACKAGE_DIRS"
+          # 使用数组存储目录路径，避免空格问题
+          readarray -t PACKAGE_DIRS < <(find . -name "package.json" -not -path "*/node_modules/*" -not -path "./package.json" -exec dirname {} \; | sed 's/^\.\///')
+          echo "Found packages:"
+          printf '%s\n' "${PACKAGE_DIRS[@]}"
+          
           # 仅保留一级目录
           FIRST_LEVEL_DIRS=()
-          for dir in $PACKAGE_DIRS; do
+          for dir in "${PACKAGE_DIRS[@]}"; do
             if [[ "$dir" != *"/"* ]]; then
               FIRST_LEVEL_DIRS+=("$dir")
             fi
           done
           
-          echo "要发布的一级目录包: ${FIRST_LEVEL_DIRS[*]}"
+          echo "要发布的一级目录包:"
+          printf '%s\n' "${FIRST_LEVEL_DIRS[@]}"
           
           for dir in "${FIRST_LEVEL_DIRS[@]}"; do
             if [ ! -d "$dir" ]; then
               echo "目录 $dir 不存在，跳过..."
               continue
             fi
-            cd $dir
+            cd "$dir"
             echo "发布 $dir"
             CURRENT_VERSION=$(node -p "require('./package.json').version")
             PACKAGE_NAME=$(node -p "require('./package.json').name")
@@ -218,7 +228,7 @@ jobs:
       - name: upload
         if: steps.check-update-all-img.outputs.should_skip != 'true'
         run: |
-          cd ${{ matrix.package }}
+          cd "${{ matrix.package }}"
 
           # 找到所有图片文件
           echo "找到以下PNG和WebP图片文件："
