@@ -1,5 +1,5 @@
 {
-  "name": "RGB_control_light",
+  "name": "rgb_control_light",
   "nickname": "blinker调色盘",
   "url": "",
   "description": "通过物联网云平台blinker调色盘控制灯带颜色和亮度，实现远程RGB灯光调节。",

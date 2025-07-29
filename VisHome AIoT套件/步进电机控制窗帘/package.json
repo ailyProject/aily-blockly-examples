@@ -1,6 +1,6 @@
 {
   "name": "stepper_control",
-  "nickname": "Blinker控制门，窗，风扇",
+  "nickname": "Blinker控制门窗风扇",
   "url": "",
   "description": "通过物联网云平台blinker，实现门、窗、风扇等设备的开关和调速功能。",
   "version": "1.0.0",
