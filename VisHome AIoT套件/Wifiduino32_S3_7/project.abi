@@ -1,0 +1,120 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "X?C,y;D5i),mNpCQV)ZL",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "bh1750_init_with_wire",
+                  "id": "x81N#a~:9]Au/egG.se-",
+                  "fields": {
+                    "VAR": "lightMeter",
+                    "MODE": "CONTINUOUS_HIGH_RES_MODE",
+                    "ADDRESS": "0x23",
+                    "WIRE": "Wire"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 250,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "serial_print",
+              "id": "=~`TbBfFmY[yxC71_++1",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "{0$4/9}}h:?fo(yY7;[X",
+                    "fields": {
+                      "TEXT": "当前光照强度:"
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_println",
+                  "id": "9METXXtf/zT;){U!du*R",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "M*}2kOM.4)H3]uu7fhCJ",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      },
+                      "block": {
+                        "type": "bh1750_read_light_level",
+                        "id": "6$nRC/A3HE[9bL.nZ:L$",
+                        "fields": {
+                          "VAR": {
+                            "id": "Q$Ix6/iFl+.J~Vn[pV={"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "time_delay",
+                      "id": "*Henk~]s~E5auotdO_y8",
+                      "inputs": {
+                        "DELAY_TIME": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "u8(eOJ~qby=zIy1BXN,}",
+                            "fields": {
+                              "NUM": 1000
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "lightMeter",
+      "id": "Q$Ix6/iFl+.J~Vn[pV={",
+      "type": "BH1750"
+    }
+  ]
+}

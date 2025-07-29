@@ -1,0 +1,142 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "stepper_init",
+              "id": ",zYd7kYAJmHgOb*=B%!K",
+              "fields": {
+                "STEPPER": {
+                  "id": "^zR%S]XCY{[Fn3f5v*zc"
+                },
+                "STEPS": 4096,
+                "PIN1": "11",
+                "PIN2": "13",
+                "PIN3": "16",
+                "PIN4": "12"
+              },
+              "next": {
+                "block": {
+                  "type": "stepper_set_speed",
+                  "id": "niav|{B|UBW@NMWAs`Y#",
+                  "fields": {
+                    "STEPPER": {
+                      "id": "^zR%S]XCY{[Fn3f5v*zc"
+                    },
+                    "SPEED": 5
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 150,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "stepper_rotate_degrees",
+              "id": "H4SW0qo-pFGD={n*vX$[",
+              "fields": {
+                "STEPPER": {
+                  "id": ",%y9g0T;2*.*Vl%];z}A"
+                }
+              },
+              "inputs": {
+                "DEGREES": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "Xwx[+u499]m4n)S;C?=j",
+                    "fields": {
+                      "NUM": 360
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "time_delay",
+                  "id": "sI|mtB_WS]PcI-%j6,/V",
+                  "inputs": {
+                    "DELAY_TIME": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "O0EkD`!5bG]6OW`(~;V;",
+                        "fields": {
+                          "NUM": 1000
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "stepper_rotate_degrees",
+                      "id": "iB|PnWS:DBPLC!VEaI%e",
+                      "fields": {
+                        "STEPPER": {
+                          "id": ",%y9g0T;2*.*Vl%];z}A"
+                        }
+                      },
+                      "inputs": {
+                        "DEGREES": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "JJ.8c9B+xcQ`m5RmOG@C",
+                            "fields": {
+                              "NUM": -360
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "time_delay",
+                          "id": "FnPWa/?3I|]Aq4Nc2SWc",
+                          "inputs": {
+                            "DELAY_TIME": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "FLuCZ:S@dfoNVw`8U4U(",
+                                "fields": {
+                                  "NUM": 1000
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "stepper",
+      "id": "^zR%S]XCY{[Fn3f5v*zc",
+      "type": "Stepper"
+    },
+    {
+      "name": "stepper",
+      "id": ",%y9g0T;2*.*Vl%];z}A"
+    }
+  ]
+}

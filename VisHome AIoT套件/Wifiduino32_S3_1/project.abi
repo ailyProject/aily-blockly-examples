@@ -1,0 +1,110 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 190,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "fastled_init",
+              "id": "4JPe-Zb(MHNMUC~|x)WP",
+              "fields": {
+                "DATA_PIN": "48",
+                "TYPE": "WS2812",
+                "NUM_LEDS": 1
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "fastled_fill_solid",
+              "id": "*4Z]tX~Um$sJUt(phjNy",
+              "fields": {
+                "DATA_PIN": "48"
+              },
+              "inputs": {
+                "COLOR": {
+                  "shadow": {
+                    "type": "fastled_preset_color",
+                    "id": "Dbe-NE72{-VMuftZ9A1S",
+                    "fields": {
+                      "COLOR": "#ffffff"
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "time_delay",
+                  "id": "_D=`q#S^gyQ3_bVw8O=u",
+                  "inputs": {
+                    "DELAY_TIME": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "q^Um6x4NHtAgQSNQ5p@j",
+                        "fields": {
+                          "NUM": 1000
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "fastled_fill_solid",
+                      "id": "AeO#TaoOQ-LI*FZ,VR([",
+                      "fields": {
+                        "DATA_PIN": "48"
+                      },
+                      "inputs": {
+                        "COLOR": {
+                          "shadow": {
+                            "type": "fastled_preset_color",
+                            "id": "/4%lBvraCN^9`!Vdu:=w",
+                            "fields": {
+                              "COLOR": "#000000"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "time_delay",
+                          "id": "vy/GSl}LP[8g[X6YN^mh",
+                          "inputs": {
+                            "DELAY_TIME": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "S?MBCN4a5bWgDiXvY^um",
+                                "fields": {
+                                  "NUM": 1000
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

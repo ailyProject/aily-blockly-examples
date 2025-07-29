@@ -1,0 +1,195 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 230,
+        "y": 130,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "E6Gp2kG#;Tw|rsbN8q+Q",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "sht31_init",
+                  "id": "R;m5}O_%wH;U4My;VItV",
+                  "fields": {
+                    "ADDRESS": "0x44"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 230,
+        "y": 250,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "serial_print",
+              "id": "@V271*n@b?GO-C7Xo|v1",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "tj.r0/X`RE$@)=u]MJ,R",
+                    "fields": {
+                      "TEXT": "温度："
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_print",
+                  "id": "Z|RgDM;%BQ;,)T[Y^$]h",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "sP4n8!)9nTj/B]1U?W43",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      },
+                      "block": {
+                        "type": "sht31_simple_read",
+                        "id": "F1Ofkvl,6Bg8?GS+tB5)",
+                        "fields": {
+                          "TYPE": "temperature"
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_println",
+                      "id": "lh5l~@j*#vT3~LC63[o*",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "-Nl.B4xj[5zo7J%Q(.or",
+                            "fields": {
+                              "TEXT": "°C"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "serial_print",
+                          "id": "vYuKY2yt/H:!{LPJ/]mr",
+                          "fields": {
+                            "SERIAL": "Serial"
+                          },
+                          "inputs": {
+                            "VAR": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "FYiw*b-GduP%nl?~B8ee",
+                                "fields": {
+                                  "TEXT": "湿度："
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "serial_print",
+                              "id": ".jDw/@-sD1(v}RIT$RL$",
+                              "fields": {
+                                "SERIAL": "Serial"
+                              },
+                              "inputs": {
+                                "VAR": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "sP4n8!)9nTj/B]1U?W43",
+                                    "fields": {
+                                      "TEXT": ""
+                                    }
+                                  },
+                                  "block": {
+                                    "type": "sht31_simple_read",
+                                    "id": "90{myaG+,-g)mj7B!9v!",
+                                    "fields": {
+                                      "TYPE": "humidity"
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "serial_println",
+                                  "id": "`2;E*Z*SIR.d~Z(+51Xe",
+                                  "fields": {
+                                    "SERIAL": "Serial"
+                                  },
+                                  "inputs": {
+                                    "VAR": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "?wTv*ljXI9.jvWSLHd$n",
+                                        "fields": {
+                                          "TEXT": "%"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "time_delay",
+                                      "id": "epX-?]1Lhe3SzE;u(y64",
+                                      "inputs": {
+                                        "DELAY_TIME": {
+                                          "shadow": {
+                                            "type": "math_number",
+                                            "id": "0Et}v!n%xaHs8Azk~YLF",
+                                            "fields": {
+                                              "NUM": 1000
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

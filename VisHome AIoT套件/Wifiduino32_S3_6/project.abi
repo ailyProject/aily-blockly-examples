@@ -1,0 +1,169 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 70,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "$#Y4m0vhCOsvA,#.%zJ7",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "115200"
+              },
+              "next": {
+                "block": {
+                  "type": "ags02ma_init",
+                  "id": "M)TRsv_*|epeW}=b}[J(",
+                  "fields": {
+                    "WIRE": "Wire"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 190,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "serial_print",
+              "id": "k;Z5]IQ)k]S(gWK|}BgY",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "B;Mmj|H+ZZE)w]X/#q^j",
+                    "fields": {
+                      "TEXT": "浓度："
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_print",
+                  "id": "h`^=PxQs{lM4-}vIS(5Q",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "8c-uFJz9.rPbV1Xt%Fo9",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      },
+                      "block": {
+                        "type": "ags02ma_read_tvoc_ugm3",
+                        "id": "(U#3@){Oj0(|+rBC^t%*"
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_println",
+                      "id": "6rBDHv5@|y;?kp%Di+S!",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "ai=[QaO{S}9Q#UGlW{,m",
+                            "fields": {
+                              "TEXT": "ug/m3"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "serial_print",
+                          "id": "wQVh)QPptS%hOQ7X`egg",
+                          "fields": {
+                            "SERIAL": "Serial"
+                          },
+                          "inputs": {
+                            "VAR": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "E_t;NFqx$0il{zH(7DAH",
+                                "fields": {
+                                  "TEXT": "ppb："
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "serial_println",
+                              "id": "Y4FT#_%f$]$fN{hs]bcc",
+                              "fields": {
+                                "SERIAL": "Serial"
+                              },
+                              "inputs": {
+                                "VAR": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "n,?)JdY7|Z.t/L{x.=$L",
+                                    "fields": {
+                                      "TEXT": ""
+                                    }
+                                  },
+                                  "block": {
+                                    "type": "ags02ma_read_tvoc_ppb",
+                                    "id": "P~-NTGK!@Fik9sC5pB;9"
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "time_delay",
+                                  "id": "iGx3{Y6J):8a[G@Iia8^",
+                                  "inputs": {
+                                    "DELAY_TIME": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "id": "aE8mNoYHmT)sC}3Fw7fF",
+                                        "fields": {
+                                          "NUM": 1000
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

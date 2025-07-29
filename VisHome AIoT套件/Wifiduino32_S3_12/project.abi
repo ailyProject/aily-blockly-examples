@@ -1,0 +1,1092 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "(Ep$m+Pj#3r;E=lH{wp%",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "115200"
+              },
+              "next": {
+                "block": {
+                  "type": "bh1750_init_with_wire",
+                  "id": "Zl;@Lvu1H1RxebhpZbWm",
+                  "fields": {
+                    "VAR": "lightMeter",
+                    "MODE": "CONTINUOUS_HIGH_RES_MODE",
+                    "ADDRESS": "0x23",
+                    "WIRE": "Wire"
+                  },
+                  "next": {
+                    "block": {
+                      "type": "stepper_init",
+                      "id": "Q2zpurEy**Xc-P#1SZlq",
+                      "fields": {
+                        "STEPPER": {
+                          "id": "h#EM!r(cy#)EZ1aRaQ`."
+                        },
+                        "STEPS": 4096,
+                        "PIN1": "12",
+                        "PIN2": "13",
+                        "PIN3": "15",
+                        "PIN4": "16"
+                      },
+                      "next": {
+                        "block": {
+                          "type": "stepper_set_speed",
+                          "id": "rRn#0YCMOc8B@uqR1}Tx",
+                          "fields": {
+                            "STEPPER": {
+                              "id": "h#EM!r(cy#)EZ1aRaQ`."
+                            },
+                            "SPEED": 5
+                          },
+                          "next": {
+                            "block": {
+                              "type": "serial_println",
+                              "id": "q8gC:oSgN/U/m;7zIGO-",
+                              "fields": {
+                                "SERIAL": "Serial"
+                              },
+                              "inputs": {
+                                "VAR": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "%]9%)]][1rf#V?2shA]|",
+                                    "fields": {
+                                      "TEXT": "开机检测..."
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "serial_print",
+                                  "id": "Kb:S$|Qk7^R%^`EbIRjE",
+                                  "fields": {
+                                    "SERIAL": "Serial"
+                                  },
+                                  "inputs": {
+                                    "VAR": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "u=w#UzNC=%,LQ:-LsdDd",
+                                        "fields": {
+                                          "TEXT": "雨量："
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "serial_println",
+                                      "id": "={5-P+7Z[.J1kxv!]4Y7",
+                                      "fields": {
+                                        "SERIAL": "Serial"
+                                      },
+                                      "inputs": {
+                                        "VAR": {
+                                          "shadow": {
+                                            "type": "text",
+                                            "id": "B`,{9B_)cL)wAbFH-XtS",
+                                            "fields": {
+                                              "TEXT": ""
+                                            }
+                                          },
+                                          "block": {
+                                            "type": "io_analogread",
+                                            "id": "6]2$qIj+,UnWG6Aft4oE",
+                                            "inputs": {
+                                              "PIN": {
+                                                "shadow": {
+                                                  "type": "io_pin_adc",
+                                                  "id": "QZm*/j]_#HgvP`aCiG9z",
+                                                  "fields": {
+                                                    "PIN": "2"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "serial_print",
+                                          "id": "!ERs.NP}x$YKjMGb(L6}",
+                                          "fields": {
+                                            "SERIAL": "Serial"
+                                          },
+                                          "inputs": {
+                                            "VAR": {
+                                              "shadow": {
+                                                "type": "text",
+                                                "id": "qHI)%Pq-KHP2]y;C^u4j",
+                                                "fields": {
+                                                  "TEXT": "光照："
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "serial_println",
+                                              "id": "8A8st[{,AaMsBUJxzVB/",
+                                              "fields": {
+                                                "SERIAL": "Serial"
+                                              },
+                                              "inputs": {
+                                                "VAR": {
+                                                  "shadow": {
+                                                    "type": "text",
+                                                    "id": "JJ+a!`h6`J(!${{B:HCW",
+                                                    "fields": {
+                                                      "TEXT": ""
+                                                    }
+                                                  },
+                                                  "block": {
+                                                    "type": "bh1750_read_light_level",
+                                                    "id": "1O.ev(%ez~Ma/j@IdTdx",
+                                                    "fields": {
+                                                      "VAR": {
+                                                        "id": "]reFOu$_d%i)3*%x()V%"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "controls_ifelse",
+                                                  "id": "0|5s7*(N[F/_Kj[_qy;b",
+                                                  "inputs": {
+                                                    "IF0": {
+                                                      "block": {
+                                                        "type": "logic_operation",
+                                                        "id": "%Y2.55AMB)3_jc1*Y[Pf",
+                                                        "fields": {
+                                                          "OP": "OR"
+                                                        },
+                                                        "inputs": {
+                                                          "A": {
+                                                            "block": {
+                                                              "type": "logic_compare",
+                                                              "id": "@l}LtcBT7[+c[;_ugu@{",
+                                                              "fields": {
+                                                                "OP": "GT"
+                                                              },
+                                                              "inputs": {
+                                                                "A": {
+                                                                  "block": {
+                                                                    "type": "io_analogread",
+                                                                    "id": "T|n|,jW,}bZDSAZ1[brq",
+                                                                    "inputs": {
+                                                                      "PIN": {
+                                                                        "shadow": {
+                                                                          "type": "io_pin_adc",
+                                                                          "id": "X|vdYEN)NwkaL4ZpU_Q7",
+                                                                          "fields": {
+                                                                            "PIN": "2"
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "B": {
+                                                                  "block": {
+                                                                    "type": "math_number",
+                                                                    "id": "_-9XEkAT|[lge|bt,uV3",
+                                                                    "fields": {
+                                                                      "NUM": 0
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "B": {
+                                                            "block": {
+                                                              "type": "logic_compare",
+                                                              "id": "|[D)!W}AK^,U,I22O+)~",
+                                                              "fields": {
+                                                                "OP": "LT"
+                                                              },
+                                                              "inputs": {
+                                                                "A": {
+                                                                  "block": {
+                                                                    "type": "bh1750_read_light_level",
+                                                                    "id": "Q_F22/Y2L)crSo-LZi!?",
+                                                                    "fields": {
+                                                                      "VAR": {
+                                                                        "id": "]reFOu$_d%i)3*%x()V%"
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "B": {
+                                                                  "block": {
+                                                                    "type": "math_number",
+                                                                    "id": "VaEemdP,hsUEd-s#@3ef",
+                                                                    "fields": {
+                                                                      "NUM": 80
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "DO0": {
+                                                      "block": {
+                                                        "type": "serial_println",
+                                                        "id": "=Jr2BK@.Ya!o-p5kq2V0",
+                                                        "fields": {
+                                                          "SERIAL": "Serial"
+                                                        },
+                                                        "inputs": {
+                                                          "VAR": {
+                                                            "shadow": {
+                                                              "type": "text",
+                                                              "id": "v+So=s/UnI[fKo[lF:{e",
+                                                              "fields": {
+                                                                "TEXT": "开机检测：窗帘应关闭（下雨或光照低）"
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "next": {
+                                                          "block": {
+                                                            "type": "stepper_step",
+                                                            "id": "|oD~!rMeWyCIV1,zkS7H",
+                                                            "fields": {
+                                                              "STEPPER": {
+                                                                "id": "h#EM!r(cy#)EZ1aRaQ`."
+                                                              }
+                                                            },
+                                                            "inputs": {
+                                                              "STEPS": {
+                                                                "shadow": {
+                                                                  "type": "math_number",
+                                                                  "id": "/.9!|Hib{z)-%x;/(x0|",
+                                                                  "fields": {
+                                                                    "NUM": 5120
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "next": {
+                                                              "block": {
+                                                                "type": "variables_set",
+                                                                "id": "YPtZn4uVM1`0cu5zQJ?6",
+                                                                "fields": {
+                                                                  "VAR": {
+                                                                    "id": "3%`0jMLc8#/?FB,Tqgqs"
+                                                                  }
+                                                                },
+                                                                "inputs": {
+                                                                  "VALUE": {
+                                                                    "block": {
+                                                                      "type": "logic_boolean",
+                                                                      "id": "_,`MSrysX1K6d,FVUl(_",
+                                                                      "fields": {
+                                                                        "BOOL": "false"
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "ELSE": {
+                                                      "block": {
+                                                        "type": "serial_println",
+                                                        "id": "|hZESOcvz[yE`wA@a0[5",
+                                                        "fields": {
+                                                          "SERIAL": "Serial"
+                                                        },
+                                                        "inputs": {
+                                                          "VAR": {
+                                                            "shadow": {
+                                                              "type": "text",
+                                                              "id": "{.N4K^)YAJA@a7s}%:az",
+                                                              "fields": {
+                                                                "TEXT": "开机环境正常，窗帘保持打开"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 790,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "serial_print",
+              "id": "[um~x$j,i8N+y25Kz#%G",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "}9YItF03O+mru*5`y:WI",
+                    "fields": {
+                      "TEXT": "雨量："
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_println",
+                  "id": "PC*SIGe@!!X~w;Fqh7Ph",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "%.!vf/VLm/i[z0Hi@6+u",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      },
+                      "block": {
+                        "type": "io_analogread",
+                        "id": "MF^97e%y_y./_S-ov,0J",
+                        "inputs": {
+                          "PIN": {
+                            "shadow": {
+                              "type": "io_pin_adc",
+                              "id": "TjZFV%w+ru.LC_;oQ,GH",
+                              "fields": {
+                                "PIN": "2"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_print",
+                      "id": "PP@,or;op,1XCueC[CEi",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "w1Z|.!R3ed/YHfI3QXEc",
+                            "fields": {
+                              "TEXT": "光照："
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "serial_println",
+                          "id": "%R6e6g`[;5w|/}upfDM}",
+                          "fields": {
+                            "SERIAL": "Serial"
+                          },
+                          "inputs": {
+                            "VAR": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "S6v6`6`}%km=Y?1V`w:^",
+                                "fields": {
+                                  "TEXT": ""
+                                }
+                              },
+                              "block": {
+                                "type": "bh1750_read_light_level",
+                                "id": "jysVV`+o)E#ceC6^V#40",
+                                "fields": {
+                                  "VAR": {
+                                    "id": "]reFOu$_d%i)3*%x()V%"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "serial_print",
+                              "id": "r`G}n-9Ux%,7CUP_?fQq",
+                              "fields": {
+                                "SERIAL": "Serial"
+                              },
+                              "inputs": {
+                                "VAR": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "^1`r7hH`^7I!euSL0D:S",
+                                    "fields": {
+                                      "TEXT": "状态："
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "controls_ifelse",
+                                  "id": "5{PUK(3Ut7t-E/TZ=]jG",
+                                  "inputs": {
+                                    "IF0": {
+                                      "block": {
+                                        "type": "variables_get",
+                                        "id": "qvtXq.Gyq?bv+3A6Fm0j",
+                                        "fields": {
+                                          "VAR": {
+                                            "id": "3%`0jMLc8#/?FB,Tqgqs"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "DO0": {
+                                      "block": {
+                                        "type": "serial_println",
+                                        "id": "36b=3FFwcVC23g$v8c?W",
+                                        "fields": {
+                                          "SERIAL": "Serial"
+                                        },
+                                        "inputs": {
+                                          "VAR": {
+                                            "shadow": {
+                                              "type": "text",
+                                              "id": "n*rW5@z5TE#R/jW!}(#]",
+                                              "fields": {
+                                                "TEXT": "打开"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "ELSE": {
+                                      "block": {
+                                        "type": "serial_println",
+                                        "id": "Z,U1euh=/V-p+L]yt7Rj",
+                                        "fields": {
+                                          "SERIAL": "Serial"
+                                        },
+                                        "inputs": {
+                                          "VAR": {
+                                            "shadow": {
+                                              "type": "text",
+                                              "id": "aE9Mj*^qafJzkoeD7,{+",
+                                              "fields": {
+                                                "TEXT": "关闭"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "controls_if",
+                                      "id": "N2JwEF(,xi}7d]G}INfG",
+                                      "inputs": {
+                                        "IF0": {
+                                          "block": {
+                                            "type": "logic_operation",
+                                            "id": "cgLB64_l5}:]{vCfmCm9",
+                                            "fields": {
+                                              "OP": "AND"
+                                            },
+                                            "inputs": {
+                                              "A": {
+                                                "block": {
+                                                  "type": "logic_compare",
+                                                  "id": ",TC}-JVB#?0Tass.9b,S",
+                                                  "fields": {
+                                                    "OP": "GT"
+                                                  },
+                                                  "inputs": {
+                                                    "A": {
+                                                      "block": {
+                                                        "type": "io_analogread",
+                                                        "id": "RdqA`_:PFmjpn:v#WZZl",
+                                                        "inputs": {
+                                                          "PIN": {
+                                                            "shadow": {
+                                                              "type": "io_pin_adc",
+                                                              "id": "l|H.Om_^`71zPY$0m2wh",
+                                                              "fields": {
+                                                                "PIN": "2"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "B": {
+                                                      "block": {
+                                                        "type": "math_number",
+                                                        "id": "N-wW,kR:,2[Ebt3z/)VA",
+                                                        "fields": {
+                                                          "NUM": 0
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "B": {
+                                                "block": {
+                                                  "type": "variables_get",
+                                                  "id": "oj]sx#/)y8ZIEufe?|=L",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "id": "3%`0jMLc8#/?FB,Tqgqs"
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "DO0": {
+                                          "block": {
+                                            "type": "serial_println",
+                                            "id": "T?v(qS-XzHiW4%1j*5Cu",
+                                            "fields": {
+                                              "SERIAL": "Serial"
+                                            },
+                                            "inputs": {
+                                              "VAR": {
+                                                "shadow": {
+                                                  "type": "text",
+                                                  "id": "8l54#~u_[{9%AH[yEr44",
+                                                  "fields": {
+                                                    "TEXT": "下雨，关闭窗帘"
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "next": {
+                                              "block": {
+                                                "type": "stepper_step",
+                                                "id": ":Mb~@NgiHht8e?28A2tm",
+                                                "fields": {
+                                                  "STEPPER": {
+                                                    "id": "h#EM!r(cy#)EZ1aRaQ`."
+                                                  }
+                                                },
+                                                "inputs": {
+                                                  "STEPS": {
+                                                    "shadow": {
+                                                      "type": "math_number",
+                                                      "id": "z94)+:|YM0QvuFyW@fd7",
+                                                      "fields": {
+                                                        "NUM": 5120
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "next": {
+                                                  "block": {
+                                                    "type": "variables_set",
+                                                    "id": "uPN7{P$$hV1W?{hOB|.c",
+                                                    "fields": {
+                                                      "VAR": {
+                                                        "id": "3%`0jMLc8#/?FB,Tqgqs"
+                                                      }
+                                                    },
+                                                    "inputs": {
+                                                      "VALUE": {
+                                                        "block": {
+                                                          "type": "logic_boolean",
+                                                          "id": "ZO~V7m:f(^rL~0OdOGBx",
+                                                          "fields": {
+                                                            "BOOL": "false"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "controls_if",
+                                          "id": "}]j}t[)XI|!T^@it!]u6",
+                                          "inputs": {
+                                            "IF0": {
+                                              "block": {
+                                                "type": "logic_operation",
+                                                "id": "e`zr_RflKU*^}]~Tyw~d",
+                                                "fields": {
+                                                  "OP": "AND"
+                                                },
+                                                "inputs": {
+                                                  "A": {
+                                                    "block": {
+                                                      "type": "logic_operation",
+                                                      "id": "c-S7,X}KbcgECTPu1x@*",
+                                                      "fields": {
+                                                        "OP": "AND"
+                                                      },
+                                                      "inputs": {
+                                                        "A": {
+                                                          "block": {
+                                                            "type": "logic_compare",
+                                                            "id": "WA/z-F0S9|3NgWg%W+lb",
+                                                            "fields": {
+                                                              "OP": "EQ"
+                                                            },
+                                                            "inputs": {
+                                                              "A": {
+                                                                "block": {
+                                                                  "type": "io_analogread",
+                                                                  "id": "CpNim6aFpUAY^LCrR`Mt",
+                                                                  "inputs": {
+                                                                    "PIN": {
+                                                                      "shadow": {
+                                                                        "type": "io_pin_adc",
+                                                                        "id": "AHeM#D[K~nC8pL~n7[}`",
+                                                                        "fields": {
+                                                                          "PIN": "2"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "B": {
+                                                                "block": {
+                                                                  "type": "math_number",
+                                                                  "id": "VBXX/!K[F|IU+sH_.}T^",
+                                                                  "fields": {
+                                                                    "NUM": 0
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "B": {
+                                                          "block": {
+                                                            "type": "logic_compare",
+                                                            "id": "o{!Rd!!fR-}*QugZy~$e",
+                                                            "fields": {
+                                                              "OP": "LT"
+                                                            },
+                                                            "inputs": {
+                                                              "A": {
+                                                                "block": {
+                                                                  "type": "bh1750_read_light_level",
+                                                                  "id": "HossKGslY#|=NT(9ad(W",
+                                                                  "fields": {
+                                                                    "VAR": {
+                                                                      "id": "]reFOu$_d%i)3*%x()V%"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "B": {
+                                                                "block": {
+                                                                  "type": "math_number",
+                                                                  "id": "LdLkXGwL0nmj0cL#,.{m",
+                                                                  "fields": {
+                                                                    "NUM": 80
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "B": {
+                                                    "block": {
+                                                      "type": "variables_get",
+                                                      "id": "WIH7oB`Yv(p|2hPkFf%k",
+                                                      "fields": {
+                                                        "VAR": {
+                                                          "id": "3%`0jMLc8#/?FB,Tqgqs"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "DO0": {
+                                              "block": {
+                                                "type": "serial_println",
+                                                "id": "p.3bgb4TiLyQYSZdhVWm",
+                                                "fields": {
+                                                  "SERIAL": "Serial"
+                                                },
+                                                "inputs": {
+                                                  "VAR": {
+                                                    "shadow": {
+                                                      "type": "text",
+                                                      "id": "~ef%lCo%IqJ|B^t?J52O",
+                                                      "fields": {
+                                                        "TEXT": "光照过低，关闭窗帘"
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "next": {
+                                                  "block": {
+                                                    "type": "stepper_step",
+                                                    "id": "L$pc+IZWD?%t|?HZ{H1S",
+                                                    "fields": {
+                                                      "STEPPER": {
+                                                        "id": "h#EM!r(cy#)EZ1aRaQ`."
+                                                      }
+                                                    },
+                                                    "inputs": {
+                                                      "STEPS": {
+                                                        "shadow": {
+                                                          "type": "math_number",
+                                                          "id": "KFsJZv{b^vTKaz7#!AAs",
+                                                          "fields": {
+                                                            "NUM": 5120
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "next": {
+                                                      "block": {
+                                                        "type": "variables_set",
+                                                        "id": "o)rjEuDd9aarRwf%EJC#",
+                                                        "fields": {
+                                                          "VAR": {
+                                                            "id": "3%`0jMLc8#/?FB,Tqgqs"
+                                                          }
+                                                        },
+                                                        "inputs": {
+                                                          "VALUE": {
+                                                            "block": {
+                                                              "type": "logic_boolean",
+                                                              "id": "m?FWI:.v8Xb[+ptvqJjG",
+                                                              "fields": {
+                                                                "BOOL": "false"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "controls_if",
+                                              "id": "Rpav4O#nV9R3-,%pHopj",
+                                              "inputs": {
+                                                "IF0": {
+                                                  "block": {
+                                                    "type": "logic_operation",
+                                                    "id": "6rIDl,(];.!6TEyLv=av",
+                                                    "fields": {
+                                                      "OP": "AND"
+                                                    },
+                                                    "inputs": {
+                                                      "A": {
+                                                        "block": {
+                                                          "type": "logic_operation",
+                                                          "id": "vV!$H(L~J9!HwV]SQzby",
+                                                          "fields": {
+                                                            "OP": "AND"
+                                                          },
+                                                          "inputs": {
+                                                            "A": {
+                                                              "block": {
+                                                                "type": "logic_compare",
+                                                                "id": "c=6YclCGeL95W;Y7^Bh0",
+                                                                "fields": {
+                                                                  "OP": "EQ"
+                                                                },
+                                                                "inputs": {
+                                                                  "A": {
+                                                                    "block": {
+                                                                      "type": "io_analogread",
+                                                                      "id": "pwvU_(dH5!m*[IdF0`a{",
+                                                                      "inputs": {
+                                                                        "PIN": {
+                                                                          "shadow": {
+                                                                            "type": "io_pin_adc",
+                                                                            "id": "qn1i#I,whVZ)nbLi2j#Z",
+                                                                            "fields": {
+                                                                              "PIN": "2"
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "B": {
+                                                                    "block": {
+                                                                      "type": "math_number",
+                                                                      "id": "YD_Tpp]d!CdBy+:$0P4b",
+                                                                      "fields": {
+                                                                        "NUM": 0
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "B": {
+                                                              "block": {
+                                                                "type": "logic_compare",
+                                                                "id": "gxibf2Z21xPtWd$~!=Y*",
+                                                                "fields": {
+                                                                  "OP": "GT"
+                                                                },
+                                                                "inputs": {
+                                                                  "A": {
+                                                                    "block": {
+                                                                      "type": "bh1750_read_light_level",
+                                                                      "id": "$P_S5;wMHEg3ldEXK:5+",
+                                                                      "fields": {
+                                                                        "VAR": {
+                                                                          "id": "]reFOu$_d%i)3*%x()V%"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "B": {
+                                                                    "block": {
+                                                                      "type": "math_number",
+                                                                      "id": "Mq%*Wofm[=ww=?m|MB%f",
+                                                                      "fields": {
+                                                                        "NUM": 250
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "B": {
+                                                        "block": {
+                                                          "type": "logic_negate",
+                                                          "id": "Dz*FDtEKvW;jHWa8M=[M",
+                                                          "inputs": {
+                                                            "BOOL": {
+                                                              "block": {
+                                                                "type": "variables_get",
+                                                                "id": "3S%1^6*DORH#(%;ve[8D",
+                                                                "fields": {
+                                                                  "VAR": {
+                                                                    "id": "3%`0jMLc8#/?FB,Tqgqs"
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "DO0": {
+                                                  "block": {
+                                                    "type": "serial_println",
+                                                    "id": "9*WkzVqYyPxF[kPY^49}",
+                                                    "fields": {
+                                                      "SERIAL": "Serial"
+                                                    },
+                                                    "inputs": {
+                                                      "VAR": {
+                                                        "shadow": {
+                                                          "type": "text",
+                                                          "id": "~fIZ6Ji$Gx=s{fW*!dSn",
+                                                          "fields": {
+                                                            "TEXT": "光照充足且无雨，打开窗帘"
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "next": {
+                                                      "block": {
+                                                        "type": "stepper_step",
+                                                        "id": ":|%k=|*mv/*af/)weeV7",
+                                                        "fields": {
+                                                          "STEPPER": {
+                                                            "id": "h#EM!r(cy#)EZ1aRaQ`."
+                                                          }
+                                                        },
+                                                        "inputs": {
+                                                          "STEPS": {
+                                                            "shadow": {
+                                                              "type": "math_number",
+                                                              "id": "LN5^uRv*g))Z!oT^KG~X",
+                                                              "fields": {
+                                                                "NUM": -5120
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "next": {
+                                                          "block": {
+                                                            "type": "variables_set",
+                                                            "id": "^1o)`oftLUud;)*%NoVh",
+                                                            "fields": {
+                                                              "VAR": {
+                                                                "id": "3%`0jMLc8#/?FB,Tqgqs"
+                                                              }
+                                                            },
+                                                            "inputs": {
+                                                              "VALUE": {
+                                                                "block": {
+                                                                  "type": "logic_boolean",
+                                                                  "id": "RHDBdG!aMV#{0}M-p-#-",
+                                                                  "fields": {
+                                                                    "BOOL": "true"
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "time_delay",
+                                                  "id": "D|8pP9z.:!HHPXk/!$Pc",
+                                                  "inputs": {
+                                                    "DELAY_TIME": {
+                                                      "shadow": {
+                                                        "type": "math_number",
+                                                        "id": "FH$Ga(WV?0~/Gahrg4SM",
+                                                        "fields": {
+                                                          "NUM": 10000
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "variable_define",
+        "id": "tPLvTV*[w5[OS7wSp?wA",
+        "x": 30,
+        "y": -30,
+        "fields": {
+          "VAR": "curtainOpen",
+          "TYPE": "bool"
+        },
+        "inputs": {
+          "VALUE": {
+            "block": {
+              "type": "logic_boolean",
+              "id": "8?b*fE_eD4q`Pk:(KJfa",
+              "fields": {
+                "BOOL": "true"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "lightMeter",
+      "id": "]reFOu$_d%i)3*%x()V%",
+      "type": "BH1750"
+    },
+    {
+      "name": "stepper",
+      "id": "h#EM!r(cy#)EZ1aRaQ`.",
+      "type": "Stepper"
+    },
+    {
+      "name": "curtainOpen",
+      "id": "3%`0jMLc8#/?FB,Tqgqs"
+    }
+  ]
+}

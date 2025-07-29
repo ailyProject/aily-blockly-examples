@@ -1,0 +1,136 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 50,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "gd3800_init",
+              "id": "5.XT1M9Sd6Z%_lAn!YV1",
+              "inputs": {
+                "PIN_TX": {
+                  "block": {
+                    "type": "math_number",
+                    "id": "0F_qmLDfNCK`8h8S3n_D",
+                    "fields": {
+                      "NUM": 14
+                    }
+                  }
+                },
+                "PIN_RX": {
+                  "block": {
+                    "type": "math_number",
+                    "id": ")-*mL3;qc5fKmi6WytY5",
+                    "fields": {
+                      "NUM": 15
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "gd3800_setvolume",
+                  "id": "j{}aDycclJ)#R|7a}D#;",
+                  "inputs": {
+                    "SETVOLUME": {
+                      "block": {
+                        "type": "math_number",
+                        "id": ",=Q_6XxqJ+Eh#Ck9T]BU",
+                        "fields": {
+                          "NUM": 10
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 170,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "gd3800_play",
+              "id": "z_sTDuy4_r=dyO*.6{:)",
+              "inputs": {
+                "MUSICNUM": {
+                  "block": {
+                    "type": "math_number",
+                    "id": "xZ34R!VtH.ua-5:`0AIe",
+                    "fields": {
+                      "NUM": 1
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "time_delay",
+                  "id": "e3Z7e`u~:7|%y(1D=|QY",
+                  "inputs": {
+                    "DELAY_TIME": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "rnz$6NFQG9D#ZKl3rJ|U",
+                        "fields": {
+                          "NUM": 2000
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "gd3800_play",
+                      "id": ":l-;SQTh/MeF#OHO,4a~",
+                      "inputs": {
+                        "MUSICNUM": {
+                          "block": {
+                            "type": "math_number",
+                            "id": "u}|Vo-3)Dj8)Rxyc2jv5",
+                            "fields": {
+                              "NUM": 2
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "time_delay",
+                          "id": "TydyiV{8LP%|%mr+5!$O",
+                          "inputs": {
+                            "DELAY_TIME": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "K-|LUi{v7Um`%wYz/$Oa",
+                                "fields": {
+                                  "NUM": 2000
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
