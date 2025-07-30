@@ -64,7 +64,7 @@
         "type": "arduino_loop",
         "id": "arduino_loop_id0",
         "x": 90,
-        "y": 290,
+        "y": 310,
         "deletable": false
       },
       {

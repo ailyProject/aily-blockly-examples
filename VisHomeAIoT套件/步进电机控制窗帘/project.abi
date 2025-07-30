@@ -5,8 +5,8 @@
       {
         "type": "arduino_setup",
         "id": "arduino_setup_id0",
-        "x": -30,
-        "y": -130,
+        "x": -170,
+        "y": -150,
         "deletable": false,
         "inputs": {
           "ARDUINO_SETUP": {
@@ -54,7 +54,7 @@
                                 "type": "text",
                                 "id": "8m^0qVr:+cI3XiOcK8)G",
                                 "fields": {
-                                  "TEXT": "c9519d1aa0b0"
+                                  "TEXT": ""
                                 }
                               }
                             },
@@ -63,7 +63,7 @@
                                 "type": "text",
                                 "id": "f^t6LIE#nY$]}?$=,%[E",
                                 "fields": {
-                                  "TEXT": "openjumper_2.4G"
+                                  "TEXT": ""
                                 }
                               }
                             },
@@ -72,7 +72,7 @@
                                 "type": "text",
                                 "id": "Nft)(;q3)qAu%^!x0UWN",
                                 "fields": {
-                                  "TEXT": "cd85586651"
+                                  "TEXT": ""
                                 }
                               }
                             }
@@ -110,15 +110,15 @@
       {
         "type": "arduino_loop",
         "id": "arduino_loop_id0",
-        "x": -250,
-        "y": -90,
+        "x": -170,
+        "y": 890,
         "deletable": false
       },
       {
         "type": "blinker_button",
         "id": "W{zq5EpJq7.mfIEokI:m",
-        "x": -230,
-        "y": 170,
+        "x": -170,
+        "y": 190,
         "fields": {
           "KEY": "btn-abf"
         },
@@ -187,8 +187,8 @@
       {
         "type": "blinker_button",
         "id": "rx}-AdQmD/+g)]azk5w%",
-        "x": 190,
-        "y": 150,
+        "x": 270,
+        "y": 190,
         "fields": {
           "KEY": "btn-abg"
         },
@@ -257,8 +257,8 @@
       {
         "type": "blinker_button",
         "id": "g9vKS;i2MK`:r;g*)Bjk",
-        "x": 70,
-        "y": 330,
+        "x": -170,
+        "y": 410,
         "fields": {
           "KEY": "btn-abi"
         },
@@ -274,77 +274,6 @@
                     "id": "+33cBK11F2}D7zHV`o=A",
                     "fields": {
                       "STATE": "off"
-                    }
-                  }
-                },
-                "DO0": {
-                  "block": {
-                    "type": "servo_write_float",
-                    "id": "a`L+z[=V|gRM`)2x_gj-",
-                    "fields": {
-                      "PIN": "12"
-                    },
-                    "inputs": {
-                      "ANGLE": {
-                        "shadow": {
-                          "type": "servo_angle",
-                          "id": "+A`Q%VUsXoSrwkePN,/Y",
-                          "fields": {
-                            "ANGLE": 0
-                          }
-                        }
-                      }
-                    },
-                    "next": {
-                      "block": {
-                        "type": "serial_print",
-                        "id": "la[zm;N$DK$7wGE^c:`=",
-                        "fields": {
-                          "SERIAL": "Serial"
-                        },
-                        "inputs": {
-                          "VAR": {
-                            "shadow": {
-                              "type": "text",
-                              "id": "WfN_,%Wu/bUhm5ayvlO4",
-                              "fields": {
-                                "TEXT": "1"
-                              }
-                            }
-                          }
-                        },
-                        "next": {
-                          "block": {
-                            "type": "blinker_widget_print",
-                            "id": "dky3:WY~mlzpOAW.MKxv",
-                            "extraState": {
-                              "itemCount": 2
-                            },
-                            "fields": {
-                              "WIDGET": "btn-abi"
-                            },
-                            "inputs": {
-                              "INPUT0": {
-                                "block": {
-                                  "type": "blinker_state",
-                                  "id": "Vc![]Kj7Ml98,i{#R6wC",
-                                  "inputs": {
-                                    "STATE": {
-                                      "shadow": {
-                                        "type": "text",
-                                        "id": "UumVV+GOd?hySZRz},]X",
-                                        "fields": {
-                                          "TEXT": "off"
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
                     }
                   }
                 }
@@ -427,6 +356,77 @@
                                       }
                                     }
                                   }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "servo_write_float",
+                                    "id": "a`L+z[=V|gRM`)2x_gj-",
+                                    "fields": {
+                                      "PIN": "12"
+                                    },
+                                    "inputs": {
+                                      "ANGLE": {
+                                        "shadow": {
+                                          "type": "servo_angle",
+                                          "id": "+A`Q%VUsXoSrwkePN,/Y",
+                                          "fields": {
+                                            "ANGLE": 0
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "next": {
+                                      "block": {
+                                        "type": "serial_print",
+                                        "id": "la[zm;N$DK$7wGE^c:`=",
+                                        "fields": {
+                                          "SERIAL": "Serial"
+                                        },
+                                        "inputs": {
+                                          "VAR": {
+                                            "shadow": {
+                                              "type": "text",
+                                              "id": "WfN_,%Wu/bUhm5ayvlO4",
+                                              "fields": {
+                                                "TEXT": "1"
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "next": {
+                                          "block": {
+                                            "type": "blinker_widget_print",
+                                            "id": "dky3:WY~mlzpOAW.MKxv",
+                                            "extraState": {
+                                              "itemCount": 2
+                                            },
+                                            "fields": {
+                                              "WIDGET": "btn-abi"
+                                            },
+                                            "inputs": {
+                                              "INPUT0": {
+                                                "block": {
+                                                  "type": "blinker_state",
+                                                  "id": "Vc![]Kj7Ml98,i{#R6wC",
+                                                  "inputs": {
+                                                    "STATE": {
+                                                      "shadow": {
+                                                        "type": "text",
+                                                        "id": "UumVV+GOd?hySZRz},]X",
+                                                        "fields": {
+                                                          "TEXT": "off"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
                                 }
                               }
                             }
@@ -444,8 +444,8 @@
       {
         "type": "blinker_button",
         "id": "Qx5M(UuE:9,IAaz{/(T}",
-        "x": 670,
-        "y": -10,
+        "x": 370,
+        "y": 430,
         "fields": {
           "KEY": "btn-fan"
         },

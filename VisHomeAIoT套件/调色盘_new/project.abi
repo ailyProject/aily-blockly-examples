@@ -64,14 +64,14 @@
         "type": "arduino_loop",
         "id": "arduino_loop_id0",
         "x": 30,
-        "y": 310,
+        "y": 230,
         "deletable": false
       },
       {
         "type": "blinker_colorpicker",
         "id": "ZLe/vN[PWZ/pY|ZpCU0W",
-        "x": 70,
-        "y": 470,
+        "x": 30,
+        "y": 290,
         "fields": {
           "KEY": "col-abc"
         },
