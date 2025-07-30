@@ -1,0 +1,834 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "blinker_init_wifi",
+              "id": "pRpbC~Rd_x6R1SWtncr6",
+              "fields": {
+                "MODE": "手动配网"
+              },
+              "inputs": {
+                "AUTH": {
+                  "block": {
+                    "type": "text",
+                    "id": "H77_9}f=j)l98=%K[rYT",
+                    "fields": {
+                      "TEXT": "b312de402059"
+                    }
+                  }
+                },
+                "SSID": {
+                  "block": {
+                    "type": "text",
+                    "id": "VEmH+*{E78|?W5c+$)h2",
+                    "fields": {
+                      "TEXT": "openjumper_2.4G"
+                    }
+                  }
+                },
+                "PSWD": {
+                  "block": {
+                    "type": "text",
+                    "id": "f9N.yk@5w,/X$VZ5Ji3)",
+                    "fields": {
+                      "TEXT": "cd85586651"
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_begin",
+                  "id": "^bB[g6USB7u7hI;Yw^Pe",
+                  "fields": {
+                    "SERIAL": "Serial",
+                    "SPEED": "9600"
+                  },
+                  "next": {
+                    "block": {
+                      "type": "wind_begin",
+                      "id": "6q]sC(`Cggh`W%iJJQwL",
+                      "fields": {
+                        "SPEED_PIN": "35",
+                        "DIR_PIN": "34"
+                      },
+                      "next": {
+                        "block": {
+                          "type": "rain_init",
+                          "id": "XiF-7=6f[(CovH:x])`Y",
+                          "fields": {
+                            "PIN": "32"
+                          },
+                          "next": {
+                            "block": {
+                              "type": "bmp280_init",
+                              "id": "(=%X[/%T1%zgtOKEL[G;",
+                              "fields": {
+                                "ADDR": "0x76",
+                                "WIRE": "Wire"
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "bmp280_set_sampling",
+                                  "id": "H`-tCo@l(.E_!DuTEM8P",
+                                  "fields": {
+                                    "MODE": "MODE_NORMAL",
+                                    "TEMP_OS": "SAMPLING_X4",
+                                    "PRES_OS": "SAMPLING_X4",
+                                    "FILTER": "FILTER_X4",
+                                    "DURATION": "STANDBY_MS_1"
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "si7021_begin",
+                                      "id": "#Akm3A]}R/76E{p)nj2V",
+                                      "fields": {
+                                        "OBJECT": {
+                                          "id": "Qqcjqh(3a2fhBbj;^{j@"
+                                        },
+                                        "WIRE": "Wire"
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "bh1750_init_with_wire",
+                                          "id": "_Y8}_ciaZhM]N.Dt|5ue",
+                                          "fields": {
+                                            "VAR": "lightMeter",
+                                            "MODE": "CONTINUOUS_HIGH_RES_MODE",
+                                            "ADDRESS": "0x23",
+                                            "WIRE": "Wire"
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "sgp30_init",
+                                              "id": "/-kbtz664foGNCL8M1X5",
+                                              "fields": {
+                                                "WIRE": "Wire"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 550,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "wind_update",
+              "id": "5)Zm(,NQ=_G`ccd#Z,59",
+              "next": {
+                "block": {
+                  "type": "rain_update",
+                  "id": "{7D(XzEVb`3o``kkVoB[",
+                  "next": {
+                    "block": {
+                      "type": "sgp30_measure",
+                      "id": "4~++5^Qz5)[kU8|,$=,d",
+                      "next": {
+                        "block": {
+                          "type": "sgp30_measure_raw",
+                          "id": "gTjBiE$Gyoe+D_)L=B~n"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "blinker_heartbeat",
+        "id": "q*/s6vm)p)[|[I5g%Zf}",
+        "x": 890,
+        "y": 30,
+        "inputs": {
+          "NAME": {
+            "block": {
+              "type": "blinker_widget_print",
+              "id": "^YbH/]_O2cSM.hz-,`vx",
+              "extraState": {
+                "itemCount": 2
+              },
+              "fields": {
+                "WIDGET": "temp"
+              },
+              "inputs": {
+                "INPUT0": {
+                  "block": {
+                    "type": "blinker_value",
+                    "id": "eIR;]}g.y~7#}fo_zwVA",
+                    "inputs": {
+                      "VALUE": {
+                        "shadow": {
+                          "type": "math_number",
+                          "id": "0U6sRE0AyyJ-Z:iZQ2=p",
+                          "fields": {
+                            "NUM": 0
+                          }
+                        },
+                        "block": {
+                          "type": "si7021_read_temperature",
+                          "id": "Y98.~,`s]EIN?:Ggp,8j",
+                          "fields": {
+                            "OBJECT": {
+                              "id": "Qqcjqh(3a2fhBbj;^{j@"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "INPUT1": {
+                  "block": {
+                    "type": "blinker_color",
+                    "id": "I=2YwhS36L#yp9;uM4q.",
+                    "inputs": {
+                      "COLOR": {
+                        "shadow": {
+                          "type": "text",
+                          "id": "/3$do(.otcX2=3:~8iY3",
+                          "fields": {
+                            "TEXT": "#FF0000"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "blinker_widget_print",
+                  "id": ":F%z7k64ZmDdC$Q}XDf;",
+                  "extraState": {
+                    "itemCount": 2
+                  },
+                  "fields": {
+                    "WIDGET": "humi"
+                  },
+                  "inputs": {
+                    "INPUT0": {
+                      "block": {
+                        "type": "blinker_value",
+                        "id": "q26wbW/R+!49U,5PLD3l",
+                        "inputs": {
+                          "VALUE": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "0U6sRE0AyyJ-Z:iZQ2=p",
+                              "fields": {
+                                "NUM": 0
+                              }
+                            },
+                            "block": {
+                              "type": "si7021_read_humidity",
+                              "id": "t{,6SdHG,%!QJ[:2O2Hi",
+                              "fields": {
+                                "OBJECT": {
+                                  "id": "Qqcjqh(3a2fhBbj;^{j@"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "INPUT1": {
+                      "block": {
+                        "type": "blinker_color",
+                        "id": "@!=s4jQ~ayI}]k=9U`~^",
+                        "inputs": {
+                          "COLOR": {
+                            "shadow": {
+                              "type": "text",
+                              "id": ")wC+^aOYLXaIcF{M38D!",
+                              "fields": {
+                                "TEXT": "#0000FF"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "blinker_widget_print",
+                      "id": "}PL]wQ7F^$)(ZwtWyJ2l",
+                      "extraState": {
+                        "itemCount": 2
+                      },
+                      "fields": {
+                        "WIDGET": "light"
+                      },
+                      "inputs": {
+                        "INPUT0": {
+                          "block": {
+                            "type": "blinker_value",
+                            "id": "SdY?nxcx`LA#px{yL6f@",
+                            "inputs": {
+                              "VALUE": {
+                                "shadow": {
+                                  "type": "math_number",
+                                  "id": "Qp8-T7=#y=sn[^$qjJ#:",
+                                  "fields": {
+                                    "NUM": 0
+                                  }
+                                },
+                                "block": {
+                                  "type": "bh1750_read_light_level",
+                                  "id": "-#rwf%GY,wqswD)F[+?}",
+                                  "fields": {
+                                    "VAR": {
+                                      "id": "/n0;3?~MMqD1/ydC|,3R"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "INPUT1": {
+                          "block": {
+                            "type": "blinker_color",
+                            "id": "FX1OvB2!pR+9s6j-/60T",
+                            "inputs": {
+                              "COLOR": {
+                                "shadow": {
+                                  "type": "text",
+                                  "id": "GZ%Jg9w#?Jt~v9=q+%^8",
+                                  "fields": {
+                                    "TEXT": "#FFA500"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "blinker_widget_print",
+                          "id": "JY7p=Qq-=|gnaaPT]=GX",
+                          "extraState": {
+                            "itemCount": 2
+                          },
+                          "fields": {
+                            "WIDGET": "tvoc"
+                          },
+                          "inputs": {
+                            "INPUT0": {
+                              "block": {
+                                "type": "blinker_value",
+                                "id": "n[cv/:dCkw:G.jz5ThG0",
+                                "inputs": {
+                                  "VALUE": {
+                                    "shadow": {
+                                      "type": "math_number",
+                                      "id": "Qp8-T7=#y=sn[^$qjJ#:",
+                                      "fields": {
+                                        "NUM": 0
+                                      }
+                                    },
+                                    "block": {
+                                      "type": "sgp30_get_tvoc",
+                                      "id": "ASP1LjR,vSA2t,nS`y)v"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "INPUT1": {
+                              "block": {
+                                "type": "blinker_color",
+                                "id": "wL~iMg#=iEor4+L1b+Ii",
+                                "inputs": {
+                                  "COLOR": {
+                                    "shadow": {
+                                      "type": "text",
+                                      "id": "b~]fq,tz80vWt4-/|8*e",
+                                      "fields": {
+                                        "TEXT": "#0000FF"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "blinker_widget_print",
+                              "id": "#7D{A2Vt:kgndR}?%@*p",
+                              "extraState": {
+                                "itemCount": 2
+                              },
+                              "fields": {
+                                "WIDGET": "rain"
+                              },
+                              "inputs": {
+                                "INPUT0": {
+                                  "block": {
+                                    "type": "blinker_value",
+                                    "id": "K+m=EMN%`s+FvwC)f=su",
+                                    "inputs": {
+                                      "VALUE": {
+                                        "shadow": {
+                                          "type": "math_number",
+                                          "id": "Qp8-T7=#y=sn[^$qjJ#:",
+                                          "fields": {
+                                            "NUM": 0
+                                          }
+                                        },
+                                        "block": {
+                                          "type": "rain_get_day",
+                                          "id": "Wr-TcUaZ%,gg~#Bn~):@"
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "INPUT1": {
+                                  "block": {
+                                    "type": "blinker_color",
+                                    "id": "W/l)DDC.TGGaOA5:z*5i",
+                                    "inputs": {
+                                      "COLOR": {
+                                        "shadow": {
+                                          "type": "text",
+                                          "id": "^%$4}u]Qb`zDN3k;,Cu_",
+                                          "fields": {
+                                            "TEXT": "#0000FF"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "blinker_widget_print",
+                                  "id": "RGHJ_UN(MCpQ{*Zki~%K",
+                                  "extraState": {
+                                    "itemCount": 2
+                                  },
+                                  "fields": {
+                                    "WIDGET": "hpa"
+                                  },
+                                  "inputs": {
+                                    "INPUT0": {
+                                      "block": {
+                                        "type": "blinker_value",
+                                        "id": "D^RY#{wG|Xw_(c%,nY^P",
+                                        "inputs": {
+                                          "VALUE": {
+                                            "shadow": {
+                                              "type": "math_number",
+                                              "id": "(/xdx#4aai$)byb7T=UC",
+                                              "fields": {
+                                                "NUM": 0
+                                              }
+                                            },
+                                            "block": {
+                                              "type": "bmp280_read_pressure",
+                                              "id": "9/ODnKuom_Lr.50C(K~v"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "INPUT1": {
+                                      "block": {
+                                        "type": "blinker_color",
+                                        "id": "(9l;W*g:syHa5Ofxguly",
+                                        "inputs": {
+                                          "COLOR": {
+                                            "shadow": {
+                                              "type": "text",
+                                              "id": "|}K.YFh23gbUvHxc?$_K",
+                                              "fields": {
+                                                "TEXT": "#1E90FF"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "blinker_widget_print",
+                                      "id": "%Qr5qS/(h5/:-r9Zq7Xc",
+                                      "extraState": {
+                                        "itemCount": 2
+                                      },
+                                      "fields": {
+                                        "WIDGET": "num-eug"
+                                      },
+                                      "inputs": {
+                                        "INPUT0": {
+                                          "block": {
+                                            "type": "blinker_value",
+                                            "id": ";yVvnRc,]Xkk*qw|^,H-",
+                                            "inputs": {
+                                              "VALUE": {
+                                                "shadow": {
+                                                  "type": "math_number",
+                                                  "id": "(/xdx#4aai$)byb7T=UC",
+                                                  "fields": {
+                                                    "NUM": 0
+                                                  }
+                                                },
+                                                "block": {
+                                                  "type": "bmp280_read_altitude",
+                                                  "id": "fpM8gJ3CA`|FrhDyRCQv",
+                                                  "fields": {
+                                                    "SEAPRESSURE": 1013.25
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "INPUT1": {
+                                          "block": {
+                                            "type": "blinker_color",
+                                            "id": "N[ZnG~yGx@L@`;%7Ti{R",
+                                            "inputs": {
+                                              "COLOR": {
+                                                "shadow": {
+                                                  "type": "text",
+                                                  "id": "ZrwH%o8n8IYw0p^eK4!N",
+                                                  "fields": {
+                                                    "TEXT": "#8B4513"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "blinker_widget_print",
+                                          "id": "t64Y%eD%t4S:(:R6z=:W",
+                                          "extraState": {
+                                            "itemCount": 2
+                                          },
+                                          "fields": {
+                                            "WIDGET": "num-z6g"
+                                          },
+                                          "inputs": {
+                                            "INPUT0": {
+                                              "block": {
+                                                "type": "blinker_value",
+                                                "id": "oHec:zjj)lhkeZ/Ku;$D",
+                                                "inputs": {
+                                                  "VALUE": {
+                                                    "shadow": {
+                                                      "type": "math_number",
+                                                      "id": "(/xdx#4aai$)byb7T=UC",
+                                                      "fields": {
+                                                        "NUM": 0
+                                                      }
+                                                    },
+                                                    "block": {
+                                                      "type": "wind_get_speed_kmh",
+                                                      "id": "NYekLc#J9)OWZnxq}@V="
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "INPUT1": {
+                                              "block": {
+                                                "type": "blinker_color",
+                                                "id": "7]Rb@9)v16$=7b6#a}SK",
+                                                "inputs": {
+                                                  "COLOR": {
+                                                    "shadow": {
+                                                      "type": "text",
+                                                      "id": "-w5Gv@HE,GTOU#/m`Aq0",
+                                                      "fields": {
+                                                        "TEXT": "#00BFFF"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "blinker_widget_print",
+                                              "id": "14{Sl|cU%.V;E9kn%F+r",
+                                              "extraState": {
+                                                "itemCount": 2
+                                              },
+                                              "fields": {
+                                                "WIDGET": "num-8mk"
+                                              },
+                                              "inputs": {
+                                                "INPUT0": {
+                                                  "block": {
+                                                    "type": "blinker_value",
+                                                    "id": "#zA#pK6l1)xYcY3;h1u0",
+                                                    "inputs": {
+                                                      "VALUE": {
+                                                        "shadow": {
+                                                          "type": "math_number",
+                                                          "id": "~X!;poWRPDIAKotg!|fP",
+                                                          "fields": {
+                                                            "NUM": 0
+                                                          }
+                                                        },
+                                                        "block": {
+                                                          "type": "wind_get_direction",
+                                                          "id": "9qKf/d/W%+_+p1[sO#HW"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "INPUT1": {
+                                                  "block": {
+                                                    "type": "blinker_color",
+                                                    "id": "z}_$4~fx1EK,x^[9U:+~",
+                                                    "inputs": {
+                                                      "COLOR": {
+                                                        "shadow": {
+                                                          "type": "text",
+                                                          "id": "3%1+utHbHijsB4%,Jptf",
+                                                          "fields": {
+                                                            "TEXT": "#FFD700"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "blinker_widget_print",
+                                                  "id": "x$xge=5.Jfei09oE_SO!",
+                                                  "extraState": {
+                                                    "itemCount": 2
+                                                  },
+                                                  "fields": {
+                                                    "WIDGET": "num-1my"
+                                                  },
+                                                  "inputs": {
+                                                    "INPUT0": {
+                                                      "block": {
+                                                        "type": "blinker_value",
+                                                        "id": "yl%}t@ow5od$i+^+V#Ht",
+                                                        "inputs": {
+                                                          "VALUE": {
+                                                            "shadow": {
+                                                              "type": "math_number",
+                                                              "id": "~X!;poWRPDIAKotg!|fP",
+                                                              "fields": {
+                                                                "NUM": 0
+                                                              }
+                                                            },
+                                                            "block": {
+                                                              "type": "sgp30_get_eco2",
+                                                              "id": "9slX+,XF!,172_}Kf6f8"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "INPUT1": {
+                                                      "block": {
+                                                        "type": "blinker_color",
+                                                        "id": "zng=tZ4cL^^e(Y}.x`An",
+                                                        "inputs": {
+                                                          "COLOR": {
+                                                            "shadow": {
+                                                              "type": "text",
+                                                              "id": "KyLY`~p0,6.nY[swEs5N",
+                                                              "fields": {
+                                                                "TEXT": "#228B22"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "blinker_widget_print",
+                                                      "id": "1`)MNR232Uln6[|ZArN4",
+                                                      "extraState": {
+                                                        "itemCount": 2
+                                                      },
+                                                      "fields": {
+                                                        "WIDGET": "num-eqb"
+                                                      },
+                                                      "inputs": {
+                                                        "INPUT0": {
+                                                          "block": {
+                                                            "type": "blinker_value",
+                                                            "id": ".Fox2Bg8Gad6OWF_3pXx",
+                                                            "inputs": {
+                                                              "VALUE": {
+                                                                "shadow": {
+                                                                  "type": "math_number",
+                                                                  "id": "~X!;poWRPDIAKotg!|fP",
+                                                                  "fields": {
+                                                                    "NUM": 0
+                                                                  }
+                                                                },
+                                                                "block": {
+                                                                  "type": "sgp30_get_raw_h2",
+                                                                  "id": "J%D$a)SLtgxV@)e!:34/"
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "INPUT1": {
+                                                          "block": {
+                                                            "type": "blinker_color",
+                                                            "id": "ac})SZ(=@g3tz62O){bl",
+                                                            "inputs": {
+                                                              "COLOR": {
+                                                                "shadow": {
+                                                                  "type": "text",
+                                                                  "id": "MD67/{Ke{XJx!j33N61:",
+                                                                  "fields": {
+                                                                    "TEXT": "#00CED1"
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "next": {
+                                                        "block": {
+                                                          "type": "blinker_widget_print",
+                                                          "id": "B(XXSBS{7lOOs`*i*B+.",
+                                                          "extraState": {
+                                                            "itemCount": 2
+                                                          },
+                                                          "fields": {
+                                                            "WIDGET": "num-02b"
+                                                          },
+                                                          "inputs": {
+                                                            "INPUT0": {
+                                                              "block": {
+                                                                "type": "blinker_value",
+                                                                "id": "K2s`%;.g,biUHT$8h94^",
+                                                                "inputs": {
+                                                                  "VALUE": {
+                                                                    "shadow": {
+                                                                      "type": "math_number",
+                                                                      "id": "~X!;poWRPDIAKotg!|fP",
+                                                                      "fields": {
+                                                                        "NUM": 0
+                                                                      }
+                                                                    },
+                                                                    "block": {
+                                                                      "type": "sgp30_get_raw_ethanol",
+                                                                      "id": "48Rph/.7$Ywj)cpHl[kg"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "INPUT1": {
+                                                              "block": {
+                                                                "type": "blinker_color",
+                                                                "id": "YiX--:o+2GK39yUyzqI|",
+                                                                "inputs": {
+                                                                  "COLOR": {
+                                                                    "shadow": {
+                                                                      "type": "text",
+                                                                      "id": "*f/KU*S(#w,)lc+{G*:n",
+                                                                      "fields": {
+                                                                        "TEXT": "#800080"
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "sensor",
+      "id": "Qqcjqh(3a2fhBbj;^{j@",
+      "type": "Si7021"
+    },
+    {
+      "name": "lightMeter",
+      "id": "/n0;3?~MMqD1/ydC|,3R",
+      "type": "BH1750"
+    }
+  ]
+}

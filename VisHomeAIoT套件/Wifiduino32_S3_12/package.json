@@ -1,13 +1,13 @@
 {
-  "name": "mp3_blinker",
-  "nickname": "Blinker控制播放音乐",
+  "name": "bh1750_rain",
+  "nickname": "自动控制窗帘",
   "url": "",
-  "description": "MP3播放器控制，支持播放、暂停、切换歌曲等功能，并集成了Blinker平台进行远程控制。",
+  "description": "通过光照传感器和雨滴传感器控制窗帘的开关和位置，实现智能窗帘控制。",
   "version": "1.0.0",
   "board": "WiFiduino32s3",
   "dependencies": {
     "@aily-project/board-wifiduino32s3": "1.0.0",
-    "@aily-project/lib-blinker": "^1.0.0",
+    "@aily-project/lib-bh1750": "^0.0.1",
     "@aily-project/lib-core-io": "1.0.0",
     "@aily-project/lib-core-logic": "0.0.1",
     "@aily-project/lib-core-loop": "0.0.1",
@@ -15,7 +15,7 @@
     "@aily-project/lib-core-serial": "0.0.1",
     "@aily-project/lib-core-text": "0.0.1",
     "@aily-project/lib-core-time": "0.0.1",
-    "@aily-project/lib-core-variables": "0.0.1",
-    "@aily-project/lib-mp3player-gd3800": "0.0.1"
+    "@aily-project/lib-core-variables": "1.0.1",
+    "@aily-project/lib-stepper": "^0.0.1"
   }
 }

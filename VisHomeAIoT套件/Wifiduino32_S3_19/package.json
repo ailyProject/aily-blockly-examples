@@ -1,12 +1,15 @@
 {
-  "name": "mp3_blinker",
-  "nickname": "Blinker控制播放音乐",
+  "name": "eve_blinker",
+  "nickname": "物联网室内环境检测",
   "url": "",
-  "description": "MP3播放器控制，支持播放、暂停、切换歌曲等功能，并集成了Blinker平台进行远程控制。",
+  "description": "通过SHT30温湿度传感器、AGS02MA空气质量传感器、BH1750光照传感器、MQ2烟雾传感器、雨滴传感器和Blinker平台，实现室内环境数据的监测和远程控制。",
   "version": "1.0.0",
   "board": "WiFiduino32s3",
   "dependencies": {
     "@aily-project/board-wifiduino32s3": "1.0.0",
+    "@aily-project/lib-adafruit-sht3x": "^1.0.0",
+    "@aily-project/lib-ags02ma": "^0.0.1",
+    "@aily-project/lib-bh1750": "^0.0.1",
     "@aily-project/lib-blinker": "^1.0.0",
     "@aily-project/lib-core-io": "1.0.0",
     "@aily-project/lib-core-logic": "0.0.1",
@@ -15,7 +18,6 @@
     "@aily-project/lib-core-serial": "0.0.1",
     "@aily-project/lib-core-text": "0.0.1",
     "@aily-project/lib-core-time": "0.0.1",
-    "@aily-project/lib-core-variables": "0.0.1",
-    "@aily-project/lib-mp3player-gd3800": "0.0.1"
+    "@aily-project/lib-core-variables": "1.0.1"
   }
 }

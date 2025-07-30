@@ -1,0 +1,442 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "7V5iA+F2G5RL{2}+o89y",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "115200"
+              },
+              "next": {
+                "block": {
+                  "type": "fastled_init",
+                  "id": "o*!#w9_X1/(RaMZ+%OBj",
+                  "fields": {
+                    "DATA_PIN": "1",
+                    "TYPE": "WS2812B",
+                    "NUM_LEDS": 7
+                  },
+                  "next": {
+                    "block": {
+                      "type": "fastled_brightness",
+                      "id": "D+OA]o,(ONNl#+.8.*FW",
+                      "inputs": {
+                        "BRIGHTNESS": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "(-d@c~%R*M@tAv=l_ZFT",
+                            "fields": {
+                              "NUM": 100
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "serial_println",
+                          "id": "Yshb8|cz,Gs/y5k^un]+",
+                          "fields": {
+                            "SERIAL": "Serial"
+                          },
+                          "inputs": {
+                            "VAR": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "@QspuZ-Nl8/jpJAnC~S,",
+                                "fields": {
+                                  "TEXT": "7颗WS2812彩灯程序已启动！"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 230,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "fastled_rainbow",
+              "id": "KlPSd/]9_;XBWlnl2,LA",
+              "fields": {
+                "DATA_PIN": "1"
+              },
+              "inputs": {
+                "INITIAL_HUE": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "1FZH:+;:}rP16k]63~7N",
+                    "fields": {
+                      "NUM": 255
+                    }
+                  }
+                },
+                "DELTA_HUE": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "bnhpaA-c[FfzL%TJD4w~",
+                    "fields": {
+                      "NUM": 10
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "time_delay",
+                  "id": "7Z-nS]ZN7k?ma$OLhC.`",
+                  "inputs": {
+                    "DELAY_TIME": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "Ku#k[gxs~x(/YRsZpBI$",
+                        "fields": {
+                          "NUM": 1000
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "fastled_fill_solid",
+                      "id": ",h[pKM+zIXV_)o|}4o.N",
+                      "fields": {
+                        "DATA_PIN": "1"
+                      },
+                      "inputs": {
+                        "COLOR": {
+                          "shadow": {
+                            "type": "fastled_preset_color",
+                            "id": "j8izR^9yL`5Le%_3+?0!",
+                            "fields": {
+                              "COLOR": "#ff0000"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "time_delay",
+                          "id": "Ew|5u`M9~v^A1qZFY(YF",
+                          "inputs": {
+                            "DELAY_TIME": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "z%)_xaH!0A!IC7e-:C,y",
+                                "fields": {
+                                  "NUM": 1000
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "fastled_fill_solid",
+                              "id": "YBj,%k8}Oe#M;Q)%;iQT",
+                              "fields": {
+                                "DATA_PIN": "1"
+                              },
+                              "inputs": {
+                                "COLOR": {
+                                  "shadow": {
+                                    "type": "fastled_preset_color",
+                                    "id": "S1HVNQ9Hq3twA,$bpkUw",
+                                    "fields": {
+                                      "COLOR": "#00ff4d"
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "time_delay",
+                                  "id": "nm|OJ%o4RSE)|R5gk[y~",
+                                  "inputs": {
+                                    "DELAY_TIME": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "id": "a1^AM_v+jDAe/NB{T#`V",
+                                        "fields": {
+                                          "NUM": 1000
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "fastled_fill_solid",
+                                      "id": "!;7{/h1?~a2Jp]:+Y9,{",
+                                      "fields": {
+                                        "DATA_PIN": "1"
+                                      },
+                                      "inputs": {
+                                        "COLOR": {
+                                          "shadow": {
+                                            "type": "fastled_preset_color",
+                                            "id": "ECJX*mmsLc,N|?0fL}`N",
+                                            "fields": {
+                                              "COLOR": "#006fff"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "time_delay",
+                                          "id": "X%cVeK4.k{j7(jWVP$w;",
+                                          "inputs": {
+                                            "DELAY_TIME": {
+                                              "shadow": {
+                                                "type": "math_number",
+                                                "id": "W{K5F;O53P[O?fZbAh/j",
+                                                "fields": {
+                                                  "NUM": 1000
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "controls_for",
+                                              "id": "B6LDWL)Uga.Ji?Gl+]d)",
+                                              "fields": {
+                                                "VAR": {
+                                                  "id": "Zjy|u4MJ{$#=cb)FNaX^"
+                                                }
+                                              },
+                                              "inputs": {
+                                                "FROM": {
+                                                  "block": {
+                                                    "type": "math_number",
+                                                    "id": "1`o=}u/EHj9@^w_Jn)Q]",
+                                                    "fields": {
+                                                      "NUM": 1
+                                                    }
+                                                  }
+                                                },
+                                                "TO": {
+                                                  "block": {
+                                                    "type": "math_number",
+                                                    "id": "yi^_LOM[;N=ZgRezk%b[",
+                                                    "fields": {
+                                                      "NUM": 7
+                                                    }
+                                                  }
+                                                },
+                                                "BY": {
+                                                  "block": {
+                                                    "type": "math_number",
+                                                    "id": "`gJ];J-($],r`W!46kAV",
+                                                    "fields": {
+                                                      "NUM": 1
+                                                    }
+                                                  }
+                                                },
+                                                "DO": {
+                                                  "block": {
+                                                    "type": "fastled_meteor",
+                                                    "id": "1fWO36o`/X8,L{P(hb#5",
+                                                    "fields": {
+                                                      "DATA_PIN": "1"
+                                                    },
+                                                    "inputs": {
+                                                      "COLOR": {
+                                                        "shadow": {
+                                                          "type": "fastled_preset_color",
+                                                          "id": "B4PHT5Qwgc9J!aYn.c?H",
+                                                          "fields": {
+                                                            "COLOR": "#e6ff00"
+                                                          }
+                                                        }
+                                                      },
+                                                      "SIZE": {
+                                                        "shadow": {
+                                                          "type": "math_number",
+                                                          "id": "1@3f1?7rVY`%/nAf;r6w",
+                                                          "fields": {
+                                                            "NUM": 1
+                                                          }
+                                                        }
+                                                      },
+                                                      "DECAY": {
+                                                        "shadow": {
+                                                          "type": "math_number",
+                                                          "id": "A,yy@L%o2S*xSX(~/@Y9",
+                                                          "fields": {
+                                                            "NUM": 0
+                                                          }
+                                                        }
+                                                      },
+                                                      "SPEED": {
+                                                        "shadow": {
+                                                          "type": "math_number",
+                                                          "id": ",eyjXMJ_+/{@`*GpMgeL",
+                                                          "fields": {
+                                                            "NUM": 1
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "next": {
+                                                      "block": {
+                                                        "type": "time_delay",
+                                                        "id": ":9b05_tW0Bn2=JxKF5JA",
+                                                        "inputs": {
+                                                          "DELAY_TIME": {
+                                                            "shadow": {
+                                                              "type": "math_number",
+                                                              "id": "+Er;M^KdcdxYh~03$*R]",
+                                                              "fields": {
+                                                                "NUM": 1000
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "controls_for",
+                                                  "id": "oSAHH*w{h:F@bxY|qiC$",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "id": "Zjy|u4MJ{$#=cb)FNaX^"
+                                                    }
+                                                  },
+                                                  "inputs": {
+                                                    "FROM": {
+                                                      "block": {
+                                                        "type": "math_number",
+                                                        "id": "SO+%5O@O*SvzN^1g}zC@",
+                                                        "fields": {
+                                                          "NUM": 1
+                                                        }
+                                                      }
+                                                    },
+                                                    "TO": {
+                                                      "block": {
+                                                        "type": "math_number",
+                                                        "id": "cTt7-$F{@bP#uoyKCjT_",
+                                                        "fields": {
+                                                          "NUM": 255
+                                                        }
+                                                      }
+                                                    },
+                                                    "BY": {
+                                                      "block": {
+                                                        "type": "math_number",
+                                                        "id": "Z_!j-lrRRil+a.Pb$XTx",
+                                                        "fields": {
+                                                          "NUM": 1
+                                                        }
+                                                      }
+                                                    },
+                                                    "DO": {
+                                                      "block": {
+                                                        "type": "fastled_breathing",
+                                                        "id": "`QP(rEJwA_Ju:@G,o~)`",
+                                                        "fields": {
+                                                          "DATA_PIN": "1"
+                                                        },
+                                                        "inputs": {
+                                                          "COLOR": {
+                                                            "shadow": {
+                                                              "type": "fastled_preset_color",
+                                                              "id": "iTc,rC]j:QAkE*@DJk}1",
+                                                              "fields": {
+                                                                "COLOR": "#00e5ff"
+                                                              }
+                                                            }
+                                                          },
+                                                          "SPEED": {
+                                                            "shadow": {
+                                                              "type": "math_number",
+                                                              "id": "tf*]sG8?(*$3lTTt$V,~",
+                                                              "fields": {
+                                                                "NUM": 5
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "next": {
+                                                          "block": {
+                                                            "type": "time_delay",
+                                                            "id": "N,-wxkuPWuTO+U(mL!{c",
+                                                            "inputs": {
+                                                              "DELAY_TIME": {
+                                                                "shadow": {
+                                                                  "type": "math_number",
+                                                                  "id": "b4~Rq)=3(A@%a}TYDea0",
+                                                                  "fields": {
+                                                                    "NUM": 10
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "i",
+      "id": "Zjy|u4MJ{$#=cb)FNaX^",
+      "type": "int"
+    },
+    {
+      "name": "j",
+      "id": "a7*~}waySWKsW;gi~18=",
+      "type": "int"
+    }
+  ]
+}

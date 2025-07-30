@@ -1,0 +1,312 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "fastled_init",
+              "id": "efL6|_]#}J]bD7?^3bSO",
+              "fields": {
+                "DATA_PIN": "48",
+                "TYPE": "WS2812",
+                "NUM_LEDS": 1
+              },
+              "next": {
+                "block": {
+                  "type": "fastled_brightness",
+                  "id": "GiqjM2Z|:z#7M30sJzzi",
+                  "inputs": {
+                    "BRIGHTNESS": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "M?qFp]Ba8`8]U:V/ZON3",
+                        "fields": {
+                          "NUM": 64
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 150,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "fastled_fill_solid",
+              "id": "Hq-];3!HK:lvZDh8Pd`6",
+              "fields": {
+                "DATA_PIN": "48"
+              },
+              "inputs": {
+                "COLOR": {
+                  "shadow": {
+                    "type": "fastled_preset_color",
+                    "id": "81es7={ogY,ub/0htXlh",
+                    "fields": {
+                      "COLOR": "#ff0000"
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "time_delay",
+                  "id": "|bk%J^Ufa7M=hVKPZ?BC",
+                  "inputs": {
+                    "DELAY_TIME": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "jh3!}FJHWa)/ZF#c7,sA",
+                        "fields": {
+                          "NUM": 500
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "fastled_fill_solid",
+                      "id": "Lhn_LOchvK)|vF}`|X%L",
+                      "fields": {
+                        "DATA_PIN": "48"
+                      },
+                      "inputs": {
+                        "COLOR": {
+                          "shadow": {
+                            "type": "fastled_preset_color",
+                            "id": "g}f:K08g1Zu@9wly}=8k",
+                            "fields": {
+                              "COLOR": "#00ff90"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "time_delay",
+                          "id": "zKj1`u3r-)lOsnEfuwQ.",
+                          "inputs": {
+                            "DELAY_TIME": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "*%P/=(Czl#ur]Nl:!SY5",
+                                "fields": {
+                                  "NUM": 500
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "fastled_fill_solid",
+                              "id": "GW3m/]IiHFlm_w,b6Tk_",
+                              "fields": {
+                                "DATA_PIN": "48"
+                              },
+                              "inputs": {
+                                "COLOR": {
+                                  "shadow": {
+                                    "type": "fastled_preset_color",
+                                    "id": "opf/q3%SI8`6(4?+67DO",
+                                    "fields": {
+                                      "COLOR": "#006fff"
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "time_delay",
+                                  "id": "cigf:op8/R(fxlagT17R",
+                                  "inputs": {
+                                    "DELAY_TIME": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "id": "MEjY!l8o,nC:)St?hPLK",
+                                        "fields": {
+                                          "NUM": 500
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "fastled_fill_solid",
+                                      "id": "6]Fq[OMTusyB=/xl?(22",
+                                      "fields": {
+                                        "DATA_PIN": "48"
+                                      },
+                                      "inputs": {
+                                        "COLOR": {
+                                          "shadow": {
+                                            "type": "fastled_preset_color",
+                                            "id": "Q$ClED$5D#fW,3mu[;#s",
+                                            "fields": {
+                                              "COLOR": "#ffff00"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "time_delay",
+                                          "id": "_POmx3b6%SnF=+R8Gq!e",
+                                          "inputs": {
+                                            "DELAY_TIME": {
+                                              "shadow": {
+                                                "type": "math_number",
+                                                "id": "JqP4ttaC~|ku;ri=]%}-",
+                                                "fields": {
+                                                  "NUM": 500
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "fastled_fill_solid",
+                                              "id": "t$)kVWU|!J4(2xlf$~FB",
+                                              "fields": {
+                                                "DATA_PIN": "48"
+                                              },
+                                              "inputs": {
+                                                "COLOR": {
+                                                  "shadow": {
+                                                    "type": "fastled_preset_color",
+                                                    "id": "+dN++@Fd;ZMY}dzuGa6R",
+                                                    "fields": {
+                                                      "COLOR": "#a200ff"
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "time_delay",
+                                                  "id": "tBAGRTBR=itr6AEwI9xZ",
+                                                  "inputs": {
+                                                    "DELAY_TIME": {
+                                                      "shadow": {
+                                                        "type": "math_number",
+                                                        "id": "w~:)$$TP/yeXkQTSc13P",
+                                                        "fields": {
+                                                          "NUM": 500
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "fastled_fill_solid",
+                                                      "id": "[[]@qZn}`O86PVwYK[.W",
+                                                      "fields": {
+                                                        "DATA_PIN": "48"
+                                                      },
+                                                      "inputs": {
+                                                        "COLOR": {
+                                                          "shadow": {
+                                                            "type": "fastled_preset_color",
+                                                            "id": "yK2uv,kb]cbCaqZzbp(V",
+                                                            "fields": {
+                                                              "COLOR": "#00ddff"
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "next": {
+                                                        "block": {
+                                                          "type": "time_delay",
+                                                          "id": "wOC-(Rm2`%L#Xu`xcE_w",
+                                                          "inputs": {
+                                                            "DELAY_TIME": {
+                                                              "shadow": {
+                                                                "type": "math_number",
+                                                                "id": "^^)5Z#}Bj[#8^+y@Oedy",
+                                                                "fields": {
+                                                                  "NUM": 500
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "next": {
+                                                            "block": {
+                                                              "type": "fastled_fill_solid",
+                                                              "id": "RIAX0^Rq4jazt/a}37,G",
+                                                              "fields": {
+                                                                "DATA_PIN": "48"
+                                                              },
+                                                              "inputs": {
+                                                                "COLOR": {
+                                                                  "shadow": {
+                                                                    "type": "fastled_preset_color",
+                                                                    "id": "JhQfPVLUez`bkgxBmR~q",
+                                                                    "fields": {
+                                                                      "COLOR": "#ffffff"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "next": {
+                                                                "block": {
+                                                                  "type": "time_delay",
+                                                                  "id": "oAd0_gC]{`z[gSKjBnjv",
+                                                                  "inputs": {
+                                                                    "DELAY_TIME": {
+                                                                      "shadow": {
+                                                                        "type": "math_number",
+                                                                        "id": "=3}Gb7_{^X*[(bj*u(Au",
+                                                                        "fields": {
+                                                                          "NUM": 500
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

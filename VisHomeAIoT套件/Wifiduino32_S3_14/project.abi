@@ -1,0 +1,2088 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 270,
+        "y": -530,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "sd_init",
+              "id": "g4:zd=V+Qso/pH|JnaNc",
+              "fields": {
+                "SPI_TYPE": "HSPI",
+                "SPI_VAR_NAME": "spi"
+              },
+              "inputs": {
+                "SCK_PIN": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "NgjqJR[fw?i#M3*QrSZ1",
+                    "fields": {
+                      "NUM": 3
+                    }
+                  }
+                },
+                "MISO_PIN": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "$I|}gj7@AaZrlkp$FpUl",
+                    "fields": {
+                      "NUM": 35
+                    }
+                  }
+                },
+                "MOSI_PIN": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "^QtTqZto@0IHkAGM,hnz",
+                    "fields": {
+                      "NUM": 14
+                    }
+                  }
+                },
+                "CS_PIN": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "emT~9E21{gc%AKtr5y*a",
+                    "fields": {
+                      "NUM": 46
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "tft_init",
+                  "id": "%p/;?,Su_m^-_0dYcKak",
+                  "fields": {
+                    "MODEL": "ST7789"
+                  },
+                  "inputs": {
+                    "CS": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "y[kbYAtdkicqC/cm##$5",
+                        "fields": {
+                          "NUM": 44
+                        }
+                      }
+                    },
+                    "DC": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "_/U6u[ys5juL1#1j^Z3z",
+                        "fields": {
+                          "NUM": 43
+                        }
+                      }
+                    },
+                    "MOSI": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "dwcx,*/c:?]GD2k97UGs",
+                        "fields": {
+                          "NUM": 47
+                        }
+                      }
+                    },
+                    "SCLK": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": ",,u96}~Ef44)qcv-r!f(",
+                        "fields": {
+                          "NUM": 21
+                        }
+                      }
+                    },
+                    "RST": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "{P0iLNxa4-/xUisvpj5)",
+                        "fields": {
+                          "NUM": -1
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "tft_set_rotation",
+                      "id": "s#oh^{M/*^//qyz[bYwa",
+                      "fields": {
+                        "ROTATION": "2"
+                      },
+                      "next": {
+                        "block": {
+                          "type": "tft_fill_screen",
+                          "id": "#V|Q/0AENb_K!4^)@NTk",
+                          "inputs": {
+                            "COLOR": {
+                              "shadow": {
+                                "type": "tft_preset_color",
+                                "id": "u{A70LKdxY3hKZ%v3$y4",
+                                "fields": {
+                                  "COLOR": "#ffffff"
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "tft_set_text_color",
+                              "id": "-y2P5]#WS6H3$/rksPsO",
+                              "inputs": {
+                                "COLOR": {
+                                  "shadow": {
+                                    "type": "tft_preset_color",
+                                    "id": "MkJCC?8)F[`9eqeTJcnL",
+                                    "fields": {
+                                      "COLOR": "#ff0000"
+                                    }
+                                  }
+                                },
+                                "BG_COLOR": {
+                                  "shadow": {
+                                    "type": "tft_preset_color",
+                                    "id": "[_n{y=Z+P2q:aB;0`IEQ",
+                                    "fields": {
+                                      "COLOR": "#ffffff"
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "tft_set_text_size",
+                                  "id": "3X3?L=X]!-rX#0=w4%Ko",
+                                  "inputs": {
+                                    "SIZE": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "id": "z6k1H3lCTb=}+7{eN4.%",
+                                        "fields": {
+                                          "NUM": 3
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "sht31_init",
+                                      "id": "!d6@{;7ug/;7xr_d9NLu",
+                                      "fields": {
+                                        "ADDRESS": "0x44"
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "tft_print",
+                                          "id": "YyF[Ro((]p}eSoMY$XLc",
+                                          "inputs": {
+                                            "ROW": {
+                                              "shadow": {
+                                                "type": "math_number",
+                                                "id": "R,.l;7Ea3su,Z$gR$y@q",
+                                                "fields": {
+                                                  "NUM": 5
+                                                }
+                                              }
+                                            },
+                                            "COLUMN": {
+                                              "shadow": {
+                                                "type": "math_number",
+                                                "id": "+%E=6aUe)4S:pcXaSm/w",
+                                                "fields": {
+                                                  "NUM": 5
+                                                }
+                                              }
+                                            },
+                                            "TEXT": {
+                                              "shadow": {
+                                                "type": "text",
+                                                "id": "h58q@ji7Q`=fM4YzJhoO",
+                                                "fields": {
+                                                  "TEXT": "TVOC Warming\\nPlease Wait"
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "ags02ma_init",
+                                              "id": "`q71(VKasN)?{_^+m7u9",
+                                              "fields": {
+                                                "WIRE": "Wire"
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "time_delay",
+                                                  "id": "oFl*-o-k9v-rApJ+3E~!",
+                                                  "inputs": {
+                                                    "DELAY_TIME": {
+                                                      "shadow": {
+                                                        "type": "math_number",
+                                                        "id": "qPDJ(|t.1Z-MQh,88q*T",
+                                                        "fields": {
+                                                          "NUM": 1000
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "tft_fill_screen",
+                                                      "id": "/e0HHj2[J~CwNPiEsck[",
+                                                      "inputs": {
+                                                        "COLOR": {
+                                                          "shadow": {
+                                                            "type": "tft_preset_color",
+                                                            "id": "QU^/Li!4vCS5pyQH$N_A",
+                                                            "fields": {
+                                                              "COLOR": "#ffffff"
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "next": {
+                                                        "block": {
+                                                          "type": "tft_print",
+                                                          "id": "|?s;wJOXoK)q]wcx]-p)",
+                                                          "inputs": {
+                                                            "ROW": {
+                                                              "shadow": {
+                                                                "type": "math_number",
+                                                                "id": "pM[[77|9ly|A:=1J![Rd",
+                                                                "fields": {
+                                                                  "NUM": 5
+                                                                }
+                                                              }
+                                                            },
+                                                            "COLUMN": {
+                                                              "shadow": {
+                                                                "type": "math_number",
+                                                                "id": "+LxGBLgBg|4z,lh2:}Xd",
+                                                                "fields": {
+                                                                  "NUM": 5
+                                                                }
+                                                              }
+                                                            },
+                                                            "TEXT": {
+                                                              "shadow": {
+                                                                "type": "text",
+                                                                "id": "q+~/T*Nq{J_se6}gEl2t",
+                                                                "fields": {
+                                                                  "TEXT": "MQ2 Warming\\nPlease Wait\\n5 second"
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "next": {
+                                                            "block": {
+                                                              "type": "time_delay",
+                                                              "id": "KOxg3~G@PU/_PGEkv2C}",
+                                                              "inputs": {
+                                                                "DELAY_TIME": {
+                                                                  "shadow": {
+                                                                    "type": "math_number",
+                                                                    "id": "5myfZ_9t5s.HVgKQe}QS",
+                                                                    "fields": {
+                                                                      "NUM": 5000
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "next": {
+                                                                "block": {
+                                                                  "type": "tft_fill_screen",
+                                                                  "id": "9W%8wp-:fSi;xX1QW)8G",
+                                                                  "inputs": {
+                                                                    "COLOR": {
+                                                                      "shadow": {
+                                                                        "type": "tft_preset_color",
+                                                                        "id": "IoOi/=W8VB1xibTZR$0U",
+                                                                        "fields": {
+                                                                          "COLOR": "#ffffff"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "next": {
+                                                                    "block": {
+                                                                      "type": "tft_print",
+                                                                      "id": "1t__m@,*QGcxTk2lLDfy",
+                                                                      "inputs": {
+                                                                        "ROW": {
+                                                                          "shadow": {
+                                                                            "type": "math_number",
+                                                                            "id": "8H#Q7lphzGz1?zs@Zc/{",
+                                                                            "fields": {
+                                                                              "NUM": 5
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "COLUMN": {
+                                                                          "shadow": {
+                                                                            "type": "math_number",
+                                                                            "id": "oI?)OhHU:fZHh.6m5:=Q",
+                                                                            "fields": {
+                                                                              "NUM": 5
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "TEXT": {
+                                                                          "shadow": {
+                                                                            "type": "text",
+                                                                            "id": "`w?G;{m=I#((`~5`TnRv",
+                                                                            "fields": {
+                                                                              "TEXT": "System Ready!"
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "next": {
+                                                                        "block": {
+                                                                          "type": "time_delay",
+                                                                          "id": "C||zt1[SM~$3p1S$5@AE",
+                                                                          "inputs": {
+                                                                            "DELAY_TIME": {
+                                                                              "shadow": {
+                                                                                "type": "math_number",
+                                                                                "id": "_.Kz}raX@RLNZ;5iO2n^",
+                                                                                "fields": {
+                                                                                  "NUM": 1000
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "next": {
+                                                                            "block": {
+                                                                              "type": "tft_fill_screen",
+                                                                              "id": "H8+}G$2b]izrti(F2pv,",
+                                                                              "inputs": {
+                                                                                "COLOR": {
+                                                                                  "shadow": {
+                                                                                    "type": "tft_preset_color",
+                                                                                    "id": "3B!5|1(z.-XPr~{_~q_Y",
+                                                                                    "fields": {
+                                                                                      "COLOR": "#ffffff"
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 250,
+        "y": 530,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "tft_print",
+              "id": "/3;7uc2?S9sJH(4YOhY?",
+              "inputs": {
+                "ROW": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "EbOp+a5P:(#BIeF{:v%T",
+                    "fields": {
+                      "NUM": 5
+                    }
+                  }
+                },
+                "COLUMN": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "0D%f1H3$31jhg^X}#|fR",
+                    "fields": {
+                      "NUM": 5
+                    }
+                  }
+                },
+                "TEXT": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "`kGhgB4w9^H`ig6jqS3Y",
+                    "fields": {
+                      "TEXT": "Temp:"
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "tft_print",
+                  "id": "?8yvSWte.s+i1PBifUa}",
+                  "inputs": {
+                    "ROW": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "oj`Kep/d7coy(B#Y.];M",
+                        "fields": {
+                          "NUM": 95
+                        }
+                      }
+                    },
+                    "COLUMN": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "m*AEo)2jhk9$Qa3/~3^^",
+                        "fields": {
+                          "NUM": 5
+                        }
+                      }
+                    },
+                    "TEXT": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "ZJ=P}nDjpJujGvR*oI7n",
+                        "fields": {
+                          "TEXT": "温度："
+                        }
+                      },
+                      "block": {
+                        "type": "number_to_string",
+                        "id": "=~V2IH(Rp9x)jpBZgIWB",
+                        "inputs": {
+                          "NUM": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "VW(*968:ZCg;}#2%yOa+",
+                              "fields": {
+                                "NUM": 0
+                              }
+                            },
+                            "block": {
+                              "type": "sht31_simple_read",
+                              "id": "m359!1myog2/:*N=!qf-",
+                              "fields": {
+                                "TYPE": "temperature"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "tft_print",
+                      "id": "J!ibmWOUk0v$Cu+sD0cx",
+                      "inputs": {
+                        "ROW": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": ",gL4Lv0X)BpW$(dlP@/h",
+                            "fields": {
+                              "NUM": 185
+                            }
+                          }
+                        },
+                        "COLUMN": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "(Z7c=}RxQK14#oSJgT:J",
+                            "fields": {
+                              "NUM": 5
+                            }
+                          }
+                        },
+                        "TEXT": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "3}Eju#I,|L}Enc3]yk.f",
+                            "fields": {
+                              "TEXT": "C"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "tft_print",
+                          "id": "y4/`BKZPL@2Po-5nF}ZO",
+                          "inputs": {
+                            "ROW": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "E|vrg]xM{6HeH(h$0DBZ",
+                                "fields": {
+                                  "NUM": 5
+                                }
+                              }
+                            },
+                            "COLUMN": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "i+/yR$SR_4$_MAw5}IPh",
+                                "fields": {
+                                  "NUM": 30
+                                }
+                              }
+                            },
+                            "TEXT": {
+                              "shadow": {
+                                "type": "text",
+                                "id": ":TOgc*If(j%7Ps(tI8IC",
+                                "fields": {
+                                  "TEXT": "Hum:"
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "tft_print",
+                              "id": "s.[ilXHq:DH0#CsE-[~r",
+                              "inputs": {
+                                "ROW": {
+                                  "shadow": {
+                                    "type": "math_number",
+                                    "id": "1w!hTfJmalYUG38yY#hX",
+                                    "fields": {
+                                      "NUM": 80
+                                    }
+                                  }
+                                },
+                                "COLUMN": {
+                                  "shadow": {
+                                    "type": "math_number",
+                                    "id": "CfsKd8#1ew2E3Jm%t(^3",
+                                    "fields": {
+                                      "NUM": 30
+                                    }
+                                  }
+                                },
+                                "TEXT": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "ZJ=P}nDjpJujGvR*oI7n",
+                                    "fields": {
+                                      "TEXT": "温度："
+                                    }
+                                  },
+                                  "block": {
+                                    "type": "number_to_string",
+                                    "id": "e?[^yQb#[5W^O68OnATR",
+                                    "inputs": {
+                                      "NUM": {
+                                        "shadow": {
+                                          "type": "math_number",
+                                          "id": "VW(*968:ZCg;}#2%yOa+",
+                                          "fields": {
+                                            "NUM": 0
+                                          }
+                                        },
+                                        "block": {
+                                          "type": "sht31_simple_read",
+                                          "id": "i=[X,DrhPf@,jtP[%lJ#",
+                                          "fields": {
+                                            "TYPE": "humidity"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "tft_print",
+                                  "id": "(kDa9vDy/8%@W92%wi~k",
+                                  "inputs": {
+                                    "ROW": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "id": "MZw6Y-,;:_MwDre9;:l8",
+                                        "fields": {
+                                          "NUM": 170
+                                        }
+                                      }
+                                    },
+                                    "COLUMN": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "id": "#l5;6fmmHt-w#!u[mb=w",
+                                        "fields": {
+                                          "NUM": 30
+                                        }
+                                      }
+                                    },
+                                    "TEXT": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "`$OJi2FJ,Blmls]HJ%K3",
+                                        "fields": {
+                                          "TEXT": "%"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "tft_print",
+                                      "id": "Gjnn(z7hJ3D9S+_IiH)#",
+                                      "inputs": {
+                                        "ROW": {
+                                          "shadow": {
+                                            "type": "math_number",
+                                            "id": "8+$%zcEew%TfVF)~Hipa",
+                                            "fields": {
+                                              "NUM": 5
+                                            }
+                                          }
+                                        },
+                                        "COLUMN": {
+                                          "shadow": {
+                                            "type": "math_number",
+                                            "id": "Sw{G_JIw.r!cGhWt_j4]",
+                                            "fields": {
+                                              "NUM": 55
+                                            }
+                                          }
+                                        },
+                                        "TEXT": {
+                                          "shadow": {
+                                            "type": "text",
+                                            "id": "pdQH,,dJkc|7R*}[QpaJ",
+                                            "fields": {
+                                              "TEXT": "Comfort:"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "controls_ifelse",
+                                          "id": "W7q6ZYS-M.hw9_xVOBn=",
+                                          "inputs": {
+                                            "IF0": {
+                                              "block": {
+                                                "type": "logic_operation",
+                                                "id": "{s:l^]wXg+UOvGFRRdA$",
+                                                "fields": {
+                                                  "OP": "AND"
+                                                },
+                                                "inputs": {
+                                                  "A": {
+                                                    "block": {
+                                                      "type": "logic_operation",
+                                                      "id": "TIh@=U0~TmkS_^K=Uta$",
+                                                      "fields": {
+                                                        "OP": "AND"
+                                                      },
+                                                      "inputs": {
+                                                        "A": {
+                                                          "block": {
+                                                            "type": "logic_compare",
+                                                            "id": "fkWZg[h#oMluzxqqA865",
+                                                            "fields": {
+                                                              "OP": "GTE"
+                                                            },
+                                                            "inputs": {
+                                                              "A": {
+                                                                "block": {
+                                                                  "type": "sht31_simple_read",
+                                                                  "id": "tiiPx?89qr~{]G1iH]vf",
+                                                                  "fields": {
+                                                                    "TYPE": "temperature"
+                                                                  }
+                                                                }
+                                                              },
+                                                              "B": {
+                                                                "block": {
+                                                                  "type": "math_number",
+                                                                  "id": "g38V(.#A=C4hh9(((+l^",
+                                                                  "fields": {
+                                                                    "NUM": 20
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "B": {
+                                                          "block": {
+                                                            "type": "logic_compare",
+                                                            "id": "rkPtSm*~3$H/`5TkV9Tb",
+                                                            "fields": {
+                                                              "OP": "LTE"
+                                                            },
+                                                            "inputs": {
+                                                              "A": {
+                                                                "block": {
+                                                                  "type": "sht31_simple_read",
+                                                                  "id": "Y0BO.x;e3K3S!$.{DN]}",
+                                                                  "fields": {
+                                                                    "TYPE": "temperature"
+                                                                  }
+                                                                }
+                                                              },
+                                                              "B": {
+                                                                "block": {
+                                                                  "type": "math_number",
+                                                                  "id": "hG@iwMYS|ZreF@xt-*`T",
+                                                                  "fields": {
+                                                                    "NUM": 26
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "B": {
+                                                    "block": {
+                                                      "type": "logic_operation",
+                                                      "id": "PHL05l/xzOo$,ed3o_0K",
+                                                      "fields": {
+                                                        "OP": "AND"
+                                                      },
+                                                      "inputs": {
+                                                        "A": {
+                                                          "block": {
+                                                            "type": "logic_compare",
+                                                            "id": ".u73]r.V2_9lFFw:L.=)",
+                                                            "fields": {
+                                                              "OP": "GTE"
+                                                            },
+                                                            "inputs": {
+                                                              "A": {
+                                                                "block": {
+                                                                  "type": "sht31_simple_read",
+                                                                  "id": "/8$F^Uf~M3F;M,iD!)LB",
+                                                                  "fields": {
+                                                                    "TYPE": "humidity"
+                                                                  }
+                                                                }
+                                                              },
+                                                              "B": {
+                                                                "block": {
+                                                                  "type": "math_number",
+                                                                  "id": "q?To,U`/aH{1=Fv6U=i4",
+                                                                  "fields": {
+                                                                    "NUM": 40
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "B": {
+                                                          "block": {
+                                                            "type": "logic_compare",
+                                                            "id": "ib$hN@xgh}*3[3e:?sL/",
+                                                            "fields": {
+                                                              "OP": "LTE"
+                                                            },
+                                                            "inputs": {
+                                                              "A": {
+                                                                "block": {
+                                                                  "type": "sht31_simple_read",
+                                                                  "id": ")X79Bt=sNT9}YD`Os!;K",
+                                                                  "fields": {
+                                                                    "TYPE": "humidity"
+                                                                  }
+                                                                }
+                                                              },
+                                                              "B": {
+                                                                "block": {
+                                                                  "type": "math_number",
+                                                                  "id": "nM#-X2WlF;Qx)GGN,)3|",
+                                                                  "fields": {
+                                                                    "NUM": 60
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "DO0": {
+                                              "block": {
+                                                "type": "tft_print",
+                                                "id": "oh4W+f,s]T2|@SjVbr,#",
+                                                "inputs": {
+                                                  "ROW": {
+                                                    "shadow": {
+                                                      "type": "math_number",
+                                                      "id": "-~`hE.8DTw8)i3,w;]Vg",
+                                                      "fields": {
+                                                        "NUM": 150
+                                                      }
+                                                    }
+                                                  },
+                                                  "COLUMN": {
+                                                    "shadow": {
+                                                      "type": "math_number",
+                                                      "id": "/+DZq3Pa6{LPj^~GeS=E",
+                                                      "fields": {
+                                                        "NUM": 55
+                                                      }
+                                                    }
+                                                  },
+                                                  "TEXT": {
+                                                    "shadow": {
+                                                      "type": "text",
+                                                      "id": "o0x+VN*B|hJSg:#zn|?L",
+                                                      "fields": {
+                                                        "TEXT": "GOOD"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "ELSE": {
+                                              "block": {
+                                                "type": "tft_print",
+                                                "id": "?al#YOEhrj|+/DLDv~Xz",
+                                                "inputs": {
+                                                  "ROW": {
+                                                    "shadow": {
+                                                      "type": "math_number",
+                                                      "id": ".ZuU1/A5iX2KfvO]7t0f",
+                                                      "fields": {
+                                                        "NUM": 150
+                                                      }
+                                                    }
+                                                  },
+                                                  "COLUMN": {
+                                                    "shadow": {
+                                                      "type": "math_number",
+                                                      "id": "7::*Ptc2Dk#qF@5I[Hn?",
+                                                      "fields": {
+                                                        "NUM": 55
+                                                      }
+                                                    }
+                                                  },
+                                                  "TEXT": {
+                                                    "shadow": {
+                                                      "type": "text",
+                                                      "id": "0rjXbYJj%1#oc_JJ.?BC",
+                                                      "fields": {
+                                                        "TEXT": "POOR"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "tft_print",
+                                              "id": "x@.3L*m*NGwhv2fsCT}g",
+                                              "inputs": {
+                                                "ROW": {
+                                                  "shadow": {
+                                                    "type": "math_number",
+                                                    "id": "_l^rGdWA+S]2qqWOFY3N",
+                                                    "fields": {
+                                                      "NUM": 5
+                                                    }
+                                                  }
+                                                },
+                                                "COLUMN": {
+                                                  "shadow": {
+                                                    "type": "math_number",
+                                                    "id": "VIE7-BSHU8VaNeG[X?,o",
+                                                    "fields": {
+                                                      "NUM": 80
+                                                    }
+                                                  }
+                                                },
+                                                "TEXT": {
+                                                  "shadow": {
+                                                    "type": "text",
+                                                    "id": "nLc+QR9ny[@e8SkUrI!Q",
+                                                    "fields": {
+                                                      "TEXT": "TVOC:"
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "tft_print",
+                                                  "id": "M:DoV[R;z3kRT6^$v5$G",
+                                                  "inputs": {
+                                                    "ROW": {
+                                                      "shadow": {
+                                                        "type": "math_number",
+                                                        "id": ",D]wu@C$%8Q=x?#)N74[",
+                                                        "fields": {
+                                                          "NUM": 95
+                                                        }
+                                                      }
+                                                    },
+                                                    "COLUMN": {
+                                                      "shadow": {
+                                                        "type": "math_number",
+                                                        "id": "WW2=u~b!M%qV[-Tn*#wR",
+                                                        "fields": {
+                                                          "NUM": 80
+                                                        }
+                                                      }
+                                                    },
+                                                    "TEXT": {
+                                                      "shadow": {
+                                                        "type": "text",
+                                                        "id": "ZuN:UDNCJ]go@jvk[H@[",
+                                                        "fields": {
+                                                          "TEXT": "GOOD"
+                                                        }
+                                                      },
+                                                      "block": {
+                                                        "type": "number_to_string",
+                                                        "id": "M2/_,q|50X$wo%427P?5",
+                                                        "inputs": {
+                                                          "NUM": {
+                                                            "shadow": {
+                                                              "type": "math_number",
+                                                              "id": "}83KL83[S]6^Cq[(0c].",
+                                                              "fields": {
+                                                                "NUM": 0
+                                                              }
+                                                            },
+                                                            "block": {
+                                                              "type": "ags02ma_read_tvoc_ppb",
+                                                              "id": "!2z|:~JEQP~^Rff^29Ik"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "tft_print",
+                                                      "id": "[!rRx|5#3e}aWGvMtL-@",
+                                                      "inputs": {
+                                                        "ROW": {
+                                                          "shadow": {
+                                                            "type": "math_number",
+                                                            "id": "o7^%3Lsab{u%#F5ZH@nY",
+                                                            "fields": {
+                                                              "NUM": 180
+                                                            }
+                                                          }
+                                                        },
+                                                        "COLUMN": {
+                                                          "shadow": {
+                                                            "type": "math_number",
+                                                            "id": ":,uO|Qwn~iH[$5n32@x*",
+                                                            "fields": {
+                                                              "NUM": 80
+                                                            }
+                                                          }
+                                                        },
+                                                        "TEXT": {
+                                                          "shadow": {
+                                                            "type": "text",
+                                                            "id": "?92Q9UI$ER{#:PbE?j^V",
+                                                            "fields": {
+                                                              "TEXT": "ppb"
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "next": {
+                                                        "block": {
+                                                          "type": "tft_print",
+                                                          "id": "-e7VQ%A*$^H.}Kv#*^+^",
+                                                          "inputs": {
+                                                            "ROW": {
+                                                              "shadow": {
+                                                                "type": "math_number",
+                                                                "id": "h?#HY+WOAZS|IoIO,`^B",
+                                                                "fields": {
+                                                                  "NUM": 5
+                                                                }
+                                                              }
+                                                            },
+                                                            "COLUMN": {
+                                                              "shadow": {
+                                                                "type": "math_number",
+                                                                "id": "}g=UIkXM]9%9e77:uvmx",
+                                                                "fields": {
+                                                                  "NUM": 105
+                                                                }
+                                                              }
+                                                            },
+                                                            "TEXT": {
+                                                              "shadow": {
+                                                                "type": "text",
+                                                                "id": "zZ_-5sVzmO-SR]QKHwlk",
+                                                                "fields": {
+                                                                  "TEXT": "MQ2:"
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "next": {
+                                                            "block": {
+                                                              "type": "controls_if",
+                                                              "id": "eTO97VB^cFOAHC~w7r=x",
+                                                              "inputs": {
+                                                                "IF0": {
+                                                                  "block": {
+                                                                    "type": "logic_compare",
+                                                                    "id": "|Iw%h6ya*][CAAU$SQx?",
+                                                                    "fields": {
+                                                                      "OP": "GT"
+                                                                    },
+                                                                    "inputs": {
+                                                                      "A": {
+                                                                        "block": {
+                                                                          "type": "io_analogread",
+                                                                          "id": ")7u^b^M$VD?|FaAb+Lq3",
+                                                                          "inputs": {
+                                                                            "PIN": {
+                                                                              "shadow": {
+                                                                                "type": "io_pin_adc",
+                                                                                "id": "8:XTVA)g^{-_GPqIM+ke",
+                                                                                "fields": {
+                                                                                  "PIN": "1"
+                                                                                }
+                                                                              },
+                                                                              "block": {
+                                                                                "type": "math_number",
+                                                                                "id": "P*U^PN^W8%f!:nYnztF|",
+                                                                                "fields": {
+                                                                                  "NUM": 6
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "B": {
+                                                                        "block": {
+                                                                          "type": "math_number",
+                                                                          "id": "%xqvP,S_)e0n_q[e;y*u",
+                                                                          "fields": {
+                                                                            "NUM": 2500
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "DO0": {
+                                                                  "block": {
+                                                                    "type": "tft_print",
+                                                                    "id": "%2JVnv};*O=EW?*.ESZ@",
+                                                                    "inputs": {
+                                                                      "ROW": {
+                                                                        "shadow": {
+                                                                          "type": "math_number",
+                                                                          "id": "es4V2@^m@(-%5gULSGJz",
+                                                                          "fields": {
+                                                                            "NUM": 80
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "COLUMN": {
+                                                                        "shadow": {
+                                                                          "type": "math_number",
+                                                                          "id": "KvCe8Sz5x.hxSy+W2bI}",
+                                                                          "fields": {
+                                                                            "NUM": 105
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "TEXT": {
+                                                                        "shadow": {
+                                                                          "type": "text",
+                                                                          "id": "BHI3%d]5Ph0-R5|{ED{k",
+                                                                          "fields": {
+                                                                            "TEXT": "Danger! "
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "next": {
+                                                                "block": {
+                                                                  "type": "controls_if",
+                                                                  "id": "#u1|WUP~x$wxbLtCr+Hy",
+                                                                  "inputs": {
+                                                                    "IF0": {
+                                                                      "block": {
+                                                                        "type": "logic_operation",
+                                                                        "id": "C!RXR(1fsUvHyB),o|j1",
+                                                                        "fields": {
+                                                                          "OP": "AND"
+                                                                        },
+                                                                        "inputs": {
+                                                                          "A": {
+                                                                            "block": {
+                                                                              "type": "logic_compare",
+                                                                              "id": "!j$sU|z=Z]$@1k0hhgM3",
+                                                                              "fields": {
+                                                                                "OP": "GT"
+                                                                              },
+                                                                              "inputs": {
+                                                                                "A": {
+                                                                                  "block": {
+                                                                                    "type": "io_analogread",
+                                                                                    "id": "@CHJFD7/~7^*r1z4.HND",
+                                                                                    "inputs": {
+                                                                                      "PIN": {
+                                                                                        "shadow": {
+                                                                                          "type": "io_pin_adc",
+                                                                                          "id": "8:XTVA)g^{-_GPqIM+ke",
+                                                                                          "fields": {
+                                                                                            "PIN": "1"
+                                                                                          }
+                                                                                        },
+                                                                                        "block": {
+                                                                                          "type": "math_number",
+                                                                                          "id": "}CGE+w4yq4%#XUXjJ8ao",
+                                                                                          "fields": {
+                                                                                            "NUM": 6
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                },
+                                                                                "B": {
+                                                                                  "block": {
+                                                                                    "type": "math_number",
+                                                                                    "id": "V!UZG.r0-bc)hTa/38!T",
+                                                                                    "fields": {
+                                                                                      "NUM": 1500
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "B": {
+                                                                            "block": {
+                                                                              "type": "logic_compare",
+                                                                              "id": "GO8Q){5$_ZGFswFPQ1Vf",
+                                                                              "fields": {
+                                                                                "OP": "LT"
+                                                                              },
+                                                                              "inputs": {
+                                                                                "A": {
+                                                                                  "block": {
+                                                                                    "type": "io_analogread",
+                                                                                    "id": "$G/A=fUj@Pd6MeVI;^[{",
+                                                                                    "inputs": {
+                                                                                      "PIN": {
+                                                                                        "shadow": {
+                                                                                          "type": "io_pin_adc",
+                                                                                          "id": "8:XTVA)g^{-_GPqIM+ke",
+                                                                                          "fields": {
+                                                                                            "PIN": "1"
+                                                                                          }
+                                                                                        },
+                                                                                        "block": {
+                                                                                          "type": "math_number",
+                                                                                          "id": "%y.1Mv@=6cuVgzt|/V_l",
+                                                                                          "fields": {
+                                                                                            "NUM": 6
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                },
+                                                                                "B": {
+                                                                                  "block": {
+                                                                                    "type": "math_number",
+                                                                                    "id": "CeF6av0]~XRQbVX~uFVz",
+                                                                                    "fields": {
+                                                                                      "NUM": 2500
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "DO0": {
+                                                                      "block": {
+                                                                        "type": "tft_print",
+                                                                        "id": "QM0X!v=:[P|MQGA+Rvj|",
+                                                                        "inputs": {
+                                                                          "ROW": {
+                                                                            "shadow": {
+                                                                              "type": "math_number",
+                                                                              "id": ":-iIL=mnF83J8.^6h7EM",
+                                                                              "fields": {
+                                                                                "NUM": 80
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "COLUMN": {
+                                                                            "shadow": {
+                                                                              "type": "math_number",
+                                                                              "id": "n5d29_FqOR5l!#Whr@oK",
+                                                                              "fields": {
+                                                                                "NUM": 105
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "TEXT": {
+                                                                            "shadow": {
+                                                                              "type": "text",
+                                                                              "id": "czEYhDqGGa!sXm{Qe^kh",
+                                                                              "fields": {
+                                                                                "TEXT": "Warning!"
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "next": {
+                                                                    "block": {
+                                                                      "type": "controls_if",
+                                                                      "id": "mcm|U]~Bdt}[AY[GPvbG",
+                                                                      "inputs": {
+                                                                        "IF0": {
+                                                                          "block": {
+                                                                            "type": "logic_compare",
+                                                                            "id": "0UNV@}jrQBv1z.#CUlWR",
+                                                                            "fields": {
+                                                                              "OP": "LT"
+                                                                            },
+                                                                            "inputs": {
+                                                                              "A": {
+                                                                                "block": {
+                                                                                  "type": "io_analogread",
+                                                                                  "id": "uN.j1s*DMh/+,yKp_=+E",
+                                                                                  "inputs": {
+                                                                                    "PIN": {
+                                                                                      "shadow": {
+                                                                                        "type": "io_pin_adc",
+                                                                                        "id": "8:XTVA)g^{-_GPqIM+ke",
+                                                                                        "fields": {
+                                                                                          "PIN": "1"
+                                                                                        }
+                                                                                      },
+                                                                                      "block": {
+                                                                                        "type": "math_number",
+                                                                                        "id": ")M`xt7srpe}keVDjQ0$A",
+                                                                                        "fields": {
+                                                                                          "NUM": 6
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              },
+                                                                              "B": {
+                                                                                "block": {
+                                                                                  "type": "math_number",
+                                                                                  "id": "q8`!Bv^geD.$=}vpVI8;",
+                                                                                  "fields": {
+                                                                                    "NUM": 1500
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "DO0": {
+                                                                          "block": {
+                                                                            "type": "tft_print",
+                                                                            "id": "|jh3#M(`+Z~HctN~A3-9",
+                                                                            "inputs": {
+                                                                              "ROW": {
+                                                                                "shadow": {
+                                                                                  "type": "math_number",
+                                                                                  "id": "x%LiRnCx|K3X8GFWdB^{",
+                                                                                  "fields": {
+                                                                                    "NUM": 80
+                                                                                  }
+                                                                                }
+                                                                              },
+                                                                              "COLUMN": {
+                                                                                "shadow": {
+                                                                                  "type": "math_number",
+                                                                                  "id": "g,6rwv(hSyS|b#6crZ|P",
+                                                                                  "fields": {
+                                                                                    "NUM": 105
+                                                                                  }
+                                                                                }
+                                                                              },
+                                                                              "TEXT": {
+                                                                                "shadow": {
+                                                                                  "type": "text",
+                                                                                  "id": "zE%v[LiF^vUvEO9btcqL",
+                                                                                  "fields": {
+                                                                                    "TEXT": "Safe    "
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "next": {
+                                                                        "block": {
+                                                                          "type": "tft_print",
+                                                                          "id": "moJM1#~30U^b-FR6mw]`",
+                                                                          "inputs": {
+                                                                            "ROW": {
+                                                                              "shadow": {
+                                                                                "type": "math_number",
+                                                                                "id": "Bc00g^HYesv`1eq}*ga!",
+                                                                                "fields": {
+                                                                                  "NUM": 5
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "COLUMN": {
+                                                                              "shadow": {
+                                                                                "type": "math_number",
+                                                                                "id": "p))$a?QKLsan)3}CH1~D",
+                                                                                "fields": {
+                                                                                  "NUM": 130
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "TEXT": {
+                                                                              "shadow": {
+                                                                                "type": "text",
+                                                                                "id": "0[[Lb,s@}rZNa!.smWDi",
+                                                                                "fields": {
+                                                                                  "TEXT": "Rain:"
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "next": {
+                                                                            "block": {
+                                                                              "type": "tft_print",
+                                                                              "id": "[4)dezss-eVh?(#KSI#`",
+                                                                              "inputs": {
+                                                                                "ROW": {
+                                                                                  "shadow": {
+                                                                                    "type": "math_number",
+                                                                                    "id": "OO^MX:;!U=|pf-X$at-q",
+                                                                                    "fields": {
+                                                                                      "NUM": 100
+                                                                                    }
+                                                                                  }
+                                                                                },
+                                                                                "COLUMN": {
+                                                                                  "shadow": {
+                                                                                    "type": "math_number",
+                                                                                    "id": "Zs2KTiI!9z8)c;SM0}Yf",
+                                                                                    "fields": {
+                                                                                      "NUM": 130
+                                                                                    }
+                                                                                  }
+                                                                                },
+                                                                                "TEXT": {
+                                                                                  "shadow": {
+                                                                                    "type": "text",
+                                                                                    "id": "7LE~S|Uju)w/v+.#Lp]c",
+                                                                                    "fields": {
+                                                                                      "TEXT": "Rain:"
+                                                                                    }
+                                                                                  },
+                                                                                  "block": {
+                                                                                    "type": "number_to_string",
+                                                                                    "id": "Oy;btG:6h+lt2Z|;wPx,",
+                                                                                    "inputs": {
+                                                                                      "NUM": {
+                                                                                        "shadow": {
+                                                                                          "type": "math_number",
+                                                                                          "id": "EpF{J_Ep,/Dzd)3LE@$}",
+                                                                                          "fields": {
+                                                                                            "NUM": 0
+                                                                                          }
+                                                                                        },
+                                                                                        "block": {
+                                                                                          "type": "map_to",
+                                                                                          "id": ":f6PA%aOTF5VvBT.dn@E",
+                                                                                          "inputs": {
+                                                                                            "NUM": {
+                                                                                              "block": {
+                                                                                                "type": "io_analogread",
+                                                                                                "id": "oVC;fYM`!nBoec=@cTB}",
+                                                                                                "inputs": {
+                                                                                                  "PIN": {
+                                                                                                    "shadow": {
+                                                                                                      "type": "io_pin_adc",
+                                                                                                      "id": "xR2sUTr4h153$v|3c]O=",
+                                                                                                      "fields": {
+                                                                                                        "PIN": "1"
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "block": {
+                                                                                                      "type": "math_number",
+                                                                                                      "id": "6)~N.{GX)@j|ZlA;Ez^s",
+                                                                                                      "fields": {
+                                                                                                        "NUM": 10
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            },
+                                                                                            "FIRST_START": {
+                                                                                              "block": {
+                                                                                                "type": "math_number",
+                                                                                                "id": ")P1-Wd4=?7fiP`u3m3D7",
+                                                                                                "fields": {
+                                                                                                  "NUM": 0
+                                                                                                }
+                                                                                              }
+                                                                                            },
+                                                                                            "FIRST_END": {
+                                                                                              "block": {
+                                                                                                "type": "math_number",
+                                                                                                "id": "*kte?=|Lae!,1PXecM%m",
+                                                                                                "fields": {
+                                                                                                  "NUM": 4095
+                                                                                                }
+                                                                                              }
+                                                                                            },
+                                                                                            "LAST_START": {
+                                                                                              "block": {
+                                                                                                "type": "math_number",
+                                                                                                "id": "cw%CGb,q$Z?g@N{W(sqr",
+                                                                                                "fields": {
+                                                                                                  "NUM": 0
+                                                                                                }
+                                                                                              }
+                                                                                            },
+                                                                                            "LAST_END": {
+                                                                                              "block": {
+                                                                                                "type": "math_number",
+                                                                                                "id": "i)tP~rbQ(z]ZWCp.F~Nu",
+                                                                                                "fields": {
+                                                                                                  "NUM": 50
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              },
+                                                                              "next": {
+                                                                                "block": {
+                                                                                  "type": "tft_print",
+                                                                                  "id": "Px*AE~6/NaVA@3hTLu~Y",
+                                                                                  "inputs": {
+                                                                                    "ROW": {
+                                                                                      "shadow": {
+                                                                                        "type": "math_number",
+                                                                                        "id": "]MtEj!s[4~I07,k@)c(}",
+                                                                                        "fields": {
+                                                                                          "NUM": 135
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "COLUMN": {
+                                                                                      "shadow": {
+                                                                                        "type": "math_number",
+                                                                                        "id": "d$@Ba9St|B5i;xCm4{|$",
+                                                                                        "fields": {
+                                                                                          "NUM": 130
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "TEXT": {
+                                                                                      "shadow": {
+                                                                                        "type": "text",
+                                                                                        "id": "@f7?dkF3M1h6R7q|9rf/",
+                                                                                        "fields": {
+                                                                                          "TEXT": "mm"
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  "next": {
+                                                                                    "block": {
+                                                                                      "type": "sd_write_file",
+                                                                                      "id": "f+jOcTWn-a;@Uw(Bxr={",
+                                                                                      "fields": {
+                                                                                        "MODE": "APPEND"
+                                                                                      },
+                                                                                      "inputs": {
+                                                                                        "DATA": {
+                                                                                          "shadow": {
+                                                                                            "type": "text",
+                                                                                            "id": "b1j,eRM@uz##Qpzk1hwa",
+                                                                                            "fields": {
+                                                                                              "TEXT": "Temp:"
+                                                                                            }
+                                                                                          },
+                                                                                          "block": {
+                                                                                            "type": "string_add_string",
+                                                                                            "id": "#w=/^=,_!*1u2Lg.B~qu",
+                                                                                            "inputs": {
+                                                                                              "STRING1": {
+                                                                                                "shadow": {
+                                                                                                  "type": "text",
+                                                                                                  "id": "GrPt_vo$I#{A*x+Us(|z",
+                                                                                                  "fields": {
+                                                                                                    "TEXT": "Temp:"
+                                                                                                  }
+                                                                                                }
+                                                                                              },
+                                                                                              "STRING2": {
+                                                                                                "shadow": {
+                                                                                                  "type": "text",
+                                                                                                  "id": "o;2;dY_aFowCb|PTpjJ/",
+                                                                                                  "fields": {
+                                                                                                    "TEXT": "world"
+                                                                                                  }
+                                                                                                },
+                                                                                                "block": {
+                                                                                                  "type": "number_to_string",
+                                                                                                  "id": "[YGSRl^Tc?JPFsL`q,rk",
+                                                                                                  "inputs": {
+                                                                                                    "NUM": {
+                                                                                                      "shadow": {
+                                                                                                        "type": "math_number",
+                                                                                                        "id": ".T=28_Zg~0}:CuPfkx#s",
+                                                                                                        "fields": {
+                                                                                                          "NUM": 0
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "block": {
+                                                                                                        "type": "sht31_simple_read",
+                                                                                                        "id": "H.BgQ_t;c|+,5ojhyCAp",
+                                                                                                        "fields": {
+                                                                                                          "TYPE": "temperature"
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        },
+                                                                                        "PATH": {
+                                                                                          "shadow": {
+                                                                                            "type": "text",
+                                                                                            "id": "PPK(#MxY9LO3[87u+h[6",
+                                                                                            "fields": {
+                                                                                              "TEXT": "/data.txt"
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      },
+                                                                                      "next": {
+                                                                                        "block": {
+                                                                                          "type": "sd_write_file",
+                                                                                          "id": "43PxHIiom}j:s~Nh[|da",
+                                                                                          "fields": {
+                                                                                            "MODE": "APPEND"
+                                                                                          },
+                                                                                          "inputs": {
+                                                                                            "DATA": {
+                                                                                              "shadow": {
+                                                                                                "type": "text",
+                                                                                                "id": "hqaVm,K0W@qI[WfbA}Nk",
+                                                                                                "fields": {
+                                                                                                  "TEXT": "°C"
+                                                                                                }
+                                                                                              }
+                                                                                            },
+                                                                                            "PATH": {
+                                                                                              "shadow": {
+                                                                                                "type": "text",
+                                                                                                "id": "(G.=Pn+gz*NO*@BpOsqp",
+                                                                                                "fields": {
+                                                                                                  "TEXT": "/data.txt"
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          },
+                                                                                          "next": {
+                                                                                            "block": {
+                                                                                              "type": "sd_write_file",
+                                                                                              "id": "#*3q@W.6$9R^:_vv2Eh|",
+                                                                                              "fields": {
+                                                                                                "MODE": "APPEND"
+                                                                                              },
+                                                                                              "inputs": {
+                                                                                                "DATA": {
+                                                                                                  "shadow": {
+                                                                                                    "type": "text",
+                                                                                                    "id": "b1j,eRM@uz##Qpzk1hwa",
+                                                                                                    "fields": {
+                                                                                                      "TEXT": "Temp:"
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "block": {
+                                                                                                    "type": "string_add_string",
+                                                                                                    "id": "Hz_pEgw=MHn3LyI_#V)w",
+                                                                                                    "inputs": {
+                                                                                                      "STRING1": {
+                                                                                                        "shadow": {
+                                                                                                          "type": "text",
+                                                                                                          "id": "~Y*Zl*2*)9K1TBSpr88B",
+                                                                                                          "fields": {
+                                                                                                            "TEXT": "Hum:"
+                                                                                                          }
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "STRING2": {
+                                                                                                        "shadow": {
+                                                                                                          "type": "text",
+                                                                                                          "id": "o;2;dY_aFowCb|PTpjJ/",
+                                                                                                          "fields": {
+                                                                                                            "TEXT": "world"
+                                                                                                          }
+                                                                                                        },
+                                                                                                        "block": {
+                                                                                                          "type": "number_to_string",
+                                                                                                          "id": "4DAL2rO~ZU4xDyZ)Xhxr",
+                                                                                                          "inputs": {
+                                                                                                            "NUM": {
+                                                                                                              "shadow": {
+                                                                                                                "type": "math_number",
+                                                                                                                "id": ".T=28_Zg~0}:CuPfkx#s",
+                                                                                                                "fields": {
+                                                                                                                  "NUM": 0
+                                                                                                                }
+                                                                                                              },
+                                                                                                              "block": {
+                                                                                                                "type": "sht31_simple_read",
+                                                                                                                "id": "bO;VF^S9{9#$`EDQC4B6",
+                                                                                                                "fields": {
+                                                                                                                  "TYPE": "humidity"
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                },
+                                                                                                "PATH": {
+                                                                                                  "shadow": {
+                                                                                                    "type": "text",
+                                                                                                    "id": "4eR?!Wq2;(C3y2HNk_xP",
+                                                                                                    "fields": {
+                                                                                                      "TEXT": "/data.txt"
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              },
+                                                                                              "next": {
+                                                                                                "block": {
+                                                                                                  "type": "sd_write_file",
+                                                                                                  "id": "]zta[zH!n}Jc#Y3UL{/9",
+                                                                                                  "fields": {
+                                                                                                    "MODE": "APPEND"
+                                                                                                  },
+                                                                                                  "inputs": {
+                                                                                                    "DATA": {
+                                                                                                      "shadow": {
+                                                                                                        "type": "text",
+                                                                                                        "id": "m8-quQ!sYR**6#Rzq{0g",
+                                                                                                        "fields": {
+                                                                                                          "TEXT": "%"
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "PATH": {
+                                                                                                      "shadow": {
+                                                                                                        "type": "text",
+                                                                                                        "id": "n2:VYQ5L7HE@$5?L0;bO",
+                                                                                                        "fields": {
+                                                                                                          "TEXT": "/data.txt"
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "next": {
+                                                                                                    "block": {
+                                                                                                      "type": "sd_write_file",
+                                                                                                      "id": "x|#,Oajwv?EV@+3|YB-.",
+                                                                                                      "fields": {
+                                                                                                        "MODE": "APPEND"
+                                                                                                      },
+                                                                                                      "inputs": {
+                                                                                                        "DATA": {
+                                                                                                          "shadow": {
+                                                                                                            "type": "text",
+                                                                                                            "id": "0_F]X3}RiTe6[yMqDe)A",
+                                                                                                            "fields": {
+                                                                                                              "TEXT": "TVOC:"
+                                                                                                            }
+                                                                                                          },
+                                                                                                          "block": {
+                                                                                                            "type": "string_add_string",
+                                                                                                            "id": "k1B1Nt-!d^irKC;t!e)f",
+                                                                                                            "inputs": {
+                                                                                                              "STRING1": {
+                                                                                                                "shadow": {
+                                                                                                                  "type": "text",
+                                                                                                                  "id": "WCk)~1uMYcz@ZzBH$7d7",
+                                                                                                                  "fields": {
+                                                                                                                    "TEXT": "TVOC:"
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              },
+                                                                                                              "STRING2": {
+                                                                                                                "shadow": {
+                                                                                                                  "type": "text",
+                                                                                                                  "id": "o;2;dY_aFowCb|PTpjJ/",
+                                                                                                                  "fields": {
+                                                                                                                    "TEXT": "world"
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                "block": {
+                                                                                                                  "type": "number_to_string",
+                                                                                                                  "id": "evFX5]wXEx=qAO$#$,Wu",
+                                                                                                                  "inputs": {
+                                                                                                                    "NUM": {
+                                                                                                                      "shadow": {
+                                                                                                                        "type": "math_number",
+                                                                                                                        "id": "}83KL83[S]6^Cq[(0c].",
+                                                                                                                        "fields": {
+                                                                                                                          "NUM": 0
+                                                                                                                        }
+                                                                                                                      },
+                                                                                                                      "block": {
+                                                                                                                        "type": "ags02ma_read_tvoc_ppb",
+                                                                                                                        "id": "dwMma!,Y[wc~g8F5~J)*"
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        },
+                                                                                                        "PATH": {
+                                                                                                          "shadow": {
+                                                                                                            "type": "text",
+                                                                                                            "id": "+p-Z,8).XUfSF*${=c#Y",
+                                                                                                            "fields": {
+                                                                                                              "TEXT": "/data.txt"
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "next": {
+                                                                                                        "block": {
+                                                                                                          "type": "sd_write_file",
+                                                                                                          "id": "elfh2,QmU_tLoEU1`~z5",
+                                                                                                          "fields": {
+                                                                                                            "MODE": "APPEND"
+                                                                                                          },
+                                                                                                          "inputs": {
+                                                                                                            "DATA": {
+                                                                                                              "shadow": {
+                                                                                                                "type": "text",
+                                                                                                                "id": "2lJfqNrYLL#KKu/REO/%",
+                                                                                                                "fields": {
+                                                                                                                  "TEXT": "ppb"
+                                                                                                                }
+                                                                                                              }
+                                                                                                            },
+                                                                                                            "PATH": {
+                                                                                                              "shadow": {
+                                                                                                                "type": "text",
+                                                                                                                "id": "yCcp8j6E`z^6[-owL-Tj",
+                                                                                                                "fields": {
+                                                                                                                  "TEXT": "/data.txt"
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          },
+                                                                                                          "next": {
+                                                                                                            "block": {
+                                                                                                              "type": "sd_write_file",
+                                                                                                              "id": "EebaM~6uEn}w|QKP#XX.",
+                                                                                                              "fields": {
+                                                                                                                "MODE": "APPEND"
+                                                                                                              },
+                                                                                                              "inputs": {
+                                                                                                                "DATA": {
+                                                                                                                  "shadow": {
+                                                                                                                    "type": "text",
+                                                                                                                    "id": "^v~$/}:o].ate{FM@$m!",
+                                                                                                                    "fields": {
+                                                                                                                      "TEXT": "Hello, world!"
+                                                                                                                    }
+                                                                                                                  },
+                                                                                                                  "block": {
+                                                                                                                    "type": "string_add_string",
+                                                                                                                    "id": "z1i~k-ds_m2f{R#[]nid",
+                                                                                                                    "inputs": {
+                                                                                                                      "STRING1": {
+                                                                                                                        "shadow": {
+                                                                                                                          "type": "text",
+                                                                                                                          "id": "qMIwOt[Re#a4,w;#:(`i",
+                                                                                                                          "fields": {
+                                                                                                                            "TEXT": "MQ2_Raw:"
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      },
+                                                                                                                      "STRING2": {
+                                                                                                                        "shadow": {
+                                                                                                                          "type": "text",
+                                                                                                                          "id": "$g6Pj_H^K1n5{w|LB1Ec",
+                                                                                                                          "fields": {
+                                                                                                                            "TEXT": "world"
+                                                                                                                          }
+                                                                                                                        },
+                                                                                                                        "block": {
+                                                                                                                          "type": "io_analogread",
+                                                                                                                          "id": "4?tq!?GL9)G19TD+(Y+D",
+                                                                                                                          "inputs": {
+                                                                                                                            "PIN": {
+                                                                                                                              "shadow": {
+                                                                                                                                "type": "io_pin_adc",
+                                                                                                                                "id": "B+@Tz/tkr7ll)SO`io!-",
+                                                                                                                                "fields": {
+                                                                                                                                  "PIN": "1"
+                                                                                                                                }
+                                                                                                                              },
+                                                                                                                              "block": {
+                                                                                                                                "type": "math_number",
+                                                                                                                                "id": "*?JnOD0*~nH/%3~ud=yb",
+                                                                                                                                "fields": {
+                                                                                                                                  "NUM": 6
+                                                                                                                                }
+                                                                                                                              }
+                                                                                                                            }
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                "PATH": {
+                                                                                                                  "shadow": {
+                                                                                                                    "type": "text",
+                                                                                                                    "id": "%!G$%.qq!4P9:U;2|Pfo",
+                                                                                                                    "fields": {
+                                                                                                                      "TEXT": "/data.txt"
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              },
+                                                                                                              "next": {
+                                                                                                                "block": {
+                                                                                                                  "type": "sd_write_file",
+                                                                                                                  "id": "Kc{UsZa?ZTssc-SpY5s@",
+                                                                                                                  "fields": {
+                                                                                                                    "MODE": "APPEND"
+                                                                                                                  },
+                                                                                                                  "inputs": {
+                                                                                                                    "DATA": {
+                                                                                                                      "shadow": {
+                                                                                                                        "type": "text",
+                                                                                                                        "id": "^v~$/}:o].ate{FM@$m!",
+                                                                                                                        "fields": {
+                                                                                                                          "TEXT": "Hello, world!"
+                                                                                                                        }
+                                                                                                                      },
+                                                                                                                      "block": {
+                                                                                                                        "type": "string_add_string",
+                                                                                                                        "id": "43ctKlf!/2;%jcgkK%g5",
+                                                                                                                        "inputs": {
+                                                                                                                          "STRING1": {
+                                                                                                                            "shadow": {
+                                                                                                                              "type": "text",
+                                                                                                                              "id": "0W#!$JB#iBA!e@_a/1Z+",
+                                                                                                                              "fields": {
+                                                                                                                                "TEXT": "Rain:"
+                                                                                                                              }
+                                                                                                                            }
+                                                                                                                          },
+                                                                                                                          "STRING2": {
+                                                                                                                            "shadow": {
+                                                                                                                              "type": "text",
+                                                                                                                              "id": "$g6Pj_H^K1n5{w|LB1Ec",
+                                                                                                                              "fields": {
+                                                                                                                                "TEXT": "world"
+                                                                                                                              }
+                                                                                                                            },
+                                                                                                                            "block": {
+                                                                                                                              "type": "io_analogread",
+                                                                                                                              "id": "(*[sg%x88;H[Y$}25hq|",
+                                                                                                                              "inputs": {
+                                                                                                                                "PIN": {
+                                                                                                                                  "shadow": {
+                                                                                                                                    "type": "io_pin_adc",
+                                                                                                                                    "id": "B+@Tz/tkr7ll)SO`io!-",
+                                                                                                                                    "fields": {
+                                                                                                                                      "PIN": "1"
+                                                                                                                                    }
+                                                                                                                                  },
+                                                                                                                                  "block": {
+                                                                                                                                    "type": "math_number",
+                                                                                                                                    "id": "R`f/$n59=5t__;c-Gi1[",
+                                                                                                                                    "fields": {
+                                                                                                                                      "NUM": 10
+                                                                                                                                    }
+                                                                                                                                  }
+                                                                                                                                }
+                                                                                                                              }
+                                                                                                                            }
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    },
+                                                                                                                    "PATH": {
+                                                                                                                      "shadow": {
+                                                                                                                        "type": "text",
+                                                                                                                        "id": "TkfYGPijsOVq|u[N8kas",
+                                                                                                                        "fields": {
+                                                                                                                          "TEXT": "/data.txt"
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  },
+                                                                                                                  "next": {
+                                                                                                                    "block": {
+                                                                                                                      "type": "sd_write_file",
+                                                                                                                      "id": "j6AVwguTmRV7ExNit?x.",
+                                                                                                                      "fields": {
+                                                                                                                        "MODE": "APPEND"
+                                                                                                                      },
+                                                                                                                      "inputs": {
+                                                                                                                        "DATA": {
+                                                                                                                          "shadow": {
+                                                                                                                            "type": "text",
+                                                                                                                            "id": "`VY.eu|9Fk57hKZMgyt:",
+                                                                                                                            "fields": {
+                                                                                                                              "TEXT": "mm"
+                                                                                                                            }
+                                                                                                                          }
+                                                                                                                        },
+                                                                                                                        "PATH": {
+                                                                                                                          "shadow": {
+                                                                                                                            "type": "text",
+                                                                                                                            "id": "%m6G8M]G_gA^q7qy+8}Z",
+                                                                                                                            "fields": {
+                                                                                                                              "TEXT": "/data.txt"
+                                                                                                                            }
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
