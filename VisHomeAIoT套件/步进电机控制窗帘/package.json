@@ -1,8 +1,8 @@
 {
   "name": "stepper_control",
-  "nickname": "步进电机控制窗帘",
+  "nickname": "Blinker控制门窗风扇",
   "url": "",
-  "description": "通过步进电机控制窗帘的开合，支持设置角度和速度等功能。",
+  "description": "通过物联网云平台blinker，实现门、窗、风扇等设备的开关和调速功能。",
   "version": "1.0.0",
   "board": "WiFiduino32s3",
   "boardDependencies": {

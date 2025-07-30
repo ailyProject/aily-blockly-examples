@@ -1,0 +1,206 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "DXFo3]D(yE=+OZO/XLHe",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "115200"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 110,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "servo_write_float",
+              "id": "Kl#E8`t{M5jyBMX]79|S",
+              "fields": {
+                "PIN": "2"
+              },
+              "inputs": {
+                "ANGLE": {
+                  "shadow": {
+                    "type": "servo_angle",
+                    "id": "z*MsyLlDO6%/PCxs[QcV",
+                    "fields": {
+                      "ANGLE": 0
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_println",
+                  "id": "aPg~@i!sDCIKid_]c~yQ",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "Zfj,XrycsdpKZPkh_B4/",
+                        "fields": {
+                          "TEXT": "Position: 0°"
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "time_delay",
+                      "id": "b7TX90V$[2gEo3//:U.l",
+                      "inputs": {
+                        "DELAY_TIME": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "FDk~vtJL[~PqNI?THSNT",
+                            "fields": {
+                              "NUM": 1000
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "servo_write_float",
+                          "id": "rAr$R+S:TvcCWj^TsC?#",
+                          "fields": {
+                            "PIN": "2"
+                          },
+                          "inputs": {
+                            "ANGLE": {
+                              "shadow": {
+                                "type": "servo_angle",
+                                "id": ".?JWuFF8^l#$DtbLsw!n",
+                                "fields": {
+                                  "ANGLE": 90
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "serial_println",
+                              "id": "CpW=emP+_:`}/eInA[];",
+                              "fields": {
+                                "SERIAL": "Serial"
+                              },
+                              "inputs": {
+                                "VAR": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "64^kB8HvhcGc2E{usA5:",
+                                    "fields": {
+                                      "TEXT": "Position: 90°"
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "time_delay",
+                                  "id": "c|k3EaNdSk~cIJd2|6Qq",
+                                  "inputs": {
+                                    "DELAY_TIME": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "id": "?jzyYLY9IslgnJYFPH.r",
+                                        "fields": {
+                                          "NUM": 1000
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "servo_write_float",
+                                      "id": "2[@r@)tlHq*mB#0A=_Wg",
+                                      "fields": {
+                                        "PIN": "2"
+                                      },
+                                      "inputs": {
+                                        "ANGLE": {
+                                          "shadow": {
+                                            "type": "servo_angle",
+                                            "id": "um6HZ_MIE73utfmWGEPL",
+                                            "fields": {
+                                              "ANGLE": 180
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "serial_println",
+                                          "id": "C|JRJH8Pmtq29a9Hbj4B",
+                                          "fields": {
+                                            "SERIAL": "Serial"
+                                          },
+                                          "inputs": {
+                                            "VAR": {
+                                              "shadow": {
+                                                "type": "text",
+                                                "id": "JXdjs0%y)Zp^wq4ZGo0,",
+                                                "fields": {
+                                                  "TEXT": "Position: 180°"
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "time_delay",
+                                              "id": "coclu|0;p~?7PX7w50/D",
+                                              "inputs": {
+                                                "DELAY_TIME": {
+                                                  "shadow": {
+                                                    "type": "math_number",
+                                                    "id": "h@:n(c]t5jTW3IN`oUY!",
+                                                    "fields": {
+                                                      "NUM": 1000
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

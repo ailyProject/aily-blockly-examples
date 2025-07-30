@@ -1,8 +1,8 @@
 {
-  "name": "RGB_control_light",
-  "nickname": "调色盘",
+  "name": "rgb_control_light",
+  "nickname": "blinker调色盘",
   "url": "",
-  "description": "通过调色盘控制灯带颜色和亮度，实现远程RGB灯光调节。",
+  "description": "通过物联网云平台blinker调色盘控制灯带颜色和亮度，实现远程RGB灯光调节。",
   "version": "1.0.0",
   "board": "WiFiduino32s3",
   "boardDependencies": {

@@ -1,0 +1,686 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 110,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "blinker_init_wifi",
+              "id": "OAu1lc%YFl4RAh6Hl|Zk",
+              "fields": {
+                "MODE": "手动配网"
+              },
+              "inputs": {
+                "AUTH": {
+                  "block": {
+                    "type": "text",
+                    "id": "JhFU7*h1r{K+@:[@cH.S",
+                    "fields": {
+                      "TEXT": ""
+                    }
+                  }
+                },
+                "SSID": {
+                  "block": {
+                    "type": "text",
+                    "id": "n9zM*;8#hKw^K=Fm)iYR",
+                    "fields": {
+                      "TEXT": ""
+                    }
+                  }
+                },
+                "PSWD": {
+                  "block": {
+                    "type": "text",
+                    "id": "fj.J1g2Xh%It}8Vusw`q",
+                    "fields": {
+                      "TEXT": ""
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_begin",
+                  "id": "N}!WXe04~#-Wf71U1lPp",
+                  "fields": {
+                    "SERIAL": "Serial",
+                    "SPEED": "115200"
+                  },
+                  "next": {
+                    "block": {
+                      "type": "sht31_init",
+                      "id": "+$mkl;`b@|7$${la4fE.",
+                      "fields": {
+                        "ADDRESS": "0x44"
+                      },
+                      "next": {
+                        "block": {
+                          "type": "bh1750_init_with_wire",
+                          "id": "W+,/cN`W597gsq.H?qwz",
+                          "fields": {
+                            "VAR": "lightMeter",
+                            "MODE": "CONTINUOUS_HIGH_RES_MODE",
+                            "ADDRESS": "0x23",
+                            "WIRE": "Wire"
+                          },
+                          "next": {
+                            "block": {
+                              "type": "ags02ma_init",
+                              "id": "v6[xq4X+!RkJ6*,/^roZ",
+                              "fields": {
+                                "WIRE": "Wire"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 1050,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "controls_if",
+              "id": "{m-*D^qo}ra883MIS0i~",
+              "inputs": {
+                "IF0": {
+                  "block": {
+                    "type": "logic_compare",
+                    "id": "])-e.%kv_-|p!EasFoIE",
+                    "fields": {
+                      "OP": "GT"
+                    },
+                    "inputs": {
+                      "A": {
+                        "block": {
+                          "type": "io_analogread",
+                          "id": "aj7U^m/ke(2dVbl$bL]/",
+                          "inputs": {
+                            "PIN": {
+                              "shadow": {
+                                "type": "io_pin_adc",
+                                "id": "Sc28+vsxeSrd4y#tlKS!",
+                                "fields": {
+                                  "PIN": "1"
+                                }
+                              },
+                              "block": {
+                                "type": "math_number",
+                                "id": "w]sjvz!DTX,@)ba6d%jd",
+                                "fields": {
+                                  "NUM": 6
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "B": {
+                        "block": {
+                          "type": "math_number",
+                          "id": "jlSjn_#nUR}[x^he,pW0",
+                          "fields": {
+                            "NUM": 2000
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "DO0": {
+                  "block": {
+                    "type": "blinker_widget_print",
+                    "id": ":NQkwl,^YL_!;Ezun|Fh",
+                    "extraState": {
+                      "itemCount": 2
+                    },
+                    "fields": {
+                      "WIDGET": "smoke"
+                    },
+                    "inputs": {
+                      "INPUT0": {
+                        "block": {
+                          "type": "blinker_text",
+                          "id": "D-GAP-up]f#BTAL4^0N:",
+                          "inputs": {
+                            "TEXT": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "Ejr=*,RXUEKDJl..t^Xg",
+                                "fields": {
+                                  "TEXT": "烟雾气体警告！"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "INPUT1": {
+                        "block": {
+                          "type": "blinker_color",
+                          "id": "nvct@29K#n@y@#o~mbRU",
+                          "inputs": {
+                            "COLOR": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "}3.ttOk{8vD,o16wzCNs",
+                                "fields": {
+                                  "TEXT": "#FF0000"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "blinker_delay",
+                        "id": "$l484a^oc;B0wc#~MC{x",
+                        "inputs": {
+                          "DELAY": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "u22_)917tJ4]+IV$dQj0",
+                              "fields": {
+                                "NUM": 5000
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "blinker_widget_print",
+                            "id": "^mhNL=pi}}~%KK9V?T;:",
+                            "extraState": {
+                              "itemCount": 2
+                            },
+                            "fields": {
+                              "WIDGET": "smoke"
+                            },
+                            "inputs": {
+                              "INPUT0": {
+                                "block": {
+                                  "type": "blinker_text",
+                                  "id": "jwvpak|Yv(/{5l)2Mz`R",
+                                  "inputs": {
+                                    "TEXT": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "opaLp6K)[q)(p!a{y+wZ",
+                                        "fields": {
+                                          "TEXT": "安全"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "INPUT1": {
+                                "block": {
+                                  "type": "blinker_color",
+                                  "id": "Wrp$7{(5xXK}P[)y0Y=a",
+                                  "inputs": {
+                                    "COLOR": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "Ap)v+p-3]:}y.*qr$]C-",
+                                        "fields": {
+                                          "TEXT": "#00FF00"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "blinker_heartbeat",
+        "id": "{[QjrOv[/y/-1`W3Wk7c",
+        "x": 30,
+        "y": 490,
+        "inputs": {
+          "NAME": {
+            "block": {
+              "type": "blinker_widget_print",
+              "id": "qIc@tEK}VzKRW^K?bNlk",
+              "extraState": {
+                "itemCount": 2
+              },
+              "fields": {
+                "WIDGET": "temp"
+              },
+              "inputs": {
+                "INPUT0": {
+                  "block": {
+                    "type": "blinker_value",
+                    "id": "`;m:FDX~2W2#3!Tj6o_+",
+                    "inputs": {
+                      "VALUE": {
+                        "shadow": {
+                          "type": "math_number",
+                          "id": "0f#(j72rtY4oWVzWG$8v",
+                          "fields": {
+                            "NUM": 0
+                          }
+                        },
+                        "block": {
+                          "type": "sht31_simple_read",
+                          "id": "BudDX4IGfE0Xc~rrDJJf",
+                          "fields": {
+                            "TYPE": "temperature"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "INPUT1": {
+                  "block": {
+                    "type": "blinker_color",
+                    "id": ")fw`XQe.Wk~!6j_Cr)@n",
+                    "inputs": {
+                      "COLOR": {
+                        "shadow": {
+                          "type": "text",
+                          "id": "FwD[B)p?G*|YJs8?^N]9",
+                          "fields": {
+                            "TEXT": "#FF0000"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "blinker_widget_print",
+                  "id": "5d@-RxIeJpbWyeuH2d[a",
+                  "extraState": {
+                    "itemCount": 2
+                  },
+                  "fields": {
+                    "WIDGET": "humi"
+                  },
+                  "inputs": {
+                    "INPUT0": {
+                      "block": {
+                        "type": "blinker_value",
+                        "id": "OyWK=TjS8*RL@J|5D)k2",
+                        "inputs": {
+                          "VALUE": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "0f#(j72rtY4oWVzWG$8v",
+                              "fields": {
+                                "NUM": 0
+                              }
+                            },
+                            "block": {
+                              "type": "sht31_simple_read",
+                              "id": "%;dOZ{+M;Pd[YG2$2NO(",
+                              "fields": {
+                                "TYPE": "humidity"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "INPUT1": {
+                      "block": {
+                        "type": "blinker_color",
+                        "id": "%u~+4`T#4wNh52L{qUXE",
+                        "inputs": {
+                          "COLOR": {
+                            "shadow": {
+                              "type": "text",
+                              "id": "z~8z[tG~-%u:Fy!jEaoz",
+                              "fields": {
+                                "TEXT": "#0000FF"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "blinker_widget_print",
+                      "id": "T642cV#-!GCoXED4WU:?",
+                      "extraState": {
+                        "itemCount": 2
+                      },
+                      "fields": {
+                        "WIDGET": "light"
+                      },
+                      "inputs": {
+                        "INPUT0": {
+                          "block": {
+                            "type": "blinker_value",
+                            "id": "tb41~6LEz+pL?hwuhP;b",
+                            "inputs": {
+                              "VALUE": {
+                                "shadow": {
+                                  "type": "math_number",
+                                  "id": "0f#(j72rtY4oWVzWG$8v",
+                                  "fields": {
+                                    "NUM": 0
+                                  }
+                                },
+                                "block": {
+                                  "type": "bh1750_read_light_level",
+                                  "id": "x,BzDZ?4^)%Zf(V(vKGz",
+                                  "fields": {
+                                    "VAR": {
+                                      "id": "o~Oq|:%9UL)EyZ+Cf;4A"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "INPUT1": {
+                          "block": {
+                            "type": "blinker_color",
+                            "id": "vW/,_AK*c}`P,WQe-|-d",
+                            "inputs": {
+                              "COLOR": {
+                                "shadow": {
+                                  "type": "text",
+                                  "id": "3Cm8Bv^uQr]D:(DPrE~S",
+                                  "fields": {
+                                    "TEXT": "#FFA500"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "blinker_widget_print",
+                          "id": "l/pJ]vD^EPaL;U!]GPW;",
+                          "extraState": {
+                            "itemCount": 2
+                          },
+                          "fields": {
+                            "WIDGET": "tvoc"
+                          },
+                          "inputs": {
+                            "INPUT0": {
+                              "block": {
+                                "type": "blinker_value",
+                                "id": "$Sub[$%#F]7YO[Grqj;H",
+                                "inputs": {
+                                  "VALUE": {
+                                    "shadow": {
+                                      "type": "math_number",
+                                      "id": "j$EhlV58Gc9z$|gR~zgR",
+                                      "fields": {
+                                        "NUM": 0
+                                      }
+                                    },
+                                    "block": {
+                                      "type": "ags02ma_read_tvoc_ppb",
+                                      "id": "n./^5gm[/O60U=8fHiBu"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "INPUT1": {
+                              "block": {
+                                "type": "blinker_color",
+                                "id": ")^Vp[=unVPoVl-nPQwM{",
+                                "inputs": {
+                                  "COLOR": {
+                                    "shadow": {
+                                      "type": "text",
+                                      "id": "h2m?9rbhQm9~~4y3Ffc|",
+                                      "fields": {
+                                        "TEXT": "#0000FF"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "blinker_widget_print",
+                              "id": "~k{x}x[384aj.0PZAa|W",
+                              "extraState": {
+                                "itemCount": 2
+                              },
+                              "fields": {
+                                "WIDGET": "mq2"
+                              },
+                              "inputs": {
+                                "INPUT0": {
+                                  "block": {
+                                    "type": "blinker_value",
+                                    "id": "/W-(5/pS[]}I}c6ryl2O",
+                                    "inputs": {
+                                      "VALUE": {
+                                        "shadow": {
+                                          "type": "math_number",
+                                          "id": "OcfSP;wN5F-j3o@M/wDN",
+                                          "fields": {
+                                            "NUM": 0
+                                          }
+                                        },
+                                        "block": {
+                                          "type": "io_analogread",
+                                          "id": "r$P`OY(fiP$tI?cU)v*c",
+                                          "inputs": {
+                                            "PIN": {
+                                              "shadow": {
+                                                "type": "io_pin_adc",
+                                                "id": "Sc28+vsxeSrd4y#tlKS!",
+                                                "fields": {
+                                                  "PIN": "1"
+                                                }
+                                              },
+                                              "block": {
+                                                "type": "math_number",
+                                                "id": "Q:NWR){i}/suyJ)eW_z*",
+                                                "fields": {
+                                                  "NUM": 6
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "INPUT1": {
+                                  "block": {
+                                    "type": "blinker_color",
+                                    "id": "EWS#T:1V!qCg2#Nru#MG",
+                                    "inputs": {
+                                      "COLOR": {
+                                        "shadow": {
+                                          "type": "text",
+                                          "id": "l{IFf/FK@q0y:qd.3DT8",
+                                          "fields": {
+                                            "TEXT": "#0000FF"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "blinker_widget_print",
+                                  "id": "{#ur/FRTb_Nh2Eb}V6I7",
+                                  "extraState": {
+                                    "itemCount": 2
+                                  },
+                                  "fields": {
+                                    "WIDGET": "rain"
+                                  },
+                                  "inputs": {
+                                    "INPUT0": {
+                                      "block": {
+                                        "type": "blinker_value",
+                                        "id": "KeM$@n48{)pry17PdUq[",
+                                        "inputs": {
+                                          "VALUE": {
+                                            "shadow": {
+                                              "type": "math_number",
+                                              "id": "XCt8?6hu!uT}hEry|e90",
+                                              "fields": {
+                                                "NUM": 0
+                                              }
+                                            },
+                                            "block": {
+                                              "type": "map_to",
+                                              "id": "iOrgWSE?q}q(!e,)I~1+",
+                                              "inputs": {
+                                                "NUM": {
+                                                  "block": {
+                                                    "type": "io_analogread",
+                                                    "id": "@gMIrw=L.tobragt-bR4",
+                                                    "inputs": {
+                                                      "PIN": {
+                                                        "shadow": {
+                                                          "type": "io_pin_adc",
+                                                          "id": "Sc28+vsxeSrd4y#tlKS!",
+                                                          "fields": {
+                                                            "PIN": "1"
+                                                          }
+                                                        },
+                                                        "block": {
+                                                          "type": "math_number",
+                                                          "id": "~:gB0cg|CNnO4nkYV(]P",
+                                                          "fields": {
+                                                            "NUM": 10
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "FIRST_START": {
+                                                  "block": {
+                                                    "type": "math_number",
+                                                    "id": "Vhph?Itebu2=!A1B{o0b",
+                                                    "fields": {
+                                                      "NUM": 0
+                                                    }
+                                                  }
+                                                },
+                                                "FIRST_END": {
+                                                  "block": {
+                                                    "type": "math_number",
+                                                    "id": "28o@Lem@ZBU!sX16.0:b",
+                                                    "fields": {
+                                                      "NUM": 4095
+                                                    }
+                                                  }
+                                                },
+                                                "LAST_START": {
+                                                  "block": {
+                                                    "type": "math_number",
+                                                    "id": "~V21V/p?B,eDc%AT~%aO",
+                                                    "fields": {
+                                                      "NUM": 0
+                                                    }
+                                                  }
+                                                },
+                                                "LAST_END": {
+                                                  "block": {
+                                                    "type": "math_number",
+                                                    "id": "i!v#[Z2Zojd)sjw9RNlY",
+                                                    "fields": {
+                                                      "NUM": 50
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "INPUT1": {
+                                      "block": {
+                                        "type": "blinker_color",
+                                        "id": ";1p|^3oQKZ@@C3Bx#pk;",
+                                        "inputs": {
+                                          "COLOR": {
+                                            "shadow": {
+                                              "type": "text",
+                                              "id": "i1Lb`:k.;EbrfPI3JDkm",
+                                              "fields": {
+                                                "TEXT": "#0000FF"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "lightMeter",
+      "id": "o~Oq|:%9UL)EyZ+Cf;4A",
+      "type": "BH1750"
+    }
+  ]
+}

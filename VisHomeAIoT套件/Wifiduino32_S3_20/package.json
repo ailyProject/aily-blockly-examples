@@ -1,0 +1,28 @@
+{
+  "name": "blinker_all",
+  "nickname": "智能家居物联网控制检测综合案例",
+  "url": "",
+  "description": "本项目构建一个全功能智能家居环境监测与控制系统，通过ESP32-S3主板集成所有传感器和执行器，实现环境数据采集、智能联动控制、远程监控功能。",
+  "version": "1.0.0",
+  "board": "WiFiduino32s3",
+  "dependencies": {
+    "@aily-project/board-wifiduino32s3": "1.0.0",
+    "@aily-project/lib-adafruit-gfx": "^1.0.2",
+    "@aily-project/lib-adafruit-sht3x": "^1.0.0",
+    "@aily-project/lib-ags02ma": "^0.0.1",
+    "@aily-project/lib-aily_servo": "^0.0.1",
+    "@aily-project/lib-bh1750": "^0.0.1",
+    "@aily-project/lib-blinker": "^1.0.0",
+    "@aily-project/lib-core-io": "1.0.0",
+    "@aily-project/lib-core-logic": "0.0.1",
+    "@aily-project/lib-core-loop": "0.0.1",
+    "@aily-project/lib-core-math": "0.0.1",
+    "@aily-project/lib-core-serial": "0.0.1",
+    "@aily-project/lib-core-text": "0.0.1",
+    "@aily-project/lib-core-time": "0.0.1",
+    "@aily-project/lib-core-variables": "1.0.1",
+    "@aily-project/lib-fastled": "^1.0.1",
+    "@aily-project/lib-mp3player-gd3800": "^0.0.1",
+    "@aily-project/lib-stepper": "^0.0.1"
+  }
+}

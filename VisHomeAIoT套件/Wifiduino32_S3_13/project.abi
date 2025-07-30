@@ -1,0 +1,790 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 10,
+        "y": 70,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "/|5|V3dPn]4KmDtX:3w:",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "115200"
+              },
+              "next": {
+                "block": {
+                  "type": "fastled_init",
+                  "id": "s`^_W@S[=Nxo(4-f/4~I",
+                  "fields": {
+                    "DATA_PIN": "47",
+                    "TYPE": "WS2812B",
+                    "NUM_LEDS": 1
+                  },
+                  "next": {
+                    "block": {
+                      "type": "sht31_init",
+                      "id": "Z~_#Ykh@MgtVvz4{3HyJ",
+                      "fields": {
+                        "ADDRESS": "0x44"
+                      },
+                      "next": {
+                        "block": {
+                          "type": "serial_println",
+                          "id": "u(NBV0eWx^`vr:S`CYC|",
+                          "fields": {
+                            "SERIAL": "Serial"
+                          },
+                          "inputs": {
+                            "VAR": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "=-nau{n^Zo`f_?X4`a^b",
+                                "fields": {
+                                  "TEXT": "温控风扇系统启动..."
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "io_pinmode",
+                              "id": "k71z+QfSU[tE^.FXO;tz",
+                              "inputs": {
+                                "PIN": {
+                                  "shadow": {
+                                    "type": "io_pin_digi",
+                                    "id": "ug6l-}tzW*+4O|ZB3Km[",
+                                    "fields": {
+                                      "PIN": "2"
+                                    }
+                                  }
+                                },
+                                "MODE": {
+                                  "shadow": {
+                                    "type": "io_mode",
+                                    "id": ",S!-P(vm2N4YK]6j:qg1",
+                                    "fields": {
+                                      "MODE": "OUTPUT"
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "io_digitalwrite",
+                                  "id": "!Z]5{tECt3|=J7)Sq?-:",
+                                  "inputs": {
+                                    "PIN": {
+                                      "shadow": {
+                                        "type": "io_pin_digi",
+                                        "id": "OHlxdNr5MV;)*p?g4q4[",
+                                        "fields": {
+                                          "PIN": "2"
+                                        }
+                                      }
+                                    },
+                                    "STATE": {
+                                      "shadow": {
+                                        "type": "io_state",
+                                        "id": "hKe5Wr}us/$[-Q}FKw._",
+                                        "fields": {
+                                          "STATE": "LOW"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 10,
+        "y": 350,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "serial_print",
+              "id": "LT:*CXfrXHGz=*~#tf^w",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "|RG#GGTV$Ess#W[%ps%M",
+                    "fields": {
+                      "TEXT": "温度："
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_print",
+                  "id": "60WkYBG_BN|W:2*{rrB=",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "S2Lan%QIH5k#$gI!zgek",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      },
+                      "block": {
+                        "type": "sht31_simple_read",
+                        "id": "*+rVdu:-4@dPv*$}5ruU",
+                        "fields": {
+                          "TYPE": "temperature"
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_println",
+                      "id": "0OD!+?*Az1I#?x*|M_Zj",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "gd;xUV:U`6^L;iThJ?-s",
+                            "fields": {
+                              "TEXT": "°C"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "serial_print",
+                          "id": "F1GS{7]SXs^[xi={N/{U",
+                          "fields": {
+                            "SERIAL": "Serial"
+                          },
+                          "inputs": {
+                            "VAR": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "hu!xAd?L}.1Q=y9pso7T",
+                                "fields": {
+                                  "TEXT": "湿度："
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "serial_print",
+                              "id": "HU*4:#1Vkk9u,7_QsHc7",
+                              "fields": {
+                                "SERIAL": "Serial"
+                              },
+                              "inputs": {
+                                "VAR": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "S2Lan%QIH5k#$gI!zgek",
+                                    "fields": {
+                                      "TEXT": ""
+                                    }
+                                  },
+                                  "block": {
+                                    "type": "sht31_simple_read",
+                                    "id": "zGv$]D`@?.C4leByniO7",
+                                    "fields": {
+                                      "TYPE": "humidity"
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "serial_println",
+                                  "id": "W4:%vnE,s,$WSi||{yvZ",
+                                  "fields": {
+                                    "SERIAL": "Serial"
+                                  },
+                                  "inputs": {
+                                    "VAR": {
+                                      "shadow": {
+                                        "type": "text",
+                                        "id": "k?k@pbC73G2MHP%qJheI",
+                                        "fields": {
+                                          "TEXT": "%"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "serial_print",
+                                      "id": "pUDuXEEV2(=ouqF4x3;$",
+                                      "fields": {
+                                        "SERIAL": "Serial"
+                                      },
+                                      "inputs": {
+                                        "VAR": {
+                                          "shadow": {
+                                            "type": "text",
+                                            "id": "}H$($:C0cj(y$K_`,/|$",
+                                            "fields": {
+                                              "TEXT": "雨滴值："
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "serial_println",
+                                          "id": "uK,pL#|6~Hjme8]MbAK-",
+                                          "fields": {
+                                            "SERIAL": "Serial"
+                                          },
+                                          "inputs": {
+                                            "VAR": {
+                                              "shadow": {
+                                                "type": "text",
+                                                "id": "M@4sO*)cyV]!+?:LA;ME",
+                                                "fields": {
+                                                  "TEXT": ""
+                                                }
+                                              },
+                                              "block": {
+                                                "type": "io_analogread",
+                                                "id": "n(rU[s-5q/R?Uu2/%+bN",
+                                                "inputs": {
+                                                  "PIN": {
+                                                    "shadow": {
+                                                      "type": "io_pin_adc",
+                                                      "id": "N!E2`vY8BTV2)u[q*tY@",
+                                                      "fields": {
+                                                        "PIN": "1"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "serial_print",
+                                              "id": ";4[~T?|0:;W}eP25q?tS",
+                                              "fields": {
+                                                "SERIAL": "Serial"
+                                              },
+                                              "inputs": {
+                                                "VAR": {
+                                                  "shadow": {
+                                                    "type": "text",
+                                                    "id": "V,*c:XHjjo{HwyZP]Ev1",
+                                                    "fields": {
+                                                      "TEXT": "状态："
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "controls_ifelse",
+                                                  "id": "Tl4uH9_|zOr]nw8e@hH*",
+                                                  "inputs": {
+                                                    "IF0": {
+                                                      "block": {
+                                                        "type": "logic_compare",
+                                                        "id": "|Ck]/Z7NleK=|Tu(dEm6",
+                                                        "fields": {
+                                                          "OP": "GT"
+                                                        },
+                                                        "inputs": {
+                                                          "A": {
+                                                            "block": {
+                                                              "type": "io_analogread",
+                                                              "id": "wFDQ+U+-oI}wI_A4k9{b",
+                                                              "inputs": {
+                                                                "PIN": {
+                                                                  "shadow": {
+                                                                    "type": "io_pin_adc",
+                                                                    "id": "D$`09?mR+Y-Ev,iaQ68:",
+                                                                    "fields": {
+                                                                      "PIN": "1"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "B": {
+                                                            "block": {
+                                                              "type": "math_number",
+                                                              "id": "@E*T(:D~ndu2+8*WuJV,",
+                                                              "fields": {
+                                                                "NUM": 0
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "DO0": {
+                                                      "block": {
+                                                        "type": "serial_println",
+                                                        "id": "=+lJ|f:jHbmv_]3R({)l",
+                                                        "fields": {
+                                                          "SERIAL": "Serial"
+                                                        },
+                                                        "inputs": {
+                                                          "VAR": {
+                                                            "shadow": {
+                                                              "type": "text",
+                                                              "id": "]3IhGKXw1H2qLmIZxL6t",
+                                                              "fields": {
+                                                                "TEXT": "下雨！"
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "next": {
+                                                          "block": {
+                                                            "type": "io_digitalwrite",
+                                                            "id": "`Yt1*CS$sJJfu$s7+jI0",
+                                                            "inputs": {
+                                                              "PIN": {
+                                                                "shadow": {
+                                                                  "type": "io_pin_digi",
+                                                                  "id": "%H9^9dkH2HPU~fyyKYk7",
+                                                                  "fields": {
+                                                                    "PIN": "2"
+                                                                  }
+                                                                }
+                                                              },
+                                                              "STATE": {
+                                                                "shadow": {
+                                                                  "type": "io_state",
+                                                                  "id": "p-{M_9qm3Y^hx(7b:Pd}",
+                                                                  "fields": {
+                                                                    "STATE": "LOW"
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "next": {
+                                                              "block": {
+                                                                "type": "fastled_fill_solid",
+                                                                "id": ")w_q=d9-1$`%K,#?KIMO",
+                                                                "fields": {
+                                                                  "DATA_PIN": "47"
+                                                                },
+                                                                "inputs": {
+                                                                  "COLOR": {
+                                                                    "shadow": {
+                                                                      "type": "fastled_preset_color",
+                                                                      "id": "|,Vn!HFP/x%ix(nLwQ9o",
+                                                                      "fields": {
+                                                                        "COLOR": "#ffff00"
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "ELSE": {
+                                                      "block": {
+                                                        "type": "serial_println",
+                                                        "id": "|*w|)~+@GIZ4%,aF4SZ+",
+                                                        "fields": {
+                                                          "SERIAL": "Serial"
+                                                        },
+                                                        "inputs": {
+                                                          "VAR": {
+                                                            "shadow": {
+                                                              "type": "text",
+                                                              "id": "s)I%ZYAf0%W2.%;BJHLa",
+                                                              "fields": {
+                                                                "TEXT": "晴天"
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "next": {
+                                                          "block": {
+                                                            "type": "controls_if",
+                                                            "id": "J9?D3xx_A[HyhnJl,PrA",
+                                                            "inputs": {
+                                                              "IF0": {
+                                                                "block": {
+                                                                  "type": "logic_compare",
+                                                                  "id": "cH|IvAtJE.fMmfQGl}vv",
+                                                                  "fields": {
+                                                                    "OP": "GT"
+                                                                  },
+                                                                  "inputs": {
+                                                                    "A": {
+                                                                      "block": {
+                                                                        "type": "sht31_simple_read",
+                                                                        "id": "IHhY7I2bCqKChpQIG%X?",
+                                                                        "fields": {
+                                                                          "TYPE": "temperature"
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "B": {
+                                                                      "block": {
+                                                                        "type": "math_number",
+                                                                        "id": "kglW^Ya;ei~IDeYU0H$W",
+                                                                        "fields": {
+                                                                          "NUM": 30
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "DO0": {
+                                                                "block": {
+                                                                  "type": "serial_println",
+                                                                  "id": "L],oMC3;5$s#=-L=#Y5o",
+                                                                  "fields": {
+                                                                    "SERIAL": "Serial"
+                                                                  },
+                                                                  "inputs": {
+                                                                    "VAR": {
+                                                                      "shadow": {
+                                                                        "type": "text",
+                                                                        "id": "TAvW^RW2.SxRGlnp7^My",
+                                                                        "fields": {
+                                                                          "TEXT": "高温！"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "next": {
+                                                                    "block": {
+                                                                      "type": "io_digitalwrite",
+                                                                      "id": "(3wKPMGd$CSbU,Q=9!|~",
+                                                                      "inputs": {
+                                                                        "PIN": {
+                                                                          "shadow": {
+                                                                            "type": "io_pin_digi",
+                                                                            "id": "I3dCultk:?$T[]{rt!A9",
+                                                                            "fields": {
+                                                                              "PIN": "2"
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "STATE": {
+                                                                          "shadow": {
+                                                                            "type": "io_state",
+                                                                            "id": "6RJDtm,2{R4E]#U5Vm;y",
+                                                                            "fields": {
+                                                                              "STATE": "HIGH"
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "next": {
+                                                                        "block": {
+                                                                          "type": "fastled_fill_solid",
+                                                                          "id": "iukl.=^51(XWZSqsdJ[E",
+                                                                          "fields": {
+                                                                            "DATA_PIN": "47"
+                                                                          },
+                                                                          "inputs": {
+                                                                            "COLOR": {
+                                                                              "shadow": {
+                                                                                "type": "fastled_preset_color",
+                                                                                "id": "3u=|Vu},l~.1cvw^JZrG",
+                                                                                "fields": {
+                                                                                  "COLOR": "#ff0000"
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "next": {
+                                                              "block": {
+                                                                "type": "controls_if",
+                                                                "id": "Kun]cMzXqYg.2Nvk|)PW",
+                                                                "inputs": {
+                                                                  "IF0": {
+                                                                    "block": {
+                                                                      "type": "logic_compare",
+                                                                      "id": "LL@.lFgeq633QWA.^2hn",
+                                                                      "fields": {
+                                                                        "OP": "LT"
+                                                                      },
+                                                                      "inputs": {
+                                                                        "A": {
+                                                                          "block": {
+                                                                            "type": "sht31_simple_read",
+                                                                            "id": "RNS.XsfN}KwWgnRqsWeY",
+                                                                            "fields": {
+                                                                              "TYPE": "temperature"
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "B": {
+                                                                          "block": {
+                                                                            "type": "math_number",
+                                                                            "id": "281LRD/JoI*o:xd7.D{U",
+                                                                            "fields": {
+                                                                              "NUM": 25
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "DO0": {
+                                                                    "block": {
+                                                                      "type": "serial_println",
+                                                                      "id": "Vzd:/6gZMaaJSi`19Vwv",
+                                                                      "fields": {
+                                                                        "SERIAL": "Serial"
+                                                                      },
+                                                                      "inputs": {
+                                                                        "VAR": {
+                                                                          "shadow": {
+                                                                            "type": "text",
+                                                                            "id": "i5]Y1I$dDzE$.?g~4yTp",
+                                                                            "fields": {
+                                                                              "TEXT": "低温"
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "next": {
+                                                                        "block": {
+                                                                          "type": "io_digitalwrite",
+                                                                          "id": "JFU=aRe8~QE3!5Z+]Qp3",
+                                                                          "inputs": {
+                                                                            "PIN": {
+                                                                              "shadow": {
+                                                                                "type": "io_pin_digi",
+                                                                                "id": "|Z25#5.Njcr-=}.#V=)a",
+                                                                                "fields": {
+                                                                                  "PIN": "2"
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "STATE": {
+                                                                              "shadow": {
+                                                                                "type": "io_state",
+                                                                                "id": "W}pSFlCC.T_@K()_*g^Y",
+                                                                                "fields": {
+                                                                                  "STATE": "LOW"
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "next": {
+                                                                            "block": {
+                                                                              "type": "fastled_fill_solid",
+                                                                              "id": "$pHV%cT0ya|@]URAw~A/",
+                                                                              "fields": {
+                                                                                "DATA_PIN": "47"
+                                                                              },
+                                                                              "inputs": {
+                                                                                "COLOR": {
+                                                                                  "shadow": {
+                                                                                    "type": "fastled_preset_color",
+                                                                                    "id": "A?v)Vi6R`pS0*~W##I+U",
+                                                                                    "fields": {
+                                                                                      "COLOR": "#00ff3c"
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "next": {
+                                                                  "block": {
+                                                                    "type": "controls_if",
+                                                                    "id": "FE-QiUYFhDB$~o1^g9~x",
+                                                                    "inputs": {
+                                                                      "IF0": {
+                                                                        "block": {
+                                                                          "type": "logic_operation",
+                                                                          "id": "e^@o]aGa=prE4WYM?Zj8",
+                                                                          "fields": {
+                                                                            "OP": "AND"
+                                                                          },
+                                                                          "inputs": {
+                                                                            "A": {
+                                                                              "block": {
+                                                                                "type": "logic_compare",
+                                                                                "id": "gbPoC?7wWn[pefQO!zaj",
+                                                                                "fields": {
+                                                                                  "OP": "GTE"
+                                                                                },
+                                                                                "inputs": {
+                                                                                  "A": {
+                                                                                    "block": {
+                                                                                      "type": "sht31_simple_read",
+                                                                                      "id": "JoG`qnczm%B03GiSLFAq",
+                                                                                      "fields": {
+                                                                                        "TYPE": "temperature"
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  "B": {
+                                                                                    "block": {
+                                                                                      "type": "math_number",
+                                                                                      "id": "$b]t3.v7O,@@z*om7s%[",
+                                                                                      "fields": {
+                                                                                        "NUM": 25
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "B": {
+                                                                              "block": {
+                                                                                "type": "logic_compare",
+                                                                                "id": "]P3]r/iu+rfq/IUDc*^5",
+                                                                                "fields": {
+                                                                                  "OP": "LTE"
+                                                                                },
+                                                                                "inputs": {
+                                                                                  "A": {
+                                                                                    "block": {
+                                                                                      "type": "sht31_simple_read",
+                                                                                      "id": "9WWoOVk$p8hdmg0i%={_",
+                                                                                      "fields": {
+                                                                                        "TYPE": "temperature"
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  "B": {
+                                                                                    "block": {
+                                                                                      "type": "math_number",
+                                                                                      "id": "|6ZzFW,2`]idDpHM2mRQ",
+                                                                                      "fields": {
+                                                                                        "NUM": 30
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "DO0": {
+                                                                        "block": {
+                                                                          "type": "serial_println",
+                                                                          "id": "!j:rfxijHp}TCVqRcgJ#",
+                                                                          "fields": {
+                                                                            "SERIAL": "Serial"
+                                                                          },
+                                                                          "inputs": {
+                                                                            "VAR": {
+                                                                              "shadow": {
+                                                                                "type": "text",
+                                                                                "id": "H%ax,1cDc0LS;o[O_BH?",
+                                                                                "fields": {
+                                                                                  "TEXT": "温度适中"
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "next": {
+                                                                            "block": {
+                                                                              "type": "fastled_fill_solid",
+                                                                              "id": "9T-G}R^1aeMwRLsLPY`#",
+                                                                              "fields": {
+                                                                                "DATA_PIN": "47"
+                                                                              },
+                                                                              "inputs": {
+                                                                                "COLOR": {
+                                                                                  "shadow": {
+                                                                                    "type": "fastled_preset_color",
+                                                                                    "id": ".ekq9EF/NA,3s=wfP~gh",
+                                                                                    "fields": {
+                                                                                      "COLOR": "#00ccff"
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

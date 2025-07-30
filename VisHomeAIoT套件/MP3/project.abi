@@ -95,15 +95,15 @@
       {
         "type": "arduino_loop",
         "id": "arduino_loop_id0",
-        "x": 50,
-        "y": 370,
+        "x": 30,
+        "y": 290,
         "deletable": false
       },
       {
         "type": "blinker_button",
         "id": "QE#c;hA;LtH~?V,JC:sW",
-        "x": 290,
-        "y": 310,
+        "x": 30,
+        "y": 370,
         "fields": {
           "KEY": "btn-abj"
         },
@@ -139,8 +139,8 @@
       {
         "type": "blinker_button",
         "id": "/m|Qe1hRh@j[,C+C5:|^",
-        "x": 710,
-        "y": 110,
+        "x": 350,
+        "y": 270,
         "fields": {
           "KEY": "btn-abh"
         },
@@ -281,8 +281,8 @@
       {
         "type": "blinker_button",
         "id": "H-pBafwHUu^IDbhBN75;",
-        "x": 170,
-        "y": 570,
+        "x": 30,
+        "y": 530,
         "fields": {
           "KEY": "btn-abk"
         },
