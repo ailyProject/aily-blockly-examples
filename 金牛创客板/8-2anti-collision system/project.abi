@@ -1,0 +1,263 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 70,
+        "y": 130,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "jo-.H!QwWK7#PVS-eo|m",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 50,
+        "y": 270,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "serial_print",
+              "id": "5.xi?_-;/QW;9N~UEP12",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "$W2uZR]%=:+zT+vPPtX=",
+                    "fields": {
+                      "TEXT": "距离："
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_print",
+                  "id": "kE-Q5rm3jnXUm[LDgD+1",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "hy?e`;=pW/(_Zh2LIn77",
+                        "fields": {
+                          "TEXT": "距离："
+                        }
+                      },
+                      "block": {
+                        "type": "ultrasonic_ranging",
+                        "id": "XiDCh[,2t(c:zCRUyOW)",
+                        "inputs": {
+                          "PIN1": {
+                            "block": {
+                              "type": "io_pin_digi",
+                              "id": "2{5fyc)+M3_Tvd~nVXK4",
+                              "fields": {
+                                "PIN": "11"
+                              }
+                            }
+                          },
+                          "PIN2": {
+                            "block": {
+                              "type": "io_pin_digi",
+                              "id": "0{o4yJS(6HVTNwq;}~L+",
+                              "fields": {
+                                "PIN": "12"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_println",
+                      "id": "aj*zF0,^oN;C1{wXH}nK",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "ZPNJEnHssf[8g=qH70;o",
+                            "fields": {
+                              "TEXT": "（cm）"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "controls_ifelse",
+                          "id": "U8,AQ*x9aGUt`s1OYgnh",
+                          "inputs": {
+                            "IF0": {
+                              "block": {
+                                "type": "logic_compare",
+                                "id": "Q~+pr+V^VrsruqbRl9w,",
+                                "fields": {
+                                  "OP": "LT"
+                                },
+                                "inputs": {
+                                  "A": {
+                                    "block": {
+                                      "type": "ultrasonic_ranging",
+                                      "id": "^g!aS]Lu,JET@TLt2;sp",
+                                      "inputs": {
+                                        "PIN1": {
+                                          "block": {
+                                            "type": "io_pin_digi",
+                                            "id": "(M2HWQ80bU6e~N9-9zP?",
+                                            "fields": {
+                                              "PIN": "11"
+                                            }
+                                          }
+                                        },
+                                        "PIN2": {
+                                          "block": {
+                                            "type": "io_pin_digi",
+                                            "id": "rW?#jOL[9B$/r4Pt-#[`",
+                                            "fields": {
+                                              "PIN": "12"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "B": {
+                                    "block": {
+                                      "type": "math_number",
+                                      "id": "==OL8]^j3B;[K,S=C0hG",
+                                      "fields": {
+                                        "NUM": 30
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "DO0": {
+                              "block": {
+                                "type": "io_tone_duration",
+                                "id": "AAI`nQ`4Sn46i,|TQj+q",
+                                "fields": {
+                                  "TONEPIN": "A1"
+                                },
+                                "inputs": {
+                                  "FREQUENCY": {
+                                    "shadow": {
+                                      "type": "io_note",
+                                      "id": "G2ldBq4E3F^|k:-Wj!2q",
+                                      "fields": {
+                                        "NOTE": "261"
+                                      }
+                                    }
+                                  },
+                                  "DURATION": {
+                                    "shadow": {
+                                      "type": "math_number",
+                                      "id": "]cu5s/meyt}E`@wI4,md",
+                                      "fields": {
+                                        "NUM": 500
+                                      }
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "io_digitalwrite",
+                                    "id": "|YQ/X;mo(W:3W?:PB^(S",
+                                    "inputs": {
+                                      "PIN": {
+                                        "shadow": {
+                                          "type": "io_pin_digi",
+                                          "id": "z/^=1|:IP4i0v)CRGaod",
+                                          "fields": {
+                                            "PIN": "13"
+                                          }
+                                        }
+                                      },
+                                      "STATE": {
+                                        "shadow": {
+                                          "type": "io_state",
+                                          "id": "#_i_-Y``Mmwz5-D=Oq;D",
+                                          "fields": {
+                                            "STATE": "HIGH"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "ELSE": {
+                              "block": {
+                                "type": "io_notone",
+                                "id": "U+uHT-HlufflS=bF5-%{",
+                                "fields": {
+                                  "TONEPIN": "A1"
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "io_digitalwrite",
+                                    "id": ",Et/MA5INd^XFrpix{KD",
+                                    "inputs": {
+                                      "PIN": {
+                                        "shadow": {
+                                          "type": "io_pin_digi",
+                                          "id": "D-F-8%dl{0H|cX0x?{GD",
+                                          "fields": {
+                                            "PIN": "13"
+                                          }
+                                        }
+                                      },
+                                      "STATE": {
+                                        "shadow": {
+                                          "type": "io_state",
+                                          "id": "q9Ivcg9FCG0==%JB$=Mu",
+                                          "fields": {
+                                            "STATE": "LOW"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 90,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "VK9Dx.qN+iMs%m+!=a[W",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "serial_println",
+              "id": "PvCOsVBZ4fm-K`g!z4?C",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "j}(59u]pCBFSFnsU#AYb",
+                    "fields": {
+                      "TEXT": ""
+                    }
+                  },
+                  "block": {
+                    "type": "io_analogread",
+                    "id": "Q_%cuX-Z(/LJsZ*b@}dj",
+                    "inputs": {
+                      "PIN": {
+                        "shadow": {
+                          "type": "io_pin_adc",
+                          "id": "gw+Ae*ZkzmXhR(q-NvIF",
+                          "fields": {
+                            "PIN": "A3"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "time_delay",
+                  "id": "2Rv8HlbPS,m|@*ZP(ujN",
+                  "inputs": {
+                    "DELAY_TIME": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": ".cwYS[dEsS-wgPraPfSs",
+                        "fields": {
+                          "NUM": 100
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

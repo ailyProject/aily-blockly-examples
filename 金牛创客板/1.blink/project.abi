@@ -1,0 +1,109 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 190,
+        "deletable": false
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "io_digitalwrite",
+              "id": "H50KwG[!K/-haR5XIZZ?",
+              "inputs": {
+                "PIN": {
+                  "shadow": {
+                    "type": "io_pin_digi",
+                    "id": "/XQeOd8OsFfeaZ^=mC2+",
+                    "fields": {
+                      "PIN": "13"
+                    }
+                  }
+                },
+                "STATE": {
+                  "shadow": {
+                    "type": "io_state",
+                    "id": "S)5OR^q?Qz$y)#MYNvfE",
+                    "fields": {
+                      "STATE": "HIGH"
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "time_delay",
+                  "id": "TGD{$QuNYZ@w9zuE3l9~",
+                  "inputs": {
+                    "DELAY_TIME": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": ".nf4A6@BS@_WUF+v/nE0",
+                        "fields": {
+                          "NUM": 1000
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "io_digitalwrite",
+                      "id": ")/X46Y@}%syTPwp}]K%:",
+                      "inputs": {
+                        "PIN": {
+                          "shadow": {
+                            "type": "io_pin_digi",
+                            "id": "7Y@3zq{#j7Ac9/j`YvH9",
+                            "fields": {
+                              "PIN": "13"
+                            }
+                          }
+                        },
+                        "STATE": {
+                          "shadow": {
+                            "type": "io_state",
+                            "id": "{1twa[%EViJ6Or18oz#1",
+                            "fields": {
+                              "STATE": "LOW"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "time_delay",
+                          "id": "JQAWRA}x^!-zYWkOk:~Z",
+                          "inputs": {
+                            "DELAY_TIME": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "Q.w|N-uv*_Mnt2{#XMuc",
+                                "fields": {
+                                  "NUM": 1000
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

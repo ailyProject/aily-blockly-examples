@@ -1,0 +1,158 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "H}KmTjeeyk}3{/RNM)||",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              },
+              "next": {
+                "block": {
+                  "type": "dht_init",
+                  "id": "lAvMjKTNEhHdC~}l[s,(",
+                  "fields": {
+                    "TYPE": "DHT11",
+                    "PIN": "10"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "serial_print",
+              "id": "J9OVc*T3_]TL!gyFo8`d",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "2SyD-q#(63wq}rjaqkh(",
+                    "fields": {
+                      "TEXT": "温度"
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_println",
+                  "id": ".8{72a|jt0A[{85H-2so",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "pZNpJ}W7H(DV}a7}Di^X",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      },
+                      "block": {
+                        "type": "dht_read_temperature",
+                        "id": "=ovr7PkpSB*}RK7sX#-,",
+                        "fields": {
+                          "TYPE": "DHT11",
+                          "PIN": "10"
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_print",
+                      "id": "z%TNYXYX%(ie#WMI7|Q!",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "YWyOe=RzWigAfaSu6pOZ",
+                            "fields": {
+                              "TEXT": "湿度"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "serial_println",
+                          "id": "o_cnGZ1l2K:NPj2#0)F)",
+                          "fields": {
+                            "SERIAL": "Serial"
+                          },
+                          "inputs": {
+                            "VAR": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "S4tj2V_;Sp260yLUll7K",
+                                "fields": {
+                                  "TEXT": ""
+                                }
+                              },
+                              "block": {
+                                "type": "dht_read_humidity",
+                                "id": "|5ekP!{-8+_Nb-v-Hmb-",
+                                "fields": {
+                                  "TYPE": "DHT11",
+                                  "PIN": "10"
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "time_delay_microseconds",
+                              "id": "pu}}:9Ow{o=:t{?2?i1^",
+                              "inputs": {
+                                "DELAY_TIME": {
+                                  "shadow": {
+                                    "type": "math_number",
+                                    "id": "RE9nO!]Qu:vER$MDBUml",
+                                    "fields": {
+                                      "NUM": 100
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

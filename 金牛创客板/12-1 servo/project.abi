@@ -1,0 +1,137 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "servo_write",
+              "id": "PG|jzG;#hR6aE#hk0;as",
+              "fields": {
+                "PIN": "3"
+              },
+              "inputs": {
+                "ANGLE": {
+                  "shadow": {
+                    "type": "servo_angle",
+                    "id": "0Ihlv[{#RsZ67ma]z-]u",
+                    "fields": {
+                      "ANGLE": 30
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "servo_write",
+                  "id": ";b|[br`{6(*4*{=jA}Q-",
+                  "fields": {
+                    "PIN": "8"
+                  },
+                  "inputs": {
+                    "ANGLE": {
+                      "shadow": {
+                        "type": "servo_angle",
+                        "id": "$oK{:1Z!tifN$3.mFx;o",
+                        "fields": {
+                          "ANGLE": 30
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "time_delay",
+                      "id": "BLBsn:fiK/PaR4[AG6Al",
+                      "inputs": {
+                        "DELAY_TIME": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "l=j#IYTxRYf6x3#20hh0",
+                            "fields": {
+                              "NUM": 2000
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "servo_write",
+                          "id": "c/*]%u.7On^bDBF:G_l7",
+                          "fields": {
+                            "PIN": "3"
+                          },
+                          "inputs": {
+                            "ANGLE": {
+                              "shadow": {
+                                "type": "servo_angle",
+                                "id": "bS50LLbWumV^uG5Y)ofH",
+                                "fields": {
+                                  "ANGLE": 150
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "servo_write",
+                              "id": "q@+rGJzYWFfwwG3M7WLO",
+                              "fields": {
+                                "PIN": "8"
+                              },
+                              "inputs": {
+                                "ANGLE": {
+                                  "shadow": {
+                                    "type": "servo_angle",
+                                    "id": "/Sw+[W~iRs?sfW8?.FzK",
+                                    "fields": {
+                                      "ANGLE": 150
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "time_delay",
+                                  "id": "^_T0BNQ=%px%(|}?IYz0",
+                                  "inputs": {
+                                    "DELAY_TIME": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "id": "[1f/[oc5-vMTmj_yyPq_",
+                                        "fields": {
+                                          "NUM": 2000
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

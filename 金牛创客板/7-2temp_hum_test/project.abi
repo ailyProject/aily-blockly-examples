@@ -1,0 +1,200 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 170,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "dht_init",
+              "id": "B9ELTV=/$o_.;;JTI`m0",
+              "fields": {
+                "TYPE": "DHT11",
+                "PIN": "10"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "controls_ifelse",
+              "id": "k[y;X92Pk+vS,6NF]8I8",
+              "inputs": {
+                "IF0": {
+                  "block": {
+                    "type": "logic_operation",
+                    "id": "cF^PD${36@u8mrxPCd!+",
+                    "fields": {
+                      "OP": "OR"
+                    },
+                    "inputs": {
+                      "A": {
+                        "block": {
+                          "type": "logic_compare",
+                          "id": "9;3`{h(N^!0sJ!}Ap$`D",
+                          "fields": {
+                            "OP": "GT"
+                          },
+                          "inputs": {
+                            "A": {
+                              "block": {
+                                "type": "dht_read_temperature",
+                                "id": "Lsb9=%n`/E=Mh)+}Wu7R",
+                                "fields": {
+                                  "TYPE": "DHT11",
+                                  "PIN": "10"
+                                }
+                              }
+                            },
+                            "B": {
+                              "block": {
+                                "type": "math_number",
+                                "id": "aYe-Xbq8)piau+n^sx;0",
+                                "fields": {
+                                  "NUM": 30
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "B": {
+                        "block": {
+                          "type": "logic_compare",
+                          "id": "m?zG)T*T~].OKwam4(v8",
+                          "fields": {
+                            "OP": "GT"
+                          },
+                          "inputs": {
+                            "A": {
+                              "block": {
+                                "type": "dht_read_humidity",
+                                "id": "O/a4ORH-,s_)lc^:|@2g",
+                                "fields": {
+                                  "TYPE": "DHT11",
+                                  "PIN": "10"
+                                }
+                              }
+                            },
+                            "B": {
+                              "block": {
+                                "type": "math_number",
+                                "id": "S:o?du4C|kj~+K;0Zp9b",
+                                "fields": {
+                                  "NUM": 70
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "DO0": {
+                  "block": {
+                    "type": "io_digitalwrite",
+                    "id": "3J4/%$KCcS_Lu$C*HYU0",
+                    "inputs": {
+                      "PIN": {
+                        "shadow": {
+                          "type": "io_pin_digi",
+                          "id": "qMm;5a.LNW?fsr(?#5tf",
+                          "fields": {
+                            "PIN": "13"
+                          }
+                        }
+                      },
+                      "STATE": {
+                        "shadow": {
+                          "type": "io_state",
+                          "id": "Tbcl}Y,V%ag3e![tv]0d",
+                          "fields": {
+                            "STATE": "HIGH"
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "time_delay",
+                        "id": "m}pj.Tm|leO9S|wrlF;P",
+                        "inputs": {
+                          "DELAY_TIME": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "GWyiQW$2eBU3R)`$[#lt",
+                              "fields": {
+                                "NUM": 1000
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "ELSE": {
+                  "block": {
+                    "type": "io_digitalwrite",
+                    "id": "k*~MW`SQ-Et1WJa(6a`n",
+                    "inputs": {
+                      "PIN": {
+                        "shadow": {
+                          "type": "io_pin_digi",
+                          "id": "7EA!@%m0`=pJMo(?4irf",
+                          "fields": {
+                            "PIN": "13"
+                          }
+                        }
+                      },
+                      "STATE": {
+                        "shadow": {
+                          "type": "io_state",
+                          "id": "iC~9v}5h}c[q:_=mljz=",
+                          "fields": {
+                            "STATE": "LOW"
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "time_delay",
+                        "id": "qqw*Pqm8RkMN5t[6YPrE",
+                        "inputs": {
+                          "DELAY_TIME": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "!Fmq{w;BmD]Zo_!]sx[9",
+                              "fields": {
+                                "NUM": 1000
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

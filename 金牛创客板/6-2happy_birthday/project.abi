@@ -1,0 +1,214 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "io_tone_duration",
+              "id": "IT)vMXGnV+-o87olueDY",
+              "fields": {
+                "TONEPIN": "A1"
+              },
+              "inputs": {
+                "FREQUENCY": {
+                  "shadow": {
+                    "type": "io_note",
+                    "id": "{|uiIA$Ztg_n!DT`AHnQ",
+                    "fields": {
+                      "NOTE": "330"
+                    }
+                  }
+                },
+                "DURATION": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "DC:]:XZr||x6q1@ayPds",
+                    "fields": {
+                      "NUM": 500
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "io_tone_duration",
+                  "id": "e*TUaNEk8s7B+Vg,6^RE",
+                  "fields": {
+                    "TONEPIN": "A1"
+                  },
+                  "inputs": {
+                    "FREQUENCY": {
+                      "shadow": {
+                        "type": "io_note",
+                        "id": "qECisKTPT!+.MD.HWhz)",
+                        "fields": {
+                          "NOTE": "330"
+                        }
+                      }
+                    },
+                    "DURATION": {
+                      "shadow": {
+                        "type": "math_number",
+                        "id": "_1v_#o9n=j1?o{7,f~PK",
+                        "fields": {
+                          "NUM": 500
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "io_tone_duration",
+                      "id": "C$0%i1h4aba~F[NM]ra6",
+                      "fields": {
+                        "TONEPIN": "A1"
+                      },
+                      "inputs": {
+                        "FREQUENCY": {
+                          "shadow": {
+                            "type": "io_note",
+                            "id": "Wv1q8~rZQn{DwDK?/y-b",
+                            "fields": {
+                              "NOTE": "370"
+                            }
+                          }
+                        },
+                        "DURATION": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "|zcp7Wqf?q.jWSE{E0vK",
+                            "fields": {
+                              "NUM": 1000
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "io_tone_duration",
+                          "id": "?.zeGzdW_FQESi#GNeO_",
+                          "fields": {
+                            "TONEPIN": "A1"
+                          },
+                          "inputs": {
+                            "FREQUENCY": {
+                              "shadow": {
+                                "type": "io_note",
+                                "id": "6u[t6umK9IU$crJ3]49/",
+                                "fields": {
+                                  "NOTE": "330"
+                                }
+                              }
+                            },
+                            "DURATION": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "cEp{wR1dt}[*^BJO8*dA",
+                                "fields": {
+                                  "NUM": 1000
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "io_tone_duration",
+                              "id": "{BIIjbSA{j60}y_oCV!R",
+                              "fields": {
+                                "TONEPIN": "A1"
+                              },
+                              "inputs": {
+                                "FREQUENCY": {
+                                  "shadow": {
+                                    "type": "io_note",
+                                    "id": "d-BR8@breX?8V`u%PUgy",
+                                    "fields": {
+                                      "NOTE": "440"
+                                    }
+                                  }
+                                },
+                                "DURATION": {
+                                  "shadow": {
+                                    "type": "math_number",
+                                    "id": "PT4=)T~4P9ZOstaxmw~5",
+                                    "fields": {
+                                      "NUM": 1000
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "io_tone_duration",
+                                  "id": "/xjv+_`E7Hrtcm;sb9LR",
+                                  "fields": {
+                                    "TONEPIN": "A1"
+                                  },
+                                  "inputs": {
+                                    "FREQUENCY": {
+                                      "shadow": {
+                                        "type": "io_note",
+                                        "id": "r}y7YHmLD^]Y8W0cE3$q",
+                                        "fields": {
+                                          "NOTE": "415"
+                                        }
+                                      }
+                                    },
+                                    "DURATION": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "id": "/X)3W~]QFZyHhRRGm8W5",
+                                        "fields": {
+                                          "NUM": 1000
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "time_delay",
+                                      "id": "j758ab`fOA0|][]D7}gv",
+                                      "inputs": {
+                                        "DELAY_TIME": {
+                                          "shadow": {
+                                            "type": "math_number",
+                                            "id": "^(1D(zka+c?N/#po~GyT",
+                                            "fields": {
+                                              "NUM": 2000
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

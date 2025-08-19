@@ -1,0 +1,162 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "servo_write",
+              "id": "gtKJS~X[D]dW#fxIaVpJ",
+              "fields": {
+                "PIN": "3"
+              },
+              "inputs": {
+                "ANGLE": {
+                  "shadow": {
+                    "type": "servo_angle",
+                    "id": "QtE,U]`1Y%M/Freb2{df",
+                    "fields": {
+                      "ANGLE": 90
+                    }
+                  },
+                  "block": {
+                    "type": "math_constrain",
+                    "id": "0h-:a+]8aI(Rbo~;]ovv",
+                    "inputs": {
+                      "VALUE": {
+                        "block": {
+                          "type": "io_analogread",
+                          "id": "jd_iEKCm)`Jc`I~MU(oI",
+                          "inputs": {
+                            "PIN": {
+                              "shadow": {
+                                "type": "io_pin_adc",
+                                "id": "W3E6#$z`S1`ltnbRr3KB",
+                                "fields": {
+                                  "PIN": "A3"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "LOW": {
+                        "block": {
+                          "type": "math_number",
+                          "id": "dER4E]S[z.XoBi:eDx|7",
+                          "fields": {
+                            "NUM": 0
+                          }
+                        }
+                      },
+                      "HIGH": {
+                        "block": {
+                          "type": "math_number",
+                          "id": "[Ev?%6If$vs3RpOTP.]4",
+                          "fields": {
+                            "NUM": 180
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "servo_write",
+                  "id": "WdOn=u,4x!AMwDVnSuTR",
+                  "fields": {
+                    "PIN": "8"
+                  },
+                  "inputs": {
+                    "ANGLE": {
+                      "shadow": {
+                        "type": "servo_angle",
+                        "id": "weE{rH!`t(oxNybRi9*7",
+                        "fields": {
+                          "ANGLE": 90
+                        }
+                      },
+                      "block": {
+                        "type": "math_constrain",
+                        "id": "]`40a:q$BW]RACo9B-}!",
+                        "inputs": {
+                          "VALUE": {
+                            "block": {
+                              "type": "io_analogread",
+                              "id": "41KucW/%]!MkFpqM.pLY",
+                              "inputs": {
+                                "PIN": {
+                                  "shadow": {
+                                    "type": "io_pin_adc",
+                                    "id": "Qpcw~3]eI]]NfE#AxHp{",
+                                    "fields": {
+                                      "PIN": "A3"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "LOW": {
+                            "block": {
+                              "type": "math_number",
+                              "id": "}eONEi~QFt)X;`V-||l5",
+                              "fields": {
+                                "NUM": 0
+                              }
+                            }
+                          },
+                          "HIGH": {
+                            "block": {
+                              "type": "math_number",
+                              "id": "INC*0~Oq`iDKpwSaQ4F{",
+                              "fields": {
+                                "NUM": 180
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "time_delay",
+                      "id": "9nn8C{Y?Y=qc+j^PqON/",
+                      "inputs": {
+                        "DELAY_TIME": {
+                          "shadow": {
+                            "type": "math_number",
+                            "id": "6eU(A[{*N(?$$-wXy:.X",
+                            "fields": {
+                              "NUM": 1000
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
