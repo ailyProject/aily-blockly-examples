@@ -1,0 +1,154 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 110,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "controls_ifelse",
+              "id": "CXiT%q4T}Cm=,~Qom@n|",
+              "inputs": {
+                "IF0": {
+                  "block": {
+                    "type": "logic_compare",
+                    "id": "gv_c%L;FaPc(./1D@Vpn",
+                    "fields": {
+                      "OP": "LT"
+                    },
+                    "inputs": {
+                      "A": {
+                        "block": {
+                          "type": "io_analogread",
+                          "id": "jTQGU*9=Ju$9?5^=ao{p",
+                          "inputs": {
+                            "PIN": {
+                              "shadow": {
+                                "type": "io_pin_adc",
+                                "id": "y%@65b;@=79F9DG-yWe{",
+                                "fields": {
+                                  "PIN": "A7"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "B": {
+                        "block": {
+                          "type": "math_number",
+                          "id": "!AJkq2G0Z7-8ZD%IJE3m",
+                          "fields": {
+                            "NUM": 200
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "DO0": {
+                  "block": {
+                    "type": "io_digitalwrite",
+                    "id": "/Va#+nC*m$B}q)KhE~VJ",
+                    "inputs": {
+                      "PIN": {
+                        "shadow": {
+                          "type": "io_pin_digi",
+                          "id": "NfW,cQ5uESh*Znmaoqn;",
+                          "fields": {
+                            "PIN": "13"
+                          }
+                        }
+                      },
+                      "STATE": {
+                        "shadow": {
+                          "type": "io_state",
+                          "id": "iaHFs0,2yZ%tiGRuF76B",
+                          "fields": {
+                            "STATE": "HIGH"
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "time_delay",
+                        "id": "D09psh+9%PN!!XUKNG0v",
+                        "inputs": {
+                          "DELAY_TIME": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "QzOKhi9*a2hB;pI4,2W]",
+                              "fields": {
+                                "NUM": 1000
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "ELSE": {
+                  "block": {
+                    "type": "io_digitalwrite",
+                    "id": "u.03M3FF+Gx`|@IG71]v",
+                    "inputs": {
+                      "PIN": {
+                        "shadow": {
+                          "type": "io_pin_digi",
+                          "id": "/FC=r6(]~s[I{b.4@X1d",
+                          "fields": {
+                            "PIN": "13"
+                          }
+                        }
+                      },
+                      "STATE": {
+                        "shadow": {
+                          "type": "io_state",
+                          "id": "g`iU%J(m2GcM?Vr8h7jn",
+                          "fields": {
+                            "STATE": "LOW"
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "time_delay",
+                        "id": "AgC~WFs|NvB!m$:M-b%*",
+                        "inputs": {
+                          "DELAY_TIME": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "vQbMi7iDq;lE;1Bx|-6-",
+                              "fields": {
+                                "NUM": 1000
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "serial_print",
+              "id": "I1n@gbTC{4+$gpFhFM2+",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "pmRO7h(M/@:KWf}Nsg+Q",
+                    "fields": {
+                      "TEXT": "灰度左："
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_print",
+                  "id": "V%V1]lR*1J,{eHsC[=)Y",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "?hOtm8VFID$yLfl{r{1[",
+                        "fields": {
+                          "TEXT": ""
+                        }
+                      },
+                      "block": {
+                        "type": "io_analogread",
+                        "id": "a+1S[%s1^)QAhfp=z{-4",
+                        "inputs": {
+                          "PIN": {
+                            "shadow": {
+                              "type": "io_pin_adc",
+                              "id": "Nu*t%YP(_oU*`Y9p:lJ|",
+                              "fields": {
+                                "PIN": "A2"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_print",
+                      "id": "5yrf!^?CPI]|S3_`Djga",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "MF@Iv=uk#b?^KbYnbjyc",
+                            "fields": {
+                              "TEXT": "--------"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "serial_print",
+                          "id": ")XSLM)x8bRei4i6hje2y",
+                          "fields": {
+                            "SERIAL": "Serial"
+                          },
+                          "inputs": {
+                            "VAR": {
+                              "shadow": {
+                                "type": "text",
+                                "id": "@[f7bL1F1{L.$s.k4ah[",
+                                "fields": {
+                                  "TEXT": "灰度右："
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "serial_print",
+                              "id": "gH1nZ:,kqiob(xE66I7]",
+                              "fields": {
+                                "SERIAL": "Serial"
+                              },
+                              "inputs": {
+                                "VAR": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "gPI0AsYJ`,lfQ~|i/sXo",
+                                    "fields": {
+                                      "TEXT": ""
+                                    }
+                                  },
+                                  "block": {
+                                    "type": "io_analogread",
+                                    "id": "[Gy/sN8A80AXKFODmn`s",
+                                    "inputs": {
+                                      "PIN": {
+                                        "shadow": {
+                                          "type": "io_pin_adc",
+                                          "id": "sLV$AYGwE|%Iqn^rFJ5y",
+                                          "fields": {
+                                            "PIN": "A6"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

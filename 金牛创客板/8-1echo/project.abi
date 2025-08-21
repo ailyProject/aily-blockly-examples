@@ -1,0 +1,136 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 50,
+        "y": 130,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "serial_begin",
+              "id": "jo-.H!QwWK7#PVS-eo|m",
+              "fields": {
+                "SERIAL": "Serial",
+                "SPEED": "9600"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "serial_print",
+              "id": "5.xi?_-;/QW;9N~UEP12",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "$W2uZR]%=:+zT+vPPtX=",
+                    "fields": {
+                      "TEXT": "距离："
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "serial_print",
+                  "id": "kE-Q5rm3jnXUm[LDgD+1",
+                  "fields": {
+                    "SERIAL": "Serial"
+                  },
+                  "inputs": {
+                    "VAR": {
+                      "shadow": {
+                        "type": "text",
+                        "id": "hy?e`;=pW/(_Zh2LIn77",
+                        "fields": {
+                          "TEXT": "距离："
+                        }
+                      },
+                      "block": {
+                        "type": "ultrasonic_ranging",
+                        "id": "XiDCh[,2t(c:zCRUyOW)",
+                        "inputs": {
+                          "PIN1": {
+                            "block": {
+                              "type": "io_pin_digi",
+                              "id": "2{5fyc)+M3_Tvd~nVXK4",
+                              "fields": {
+                                "PIN": "11"
+                              }
+                            }
+                          },
+                          "PIN2": {
+                            "block": {
+                              "type": "io_pin_digi",
+                              "id": "0{o4yJS(6HVTNwq;}~L+",
+                              "fields": {
+                                "PIN": "12"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "serial_println",
+                      "id": "aj*zF0,^oN;C1{wXH}nK",
+                      "fields": {
+                        "SERIAL": "Serial"
+                      },
+                      "inputs": {
+                        "VAR": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "ZPNJEnHssf[8g=qH70;o",
+                            "fields": {
+                              "TEXT": "（cm）"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "time_delay",
+                          "id": "vfJX+P[fk1#4VRlec[T}",
+                          "inputs": {
+                            "DELAY_TIME": {
+                              "shadow": {
+                                "type": "math_number",
+                                "id": "F7piw.9aWe%5LMLH}A4+",
+                                "fields": {
+                                  "NUM": 100
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
