@@ -1,5 +1,6 @@
 {
-  "name": "8-1超声波测距",
+  "name": "echo",
+  "nickname": "超声波测距",
   "version": "1.0.0",
   "description": "",
   "board": "金牛创翼板",

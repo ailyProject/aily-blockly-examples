@@ -1,5 +1,6 @@
 {
-  "name": "12-2 电位器控制舵机角度",
+  "name": "potentiometer_servo",
+  "nickname": "电位器控制舵机角度",
   "version": "1.0.0",
   "description": "",
   "board": "Arduino UNO R3",
