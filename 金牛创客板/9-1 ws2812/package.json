@@ -1,5 +1,5 @@
 {
-  "name": "9-1 ws2812灯带",
+  "name": "ws2812",
   "version": "1.0.0",
   "description": "",
   "board": "Arduino UNO R3",

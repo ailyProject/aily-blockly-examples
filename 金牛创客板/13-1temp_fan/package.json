@@ -1,5 +1,5 @@
 {
-  "name": "13-1温控风扇",
+  "name": "tem_fan",
   "version": "1.0.0",
   "description": "",
   "board": "Arduino UNO R3",

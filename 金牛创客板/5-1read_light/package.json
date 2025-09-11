@@ -1,5 +1,5 @@
 {
-  "name": "4-1.读取电位器数值_new",
+  "name": "readpotentiometer",
   "version": "1.0.0",
   "description": "",
   "board": "金牛创翼板",
