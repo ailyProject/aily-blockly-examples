@@ -1,0 +1,253 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_SETUP": {
+            "block": {
+              "type": "dht_init",
+              "id": "$/I3:K[@RZ9;U{+!{j+H",
+              "fields": {
+                "TYPE": "DHT11",
+                "PIN": "10"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "serial_println",
+              "id": "#sD#_/:Hi[Cb)uyg8]_]",
+              "fields": {
+                "SERIAL": "Serial"
+              },
+              "inputs": {
+                "VAR": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "EZ*WC,9UzsM-5!-I$)Wn",
+                    "fields": {
+                      "TEXT": ""
+                    }
+                  },
+                  "block": {
+                    "type": "dht_read_temperature",
+                    "id": "]sJX)):hFZJ{wR.PC)Gf",
+                    "fields": {
+                      "TYPE": "DHT11",
+                      "PIN": "10"
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "controls_ifelse",
+                  "id": "18mID$0-0wwf5/J0yTDW",
+                  "extraState": {
+                    "elseIfCount": 1
+                  },
+                  "inputs": {
+                    "IF0": {
+                      "block": {
+                        "type": "logic_compare",
+                        "id": "W0mtoUoY+#8+0NxaqJVX",
+                        "fields": {
+                          "OP": "GT"
+                        },
+                        "inputs": {
+                          "A": {
+                            "block": {
+                              "type": "dht_read_temperature",
+                              "id": "2I.@Pc?c@bxla:zI|4}K",
+                              "fields": {
+                                "TYPE": "DHT11",
+                                "PIN": "10"
+                              }
+                            }
+                          },
+                          "B": {
+                            "block": {
+                              "type": "math_number",
+                              "id": "_Yg_=)/cK7G3SRp$Wu=i",
+                              "fields": {
+                                "NUM": 30
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "DO0": {
+                      "block": {
+                        "type": "io_analogwrite",
+                        "id": "59O$g$+BK**Lf]ZLle[#",
+                        "inputs": {
+                          "PIN": {
+                            "shadow": {
+                              "type": "io_pin_pwm",
+                              "id": "NN8Q#[e-%Uz*:h#@K@kn",
+                              "fields": {
+                                "PIN": "9"
+                              }
+                            }
+                          },
+                          "PWM": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "{45nkZ`%qm*NM_S[!QRk",
+                              "fields": {
+                                "NUM": 255
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "IF1": {
+                      "block": {
+                        "type": "logic_operation",
+                        "id": "kiuBqjIjPKufS*e.fndT",
+                        "fields": {
+                          "OP": "AND"
+                        },
+                        "inputs": {
+                          "A": {
+                            "block": {
+                              "type": "logic_compare",
+                              "id": "$1`%WU~95[CP7k@Em|5p",
+                              "fields": {
+                                "OP": "LTE"
+                              },
+                              "inputs": {
+                                "A": {
+                                  "block": {
+                                    "type": "math_number",
+                                    "id": "YF;s-kej~TQm/uC-=~bV",
+                                    "fields": {
+                                      "NUM": 20
+                                    }
+                                  }
+                                },
+                                "B": {
+                                  "block": {
+                                    "type": "dht_read_temperature",
+                                    "id": "SI(0_dF`UyYAqrvkQJYu",
+                                    "fields": {
+                                      "TYPE": "DHT11",
+                                      "PIN": "10"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "B": {
+                            "block": {
+                              "type": "logic_compare",
+                              "id": "V[ii),-Yl[i1/|_Y?%n?",
+                              "fields": {
+                                "OP": "LTE"
+                              },
+                              "inputs": {
+                                "A": {
+                                  "block": {
+                                    "type": "dht_read_temperature",
+                                    "id": "%ZoPXsCJ)JrxREoouYRj",
+                                    "fields": {
+                                      "TYPE": "DHT11",
+                                      "PIN": "10"
+                                    }
+                                  }
+                                },
+                                "B": {
+                                  "block": {
+                                    "type": "math_number",
+                                    "id": "d=.akN9HcERAIef,Q$%N",
+                                    "fields": {
+                                      "NUM": 30
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "DO1": {
+                      "block": {
+                        "type": "io_analogwrite",
+                        "id": "#+(F~VPhF6GyX5DjlIgN",
+                        "inputs": {
+                          "PIN": {
+                            "shadow": {
+                              "type": "io_pin_pwm",
+                              "id": "YHq#n@if$$|B+p(a$k*7",
+                              "fields": {
+                                "PIN": "9"
+                              }
+                            }
+                          },
+                          "PWM": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "Fdlk*GCeOMxGicD]9pIh",
+                              "fields": {
+                                "NUM": 125
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "ELSE": {
+                      "block": {
+                        "type": "io_analogwrite",
+                        "id": "I_2Jee.:`Tp80^)/./NU",
+                        "inputs": {
+                          "PIN": {
+                            "shadow": {
+                              "type": "io_pin_pwm",
+                              "id": ",kfHcEHdde-/U~tLWuXY",
+                              "fields": {
+                                "PIN": "9"
+                              }
+                            }
+                          },
+                          "PWM": {
+                            "shadow": {
+                              "type": "math_number",
+                              "id": "=T_$=F0ei:AsUQ^T=TJn",
+                              "fields": {
+                                "NUM": 0
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

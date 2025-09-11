@@ -1,13 +1,11 @@
 {
-  "name": "aivox-led",
-  "nickname": "AIVOX点灯",
+  "name": "4-2.电位器调速",
   "version": "1.0.0",
-  "description": "通过AIVOX控制LED灯",
-  "board": "aivox",
+  "description": "",
+  "board": "金牛创翼板",
   "dependencies": {
-    "@aily-project/board-ai-vox": "1.0.0",
-    "@aily-project/lib-ai-vox": "1.0.0",
-    "@aily-project/lib-core-io": "0.0.1",
+    "@aily-project/board-arduino_uno": "^1.0.1",
+    "@aily-project/lib-core-io": "1.0.0",
     "@aily-project/lib-core-logic": "0.0.1",
     "@aily-project/lib-core-loop": "0.0.1",
     "@aily-project/lib-core-math": "0.0.1",

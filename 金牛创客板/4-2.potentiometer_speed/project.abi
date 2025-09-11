@@ -1,0 +1,115 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "arduino_setup",
+        "id": "arduino_setup_id0",
+        "x": 30,
+        "y": 30,
+        "deletable": false
+      },
+      {
+        "type": "arduino_loop",
+        "id": "arduino_loop_id0",
+        "x": 30,
+        "y": 290,
+        "deletable": false,
+        "inputs": {
+          "ARDUINO_LOOP": {
+            "block": {
+              "type": "io_analogwrite",
+              "id": "@{}HseIorGGp9M2@Fmf_",
+              "inputs": {
+                "PIN": {
+                  "shadow": {
+                    "type": "io_pin_pwm",
+                    "id": "8+M|x2=0^-x6Pme.1zRH",
+                    "fields": {
+                      "PIN": "9"
+                    }
+                  }
+                },
+                "PWM": {
+                  "shadow": {
+                    "type": "math_number",
+                    "id": "d{,o!/QTVOULDe-Q~IMV",
+                    "fields": {
+                      "NUM": 255
+                    }
+                  },
+                  "block": {
+                    "type": "map_to",
+                    "id": ":J/D@rRXox7rwq;7},Sn",
+                    "inputs": {
+                      "NUM": {
+                        "block": {
+                          "type": "io_analogread",
+                          "id": "#M)cb=v)1N+l6*8nRz/5",
+                          "inputs": {
+                            "PIN": {
+                              "shadow": {
+                                "type": "io_pin_adc",
+                                "id": ")_]UWxlwf`U:0t*yP?SE",
+                                "fields": {
+                                  "PIN": "A0"
+                                }
+                              },
+                              "block": {
+                                "type": "math_number",
+                                "id": "HzDA),45y$q=riyCto(]",
+                                "fields": {
+                                  "NUM": 0
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "FIRST_START": {
+                        "block": {
+                          "type": "math_number",
+                          "id": "tM5+vz]U?NUE*m0V3XW)",
+                          "fields": {
+                            "NUM": 0
+                          }
+                        }
+                      },
+                      "FIRST_END": {
+                        "block": {
+                          "type": "math_number",
+                          "id": "5]xo=34]RDXC@!*%{b|t",
+                          "fields": {
+                            "NUM": 1023
+                          }
+                        }
+                      },
+                      "LAST_START": {
+                        "block": {
+                          "type": "math_number",
+                          "id": "Hm(!/WDqFQ_oeGx2Gn#4",
+                          "fields": {
+                            "NUM": 0
+                          }
+                        }
+                      },
+                      "LAST_END": {
+                        "block": {
+                          "type": "math_number",
+                          "id": "wc8WE9M${ozso0w9ELr=",
+                          "fields": {
+                            "NUM": 255
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

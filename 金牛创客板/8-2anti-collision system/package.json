@@ -1,21 +1,19 @@
 {
-  "name": "aivox-sensor",
-  "nickname": "AIVOX读取传感器",
+  "name": "8-2防撞报警系统",
   "version": "1.0.0",
-  "description": "通过AIVOX获取超声波的距离、DHT11温湿度传感器的值、光敏传感器的模拟值",
-  "board": "aivox",
+  "description": "",
+  "board": "金牛创翼板",
   "dependencies": {
-    "@aily-project/board-ai-vox": "1.0.0",
-    "@aily-project/lib-ai-vox": "1.0.0",
-    "@aily-project/lib-core-io": "0.0.1",
+    "@aily-project/board-arduino_uno": "^1.0.1",
+    "@aily-project/lib-core-io": "1.0.0",
     "@aily-project/lib-core-logic": "0.0.1",
     "@aily-project/lib-core-loop": "0.0.1",
     "@aily-project/lib-core-math": "0.0.1",
     "@aily-project/lib-core-serial": "0.0.1",
     "@aily-project/lib-core-text": "0.0.1",
     "@aily-project/lib-core-time": "0.0.1",
+    "@aily-project/lib-core-tone": "^0.0.2",
     "@aily-project/lib-core-variables": "1.0.1",
-    "@aily-project/lib-dht": "^1.0.0",
     "@aily-project/lib-ultrasonic": "^0.0.1"
   }
 }
