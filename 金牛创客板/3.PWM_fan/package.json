@@ -1,5 +1,5 @@
 {
-  "name": "3.PWM调速小电扇",
+  "name": "pwmfan",
   "version": "1.0.0",
   "description": "",
   "board": "金牛创翼板",
