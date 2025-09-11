@@ -1,5 +1,6 @@
 {
-  "name": "AIVOXServo",
+  "name": "aivox-servo",
+  "nickname": "AIVOX控制舵机",
   "version": "1.0.0",
   "description": "通过AIVOX控制舵机",
   "board": "aivox",
