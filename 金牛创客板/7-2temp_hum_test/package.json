@@ -1,5 +1,6 @@
 {
   "name": "tem_hum_test",
+  "nickname": "温湿度检测报警",
   "version": "1.0.0",
   "description": "",
   "board": "金牛创翼板",

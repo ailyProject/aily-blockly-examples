@@ -1,5 +1,6 @@
 {
   "name": "keyled",
+  "nickname": "按键控制LED",
   "version": "1.0.0",
   "description": "",
   "board": "金牛创翼板",

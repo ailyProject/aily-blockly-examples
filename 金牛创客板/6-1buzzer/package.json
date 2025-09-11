@@ -1,5 +1,6 @@
 {
   "name": "buzzer",
+  "nickname": "蜂鸣器发声",
   "version": "1.0.0",
   "description": "",
   "board": "金牛创翼板",

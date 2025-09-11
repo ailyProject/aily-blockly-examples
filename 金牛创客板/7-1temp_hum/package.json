@@ -1,5 +1,6 @@
 {
   "name": "tem_hum",
+  "nickname": "温湿度读取",
   "version": "1.0.0",
   "description": "",
   "board": "金牛创翼板",
