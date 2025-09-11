@@ -1,5 +1,6 @@
 {
   "name": "readpotentiometer",
+  "nickname": "光敏模块读取",
   "version": "1.0.0",
   "description": "",
   "board": "金牛创翼板",

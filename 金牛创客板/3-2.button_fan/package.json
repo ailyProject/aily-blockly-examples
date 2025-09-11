@@ -1,5 +1,6 @@
 {
   "name": "keyfan",
+  "nickname": "按键控制风扇速度",
   "version": "1.0.0",
   "description": "",
   "board": "金牛创翼板",

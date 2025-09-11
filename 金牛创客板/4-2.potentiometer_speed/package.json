@@ -1,5 +1,6 @@
 {
   "name": "potentiometer_speed",
+  "nickname": "电位器调速",
   "version": "1.0.0",
   "description": "",
   "board": "金牛创翼板",

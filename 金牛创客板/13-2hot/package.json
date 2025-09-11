@@ -1,5 +1,6 @@
 {
   "name": "hot_test",
+  "nickname": "高温报警",
   "version": "1.0.0",
   "description": "",
   "board": "Arduino UNO R3",

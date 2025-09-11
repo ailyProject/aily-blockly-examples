@@ -1,5 +1,6 @@
 {
   "name": "ws2812",
+  "nickname": "WS2812彩灯",
   "version": "1.0.0",
   "description": "",
   "board": "Arduino UNO R3",

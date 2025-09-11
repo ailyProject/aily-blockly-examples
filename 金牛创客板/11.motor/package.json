@@ -1,5 +1,6 @@
 {
   "name": "motor",
+  "nickname": "直流电机控制",
   "version": "1.0.0",
   "description": "",
   "board": "Arduino UNO R3",

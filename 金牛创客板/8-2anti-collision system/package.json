@@ -1,5 +1,6 @@
 {
-  "name": "anti-collision system",
+  "name": "anti-collisionsystem",
+  "nickname": "防撞报警系统",
   "version": "1.0.0",
   "description": "",
   "board": "金牛创翼板",
