@@ -1,5 +1,6 @@
 {
-  "name": "AIVOX-sensor",
+  "name": "aivox-sensor",
+  "nickname": "AIVOX读取传感器",
   "version": "1.0.0",
   "description": "通过AIVOX获取超声波的距离、DHT11温湿度传感器的值、光敏传感器的模拟值",
   "board": "aivox",
