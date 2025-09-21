@@ -1,6 +1,6 @@
 {
   "name": "aivox-led",
-  "nickname": "AIVOX点灯",
+  "nickname":"AIVOX控制LED灯",
   "version": "1.0.0",
   "description": "通过AIVOX控制LED灯",
   "board": "aivox",

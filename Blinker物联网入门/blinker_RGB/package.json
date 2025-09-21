@@ -1,6 +1,6 @@
 {
-  "name": "blinker_RGB",
-  "nikename": "Blinker控制RGB灯",
+  "name": "blinker_rgb",
+  "nickname": "Blinker控制RGB灯",
   "url": "https://www.diandeng.tech/home",
   "description": "通过Blinker APP控制RGB灯的颜色和亮度、学习Blinker的基本使用方法。",
   "version": "1.0.0",
