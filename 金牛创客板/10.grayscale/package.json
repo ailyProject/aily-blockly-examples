@@ -1,5 +1,6 @@
 {
-  "name": "10.灰度传感器",
+  "name": "gray_sensor",
+  "nickname": "灰度传感器",
   "version": "1.0.0",
   "description": "",
   "board": "金牛创翼板",
