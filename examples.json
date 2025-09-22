@@ -8,10 +8,22 @@
     "img": "ai-vox-subject.webp",
     "examples": [
       {
-        "nickname": "AI小智使用入门",
-        "description": "AI小智使用入门，包含AI小智的基本使用方法、语音交互、简单编程示例等内容，适合初学者快速上手。",
-        "path": "AI小智入门示例",
-        "url": "https://dcnmu33qx4fc.feishu.cn/docx/Lpy7dfEYAo04PzxJNI0ceTj5nxg"
+        "nickname": "AIVOX控制LED灯",
+        "description": "通过AIVOX控制LED灯",
+        "path": "AIVOXControlLed",
+        "url": ""
+      },
+      {
+        "nickname": "AIVOX获取传感器数据",
+        "description": "通过AIVOX获取超声波的距离、DHT11温湿度传感器的值、光敏传感器的模拟值",
+        "path": "AIVOXSensor",
+        "url": ""
+      },
+      {
+        "nickname": "AIVOX控制舵机",
+        "description": "通过AIVOX控制舵机",
+        "path": "AIVOXServo",
+        "url": ""
       }
     ]
   },
@@ -127,7 +139,7 @@
     "description": "学习使用Blinker APP基本功能，包括基本组件使用、数据上传、常用组件介绍（按键，调色、滑块等）、简单项目实践。适合零基础学习者快速掌握Blinker的使用。",
     "author": "mango",
     "url": "",
-    "img": "Blinker_subject.webp",
+    "img": "blinker-subject.webp",
     "examples": [
       {
         "nickname": "环境检测装置",
@@ -142,7 +154,7 @@
         "url": "https://www.diandeng.tech/home"
       },
       {
-        "nickname": "blinker_led",
+        "nickname": "Blinker控制开关灯",
         "description": "通过Blinker APP控制LED灯的开关，学习Blinker的基本使用方法。",
         "path": "blinker_led",
         "url": "https://www.diandeng.tech/home"
@@ -154,7 +166,7 @@
         "url": "https://www.diandeng.tech/home"
       },
       {
-        "nickname": "blinker_RGB",
+        "nickname": "Blinker控制RGB灯",
         "description": "通过Blinker APP控制RGB灯的颜色和亮度、学习Blinker的基本使用方法。",
         "path": "blinker_RGB",
         "url": "https://www.diandeng.tech/home"
@@ -172,31 +184,139 @@
     "nickname": "VisHome AIoT套件使用教程",
     "description": "【OpenJumper VisHome AIoT教学套件】采用创新性木板与高透亚克力复合结构，通过精密螺丝装配工艺，在确保教学演示稳固性的同时，呈现极简科技美学。套件核心搭载WiFiduino32S3智能控制器，配合模块化传感器阵列，结合Blinker物联网云平台实现数据可视化交互。通过沉浸式智能家居场景实践，学习者可快速掌握物联网系统架构、云端控制的全链路开发技能，也能学习了解生成式人工智能（小智AI）与硬件结合的专业知识，是AIoT入门教育的理想实训平台。",
     "author": "OpenJumper",
-    "url": "",
-    "img": "subject.webp",
+    "url": "https://openjumper.com/doc",
+    "img": "vishome-subject.webp",
     "examples": [
       {
         "nickname": "blinker控制开关灯",
         "description": "通过物联网云平台blinker，实现对LED灯的远程控制，支持开关灯、调节亮度等功能。",
-        "path": "blinker控制开关灯",
+        "path": "blinker-light",
         "url": ""
       },
       {
-        "nickname": "MP3播放器",
-        "description": "MP3播放器控制，支持播放、暂停、切换歌曲等功能。",
+        "nickname": "Blinker控制门窗风扇",
+        "description": "通过物联网云平台blinker，实现门、窗、风扇等设备的开关和调速功能。",
+        "path": "blinker-stepper",
+        "url": ""
+      },
+      {
+        "nickname": "blinker调色盘",
+        "description": "通过物联网云平台blinker调色盘控制灯带颜色和亮度，实现远程RGB灯光调节。",
+        "path": "color-picker",
+        "url": ""
+      },
+      {
+        "nickname": "Blinker控制播放音乐",
+        "description": "MP3播放器控制，支持播放、暂停、切换歌曲等功能，并集成了Blinker平台进行远程控制。",
         "path": "MP3",
         "url": ""
       },
       {
-        "nickname": "步进电机控制窗帘",
-        "description": "通过步进电机控制窗帘的开合，支持设置角度和速度等功能。",
-        "path": "步进电机控制窗帘",
+        "nickname": "基础教程 - 板载LED控制",
+        "description": "板载LED控制，支持开关等功能。",
+        "path": "Wifiduino32_S3_1",
         "url": ""
       },
       {
-        "nickname": "调色盘",
-        "description": "通过调色盘控制灯带颜色和亮度，实现远程RGB灯光调节。",
-        "path": "调色盘_new",
+        "nickname": "基础教程 - 步进电机",
+        "description": "步进电机控制，支持设置角度和速度等功能。",
+        "path": "Wifiduino32_S3_10",
+        "url": ""
+      },
+      {
+        "nickname": "智能电灯 - 光控LED系统",
+        "description": "通过光照传感器控制LED灯的开关和亮度，实现智能照明。",
+        "path": "Wifiduino32_S3_11",
+        "url": ""
+      },
+      {
+        "nickname": "自动控制窗帘",
+        "description": "通过光照传感器和雨滴传感器控制窗帘的开关和位置，实现智能窗帘控制。",
+        "path": "Wifiduino32_S3_12",
+        "url": ""
+      },
+      {
+        "nickname": "温控风扇",
+        "description": "通过温湿度传感器以及雨滴传感器控制风扇的开关和速度，实现智能风扇控制。",
+        "path": "Wifiduino32_S3_13",
+        "url": ""
+      },
+      {
+        "nickname": "环境记录仪",
+        "description": "通过SHT30温湿度传感器和AGS02MA空气质量传感器以及雨滴传感器和MQ2烟雾传感器，记录环境数据并显示在LCD屏幕上，同时储存在SD卡中。",
+        "path": "Wifiduino32_S3_14",
+        "url": ""
+      },
+      {
+        "nickname": "物联网室内环境检测",
+        "description": "通过SHT30温湿度传感器、AGS02MA空气质量传感器、BH1750光照传感器、MQ2烟雾传感器、雨滴传感器和Blinker平台，实现室内环境数据的监测和远程控制。",
+        "path": "Wifiduino32_S3_19",
+        "url": ""
+      },
+      {
+        "nickname": "基础教程 - LED可编程彩灯",
+        "description": "LED控制，支持开关、调光等功能。",
+        "path": "Wifiduino32_S3_2",
+        "url": ""
+      },
+      {
+        "nickname": "智能家居物联网控制检测综合案例",
+        "description": "本项目构建一个全功能智能家居环境监测与控制系统，通过ESP32-S3主板集成所有传感器和执行器，实现环境数据采集、智能联动控制、远程监控功能。",
+        "path": "Wifiduino32_S3_20",
+        "url": ""
+      },
+      {
+        "nickname": "基础教程 - LED彩灯特效",
+        "description": "LED控制，支持开关、灯光特效等功能。",
+        "path": "Wifiduino32_S3_2_JingJie",
+        "url": ""
+      },
+      {
+        "nickname": "基础教程 - 舵机驱动",
+        "description": "舵机控制，支持角度设置等功能。",
+        "path": "Wifiduino32_S3_3",
+        "url": ""
+      },
+      {
+        "nickname": "基础教程 - 舵机平滑控制",
+        "description": "舵机平滑控制，支持角度设置，旋转等功能。",
+        "path": "Wifiduino32_S3_3_JingJie",
+        "url": ""
+      },
+      {
+        "nickname": "基础教程 - 调速风扇",
+        "description": "调速风扇控制，支持电机速度设置等功能。",
+        "path": "Wifiduino32_S3_4",
+        "url": ""
+      },
+      {
+        "nickname": "基础教程 - MQ2烟雾传感器",
+        "description": "MQ2烟雾传感器控制，支持烟雾浓度检测。",
+        "path": "Wifiduino32_S3_5",
+        "url": ""
+      },
+      {
+        "nickname": "基础教程 - TVOC传感器",
+        "description": "AGS02MA传感器控制，支持TVOC浓度检测。",
+        "path": "Wifiduino32_S3_6",
+        "url": ""
+      },
+      {
+        "nickname": "基础教程 - 光照传感器",
+        "description": "BH1750光照传感器控制，支持光照强度检测。",
+        "path": "Wifiduino32_S3_7",
+        "url": ""
+      },
+      {
+        "nickname": "基础教程 - 温湿度传感器",
+        "description": "SHT30温湿度传感器控制，支持温湿度检测。",
+        "path": "Wifiduino32_S3_8",
+        "url": ""
+      },
+      {
+        "nickname": "基础教程 - MP3播放器",
+        "description": "MP3播放器控制，支持播放、暂停、切换歌曲等功能。",
+        "path": "Wifiduino32_S3_9",
         "url": ""
       }
     ]
@@ -205,7 +325,7 @@
     "name": "@aily-project/example-qixiangzhan",
     "nickname": "气象物联网大师套件使用教程",
     "description": "OpenJumper气象物联网大师套件 是一款专为物联网与气象学习设计的全能教学工具。它集成了风速、风向、雨量、温湿度、气压、光照、空气质量等多种高精度传感器，通过RJ-11接口便捷连接，搭配blinker物联网云平台，以及详细教程，让用户轻松采集、分析气象数据。无论是教学实验、创客项目，还是物联网开发，这套件都能提供完整的解决方案，助力探索智能气象的奥秘！",
-    "author": "openjumper",
+    "author": "OpenJumper",
     "url": "https://openjumper.com/doc/weather-meter-iot",
     "img": "qx-subject.webp",
     "examples": [
@@ -219,6 +339,12 @@
         "nickname": "BMP280 温度气压海拔传感器",
         "description": "采集BMP280气压、温度和海拔数据，并进行串口输出，学习BMP280传感器的基本使用方法。",
         "path": "BMP280",
+        "url": "https://openjumper.com/doc/weather-meter-iot"
+      },
+      {
+        "nickname": "气象物联网大师套件综合例程Blinker",
+        "description": "本项目是气象物联网大师套件的综合示例，涵盖了多种传感器的使用方法和数据处理流程，帮助用户快速上手气象监测与物联网应用。同时集成了Blinker平台，便于用户进行数据可视化和远程监控。",
+        "path": "Climate_Blinker",
         "url": "https://openjumper.com/doc/weather-meter-iot"
       },
       {
@@ -361,11 +487,138 @@
   },
   {
     "name": "@aily-project/example-jinniu",
-    "nickname": "金牛板使用教程",
-    "description": "针对金牛创客板的基础教程，包含基础模块的使用、基本电路连接、常用组件介绍（传感器、执行器等）、基础编程语法、简单项目实践。适合零基础学习者快速掌握金牛板的使用。",
-    "author": "openjumper",
+    "nickname": "金牛创翼板使用教程",
+    "description": "金牛创翼板是一款K12信息技术细教学应用开发板，该开发板基于Arduino设计，并将多种传感器硬件集成在了一张板卡中，包含了\n•\tLED红灯 x 1：用于指示电源状态或用于项目中的灯效演示。\n•\t2812 RGB灯 x 4：可编程的RGB灯，能够创造丰富的灯光效果和色彩变化。\n•\t按钮 x 1：用于输入控制或触发事件。\n•\t旋钮电位器 x 1：方便用户调节并输入模拟值。\n•\tDHT11温湿度传感器 x 1：用于实时监测环境的温度与湿度。\n•\t光线传感器 x 1：感应环境光照强度，适用于光敏项目。\n•\t板载电机 x 1：用于驱动或演示多种机械动作。\n•\t灰度传感器 x 2：检测黑白程度，适合简单的跟随或避障项目。（仅限V1版本）\n•\tTTS语音播报模x1 : 用于语音合成及播报。（仅限V2版本）\n            声音传感器x1 ：检测模拟音量大小。（仅限V2版本）\n•\t超声波传感器 x 1：用于测距和避障，广泛用于机器人项目。\n•\t蜂鸣器 x 1：用于发出声音提示或音乐效果。 （仅限V1版本）\n•\t自锁开关 x 1：用于电源控制或系统重启。\n•\t电机接口 x 2：连接外部电机，扩展功能。\n•\t舵机接口 x 2：连接舵机，实现精准的角度控制。\n•\t串口接口 x 1：方便与其他设备进行数据传输。\n•\tIIC接口 x 2：用于扩展其他IIC兼容的传感器或模块。",
+    "author": "OpenJumper",
     "url": "",
     "img": "jinniu_subject.webp",
-    "examples": []
+    "examples": [
+      {
+        "nickname": "灰度传感器",
+        "description": "",
+        "path": "10grayscale",
+        "url": ""
+      },
+      {
+        "nickname": "直流电机控制",
+        "description": "",
+        "path": "11motor",
+        "url": ""
+      },
+      {
+        "nickname": "舵机控制",
+        "description": "",
+        "path": "12-1servo",
+        "url": ""
+      },
+      {
+        "nickname": "电位器控制舵机角度",
+        "description": "",
+        "path": "12-2 potentiometer_servo",
+        "url": ""
+      },
+      {
+        "nickname": "温控风扇",
+        "description": "",
+        "path": "13-1temp_fan",
+        "url": ""
+      },
+      {
+        "nickname": "高温报警",
+        "description": "",
+        "path": "13-2hot",
+        "url": ""
+      },
+      {
+        "nickname": "blink",
+        "description": "",
+        "path": "1blink",
+        "url": ""
+      },
+      {
+        "nickname": "按键控制LED",
+        "description": "",
+        "path": "2button_led",
+        "url": ""
+      },
+      {
+        "nickname": "按键控制风扇速度",
+        "description": "",
+        "path": "3-2button_fan",
+        "url": ""
+      },
+      {
+        "nickname": "PWM调速小风扇",
+        "description": "",
+        "path": "3PWM_fan",
+        "url": ""
+      },
+      {
+        "nickname": "电位器读取",
+        "description": "",
+        "path": "4-1read_potentiometer",
+        "url": ""
+      },
+      {
+        "nickname": "电位器调速",
+        "description": "",
+        "path": "4-2potentiometer_speed",
+        "url": ""
+      },
+      {
+        "nickname": "光敏模块读取",
+        "description": "",
+        "path": "5-1read_light",
+        "url": ""
+      },
+      {
+        "nickname": "自动小夜灯",
+        "description": "",
+        "path": "5-2auto_light",
+        "url": ""
+      },
+      {
+        "nickname": "蜂鸣器发声",
+        "description": "",
+        "path": "6-1buzzer",
+        "url": ""
+      },
+      {
+        "nickname": "生日快乐歌",
+        "description": "",
+        "path": "6-2happy_birthday",
+        "url": ""
+      },
+      {
+        "nickname": "温湿度读取",
+        "description": "",
+        "path": "7-1temp_hum",
+        "url": ""
+      },
+      {
+        "nickname": "温湿度检测报警",
+        "description": "",
+        "path": "7-2temp_hum_test",
+        "url": ""
+      },
+      {
+        "nickname": "超声波测距",
+        "description": "",
+        "path": "8-1echo",
+        "url": ""
+      },
+      {
+        "nickname": "防撞报警系统",
+        "description": "",
+        "path": "8-2anti-collision system",
+        "url": ""
+      },
+      {
+        "nickname": "WS2812彩灯",
+        "description": "",
+        "path": "9-1ws2812",
+        "url": ""
+      }
+    ]
   }
 ]
